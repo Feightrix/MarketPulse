@@ -1,0 +1,56 @@
+name: MarketPulse Phase 3E Universe Stress
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'phase3e_config.json'
+      - '.github/workflows/phase3e-stress.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: pip install numpy pandas
+      - name: Run frozen-rule subset stress
+        env:
+          ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
+          ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+        run: |
+          python - <<'PY'
+          import json, random, numpy as np, pandas as pd
+          import phase3d_swing_backtest as b
+          cfg=json.load(open('phase3e_config.json')); u=cfg['etf_universe']; r=cfg['locked_rule']; groups=cfg['groups']
+          sig=(r['ranking_lookback_days'],r['breakout_lookback_days'],r['breakout_band_pct'],r['trend_mode'])
+          b.UNIVERSE=u; data=b.load_data()
+          def test(syms,a='2024-01-01',z='2025-12-31'):
+              b.UNIVERSE=list(syms); p=b.pack(data,pd.Timestamp(a).date(),pd.Timestamp(z).date())
+              return b.rounded(b.sim(p,sig,r['max_hold_days'],r['downside_boundary_pct'],r['upside_boundary_pct'],5.0))
+          group_out={}
+          for name,members in groups.items():
+              syms=[s for s in u if s not in members]
+              group_out[name]={'remaining':len(syms),'validation_2024_2025':test(syms),'check_2026':test(syms,'2026-01-01','2026-07-31')}
+          gp=sum(1 for x in group_out.values() if x['validation_2024_2025']['total_return']>0 and x['validation_2024_2025']['profit_factor']>1)
+          rng=random.Random(cfg['random_seed']); n=cfg['random_subset_tests']; size=12; rows=[]
+          for i in range(n):
+              syms=sorted(rng.sample(u,size)); rows.append(test(syms))
+              if (i+1)%50==0: print('subsets',i+1,'/',n,flush=True)
+          rets=np.array([x['total_return'] for x in rows]); pfs=np.array([x['profit_factor'] for x in rows]); dds=np.array([x['max_drawdown'] for x in rows])
+          subset={'tests':n,'subset_size':size,'positive_return_rate':float(np.mean(rets>0)),'pf_above_1_rate':float(np.mean(pfs>1)),'median_return':float(np.median(rets)),'p10_return':float(np.quantile(rets,.10)),'p90_return':float(np.quantile(rets,.90)),'median_max_drawdown':float(np.median(dds)),'worst_max_drawdown':float(np.max(dds))}
+          g=cfg['gate']; gate=(gp/len(group_out)>=g['leave_group_out_positive_fraction_min'] and subset['positive_return_rate']>=g['random_subset_positive_fraction_min'] and subset['pf_above_1_rate']>=g['random_subset_pf_above_1_fraction_min'] and subset['median_return']>0)
+          out={'phase':'3E-stress','leave_one_group_out':group_out,'group_positive':gp,'group_total':len(group_out),'random_subset_2024_2025':subset,'stress_gate':'PASS' if gate else 'FAIL'}
+          json.dump(out,open('phase3e_stress_results.json','w'),indent=2); print(json.dumps(out,indent=2))
+          PY
+      - name: Commit results
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add phase3e_stress_results.json
+          if git diff --cached --quiet; then echo "No changes"; else git commit -m "Update Phase 3E universe stress results" && git push; fi
