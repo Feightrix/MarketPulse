@@ -18,20 +18,20 @@
 
 | Period | Trades | Return | Win rate | Expectancy | Profit factor | Daily Sharpe | Max DD | Positive days |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| Train 2021-2023 | 459 | -16.49% | 34.20% | -3.92 bps/trade | 0.49 | -5.75 | 16.89% | 32.95% |
-| Validation 2024 | 161 | -4.17% | 39.75% | -2.64 bps/trade | 0.57 | -4.14 | 4.17% | 39.66% |
-| Untouched holdout 2025-2026-07 | 285 | -6.58% | 38.60% | -2.38 bps/trade | 0.62 | -3.84 | 7.36% | 40.69% |
+| Train 2021-2023 | 82 | -3.31% | 31.71% | -4.10 bps/trade | 0.49 | -5.16 | 3.52% | 31.71% |
+| Validation 2024 | 26 | -0.59% | 34.62% | -2.26 bps/trade | 0.58 | -3.53 | 0.75% | 34.62% |
+| Untouched holdout 2025-2026-07 | 46 | 0.40% | 50.00% | 0.88 bps/trade | 1.15 | 1.04 | 1.25% | 50.00% |
 
 ## Friction stress — untouched holdout
 
 | One-way friction | Expectancy | Return | Profit factor |
 |---:|---:|---:|---:|
-| 2 bps | -2.38 bps/trade | -6.58% | 0.62 |
-| 4 bps | -6.01 bps/trade | -15.81% | 0.31 |
-| 6 bps | -9.60 bps/trade | -24.17% | 0.16 |
-| 10 bps | -16.71 bps/trade | -38.74% | 0.05 |
+| 2 bps | 0.88 bps/trade | 0.40% | 1.15 |
+| 4 bps | -2.87 bps/trade | -1.32% | 0.64 |
+| 6 bps | -7.20 bps/trade | -3.26% | 0.31 |
+| 10 bps | -14.05 bps/trade | -6.27% | 0.08 |
 
-**Nearby parameter combinations profitable on holdout:** 0/9  
+**Nearby parameter combinations profitable on holdout:** 7/9  
 **Phase 3 historical gate:** FAIL
 
 ## Important
