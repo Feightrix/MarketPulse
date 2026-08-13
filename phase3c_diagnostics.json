@@ -1,0 +1,95 @@
+{
+  "regime_true_bars": {
+    "strict_trend": 0,
+    "trend_breadth": 0,
+    "momentum_breadth": 0,
+    "low_vol_trend": 0
+  },
+  "regime_true_days": {
+    "strict_trend": 0,
+    "trend_breadth": 0,
+    "momentum_breadth": 0,
+    "low_vol_trend": 0
+  },
+  "selection_counts": {
+    "5": {
+      "SPY": 0,
+      "QQQ": 0,
+      "IWM": 0,
+      "none": 753
+    },
+    "20": {
+      "SPY": 0,
+      "QQQ": 0,
+      "IWM": 0,
+      "none": 753
+    }
+  },
+  "signal_counts": {
+    "SPY": {
+      "breakout6": 429,
+      "vwap_reclaim": 163,
+      "pullback9": 223
+    },
+    "QQQ": {
+      "breakout6": 494,
+      "vwap_reclaim": 181,
+      "pullback9": 243
+    },
+    "IWM": {
+      "breakout6": 462,
+      "vwap_reclaim": 161,
+      "pullback9": 245
+    }
+  },
+  "intersections": {
+    "strict_trend": {
+      "5": {
+        "breakout6": 0,
+        "vwap_reclaim": 0,
+        "pullback9": 0
+      },
+      "20": {
+        "breakout6": 0,
+        "vwap_reclaim": 0,
+        "pullback9": 0
+      }
+    },
+    "trend_breadth": {
+      "5": {
+        "breakout6": 0,
+        "vwap_reclaim": 0,
+        "pullback9": 0
+      },
+      "20": {
+        "breakout6": 0,
+        "vwap_reclaim": 0,
+        "pullback9": 0
+      }
+    },
+    "momentum_breadth": {
+      "5": {
+        "breakout6": 0,
+        "vwap_reclaim": 0,
+        "pullback9": 0
+      },
+      "20": {
+        "breakout6": 0,
+        "vwap_reclaim": 0,
+        "pullback9": 0
+      }
+    },
+    "low_vol_trend": {
+      "5": {
+        "breakout6": 0,
+        "vwap_reclaim": 0,
+        "pullback9": 0
+      },
+      "20": {
+        "breakout6": 0,
+        "vwap_reclaim": 0,
+        "pullback9": 0
+      }
+    }
+  }
+}
