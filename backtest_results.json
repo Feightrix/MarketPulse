@@ -1,0 +1,107 @@
+{
+  "data_source": "https://raw.githubusercontent.com/vivek-v-rao/OHLC-Vol/refs/heads/main/prices_ohlc.csv",
+  "data_end": "2026-04-15",
+  "assumed_one_way_slippage_bps": 5.0,
+  "starting_capital": 100.0,
+  "parameter_combinations_tested": 96,
+  "selection_process": "Tune on 2010-2018, select robust finalist using 2019-2022, then reveal untouched 2023-data_end holdout.",
+  "best_parameters": {
+    "short_lb": 63,
+    "long_lb": 252,
+    "trend_lb": 200,
+    "top_n": 1,
+    "rebalance": 10,
+    "target_vol": 0.15,
+    "vol_lb": 60
+  },
+  "train": {
+    "total_return": 1.0955138550184471,
+    "cagr": 0.09723394204550284,
+    "annual_vol": 0.1391688183358978,
+    "sharpe": 0.7372846459020558,
+    "max_drawdown": -0.15792895955394382,
+    "positive_months": 0.6105263157894737,
+    "worst_month": -0.07595338401602558,
+    "rebalances": 97,
+    "turnover": 55.827260389076116,
+    "ending_100": 209.55138550184472
+  },
+  "validation": {
+    "total_return": 0.7090141509988568,
+    "cagr": 0.14368424861068507,
+    "annual_vol": 0.1605697960639537,
+    "sharpe": 0.9153548713521312,
+    "max_drawdown": -0.2111735308179694,
+    "positive_months": 0.6595744680851063,
+    "worst_month": -0.10204036388156168,
+    "rebalances": 82,
+    "turnover": 16.108914352975468,
+    "ending_100": 170.90141509988567
+  },
+  "holdout": {
+    "total_return": 1.1151765693300209,
+    "cagr": 0.25658740026383353,
+    "annual_vol": 0.17026827889654303,
+    "sharpe": 1.433382679996562,
+    "max_drawdown": -0.15952116069794575,
+    "positive_months": 0.717948717948718,
+    "worst_month": -0.085902639870991,
+    "rebalances": 63,
+    "turnover": 25.481474535974233,
+    "ending_100": 211.5176569330021
+  },
+  "full_period": {
+    "total_return": 7.837302432657276,
+    "cagr": 0.15347959671655675,
+    "annual_vol": 0.1516693077401468,
+    "sharpe": 1.0196721917704854,
+    "max_drawdown": -0.16004438277949817,
+    "positive_months": 0.644808743169399,
+    "worst_month": -0.0914080612255832,
+    "rebalances": 246,
+    "turnover": 98.87544825803587,
+    "ending_100": 883.7302432657276
+  },
+  "spy_baseline": {
+    "train": {
+      "total_return": 1.643383445523626,
+      "cagr": 0.11421091363463831,
+      "annual_vol": 0.1490795815274336,
+      "sharpe": 0.8006423892503407,
+      "max_drawdown": -0.1934889210967511,
+      "positive_months": 0.7009345794392523,
+      "worst_month": -0.08804804736385619,
+      "rebalances": 1,
+      "turnover": 1.0,
+      "ending_100": 264.3383445523626
+    },
+    "validation": {
+      "total_return": 0.6338858868227244,
+      "cagr": 0.13087632538085425,
+      "annual_vol": 0.22516067033249781,
+      "sharpe": 0.6585026853399092,
+      "max_drawdown": -0.3371726207802117,
+      "positive_months": 0.6382978723404256,
+      "worst_month": -0.12487109518124972,
+      "rebalances": 1,
+      "turnover": 1.0,
+      "ending_100": 163.38858868227243
+    },
+    "holdout": {
+      "total_return": 0.9172651100974325,
+      "cagr": 0.2195090482595463,
+      "annual_vol": 0.15264506140283302,
+      "sharpe": 1.3820970434753697,
+      "max_drawdown": -0.18755232421298929,
+      "positive_months": 0.6923076923076923,
+      "worst_month": -0.055719305242981854,
+      "rebalances": 1,
+      "turnover": 1.0,
+      "ending_100": 191.72651100974326
+    }
+  },
+  "bootstrap_probability_profitable_3m": 0.7008,
+  "bootstrap_probability_profitable_1y": 0.84,
+  "phase2_pass": true,
+  "guaranteed_profit": false
+}
