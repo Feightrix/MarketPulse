@@ -1,0 +1,267 @@
+{
+  "phase": "4A",
+  "objective": "10-15% daily scorecard on $2,000 via many rapid long/short trades; risk controls dominate.",
+  "universe": [
+    "SPY",
+    "QQQ",
+    "IWM",
+    "AAPL",
+    "MSFT",
+    "NVDA",
+    "AMD",
+    "AMZN",
+    "META",
+    "TSLA"
+  ],
+  "candidate_count": 192,
+  "selected": {
+    "mode": "trend",
+    "take_profit_pct": 0.002,
+    "stop_pct": 0.002,
+    "hold_minutes": 5,
+    "max_trades_day": 30,
+    "risk_per_trade": 0.0035,
+    "daily_loss_stop": 0.015
+  },
+  "development": {
+    "trades": 5407,
+    "final_equity": 238.82,
+    "total_return": -0.880590225168556,
+    "win_rate": 0.3754392454226003,
+    "expectancy_bps": -3.9201831028329335,
+    "profit_factor": 0.5155087186969962,
+    "max_drawdown": 0.8807826533865665,
+    "days": 753,
+    "day_pos_rate": 0.15272244355909695,
+    "day_2pct": 0.0,
+    "day_5pct": 0.0,
+    "day_10pct": 0.0,
+    "day_15pct": 0.0,
+    "best_day": 0.008176257567803047,
+    "median_day": -0.002952624312414387,
+    "sides": {
+      "long": {
+        "trades": 5405,
+        "win_rate": 0.3753931544865865,
+        "expectancy_bps": -3.9242540439371356
+      },
+      "short": {
+        "trades": 2,
+        "win_rate": 0.5,
+        "expectancy_bps": 7.081535231270789
+      }
+    }
+  },
+  "validation_2024": {
+    "trades": 1873,
+    "final_equity": 1016.6,
+    "total_return": -0.4917017529457759,
+    "win_rate": 0.3662573411639082,
+    "expectancy_bps": -3.604624504586573,
+    "profit_factor": 0.49082502791989824,
+    "max_drawdown": 0.49307494401130425,
+    "days": 252,
+    "day_pos_rate": 0.1388888888888889,
+    "day_2pct": 0.0,
+    "day_5pct": 0.0,
+    "day_10pct": 0.0,
+    "day_15pct": 0.0,
+    "best_day": 0.012379013178269505,
+    "median_day": -0.0028546385482574044,
+    "sides": {
+      "long": {
+        "trades": 1872,
+        "win_rate": 0.36645299145299143,
+        "expectancy_bps": -3.604486611693723
+      },
+      "short": {
+        "trades": 1,
+        "win_rate": 0.0,
+        "expectancy_bps": -3.8627600000006628
+      }
+    }
+  },
+  "validation_2025": {
+    "trades": 1974,
+    "final_equity": 1014.91,
+    "total_return": -0.4925443378573301,
+    "win_rate": 0.3768996960486322,
+    "expectancy_bps": -3.4276878928666408,
+    "profit_factor": 0.5309237261137119,
+    "max_drawdown": 0.4940263247146943,
+    "days": 249,
+    "day_pos_rate": 0.14859437751004015,
+    "day_2pct": 0.0,
+    "day_5pct": 0.0,
+    "day_10pct": 0.0,
+    "day_15pct": 0.0,
+    "best_day": 0.01077669705482065,
+    "median_day": -0.0031112686293912617,
+    "sides": {
+      "long": {
+        "trades": 1974,
+        "win_rate": 0.3768996960486322,
+        "expectancy_bps": -3.4276878928666408
+      },
+      "short": {
+        "trades": 0,
+        "win_rate": 0,
+        "expectancy_bps": 0
+      }
+    }
+  },
+  "validation_2024_2025": {
+    "trades": 3847,
+    "final_equity": 515.88,
+    "total_return": -0.7420611764751404,
+    "win_rate": 0.37171822199116195,
+    "expectancy_bps": -3.513833532001403,
+    "profit_factor": 0.5050985057302853,
+    "max_drawdown": 0.7420611764751404,
+    "days": 501,
+    "day_pos_rate": 0.1437125748502994,
+    "day_2pct": 0.0,
+    "day_5pct": 0.0,
+    "day_10pct": 0.0,
+    "day_15pct": 0.0,
+    "best_day": 0.012379013178269505,
+    "median_day": -0.0029261122673555073,
+    "sides": {
+      "long": {
+        "trades": 3846,
+        "win_rate": 0.3718148725949038,
+        "expectancy_bps": -3.5137428074907433
+      },
+      "short": {
+        "trades": 1,
+        "win_rate": 0.0,
+        "expectancy_bps": -3.8627600000006628
+      }
+    }
+  },
+  "check_2026": {
+    "trades": 1202,
+    "final_equity": 1286.57,
+    "total_return": -0.3567170435017444,
+    "win_rate": 0.39933444259567386,
+    "expectancy_bps": -3.6600014398201464,
+    "profit_factor": 0.5406318172656939,
+    "max_drawdown": 0.3605502618016516,
+    "days": 145,
+    "day_pos_rate": 0.15862068965517243,
+    "day_2pct": 0.0,
+    "day_5pct": 0.0,
+    "day_10pct": 0.0,
+    "day_15pct": 0.0,
+    "best_day": 0.00869751266842389,
+    "median_day": -0.003591973679241689,
+    "sides": {
+      "long": {
+        "trades": 1186,
+        "win_rate": 0.3954468802698145,
+        "expectancy_bps": -3.745564790919012
+      },
+      "short": {
+        "trades": 16,
+        "win_rate": 0.6875,
+        "expectancy_bps": 2.6823819603831955
+      }
+    }
+  },
+  "friction_stress": {
+    "2": {
+      "trades": 3847,
+      "final_equity": 515.88,
+      "total_return": -0.7420611764751404,
+      "win_rate": 0.37171822199116195,
+      "expectancy_bps": -3.513833532001403,
+      "profit_factor": 0.5050985057302853,
+      "max_drawdown": 0.7420611764751404,
+      "days": 501,
+      "day_pos_rate": 0.1437125748502994,
+      "day_2pct": 0.0,
+      "day_5pct": 0.0,
+      "day_10pct": 0.0,
+      "day_15pct": 0.0,
+      "best_day": 0.012379013178269505,
+      "median_day": -0.0029261122673555073,
+      "sides": {
+        "long": {
+          "trades": 3846,
+          "win_rate": 0.3718148725949038,
+          "expectancy_bps": -3.5137428074907433
+        },
+        "short": {
+          "trades": 1,
+          "win_rate": 0.0,
+          "expectancy_bps": -3.8627600000006628
+        }
+      }
+    },
+    "5": {
+      "trades": 2592,
+      "final_equity": 193.62,
+      "total_return": -0.9031892965532919,
+      "win_rate": 0.24305555555555555,
+      "expectancy_bps": -8.99581942055445,
+      "profit_factor": 0.2106242407789802,
+      "max_drawdown": 0.9031892965532919,
+      "days": 501,
+      "day_pos_rate": 0.015968063872255488,
+      "day_2pct": 0.0,
+      "day_5pct": 0.0,
+      "day_10pct": 0.0,
+      "day_15pct": 0.0,
+      "best_day": 0.004968733871163256,
+      "median_day": -0.004476255838872789,
+      "sides": {
+        "long": {
+          "trades": 2591,
+          "win_rate": 0.2431493631802393,
+          "expectancy_bps": -8.995680061010088
+        },
+        "short": {
+          "trades": 1,
+          "win_rate": 0.0,
+          "expectancy_bps": -9.356899999999087
+        }
+      }
+    },
+    "10": {
+      "trades": 1963,
+      "final_equity": 57.05,
+      "total_return": -0.9714741872478894,
+      "win_rate": 0.13295975547631178,
+      "expectancy_bps": -18.095652327963826,
+      "profit_factor": 0.0514536692845807,
+      "max_drawdown": 0.9714741872478894,
+      "days": 501,
+      "day_pos_rate": 0.0,
+      "day_2pct": 0.0,
+      "day_5pct": 0.0,
+      "day_10pct": 0.0,
+      "day_15pct": 0.0,
+      "best_day": 0.0,
+      "median_day": -0.006917715068710084,
+      "sides": {
+        "long": {
+          "trades": 1962,
+          "win_rate": 0.13302752293577982,
+          "expectancy_bps": -18.095439204787457
+        },
+        "short": {
+          "trades": 1,
+          "win_rate": 0.0,
+          "expectancy_bps": -18.51379999999949
+        }
+      }
+    }
+  },
+  "gate": "FAIL",
+  "limitations": [
+    "IEX-only historical feed on Alpaca Basic may differ from consolidated SIP market.",
+    "Ordinary bars do not reconstruct historical borrow availability or borrow fees.",
+    "1-minute bars cannot establish high/low ordering; stop-first is used when both boundaries are touched.",
+    "Backtest is research only; no live orders are submitted."
+  ]
+}
