@@ -1,0 +1,31 @@
+{
+  "purpose": "Adversarial robustness research for the locked Phase 3D model",
+  "locked_rule": {
+    "ranking_lookback_days": 20,
+    "breakout_lookback_days": 20,
+    "breakout_band_pct": 0.01,
+    "trend_mode": "fast",
+    "max_hold_days": 10,
+    "downside_boundary_pct": 0.05,
+    "upside_boundary_pct": 0.06,
+    "capital_fraction": 0.95
+  },
+  "etf_universe": ["SPY","QQQ","IWM","DIA","XLK","XLF","XLE","XLV","XLI","XLY","XLP","XLU","XLB","XLC","EFA","EEM","VWO","TLT","IEF","LQD","HYG","GLD","SLV","VNQ","IYR","GDX","SMH","XBI","XOP"],
+  "groups": {
+    "broad_us": ["SPY","QQQ","IWM","DIA"],
+    "us_sectors": ["XLK","XLF","XLE","XLV","XLI","XLY","XLP","XLU","XLB","XLC"],
+    "international": ["EFA","EEM","VWO"],
+    "rates_credit": ["TLT","IEF","LQD","HYG"],
+    "real_assets_industries": ["GLD","SLV","VNQ","IYR","GDX","SMH","XBI","XOP"]
+  },
+  "random_subset_tests": 200,
+  "random_seed": 20260813,
+  "gate": {
+    "both_2024_and_2025_positive": true,
+    "2026_positive": true,
+    "positive_at_20bps_one_way_friction": true,
+    "leave_group_out_positive_fraction_min": 0.75,
+    "random_subset_positive_fraction_min": 0.65,
+    "random_subset_pf_above_1_fraction_min": 0.60
+  }
+}
