@@ -6,6 +6,7 @@ on:
   push:
     paths:
       - 'micro_backtest_v2.py'
+      - 'micro_backtest_v3.py'
       - '.github/workflows/micro-backtest.yml'
 
 permissions:
@@ -67,7 +68,7 @@ jobs:
         env:
           ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
           ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
-        run: python micro_backtest_v2.py
+        run: python micro_backtest_v3.py
 
       - name: Commit validation results
         run: |
