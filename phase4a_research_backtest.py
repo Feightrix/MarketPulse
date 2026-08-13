@@ -50,7 +50,12 @@ def prep(d):
         g["rsi"]=rsi(c,7); resid=(c-g.vwap)/g.vwap; sd=resid.rolling(20,min_periods=15).std(); g["z"]=resid/sd.replace(0,np.nan)
         g["vr"]=g.volume/g.volume.rolling(20,min_periods=10).median(); g["sep"]=(g.e9-g.e50).abs()/c
         return g
-    return d.groupby("date",group_keys=False).apply(one).reset_index(drop=True)
+    parts=[]
+    for dt,g in d.groupby("date",sort=False):
+        q=one(g)
+        q["date"]=dt
+        parts.append(q)
+    return pd.concat(parts,ignore_index=True) if parts else d.copy()
 
 def build_events(data, mode):
     ev=[]
@@ -198,11 +203,11 @@ def main():
     with open("phase4a_results.json","w") as f: json.dump(result,f,indent=2)
     with open("phase4a_summary.md","w") as f:
         m=result["validation_2024_2025"]
-        f.write(f"# MarketPulse — Phase 4A Rapid Long/Short Validation\\n\\n**Gate: {result['gate']}**\\n\\n")
-        f.write(f"Selected: **{mode}**, TP **{tp:.2%}**, stop **{sl:.2%}**, time stop **{hold} min**.\\n\\n")
-        f.write(f"Validation 2024-25: {m['trades']} trades, {m['win_rate']:.2%} wins, {m['expectancy_bps']:.1f} bps expectancy, PF {m['profit_factor']:.2f}, max DD {m['max_drawdown']:.2%}.\\n\\n")
-        f.write(f"Days reaching +2%: {m['day_2pct']:.2%}; +5%: {m['day_5pct']:.2%}; +10%: {m['day_10pct']:.2%}; +15%: {m['day_15pct']:.2%}.\\n\\n")
-        f.write("The 10%-15% daily objective is a scorecard, not a guarantee. Hard loss/profit-protection rules dominate.\\n")
+        f.write(f"# MarketPulse — Phase 4A Rapid Long/Short Validation\n\n**Gate: {result['gate']}**\n\n")
+        f.write(f"Selected: **{mode}**, TP **{tp:.2%}**, stop **{sl:.2%}**, time stop **{hold} min**.\n\n")
+        f.write(f"Validation 2024-25: {m['trades']} trades, {m['win_rate']:.2%} wins, {m['expectancy_bps']:.1f} bps expectancy, PF {m['profit_factor']:.2f}, max DD {m['max_drawdown']:.2%}.\n\n")
+        f.write(f"Days reaching +2%: {m['day_2pct']:.2%}; +5%: {m['day_5pct']:.2%}; +10%: {m['day_10pct']:.2%}; +15%: {m['day_15pct']:.2%}.\n\n")
+        f.write("The 10%-15% daily objective is a scorecard, not a guarantee. Hard loss/profit-protection rules dominate.\n")
     print(json.dumps(result,indent=2),flush=True)
 
 if __name__=="__main__": main()
