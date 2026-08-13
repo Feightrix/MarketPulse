@@ -1,0 +1,107 @@
+{
+  "method": "Fixed family comparison; development 2021-2023, validation 2024 and 2025, 2026 forward-like check",
+  "candidate_count": 180,
+  "valid_development_candidates": 9,
+  "robust_validation_candidates": 0,
+  "selected": {
+    "variant": "breakout_6bar",
+    "take_profit_pct": 0.0045,
+    "stop_loss_pct": 0.004,
+    "max_hold_minutes": 60,
+    "capital_fraction": 0.95,
+    "max_trades_per_day": 3,
+    "cooldown_minutes": 15
+  },
+  "development": {
+    "trades": 89,
+    "final_equity": 100.0294,
+    "total_return": 0.000294,
+    "win_rate": 0.539326,
+    "expectancy_bps": 0.0736,
+    "profit_factor": 1.0028,
+    "max_drawdown": 0.02729,
+    "daily_sharpe": 0.041,
+    "positive_days": 0.539326
+  },
+  "validation_2024": {
+    "trades": 30,
+    "final_equity": 99.4435,
+    "total_return": -0.005565,
+    "win_rate": 0.5,
+    "expectancy_bps": -1.8371,
+    "profit_factor": 0.7999,
+    "max_drawdown": 0.012178,
+    "daily_sharpe": -1.3661,
+    "positive_days": 0.5
+  },
+  "validation_2025": {
+    "trades": 30,
+    "final_equity": 100.0217,
+    "total_return": 0.000217,
+    "win_rate": 0.4,
+    "expectancy_bps": 0.0978,
+    "profit_factor": 1.0084,
+    "max_drawdown": 0.007423,
+    "daily_sharpe": 0.0688,
+    "positive_days": 0.4
+  },
+  "check_2026": {
+    "trades": 16,
+    "final_equity": 100.6017,
+    "total_return": 0.006017,
+    "win_rate": 0.625,
+    "expectancy_bps": 3.7771,
+    "profit_factor": 1.5134,
+    "max_drawdown": 0.005787,
+    "daily_sharpe": 2.5666,
+    "positive_days": 0.625
+  },
+  "friction_stress_2026": {
+    "2.0": {
+      "trades": 16,
+      "final_equity": 100.6017,
+      "total_return": 0.006017,
+      "win_rate": 0.625,
+      "expectancy_bps": 3.7771,
+      "profit_factor": 1.5134,
+      "max_drawdown": 0.005787,
+      "daily_sharpe": 2.5666,
+      "positive_days": 0.625
+    },
+    "4.0": {
+      "trades": 16,
+      "final_equity": 100.0489,
+      "total_return": 0.000489,
+      "win_rate": 0.5,
+      "expectancy_bps": 0.3329,
+      "profit_factor": 1.0342,
+      "max_drawdown": 0.009114,
+      "daily_sharpe": 0.2247,
+      "positive_days": 0.5
+    },
+    "6.0": {
+      "trades": 16,
+      "final_equity": 98.6588,
+      "total_return": -0.013412,
+      "win_rate": 0.25,
+      "expectancy_bps": -8.4079,
+      "profit_factor": 0.4017,
+      "max_drawdown": 0.01803,
+      "daily_sharpe": -5.6633,
+      "positive_days": 0.25
+    },
+    "10.0": {
+      "trades": 16,
+      "final_equity": 97.6146,
+      "total_return": -0.023854,
+      "win_rate": 0.1875,
+      "expectancy_bps": -15.0518,
+      "profit_factor": 0.2134,
+      "max_drawdown": 0.026945,
+      "daily_sharpe": -10.3893,
+      "positive_days": 0.1875
+    }
+  },
+  "gate": "FAIL",
+  "warning": "No historical test ensures future profit. Paper trading is the next forward test if and only if the gate passes."
+}
