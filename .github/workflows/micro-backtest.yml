@@ -1,5 +1,6 @@
 name: MarketPulse Micro Backtest
 
+# Credential recheck trigger: 2026-08-13
 on:
   workflow_dispatch:
   push:
