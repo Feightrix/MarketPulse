@@ -1,0 +1,41 @@
+name: MarketPulse Phase 2 Backtest
+
+on:
+  push:
+    paths:
+      - 'backtest.py'
+      - '.github/workflows/backtest.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install numpy pandas
+
+      - name: Run MarketPulse strategy validation
+        run: python backtest.py
+
+      - name: Commit validation results
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add backtest_results.json backtest_summary.md
+          if git diff --cached --quiet; then
+            echo "No result changes to commit"
+          else
+            git commit -m "Update Phase 2 strategy validation results"
+            git push
+          fi
