@@ -1,4 +1,6 @@
 import math
+from itertools import product as itertools_product
+
 import numpy as np
 import pandas as pd
 import backtest
@@ -24,7 +26,6 @@ def desired_weights_fast(close, i, short_lb, long_lb, trend_lb, top_n, target_vo
 
     gross = 1.0
     if target_vol is not None:
-        # Only calculate the small rolling window needed for this signal.
         window = close[chosen].iloc[signal_i - vol_lb:signal_i + 1]
         daily = window.pct_change().dropna()
         vols = daily.std(ddof=0) * math.sqrt(252)
@@ -37,5 +38,19 @@ def desired_weights_fast(close, i, short_lb, long_lb, trend_lb, top_n, target_vo
     return w
 
 
+def focused_product(*_args):
+    # Focused, pre-declared robustness grid: 96 combinations.
+    return itertools_product(
+        [63, 126],
+        [126, 252],
+        [150, 200],
+        [1, 2],
+        [10, 21],
+        [None, 0.15],
+        [20, 60],
+    )
+
+
 backtest.desired_weights = desired_weights_fast
+backtest.product = focused_product
 backtest.main()
