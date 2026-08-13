@@ -2,11 +2,14 @@
 
 **Monthly objective:** 2× the balance recorded at the start of each month (tracked, never forced)
 **Candidates tested:** 192
+**Candidates with at least one development trade:** 0
+**Positive-expectancy development candidates:** 0
 **Development-valid candidates:** 0
-**Candidates passing both 2024 and 2025 validation:** 0
+**Candidates passing development + both 2024 and 2025 validation:** 0
 
-## Selected setup
+## Selected strongest candidate (not necessarily a PASS)
 
+- Development gate passed: **NO**
 - Regime filter: **strict_trend**
 - ETF selection: strongest prior **5 trading-day** return
 - Entry: **breakout6**
@@ -25,6 +28,12 @@
 | Validation 2024-2025 | 0 | 0.00% | 0.00 bps | 0.00 | 0.00% | 0.00% | 0.00% | 0/24 |
 | 2026 check through Jul | 0 | 0.00% | 0.00 bps | 0.00 | 0.00% | 0.00% | 0.00% | 0/7 |
 
+## Development diagnostics
+
+- Maximum trades among any candidate: **0**
+- Highest candidate expectancy: **0.00 bps/trade**
+- Highest candidate total return: **0.00%**
+
 ## Validation friction stress
 
 | One-way friction | Expectancy | Return | PF |
@@ -38,4 +47,4 @@
 
 ## Important
 
-The monthly doubling target is reported as an objective only. It never increases position size, leverage, trade frequency, or loss tolerance. A strategy that does not meet the target can still be a valid strategy; a strategy that reaches the target in a backtest is not guaranteed to repeat it.
+The monthly doubling target is an objective only. It never raises leverage, position size, trade frequency, or loss tolerance. This corrected report ranks failed candidates honestly when none clears the development gate; it does not lower the gate to create a PASS.

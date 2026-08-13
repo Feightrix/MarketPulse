@@ -5,6 +5,14 @@
   "candidate_count": 192,
   "development_valid_candidates": 0,
   "robust_2024_2025_candidates": 0,
+  "diagnostics": {
+    "candidates_with_trades": 0,
+    "positive_expectancy_candidates": 0,
+    "max_development_trades": 0,
+    "max_development_expectancy_bps": 0.0,
+    "max_development_return": 0.0
+  },
+  "selected_is_development_pass": false,
   "selected": {
     "regime": "strict_trend",
     "selection_lookback_days": 5,
