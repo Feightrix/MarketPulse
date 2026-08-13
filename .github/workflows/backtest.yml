@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'backtest.py'
+      - 'backtest_fast.py'
       - '.github/workflows/backtest.yml'
   workflow_dispatch:
 
@@ -26,7 +27,7 @@ jobs:
         run: pip install numpy pandas
 
       - name: Run MarketPulse strategy validation
-        run: python backtest.py
+        run: python backtest_fast.py
 
       - name: Commit validation results
         run: |
