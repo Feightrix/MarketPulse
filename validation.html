@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MarketPulse — Phase 2 Strategy Validation</title>
+<style>
+:root{--bg:#071018;--card:#0d1924;--card2:#101f2c;--line:#1c3445;--text:#edf7ff;--muted:#8ea9bb;--cyan:#54d3ff;--green:#70e3a0;--red:#ff7d88;--gold:#ffc766}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 20% 0,#102435 0,#071018 42%);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}.shell{width:min(1180px,94vw);margin:auto;padding:28px 0 60px}.top{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:18px}.brand h1{margin:0;font-size:30px}.brand p{margin:6px 0 0;color:var(--muted)}a{color:var(--cyan);text-decoration:none}.pass{padding:9px 14px;border:1px solid #326a4c;background:#102c20;border-radius:999px;color:var(--green);font-weight:800}.warning{border:1px solid #67444a;background:#29171b;padding:16px 18px;border-radius:14px;color:#ffd9dd;margin-bottom:18px}.warning b{color:#fff}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}.card{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:16px;padding:18px}.hero{grid-column:span 12}.metric{grid-column:span 3}.half{grid-column:span 6}.full{grid-column:span 12}.label{text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-size:11px;font-weight:800}.big{font-size:32px;font-weight:850;margin-top:6px}.good{color:var(--green)}.bad{color:var(--red)}.gold{color:var(--gold)}.small{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.45}.hero h2{margin:4px 0 8px;font-size:26px}.hero p{color:var(--muted);line-height:1.55;max-width:900px}.strategy{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 20px;margin-top:12px}.row{display:flex;justify-content:space-between;border-bottom:1px solid #172d3d;padding:9px 0;gap:15px}.row span:first-child{color:var(--muted)}table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}th,td{text-align:right;padding:11px 8px;border-bottom:1px solid #173043}th:first-child,td:first-child{text-align:left}th{color:var(--muted);font-size:11px;text-transform:uppercase}.bar{height:12px;background:#132838;border-radius:99px;overflow:hidden;margin-top:10px}.fill{height:100%;background:linear-gradient(90deg,#54d3ff,#70e3a0)}.gate{font-size:15px;line-height:1.55;color:var(--muted)}.gate b{color:var(--text)}.footer{color:var(--muted);font-size:12px;line-height:1.5;margin-top:18px}@media(max-width:780px){.metric,.half{grid-column:span 12}.strategy{grid-template-columns:1fr}.top{align-items:flex-start;flex-direction:column}.big{font-size:28px}table{font-size:12px}th,td{padding:9px 4px}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="top">
+    <div class="brand"><h1>MarketPulse</h1><p>Phase 2 · Strategy Validation</p></div>
+    <div class="pass">HISTORICAL GATE: PASS</div>
+  </div>
+
+  <div class="warning"><b>No profit guarantee.</b> This test found a historically profitable configuration, not a way to ensure future profit. The $5,000/month income target from a $100 account is <b>not validated</b> by these results.</div>
+
+  <div class="grid">
+    <div class="card hero">
+      <div class="label">Selected engine</div>
+      <h2>Trend + Momentum + Cash Protection</h2>
+      <p>MarketPulse ranks a small liquid ETF universe using medium- and long-term momentum, requires the winner to remain above its long-term trend, scales exposure down when volatility is high, and holds cash when nothing qualifies. Parameters were selected using older data before the final holdout period was revealed.</p>
+    </div>
+
+    <div class="card metric"><div class="label">Untouched Holdout CAGR</div><div class="big good">25.66%</div><div class="small">2023 through Apr. 15, 2026</div></div>
+    <div class="card metric"><div class="label">Holdout Sharpe</div><div class="big good">1.43</div><div class="small">Historical risk-adjusted result</div></div>
+    <div class="card metric"><div class="label">Max Drawdown</div><div class="big bad">-15.95%</div><div class="small">Worst peak-to-trough decline</div></div>
+    <div class="card metric"><div class="label">$100 Holdout Result</div><div class="big gold">$211.52</div><div class="small">Not $5,000/month</div></div>
+
+    <div class="card half">
+      <div class="label">Locked Strategy Parameters</div>
+      <div class="strategy">
+        <div class="row"><span>Short momentum</span><b>63 days</b></div>
+        <div class="row"><span>Long momentum</span><b>252 days</b></div>
+        <div class="row"><span>Trend filter</span><b>200-day SMA</b></div>
+        <div class="row"><span>Hold</span><b>Top 1 asset</b></div>
+        <div class="row"><span>Rebalance</span><b>Every 10 days</b></div>
+        <div class="row"><span>Volatility target</span><b>15%</b></div>
+        <div class="row"><span>Volatility lookback</span><b>60 days</b></div>
+        <div class="row"><span>Friction assumption</span><b>5 bps one-way</b></div>
+      </div>
+      <div class="small" style="margin-top:12px">Universe: SPY · QQQ · GLD · HYG · USO. If no asset has positive long momentum and a positive trend filter, MarketPulse moves to cash.</div>
+    </div>
+
+    <div class="card half">
+      <div class="label">Robustness — Probability of Positive Result</div>
+      <div style="margin-top:16px"><b>3-month bootstrap</b><span style="float:right" class="good">70.08%</span><div class="bar"><div class="fill" style="width:70.08%"></div></div></div>
+      <div style="margin-top:22px"><b>1-year bootstrap</b><span style="float:right" class="good">84.00%</span><div class="bar"><div class="fill" style="width:84%"></div></div></div>
+      <div class="small" style="margin-top:18px">This is exactly why the word “guaranteed” cannot be used. Even after selecting the strongest robust configuration, historical resampling still produced losing periods.</div>
+    </div>
+
+    <div class="card full">
+      <div class="label">Out-of-Sample Test Sequence</div>
+      <table>
+        <thead><tr><th>Period</th><th>CAGR</th><th>Sharpe</th><th>Max DD</th><th>Positive Months</th><th>$100 →</th><th>SPY CAGR</th><th>SPY DD</th></tr></thead>
+        <tbody>
+          <tr><td>Train · 2010–2018</td><td>9.72%</td><td>0.74</td><td>-15.79%</td><td>61.05%</td><td>$209.55</td><td>11.42%</td><td>-19.35%</td></tr>
+          <tr><td>Validation · 2019–2022</td><td>14.37%</td><td>0.92</td><td>-21.12%</td><td>65.96%</td><td>$170.90</td><td>13.09%</td><td>-33.72%</td></tr>
+          <tr><td><b>Untouched Holdout · 2023–2026-04-15</b></td><td class="good"><b>25.66%</b></td><td class="good"><b>1.43</b></td><td>-15.95%</td><td>71.79%</td><td class="gold"><b>$211.52</b></td><td>21.95%</td><td>-18.76%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card full gate">
+      <div class="label">What PASS Means</div>
+      <p><b>PASS means:</b> the strategy remained profitable in training, validation, and an untouched holdout; held the holdout drawdown under 25%; achieved a holdout Sharpe above 0.45; and had at least a 60% historical bootstrap probability of a positive one-year result.</p>
+      <p><b>PASS does not mean:</b> guaranteed profit, a guaranteed monthly income, or readiness to trade real money. The next validation layer must stress-test execution, alternate data periods, harsher slippage, parameter instability, and failure scenarios.</p>
+    </div>
+  </div>
+
+  <div class="footer"><a href="./">← Back to Phase 1 simulator</a><br><br>Historical data through April 15, 2026. Backtest tested 96 pre-declared configurations and assumed 5 bps one-way friction per unit of turnover. Backtests can materially overstate live results.</div>
+</div>
+</body>
+</html>
