@@ -1,0 +1,174 @@
+{
+  "phase": "3E-stress",
+  "leave_one_group_out": {
+    "broad_us": {
+      "remaining": 25,
+      "validation_2024_2025": {
+        "trades": 60,
+        "final_equity": 124.686038,
+        "total_return": 0.24686,
+        "win_rate": 0.533333,
+        "expectancy_bps": 43.463319,
+        "profit_factor": 1.276749,
+        "max_drawdown": 0.263738,
+        "months_total": 24,
+        "months_doubled": 0,
+        "monthly_positive_rate": 0.5,
+        "best_month_return": 0.147621,
+        "median_month_return": -0.000919
+      },
+      "check_2026": {
+        "trades": 24,
+        "final_equity": 112.531448,
+        "total_return": 0.125314,
+        "win_rate": 0.541667,
+        "expectancy_bps": 60.216311,
+        "profit_factor": 1.231945,
+        "max_drawdown": 0.230887,
+        "months_total": 7,
+        "months_doubled": 0,
+        "monthly_positive_rate": 0.428571,
+        "best_month_return": 0.121363,
+        "median_month_return": -0.01387
+      }
+    },
+    "us_sectors": {
+      "remaining": 19,
+      "validation_2024_2025": {
+        "trades": 61,
+        "final_equity": 93.424914,
+        "total_return": -0.065751,
+        "win_rate": 0.557377,
+        "expectancy_bps": -4.241119,
+        "profit_factor": 0.931801,
+        "max_drawdown": 0.424321,
+        "months_total": 24,
+        "months_doubled": 0,
+        "monthly_positive_rate": 0.416667,
+        "best_month_return": 0.147621,
+        "median_month_return": -0.003539
+      },
+      "check_2026": {
+        "trades": 24,
+        "final_equity": 106.627214,
+        "total_return": 0.066272,
+        "win_rate": 0.458333,
+        "expectancy_bps": 36.683977,
+        "profit_factor": 1.130974,
+        "max_drawdown": 0.134535,
+        "months_total": 7,
+        "months_doubled": 0,
+        "monthly_positive_rate": 0.571429,
+        "best_month_return": 0.133305,
+        "median_month_return": 0.002767
+      }
+    },
+    "international": {
+      "remaining": 26,
+      "validation_2024_2025": {
+        "trades": 61,
+        "final_equity": 152.476702,
+        "total_return": 0.524767,
+        "win_rate": 0.557377,
+        "expectancy_bps": 76.383399,
+        "profit_factor": 1.583557,
+        "max_drawdown": 0.264232,
+        "months_total": 24,
+        "months_doubled": 0,
+        "monthly_positive_rate": 0.5,
+        "best_month_return": 0.137037,
+        "median_month_return": -0.00038
+      },
+      "check_2026": {
+        "trades": 26,
+        "final_equity": 127.462542,
+        "total_return": 0.274625,
+        "win_rate": 0.576923,
+        "expectancy_bps": 104.84368,
+        "profit_factor": 1.434905,
+        "max_drawdown": 0.241867,
+        "months_total": 7,
+        "months_doubled": 0,
+        "monthly_positive_rate": 0.571429,
+        "best_month_return": 0.19305,
+        "median_month_return": 0.057263
+      }
+    },
+    "rates_credit": {
+      "remaining": 25,
+      "validation_2024_2025": {
+        "trades": 60,
+        "final_equity": 122.634013,
+        "total_return": 0.22634,
+        "win_rate": 0.533333,
+        "expectancy_bps": 40.659113,
+        "profit_factor": 1.257815,
+        "max_drawdown": 0.263738,
+        "months_total": 24,
+        "months_doubled": 0,
+        "monthly_positive_rate": 0.458333,
+        "best_month_return": 0.147621,
+        "median_month_return": -0.002288
+      },
+      "check_2026": {
+        "trades": 23,
+        "final_equity": 104.384038,
+        "total_return": 0.04384,
+        "win_rate": 0.521739,
+        "expectancy_bps": 29.08604,
+        "profit_factor": 1.084777,
+        "max_drawdown": 0.241867,
+        "months_total": 7,
+        "months_doubled": 0,
+        "monthly_positive_rate": 0.428571,
+        "best_month_return": 0.133305,
+        "median_month_return": -0.022965
+      }
+    },
+    "real_assets_industries": {
+      "remaining": 21,
+      "validation_2024_2025": {
+        "trades": 51,
+        "final_equity": 108.564916,
+        "total_return": 0.085649,
+        "win_rate": 0.509804,
+        "expectancy_bps": 19.767302,
+        "profit_factor": 1.156876,
+        "max_drawdown": 0.247631,
+        "months_total": 24,
+        "months_doubled": 0,
+        "monthly_positive_rate": 0.5,
+        "best_month_return": 0.076028,
+        "median_month_return": 0.003292
+      },
+      "check_2026": {
+        "trades": 16,
+        "final_equity": 117.015645,
+        "total_return": 0.170156,
+        "win_rate": 0.6875,
+        "expectancy_bps": 104.812196,
+        "profit_factor": 1.900972,
+        "max_drawdown": 0.123666,
+        "months_total": 7,
+        "months_doubled": 0,
+        "monthly_positive_rate": 0.571429,
+        "best_month_return": 0.090895,
+        "median_month_return": 0.050946
+      }
+    }
+  },
+  "group_positive": 4,
+  "group_total": 5,
+  "random_subset_2024_2025": {
+    "tests": 200,
+    "subset_size": 12,
+    "positive_return_rate": 0.905,
+    "pf_above_1_rate": 0.905,
+    "median_return": 0.3002825,
+    "p10_return": 0.012271500000000017,
+    "p90_return": 0.6333494000000001,
+    "median_max_drawdown": 0.20494250000000003,
+    "worst_max_drawdown": 0.430806
+  },
+  "stress_gate": "PASS"
+}
