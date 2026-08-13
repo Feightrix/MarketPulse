@@ -6,6 +6,7 @@ on:
     paths:
       - 'phase3c_regime_backtest.py'
       - 'phase3c_regime_backtest_v2.py'
+      - 'phase3c_diagnostic.py'
       - '.github/workflows/phase3c-backtest.yml'
 
 permissions:
@@ -43,6 +44,12 @@ jobs:
               print('Market Data API: AUTH OK', r.status)
           PY
 
+      - name: Diagnose Phase 3C gates
+        env:
+          ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
+          ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+        run: python phase3c_diagnostic.py
+
       - name: Run Phase 3C regime validation
         env:
           ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
@@ -53,10 +60,10 @@ jobs:
         run: |
           git config user.name "MarketPulse Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add phase3c_results.json phase3c_summary.md
+          git add phase3c_diagnostics.json phase3c_results.json phase3c_summary.md
           if git diff --cached --quiet; then
             echo "No result changes to commit"
           else
-            git commit -m "Update corrected Phase 3C regime validation results"
+            git commit -m "Update Phase 3C diagnostics and validation results"
             git push
           fi
