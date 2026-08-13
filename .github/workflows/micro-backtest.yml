@@ -2,6 +2,10 @@ name: MarketPulse Micro Backtest
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'micro_backtest_v2.py'
+      - '.github/workflows/micro-backtest.yml'
 
 permissions:
   contents: write
