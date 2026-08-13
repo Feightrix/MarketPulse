@@ -1,0 +1,40 @@
+name: MarketPulse Micro Backtest
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install numpy pandas
+
+      - name: Run MarketPulse Micro validation
+        env:
+          ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
+          ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+        run: python micro_backtest_v2.py
+
+      - name: Commit validation results
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add micro_backtest_results.json micro_backtest_summary.md
+          if git diff --cached --quiet; then
+            echo "No result changes to commit"
+          else
+            git commit -m "Update MarketPulse Micro validation results"
+            git push
+          fi
