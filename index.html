@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>MarketPulse — Phase 1 Paper Trading Simulator</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="shell">
+  <div class="topbar">
+    <div class="brand"><div class="mark"><div class="pulse"></div></div><div><h1>MarketPulse</h1><div class="sub">Phase 1 · $100 Paper Trading Simulator</div></div></div>
+    <div class="status"><span class="dot"></span><span id="engineStatus">Simulation ready</span></div>
+  </div>
+  <div class="warning"><b>Paper simulation only.</b> No brokerage is connected and no real orders are sent. Results are simulated and do not guarantee future profit.</div>
+
+  <div class="stats">
+    <div class="card stat"><div class="label">Portfolio</div><div class="value" id="portfolio">$100.00</div><div class="mini" id="portfolioDelta">Starting capital</div></div>
+    <div class="card stat"><div class="label">Cash</div><div class="value" id="cash">$100.00</div><div class="mini">Available to trade</div></div>
+    <div class="card stat"><div class="label">Net P/L</div><div class="value" id="netpl">$0.00</div><div class="mini" id="netplPct">0.00%</div></div>
+    <div class="card stat"><div class="label">Trades</div><div class="value" id="trades">0</div><div class="mini" id="winrate">0% win rate</div></div>
+    <div class="card stat"><div class="label">Risk / Trade</div><div class="value" id="riskDisplay">$1.00</div><div class="mini">1.0% of starting capital</div></div>
+    <div class="card stat"><div class="label">Max Drawdown</div><div class="value" id="drawdown">0.00%</div><div class="mini">Peak-to-trough</div></div>
+    <div class="card stat"><div class="label">Cycle</div><div class="value" id="cycleCount">0</div><div class="mini">Simulation ticks</div></div>
+  </div>
+
+  <div class="grid">
+    <div class="maincol">
+      <div class="card section">
+        <div class="section-head"><div><div class="section-title">Market Scanner</div><div class="sub">Synthetic price feed for Phase 1 validation</div></div><div class="controls"><button class="btn primary" id="startBtn">Start</button><button class="btn" id="stepBtn">Step</button><button class="btn stop" id="pauseBtn" disabled>Pause</button><button class="btn" id="resetBtn">Reset</button></div></div>
+        <div class="chartwrap"><canvas id="chart"></canvas><div class="overlay"><span class="symbol-big" id="chartSymbol">SPY</span><span class="chartprice" id="chartPrice">$100.00</span></div></div>
+      </div>
+
+      <div class="card section">
+        <div class="section-head"><div class="section-title">Watchlist & Signal Engine</div><span class="badge">Long-only · no leverage</span></div>
+        <div style="overflow:auto"><table><thead><tr><th>Symbol</th><th class="right">Price</th><th class="right">Momentum</th><th class="right">Trend</th><th class="center">Signal</th><th class="right">Score</th></tr></thead><tbody id="watchRows"></tbody></table></div>
+      </div>
+
+      <div class="card section">
+        <div class="section-head"><div class="section-title">Decision Pipeline</div><span class="badge" id="cycleBadge">Waiting</span></div>
+        <div class="logic">
+          <div class="logic-step active" id="l0"><b>1 · SCAN</b><span>Read watchlist</span></div>
+          <div class="logic-step" id="l1"><b>2 · SCORE</b><span>Trend + momentum</span></div>
+          <div class="logic-step" id="l2"><b>3 · SIZE</b><span>Risk-based position</span></div>
+          <div class="logic-step" id="l3"><b>4 · MANAGE</b><span>Stop + target</span></div>
+          <div class="logic-step" id="l4"><b>5 · EXIT</b><span>Close + record</span></div>
+        </div>
+      </div>
+
+      <div class="card section">
+        <div class="section-head"><div class="section-title">Trade History</div><button class="btn" id="exportBtn">Export CSV</button></div>
+        <div class="trade-log"><table><thead><tr><th>#</th><th>Symbol</th><th>Action</th><th class="right">Price</th><th class="right">Qty</th><th class="right">P/L</th><th>Reason</th></tr></thead><tbody id="tradeRows"><tr><td colspan="7" class="empty">No trades yet. Start or step the simulator.</td></tr></tbody></table></div>
+      </div>
+    </div>
+
+    <div class="sidecol">
+      <div class="card section">
+        <div class="section-head"><div class="section-title">Open Position</div><span class="badge" id="positionBadge">None</span></div>
+        <div id="positionBox" class="empty">MarketPulse is currently holding cash.</div>
+      </div>
+
+      <div class="card section">
+        <div class="section-head"><div class="section-title">Strategy Controls</div><span class="badge">Phase 1</span></div>
+        <div class="settings">
+          <div class="field"><label>Risk per trade</label><select id="riskPct"><option value="0.5">0.5%</option><option value="1" selected>1.0%</option><option value="2">2.0%</option></select></div>
+          <div class="field"><label>Max capital used</label><select id="capitalPct"><option value="25">25%</option><option value="50" selected>50%</option><option value="75">75%</option></select></div>
+          <div class="field"><label>Stop loss</label><select id="stopPct"><option value="1">1.0%</option><option value="1.5" selected>1.5%</option><option value="2">2.0%</option></select></div>
+          <div class="field"><label>Profit target</label><select id="targetPct"><option value="2">2.0%</option><option value="3" selected>3.0%</option><option value="4">4.0%</option></select></div>
+        </div>
+        <div class="footer-note" style="margin-top:12px">These controls let us validate the mechanics and risk behavior. They are not claims that the strategy is profitable.</div>
+      </div>
+
+      <div class="card section">
+        <div class="section-head"><div class="section-title">Engine Explanation</div><span class="badge" id="reasonBadge">Idle</span></div>
+        <div id="reasonText" class="footer-note">MarketPulse is waiting for a simulation cycle. When it acts, this panel explains why it bought, held, or exited.</div>
+      </div>
+
+      <div class="card section">
+        <div class="section-head"><div class="section-title">Phase 1 Goal</div></div>
+        <div class="footer-note">Prove the full workflow visually: scan → signal → size → simulated order → stop/target management → exit → performance accounting. Real brokerage connectivity is intentionally excluded from this phase.</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
