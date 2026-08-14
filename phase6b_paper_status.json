@@ -1,18 +1,18 @@
 {
   "phase": "6B",
-  "timestamp_utc": "2026-08-14T15:33:00.739322+00:00",
+  "timestamp_utc": "2026-08-14T16:01:27.845525+00:00",
   "paper_base": "https://paper-api.alpaca.markets",
-  "account_equity": 100000.0,
+  "account_equity": 100045.55,
   "market_open": true,
   "account_status": "ACTIVE",
   "trading_blocked": false,
   "signal_date": "2026-08-14",
   "target_weights": {
-    "SPY": 0.11516114333634761,
-    "QQQ": 0.05969203283723848,
-    "IWM": 0.10490795397827225,
-    "XLE": 0.0858712470712807,
-    "XLP": 0.059367622776860945,
+    "SPY": 0.11523506376414329,
+    "QQQ": 0.05972054063212312,
+    "IWM": 0.10489856286328382,
+    "XLE": 0.08577427730051446,
+    "XLP": 0.05937155543993536,
     "BIL": 0.425,
     "XLK": 0.024999999999999998,
     "XLV": 0.024999999999999998,
@@ -20,11 +20,11 @@
     "XLY": -0.024999999999999998
   },
   "trend_sleeve": {
-    "SPY": 0.1354836980427619,
-    "QQQ": 0.07022592098498645,
-    "IWM": 0.12342112232737913,
-    "XLE": 0.07161323184856554,
-    "XLP": 0.09925602679630699,
+    "SPY": 0.1355706632519333,
+    "QQQ": 0.07025945956720367,
+    "IWM": 0.12341007395680449,
+    "XLE": 0.07149914976531113,
+    "XLP": 0.09926065345874747,
     "BIL": 0.5
   },
   "neutral_sleeve": {
@@ -36,174 +36,89 @@
     "XLY": -0.16666666666666666
   },
   "desired_quantities": {
-    "SPY": 14.839206,
-    "QQQ": 8.18978,
-    "IWM": 34.493877,
-    "XLE": 138.759388,
-    "XLP": 68.919924,
-    "BIL": 464.277911,
-    "XLK": 13.190524,
-    "XLV": 14.9227,
+    "SPY": 14.847173,
+    "QQQ": 8.188661,
+    "IWM": 34.478159,
+    "XLE": 138.453287,
+    "XLP": 68.935878,
+    "BIL": 464.48939,
+    "XLK": 13.187487,
+    "XLV": 14.940199,
     "XLU": -56.0,
     "XLY": -21.0
   },
   "tracking": {
     "SPY": {
-      "weight": 0.11516114333634761,
-      "target_dollars": 11516.114333634761,
-      "reference_price": 776.06,
-      "desired_qty": 14.839206,
-      "represented_dollars": 11516.11420836
+      "weight": 0.11523506376414329,
+      "target_dollars": 11528.755333568786,
+      "reference_price": 776.495,
+      "desired_qty": 14.847173,
+      "represented_dollars": 11528.755598635
     },
     "QQQ": {
-      "weight": 0.05969203283723848,
-      "target_dollars": 5969.203283723848,
-      "reference_price": 728.86,
-      "desired_qty": 8.18978,
-      "represented_dollars": 5969.203050800001
+      "weight": 0.05972054063212312,
+      "target_dollars": 5974.774333838105,
+      "reference_price": 729.64,
+      "desired_qty": 8.188661,
+      "represented_dollars": 5974.77461204
     },
     "IWM": {
-      "weight": 0.10490795397827225,
-      "target_dollars": 10490.795397827225,
-      "reference_price": 304.135,
-      "desired_qty": 34.493877,
-      "represented_dollars": 10490.795281395
+      "weight": 0.10489856286328382,
+      "target_dollars": 10494.634415866805,
+      "reference_price": 304.385,
+      "desired_qty": 34.478159,
+      "represented_dollars": 10494.634427215
     },
     "XLE": {
-      "weight": 0.0858712470712807,
-      "target_dollars": 8587.12470712807,
-      "reference_price": 61.885,
-      "desired_qty": 138.759388,
-      "represented_dollars": 8587.12472638
+      "weight": 0.08577427730051446,
+      "target_dollars": 8581.334748382484,
+      "reference_price": 61.98,
+      "desired_qty": 138.453287,
+      "represented_dollars": 8581.334728259999
     },
     "XLP": {
-      "weight": 0.059367622776860945,
-      "target_dollars": 5936.762277686094,
-      "reference_price": 86.14,
-      "desired_qty": 68.919924,
-      "represented_dollars": 5936.76225336
+      "weight": 0.05937155543993536,
+      "target_dollars": 5939.8599183438255,
+      "reference_price": 86.165,
+      "desired_qty": 68.935878,
+      "represented_dollars": 5939.85992787
     },
     "BIL": {
       "weight": 0.425,
-      "target_dollars": 42500.0,
+      "target_dollars": 42519.35875,
       "reference_price": 91.54,
-      "desired_qty": 464.277911,
-      "represented_dollars": 42499.99997294001
+      "desired_qty": 464.48939,
+      "represented_dollars": 42519.35876060001
     },
     "XLK": {
       "weight": 0.024999999999999998,
-      "target_dollars": 2500.0,
-      "reference_price": 189.53,
-      "desired_qty": 13.190524,
-      "represented_dollars": 2500.00001372
+      "target_dollars": 2501.13875,
+      "reference_price": 189.66,
+      "desired_qty": 13.187487,
+      "represented_dollars": 2501.1387844200003
     },
     "XLV": {
       "weight": 0.024999999999999998,
-      "target_dollars": 2500.0,
-      "reference_price": 167.53,
-      "desired_qty": 14.9227,
-      "represented_dollars": 2499.9999310000003
+      "target_dollars": 2501.13875,
+      "reference_price": 167.41,
+      "desired_qty": 14.940199,
+      "represented_dollars": 2501.13871459
     },
     "XLU": {
       "weight": -0.024999999999999998,
-      "target_dollars": -2500.0,
-      "reference_price": 44.275,
+      "target_dollars": -2501.13875,
+      "reference_price": 44.265,
       "desired_qty": -56,
-      "represented_dollars": -2479.4
+      "represented_dollars": -2478.84
     },
     "XLY": {
       "weight": -0.024999999999999998,
-      "target_dollars": -2500.0,
-      "reference_price": 118.2,
+      "target_dollars": -2501.13875,
+      "reference_price": 118.27,
       "desired_qty": -21,
-      "represented_dollars": -2482.2000000000003
+      "represented_dollars": -2483.67
     }
   },
-  "last_rebalance_month": null,
-  "status": "REBALANCE_COMPLETE",
-  "actions": [
-    {
-      "symbol": "BIL",
-      "action": "buy",
-      "qty": 464.277911,
-      "order_id": "31696397-d3c4-481b-91e7-7b9b35c1c8c6",
-      "status": "filled"
-    },
-    {
-      "symbol": "IWM",
-      "action": "buy",
-      "qty": 34.493877,
-      "order_id": "636e5500-3ed2-408b-89df-bd4d0038059e",
-      "status": "filled"
-    },
-    {
-      "symbol": "QQQ",
-      "action": "buy",
-      "qty": 8.18978,
-      "order_id": "1c1a6a9f-66dc-4b34-b7a5-abc4ef6bb011",
-      "status": "filled"
-    },
-    {
-      "symbol": "SPY",
-      "action": "buy",
-      "qty": 14.839206,
-      "order_id": "1582fb3b-a221-4342-b656-7b513915a9fc",
-      "status": "filled"
-    },
-    {
-      "symbol": "XLE",
-      "action": "buy",
-      "qty": 138.759388,
-      "order_id": "9796575a-893c-4b93-956a-34a0c1e2bbc8",
-      "status": "filled"
-    },
-    {
-      "symbol": "XLK",
-      "action": "buy",
-      "qty": 13.190524,
-      "order_id": "f6d634e0-107a-4821-ac63-18d3999f97b6",
-      "status": "filled"
-    },
-    {
-      "symbol": "XLP",
-      "action": "buy",
-      "qty": 68.919924,
-      "order_id": "9ad7f455-5c8b-4c3d-833d-8cc6c40f3d2b",
-      "status": "filled"
-    },
-    {
-      "symbol": "XLU",
-      "action": "sell",
-      "qty": 56,
-      "order_id": "e40aa9b0-ab4f-4dff-85a7-4e79814afa48",
-      "status": "filled"
-    },
-    {
-      "symbol": "XLV",
-      "action": "buy",
-      "qty": 14.9227,
-      "order_id": "57176477-6fb9-41fc-8216-b62abcce1550",
-      "status": "filled"
-    },
-    {
-      "symbol": "XLY",
-      "action": "sell",
-      "qty": 21,
-      "order_id": "36b61563-3fd6-4218-9468-18d6061aac1f",
-      "status": "filled"
-    }
-  ],
-  "final_positions": {
-    "BIL": 464.277911,
-    "IWM": 34.493877,
-    "QQQ": 8.18978,
-    "SPY": 14.839206,
-    "XLE": 138.759388,
-    "XLK": 13.190524,
-    "XLP": 68.919924,
-    "XLU": -56.0,
-    "XLV": 14.9227,
-    "XLY": -21.0
-  },
-  "rebalance_count": 1
+  "last_rebalance_month": "2026-08",
+  "status": "CURRENT_MONTH_ALREADY_REBALANCED"
 }
