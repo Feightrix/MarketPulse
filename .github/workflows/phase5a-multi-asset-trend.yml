@@ -1,0 +1,65 @@
+name: MarketPulse Phase 5A Multi-Asset Trend
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'phase5a_multi_asset_trend.py'
+      - '.github/workflows/phase5a-multi-asset-trend.yml'
+
+concurrency:
+  group: marketpulse-phase5a
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install numpy pandas
+
+      - name: Validate Alpaca Market Data credentials
+        env:
+          ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
+          ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+        run: |
+          python - <<'PY'
+          import os, urllib.request
+          h={'APCA-API-KEY-ID':os.environ['ALPACA_API_KEY_ID'],'APCA-API-SECRET-KEY':os.environ['ALPACA_API_SECRET_KEY']}
+          u='https://data.alpaca.markets/v2/stocks/SPY/bars?timeframe=1Day&start=2026-07-01T00%3A00%3A00Z&end=2026-07-10T00%3A00%3A00Z&feed=iex&adjustment=all&limit=1'
+          with urllib.request.urlopen(urllib.request.Request(u,headers=h),timeout=30) as r:
+              r.read(); print('Market Data API: AUTH OK',r.status)
+          PY
+
+      - name: Syntax check Phase 5A
+        run: python -m py_compile phase5a_multi_asset_trend.py
+
+      - name: Run Phase 5A historical research
+        env:
+          ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
+          ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+        run: python phase5a_multi_asset_trend.py
+
+      - name: Commit Phase 5A research outputs
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add phase5a_results.json phase5a_summary.md
+          if git diff --cached --quiet; then
+            echo "No result changes to commit"
+          else
+            git commit -m "Update Phase 5A multi-asset trend research results"
+            git push
+          fi
