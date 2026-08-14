@@ -1,0 +1,44 @@
+name: MarketPulse Phase 5F Vol Target Trend
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'phase5f_vol_target_trend.py'
+      - '.github/workflows/phase5f-vol-target-trend.yml'
+
+concurrency:
+  group: marketpulse-phase5f
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install numpy pandas yfinance
+      - name: Syntax check Phase 5F
+        run: python -m py_compile phase5f_vol_target_trend.py
+      - name: Run Phase 5F historical research
+        run: python phase5f_vol_target_trend.py
+      - name: Commit Phase 5F research outputs
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add phase5f_results.json phase5f_summary.md
+          if git diff --cached --quiet; then
+            echo "No result changes to commit"
+          else
+            git commit -m "Update Phase 5F volatility-targeted trend results"
+            git push
+          fi
