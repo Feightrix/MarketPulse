@@ -1,0 +1,44 @@
+name: MarketPulse Phase 5D Protective Momentum
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'phase5d_protective_momentum.py'
+      - '.github/workflows/phase5d-protective-momentum.yml'
+
+concurrency:
+  group: marketpulse-phase5d
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install numpy pandas yfinance
+      - name: Syntax check Phase 5D
+        run: python -m py_compile phase5d_protective_momentum.py
+      - name: Run Phase 5D historical research
+        run: python phase5d_protective_momentum.py
+      - name: Commit Phase 5D research outputs
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add phase5d_results.json phase5d_summary.md
+          if git diff --cached --quiet; then
+            echo "No result changes to commit"
+          else
+            git commit -m "Update Phase 5D protective momentum results"
+            git push
+          fi
