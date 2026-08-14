@@ -1,0 +1,219 @@
+{
+  "phase": "5B",
+  "strategy": "consistency tournament: multi-asset and sector absolute momentum trend rotation",
+  "starting_equity": 2500.0,
+  "universe": [
+    "SPY",
+    "QQQ",
+    "IWM",
+    "XLE",
+    "XLP",
+    "XLU",
+    "GLD",
+    "TLT"
+  ],
+  "defensive_asset": "BIL",
+  "historical_source": "yfinance adjusted daily OHLC",
+  "coverage": {
+    "SPY": {
+      "start": "2007-01-03",
+      "end": "2026-07-31",
+      "bars": 4925
+    },
+    "QQQ": {
+      "start": "2007-01-03",
+      "end": "2026-07-31",
+      "bars": 4925
+    },
+    "IWM": {
+      "start": "2007-01-03",
+      "end": "2026-07-31",
+      "bars": 4925
+    },
+    "XLE": {
+      "start": "2007-01-03",
+      "end": "2026-07-31",
+      "bars": 4925
+    },
+    "XLP": {
+      "start": "2007-01-03",
+      "end": "2026-07-31",
+      "bars": 4925
+    },
+    "XLU": {
+      "start": "2007-01-03",
+      "end": "2026-07-31",
+      "bars": 4925
+    },
+    "GLD": {
+      "start": "2007-01-03",
+      "end": "2026-07-31",
+      "bars": 4925
+    },
+    "TLT": {
+      "start": "2007-01-03",
+      "end": "2026-07-31",
+      "bars": 4925
+    },
+    "BIL": {
+      "start": "2007-05-30",
+      "end": "2026-07-31",
+      "bars": 4824
+    }
+  },
+  "candidate_count": 54,
+  "valid_development_candidates": 0,
+  "selected_config": {
+    "lookback": 252,
+    "sma": 150,
+    "top_n": 3,
+    "freq": "monthly"
+  },
+  "development_2008_2014_2bps": {
+    "final_equity": 5531.651787000463,
+    "total_return_pct": 121.2660714800185,
+    "cagr_pct": 12.023024882424703,
+    "max_drawdown_pct": 15.987278478738421,
+    "positive_month_rate_pct": 59.036144578313255,
+    "trade_events": 75,
+    "turnover_sum": 44.90581363889414,
+    "annual_returns_pct": {
+      "2008": 13.572841947969572,
+      "2009": 9.462933491374791,
+      "2010": 14.636155191623534,
+      "2011": 2.6514783469303804,
+      "2012": 3.0005401114250985,
+      "2013": 28.493038112478807,
+      "2014": 14.279236280709974
+    }
+  },
+  "development_2008_2014_10bps": {
+    "final_equity": 5336.323138140323,
+    "total_return_pct": 113.45292552561293,
+    "cagr_pct": 11.448795754034746,
+    "max_drawdown_pct": 16.30274022468241,
+    "positive_month_rate_pct": 59.036144578313255,
+    "trade_events": 75,
+    "turnover_sum": 44.90581363889414,
+    "annual_returns_pct": {
+      "2008": 12.878598770739046,
+      "2009": 8.523699401388928,
+      "2010": 14.145179809866782,
+      "2011": 2.2014758189986106,
+      "2012": 2.277915314351331,
+      "2013": 28.006661854367955,
+      "2014": 14.087149349109751
+    }
+  },
+  "validation_2015_2019_2bps": {
+    "final_equity": 2641.381414922182,
+    "total_return_pct": 5.655256596887281,
+    "cagr_pct": 1.1076731910365512,
+    "max_drawdown_pct": 20.83236115930961,
+    "positive_month_rate_pct": 55.932203389830505,
+    "trade_events": 60,
+    "turnover_sum": 39.07598173049927,
+    "annual_returns_pct": {
+      "2015": -11.289424092346723,
+      "2016": -1.6673015020755688,
+      "2017": 10.507366381935213,
+      "2018": -3.2449902962302324,
+      "2019": 13.279953797449174
+    }
+  },
+  "validation_2015_2019_10bps": {
+    "final_equity": 2560.0281832170153,
+    "total_return_pct": 2.401127328680608,
+    "cagr_pct": 0.4762666572044161,
+    "max_drawdown_pct": 21.51226810549518,
+    "positive_month_rate_pct": 52.54237288135594,
+    "trade_events": 60,
+    "turnover_sum": 39.07598173049927,
+    "annual_returns_pct": {
+      "2015": -12.190380448380933,
+      "2016": -2.5056505949243357,
+      "2017": 10.20168745968899,
+      "2018": -3.615118234918724,
+      "2019": 12.612353029035406
+    }
+  },
+  "holdout_2020_2023_2bps": {
+    "final_equity": 3714.6111661677933,
+    "total_return_pct": 48.58444664671173,
+    "cagr_pct": 10.436178569065158,
+    "max_drawdown_pct": 27.56865739356912,
+    "positive_month_rate_pct": 63.829787234042556,
+    "trade_events": 48,
+    "turnover_sum": 33.06777178742276,
+    "annual_returns_pct": {
+      "2020": 21.78647311869515,
+      "2021": 14.503658211098625,
+      "2022": -1.3487505262136268,
+      "2023": 8.007109953206859
+    }
+  },
+  "holdout_2020_2023_10bps": {
+    "final_equity": 3617.563948260161,
+    "total_return_pct": 44.70255793040643,
+    "cagr_pct": 9.705700181171029,
+    "max_drawdown_pct": 28.111491190538608,
+    "positive_month_rate_pct": 63.829787234042556,
+    "trade_events": 48,
+    "turnover_sum": 33.06777178742276,
+    "annual_returns_pct": {
+      "2020": 21.13230474593648,
+      "2021": 13.941565999744787,
+      "2022": -2.040159442208489,
+      "2023": 7.0251817828674845
+    }
+  },
+  "final_holdout_2024_2026_2bps": {
+    "final_equity": 4348.2484480929215,
+    "total_return_pct": 73.92993792371686,
+    "cagr_pct": 23.96569454024975,
+    "max_drawdown_pct": 8.011437476680527,
+    "positive_month_rate_pct": 83.33333333333334,
+    "trade_events": 31,
+    "turnover_sum": 14.432965244057966,
+    "annual_returns_pct": {
+      "2024": 18.19018187952921,
+      "2025": 31.56545182423709,
+      "2026": 11.853886672193447
+    }
+  },
+  "final_holdout_2024_2026_10bps": {
+    "final_equity": 4298.30191908093,
+    "total_return_pct": 71.9320767632372,
+    "cagr_pct": 23.411035640621236,
+    "max_drawdown_pct": 8.013228289044294,
+    "positive_month_rate_pct": 83.33333333333334,
+    "trade_events": 31,
+    "turnover_sum": 14.432965244057966,
+    "annual_returns_pct": {
+      "2024": 17.487726213957046,
+      "2025": 31.128587282035134,
+      "2026": 11.600728065611388
+    }
+  },
+  "gate_checks": {
+    "development_2008_2014_all_positive": true,
+    "validation_2015_positive_10bps": false,
+    "validation_2016_positive_10bps": false,
+    "validation_2017_positive_10bps": true,
+    "validation_2018_positive_10bps": false,
+    "validation_2019_positive_10bps": true,
+    "validation_drawdown": false,
+    "holdout1_2020_positive_10bps": true,
+    "holdout1_2021_positive_10bps": true,
+    "holdout1_2022_positive_10bps": false,
+    "holdout1_2023_positive_10bps": true,
+    "holdout1_drawdown": false,
+    "holdout2_2024_positive_10bps": true,
+    "holdout2_2025_positive_10bps": true,
+    "holdout2_2026_positive_10bps": true,
+    "holdout2_drawdown": true
+  },
+  "gate": "FAIL",
+  "research_only": true,
+  "note": "Historical consistency is not a guarantee. A PASS still requires data cross-check and paper trading before live deployment."
+}
