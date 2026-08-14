@@ -1,0 +1,116 @@
+{
+  "phase": "5A",
+  "strategy": "long-only multi-asset absolute momentum + trend rotation",
+  "starting_equity": 2500.0,
+  "universe": [
+    "SPY",
+    "QQQ",
+    "IWM",
+    "GLD",
+    "TLT"
+  ],
+  "cash_proxy": "BIL",
+  "candidate_count": 36,
+  "valid_development_candidates": 0,
+  "selection_policy": "Select using 2017-2020 only at 10 bps per side. Validate 2021-2023, then final holdout 2024-2026 YTD.",
+  "selected_config": {
+    "lookback": 63,
+    "sma": 100,
+    "top_n": 1,
+    "freq": "monthly"
+  },
+  "development_2bps": {
+    "final_equity": 2499.674902470741,
+    "total_return_pct": -0.013003901170360876,
+    "cagr_pct": -0.03044397866700521,
+    "max_drawdown_pct": 0.013003901170360876,
+    "positive_month_rate_pct": 0.0,
+    "trade_events": 0,
+    "turnover_sum": 0.0,
+    "annual_returns_pct": {
+      "2020": -0.013003901170360876
+    }
+  },
+  "development_10bps": {
+    "final_equity": 2499.674902470741,
+    "total_return_pct": -0.013003901170360876,
+    "cagr_pct": -0.03044397866700521,
+    "max_drawdown_pct": 0.013003901170360876,
+    "positive_month_rate_pct": 0.0,
+    "trade_events": 0,
+    "turnover_sum": 0.0,
+    "annual_returns_pct": {
+      "2020": -0.013003901170360876
+    }
+  },
+  "validation_2021_2023_2bps": {
+    "final_equity": 3548.551397598635,
+    "total_return_pct": 41.942055903945395,
+    "cagr_pct": 12.465152431825398,
+    "max_drawdown_pct": 16.003180970914464,
+    "positive_month_rate_pct": 77.14285714285715,
+    "trade_events": 13,
+    "turnover_sum": 26.0,
+    "annual_returns_pct": {
+      "2021": 27.7780871735682,
+      "2022": -11.195177020402125,
+      "2023": 25.08872212778588
+    }
+  },
+  "validation_2021_2023_10bps": {
+    "final_equity": 3475.416989352281,
+    "total_return_pct": 39.01667957409123,
+    "cagr_pct": 11.682355001190547,
+    "max_drawdown_pct": 16.271863146773903,
+    "positive_month_rate_pct": 74.28571428571429,
+    "trade_events": 13,
+    "turnover_sum": 26.0,
+    "annual_returns_pct": {
+      "2021": 26.758721924293805,
+      "2022": -11.620928541390164,
+      "2023": 24.090811615633513
+    }
+  },
+  "holdout_2024_2026_2bps": {
+    "final_equity": 3608.1839684842303,
+    "total_return_pct": 44.32735873936922,
+    "cagr_pct": 15.305846337373064,
+    "max_drawdown_pct": 19.204630245830522,
+    "positive_month_rate_pct": 56.666666666666664,
+    "trade_events": 15,
+    "turnover_sum": 30.0,
+    "annual_returns_pct": {
+      "2024": -4.2058978791521096,
+      "2025": 37.63046095112765,
+      "2026": 9.470052999871804
+    }
+  },
+  "holdout_2024_2026_10bps": {
+    "final_equity": 3522.516856673541,
+    "total_return_pct": 40.900674266941635,
+    "cagr_pct": 14.235409585085312,
+    "max_drawdown_pct": 19.20463024583047,
+    "positive_month_rate_pct": 56.666666666666664,
+    "trade_events": 15,
+    "turnover_sum": 30.0,
+    "annual_returns_pct": {
+      "2024": -5.577082412902024,
+      "2025": 36.53249719037221,
+      "2026": 9.294830826202617
+    }
+  },
+  "gate_checks": {
+    "development_all_years_positive_10bps": false,
+    "validation_2021_positive_10bps": true,
+    "validation_2022_positive_10bps": false,
+    "validation_2023_positive_10bps": true,
+    "validation_drawdown": false,
+    "holdout_2024_positive_10bps": false,
+    "holdout_2025_positive_10bps": true,
+    "holdout_2026_ytd_positive_10bps": true,
+    "holdout_drawdown": false
+  },
+  "gate": "FAIL",
+  "research_only": true,
+  "note": "A PASS means historical robustness under this test protocol, not guaranteed future profit. Paper trading is still required before live deployment."
+}
