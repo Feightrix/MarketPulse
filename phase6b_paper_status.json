@@ -1,0 +1,9 @@
+{
+  "phase": "6B",
+  "timestamp_utc": "2026-08-14T04:06:20.496075+00:00",
+  "paper_base": "https://paper-api.alpaca.markets",
+  "status": "PAPER_AUTH_FAILED",
+  "problems": [
+    "Paper API GET /v2/account failed: HTTP 401: {\"code\":40110000,\"message\":\"request is not authorized\"}"
+  ]
+}
