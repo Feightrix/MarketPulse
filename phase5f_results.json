@@ -1,0 +1,218 @@
+{
+  "phase": "5F",
+  "strategy": "independent absolute-trend sleeves with inverse-vol weighting and portfolio vol targeting",
+  "starting_equity": 2500.0,
+  "universe": [
+    "SPY",
+    "QQQ",
+    "IWM",
+    "XLE",
+    "XLP",
+    "XLU",
+    "GLD",
+    "TLT"
+  ],
+  "defensive_asset": "BIL",
+  "coverage": {
+    "SPY": {
+      "start": "2007-01-03",
+      "end": "2026-07-31",
+      "bars": 4925
+    },
+    "QQQ": {
+      "start": "2007-01-03",
+      "end": "2026-07-31",
+      "bars": 4925
+    },
+    "IWM": {
+      "start": "2007-01-03",
+      "end": "2026-07-31",
+      "bars": 4925
+    },
+    "XLE": {
+      "start": "2007-01-03",
+      "end": "2026-07-31",
+      "bars": 4925
+    },
+    "XLP": {
+      "start": "2007-01-03",
+      "end": "2026-07-31",
+      "bars": 4925
+    },
+    "XLU": {
+      "start": "2007-01-03",
+      "end": "2026-07-31",
+      "bars": 4925
+    },
+    "GLD": {
+      "start": "2007-01-03",
+      "end": "2026-07-31",
+      "bars": 4925
+    },
+    "TLT": {
+      "start": "2007-01-03",
+      "end": "2026-07-31",
+      "bars": 4925
+    },
+    "BIL": {
+      "start": "2007-05-30",
+      "end": "2026-07-31",
+      "bars": 4824
+    }
+  },
+  "candidate_count": 72,
+  "valid_development_candidates": 41,
+  "selected_config": {
+    "lookback": 252,
+    "sma": 150,
+    "vol_window": 42,
+    "target_vol": 0.08,
+    "risk_cap": 0.5
+  },
+  "development_2bps": {
+    "final_equity": 3873.1245414489154,
+    "total_return_pct": 54.92498165795661,
+    "cagr_pct": 6.458124422520117,
+    "max_drawdown_pct": 6.998452836589264,
+    "positive_month_rate_pct": 67.46987951807229,
+    "trade_events": 79,
+    "turnover_sum": 19.812184917822577,
+    "annual_returns_pct": {
+      "2008": 4.8466678352405035,
+      "2009": 3.3403660264443857,
+      "2010": 5.516964002443725,
+      "2011": 7.27757947742611,
+      "2012": 4.092799677041747,
+      "2013": 12.579519456053646,
+      "2014": 7.791742497240173
+    }
+  },
+  "development_10bps": {
+    "final_equity": 3812.2031510802653,
+    "total_return_pct": 52.488126043210606,
+    "cagr_pct": 6.217115800579975,
+    "max_drawdown_pct": 7.183768240577804,
+    "positive_month_rate_pct": 66.26506024096386,
+    "trade_events": 79,
+    "turnover_sum": 19.812184917822577,
+    "annual_returns_pct": {
+      "2008": 4.505837758686426,
+      "2009": 2.9411224823432836,
+      "2010": 5.265130951957886,
+      "2011": 7.112350286278746,
+      "2012": 3.9223667328392997,
+      "2013": 12.423485910923858,
+      "2014": 7.60102705086716
+    }
+  },
+  "validation_2bps": {
+    "final_equity": 2943.420986150621,
+    "total_return_pct": 17.736839446024845,
+    "cagr_pct": 3.3237046920799207,
+    "max_drawdown_pct": 8.851836715732464,
+    "positive_month_rate_pct": 69.49152542372882,
+    "trade_events": 60,
+    "turnover_sum": 15.841599600388497,
+    "annual_returns_pct": {
+      "2015": -4.584946228322229,
+      "2016": 4.027552411611235,
+      "2017": 8.132489744390359,
+      "2018": -1.1113555347415538,
+      "2019": 10.928838862159163
+    }
+  },
+  "validation_10bps": {
+    "final_equity": 2906.3422920232797,
+    "total_return_pct": 16.253691680931183,
+    "cagr_pct": 3.0617439657491197,
+    "max_drawdown_pct": 9.111906494793454,
+    "positive_month_rate_pct": 67.79661016949152,
+    "trade_events": 60,
+    "turnover_sum": 15.841599600388497,
+    "annual_returns_pct": {
+      "2015": -4.997340781615844,
+      "2016": 3.7427443944774375,
+      "2017": 7.953291258557282,
+      "2018": -1.295259321612563,
+      "2019": 10.697894151121702
+    }
+  },
+  "holdout1_2bps": {
+    "final_equity": 2840.345411582949,
+    "total_return_pct": 13.613816463317963,
+    "cagr_pct": 3.2513721514348726,
+    "max_drawdown_pct": 11.427046356377367,
+    "positive_month_rate_pct": 59.57446808510638,
+    "trade_events": 48,
+    "turnover_sum": 18.771579190018883,
+    "annual_returns_pct": {
+      "2020": 7.299389592594996,
+      "2021": 7.16829309797975,
+      "2022": -4.25644138066531,
+      "2023": 3.1948486257246334
+    }
+  },
+  "holdout1_10bps": {
+    "final_equity": 2797.9961037942544,
+    "total_return_pct": 11.919844151770164,
+    "cagr_pct": 2.863273514790432,
+    "max_drawdown_pct": 11.797134519520213,
+    "positive_month_rate_pct": 59.57446808510638,
+    "trade_events": 48,
+    "turnover_sum": 18.771579190018883,
+    "annual_returns_pct": {
+      "2020": 6.947416278190066,
+      "2021": 6.870363510163724,
+      "2022": -4.616813473575753,
+      "2023": 2.6615190365071983
+    }
+  },
+  "holdout2_2bps": {
+    "final_equity": 3155.359476039286,
+    "total_return_pct": 26.214379041571444,
+    "cagr_pct": 9.457490158144521,
+    "max_drawdown_pct": 4.927756757916335,
+    "positive_month_rate_pct": 70.0,
+    "trade_events": 31,
+    "turnover_sum": 8.110439445793673,
+    "annual_returns_pct": {
+      "2024": 11.828824318948982,
+      "2025": 9.158835211412963,
+      "2026": 3.3942013720572373
+    }
+  },
+  "holdout2_10bps": {
+    "final_equity": 3134.9477794718,
+    "total_return_pct": 25.397911178872,
+    "cagr_pct": 9.182106631195786,
+    "max_drawdown_pct": 4.980426098333568,
+    "positive_month_rate_pct": 70.0,
+    "trade_events": 31,
+    "turnover_sum": 8.110439445793673,
+    "annual_returns_pct": {
+      "2024": 11.608657954418033,
+      "2025": 8.873071218373575,
+      "2026": 3.1981571836343647
+    }
+  },
+  "gate_checks": {
+    "development_2008_2014_all_positive": true,
+    "validation_2015_positive_10bps": false,
+    "validation_2016_positive_10bps": true,
+    "validation_2017_positive_10bps": true,
+    "validation_2018_positive_10bps": false,
+    "validation_2019_positive_10bps": true,
+    "validation_drawdown": false,
+    "holdout1_2020_positive_10bps": true,
+    "holdout1_2021_positive_10bps": true,
+    "holdout1_2022_positive_10bps": false,
+    "holdout1_2023_positive_10bps": true,
+    "holdout1_drawdown": false,
+    "holdout2_2024_positive_10bps": true,
+    "holdout2_2025_positive_10bps": true,
+    "holdout2_2026_positive_10bps": true,
+    "holdout2_drawdown": true
+  },
+  "gate": "FAIL",
+  "research_only": true
+}
