@@ -1,5 +1,4 @@
 import json
-import math
 import os
 import time
 import urllib.parse
@@ -18,8 +17,8 @@ BASE_BPS = 2.0
 STRESS_BPS = 10.0
 
 RISKY = ["SPY", "QQQ", "IWM", "GLD", "TLT"]
-CASH = "BIL"
-SYMS = RISKY + [CASH]
+CASH = "CASH"
+SYMS = RISKY
 
 LOOKBACKS = [63, 126, 252]
 SMAS = [100, 150, 200]
@@ -76,17 +75,31 @@ def fetch(sym):
 
 
 def aligned_panel(raw):
+    coverage = {
+        sym: {"start": str(raw[sym].index.min()), "end": str(raw[sym].index.max()), "bars": int(len(raw[sym]))}
+        for sym in RISKY
+    }
     common = None
-    for sym in SYMS:
+    for sym in RISKY:
         idx = raw[sym].index
         common = idx if common is None else common.intersection(idx)
     common = common.sort_values()
+    if len(common) == 0:
+        raise RuntimeError("No common daily history across risky universe")
+
+    common_start = pd.Timestamp(common.min()).date()
+    if common_start > pd.Timestamp("2016-01-31").date():
+        raise RuntimeError(f"Insufficient common history: starts {common_start}; coverage={coverage}")
+
     opens = pd.DataFrame(index=common)
     closes = pd.DataFrame(index=common)
-    for sym in SYMS:
+    for sym in RISKY:
         opens[sym] = raw[sym].loc[common, "open"].astype(float)
         closes[sym] = raw[sym].loc[common, "close"].astype(float)
-    return opens, closes
+    # Synthetic uninvested cash removes dependence on a cash ETF's historical coverage.
+    opens[CASH] = 1.0
+    closes[CASH] = 1.0
+    return opens, closes, coverage
 
 
 def is_rebalance_day(dates, i, freq):
@@ -134,10 +147,7 @@ def normalize(weights):
 
 
 def drift(weights, returns):
-    grown = {}
-    for sym, w in weights.items():
-        r = returns.get(sym, 0.0)
-        grown[sym] = w * (1.0 + r)
+    grown = {sym: w * (1.0 + returns.get(sym, 0.0)) for sym, w in weights.items()}
     return normalize(grown)
 
 
@@ -177,8 +187,7 @@ def simulate(opens, closes, start, end, config, bps):
             target = target_weights(closes, i - 1, config)
             t = turnover(weights, target)
             if t > 1e-8:
-                cost = eq * (bps / 10000.0) * t
-                eq -= cost
+                eq -= eq * (bps / 10000.0) * t
                 turnover_sum += t
                 trade_events += 1
             weights = target
@@ -198,33 +207,21 @@ def simulate(opens, closes, start, end, config, bps):
 def summarize(curve, trade_events, turnover_sum):
     if not curve:
         return {
-            "final_equity": START_EQ,
-            "total_return_pct": 0.0,
-            "cagr_pct": 0.0,
-            "max_drawdown_pct": 0.0,
-            "positive_month_rate_pct": 0.0,
-            "trade_events": 0,
-            "turnover_sum": 0.0,
-            "annual_returns_pct": {},
+            "final_equity": START_EQ, "total_return_pct": 0.0, "cagr_pct": 0.0,
+            "max_drawdown_pct": 0.0, "positive_month_rate_pct": 0.0,
+            "trade_events": 0, "turnover_sum": 0.0, "annual_returns_pct": {},
         }
 
     s = pd.Series([x[1] for x in curve], index=pd.to_datetime([x[0] for x in curve]), dtype=float)
-    running_max = s.cummax()
-    dd = 1.0 - s / running_max
-    max_dd = float(dd.max() * 100.0)
+    max_dd = float((1.0 - s / s.cummax()).max() * 100.0)
 
     monthly = s.resample("ME").last()
-    monthly_prev = monthly.shift(1)
-    monthly_ret = monthly / monthly_prev - 1.0
-    monthly_ret = monthly_ret.dropna()
+    monthly_ret = (monthly / monthly.shift(1) - 1.0).dropna()
     pos_month = float((monthly_ret > 0).mean() * 100.0) if len(monthly_ret) else 0.0
 
     annual = {}
-    years = sorted(s.index.year.unique())
-    for y in years:
+    for y in sorted(s.index.year.unique()):
         ys = s[s.index.year == y]
-        if ys.empty:
-            continue
         prior = s[s.index < ys.index[0]]
         start_eq = float(prior.iloc[-1]) if len(prior) else START_EQ
         annual[str(y)] = float((ys.iloc[-1] / start_eq - 1.0) * 100.0)
@@ -293,13 +290,14 @@ def fmt(m):
 def main():
     print("Fetching daily Alpaca data for Phase 5A...")
     raw = {s: fetch(s) for s in SYMS}
-    opens, closes = aligned_panel(raw)
+    opens, closes, coverage = aligned_panel(raw)
+    print("Coverage:", json.dumps(coverage, indent=2))
 
-    candidates = []
     configs = [
         {"lookback": lb, "sma": sma, "top_n": n, "freq": freq}
         for lb, sma, n, freq in product(LOOKBACKS, SMAS, TOP_NS, FREQS)
     ]
+    candidates = []
     print(f"Testing {len(configs)} low-turnover multi-asset configurations...")
 
     for config in configs:
@@ -308,8 +306,7 @@ def main():
         candidates.append({"config": config, "development_10bps": dev10, "dev_valid": ok, "score": score(dev10)})
 
     valid = [c for c in candidates if c["dev_valid"]]
-    pool = valid if valid else candidates
-    selected = max(pool, key=lambda x: x["score"])
+    selected = max(valid if valid else candidates, key=lambda x: x["score"])
     config = selected["config"]
 
     dev2 = simulate(opens, closes, DEV_START, DEV_END, config, BASE_BPS)
@@ -324,7 +321,10 @@ def main():
         "strategy": "long-only multi-asset absolute momentum + trend rotation",
         "starting_equity": START_EQ,
         "universe": RISKY,
-        "cash_proxy": CASH,
+        "cash_proxy": "uninvested cash at 0% research return",
+        "data_coverage": coverage,
+        "common_data_start": str(closes.index.min()),
+        "common_data_end": str(closes.index.max()),
         "candidate_count": len(configs),
         "valid_development_candidates": len(valid),
         "selection_policy": "Select using 2017-2020 only at 10 bps per side. Validate 2021-2023, then final holdout 2024-2026 YTD.",
@@ -344,7 +344,7 @@ def main():
         json.dump(result, f, indent=2)
 
     failures = [k for k, v in checks.items() if not v]
-    summary = f"""# MarketPulse Phase 5A — Multi-Asset Trend Rotation\n\n**Gate: {result['gate']}**\n\n## Objective\nFind a materially more consistent strategy by abandoning minute-level leveraged-ETF trading and testing low-turnover, long-only trend/momentum rotation across diversified liquid ETFs.\n\n## Universe\n- Risk assets: **{', '.join(RISKY)}**\n- Defensive/cash proxy: **{CASH}**\n- Starting equity: **${START_EQ:,.0f}**\n- Fractional allocation assumed for research\n\n## Selected configuration\n- Momentum lookback: **{config['lookback']} trading days**\n- Trend filter: **close above {config['sma']}-day SMA**\n- Hold top: **{config['top_n']}** eligible asset(s)\n- Rebalance: **{config['freq']}**\n- If nothing qualifies: **100% {CASH}**\n\n## Development 2017–2020\n- Valid candidates: **{len(valid)} / {len(configs)}**\n- 2 bps: {fmt(dev2)}\n- 10 bps: {fmt(selected['development_10bps'])}\n\n## Validation 2021–2023\n- 2 bps: {fmt(val2)}\n- 10 bps: {fmt(val10)}\n\n## Final holdout 2024–2026 YTD\n- 2 bps: {fmt(hold2)}\n- 10 bps: {fmt(hold10)}\n\n## Gate checks\n"""
+    summary = f"""# MarketPulse Phase 5A — Multi-Asset Trend Rotation\n\n**Gate: {result['gate']}**\n\n## Objective\nFind a materially more consistent strategy by abandoning minute-level leveraged-ETF trading and testing low-turnover, long-only trend/momentum rotation across diversified liquid ETFs.\n\n## Universe\n- Risk assets: **{', '.join(RISKY)}**\n- Defensive allocation: **uninvested cash (0% assumed research return)**\n- Starting equity: **${START_EQ:,.0f}**\n- Fractional allocation assumed for research\n- Common data: **{closes.index.min()} to {closes.index.max()}**\n\n## Selected configuration\n- Momentum lookback: **{config['lookback']} trading days**\n- Trend filter: **close above {config['sma']}-day SMA**\n- Hold top: **{config['top_n']}** eligible asset(s)\n- Rebalance: **{config['freq']}**\n- If nothing qualifies: **100% cash**\n\n## Development 2017–2020\n- Valid candidates: **{len(valid)} / {len(configs)}**\n- 2 bps: {fmt(dev2)}\n- 10 bps: {fmt(selected['development_10bps'])}\n\n## Validation 2021–2023\n- 2 bps: {fmt(val2)}\n- 10 bps: {fmt(val10)}\n\n## Final holdout 2024–2026 YTD\n- 2 bps: {fmt(hold2)}\n- 10 bps: {fmt(hold10)}\n\n## Gate checks\n"""
     for k, v in checks.items():
         summary += f"- {'PASS' if v else 'FAIL'} — {k}\n"
     summary += "\n## Failure reasons\n"
