@@ -1,0 +1,221 @@
+{
+  "phase": "5C",
+  "strategy": "long/inverse multi-market time-series momentum",
+  "starting_equity": 2500.0,
+  "pairs": {
+    "SPY": {
+      "long": "SPY",
+      "inverse": "SH"
+    },
+    "QQQ": {
+      "long": "QQQ",
+      "inverse": "PSQ"
+    },
+    "IWM": {
+      "long": "IWM",
+      "inverse": "RWM"
+    },
+    "TLT": {
+      "long": "TLT",
+      "inverse": "TBF"
+    }
+  },
+  "defensive_asset": "BIL",
+  "candidate_count": 36,
+  "valid_development_candidates": 0,
+  "selected_config": {
+    "lookback": 252,
+    "sma": 100,
+    "top_n": 4,
+    "freq": "monthly"
+  },
+  "coverage": {
+    "BIL": {
+      "start": "2009-01-02",
+      "end": "2026-07-31",
+      "bars": 4421
+    },
+    "IWM": {
+      "start": "2009-01-02",
+      "end": "2026-07-31",
+      "bars": 4421
+    },
+    "PSQ": {
+      "start": "2009-01-02",
+      "end": "2026-07-31",
+      "bars": 4421
+    },
+    "QQQ": {
+      "start": "2009-01-02",
+      "end": "2026-07-31",
+      "bars": 4421
+    },
+    "RWM": {
+      "start": "2009-01-02",
+      "end": "2026-07-31",
+      "bars": 4421
+    },
+    "SH": {
+      "start": "2009-01-02",
+      "end": "2026-07-31",
+      "bars": 4421
+    },
+    "SPY": {
+      "start": "2009-01-02",
+      "end": "2026-07-31",
+      "bars": 4421
+    },
+    "TBF": {
+      "start": "2009-08-20",
+      "end": "2026-07-30",
+      "bars": 4259
+    },
+    "TLT": {
+      "start": "2009-01-02",
+      "end": "2026-07-31",
+      "bars": 4421
+    }
+  },
+  "development_2bps": {
+    "final_equity": 4264.079932695632,
+    "total_return_pct": 70.56319730782528,
+    "cagr_pct": 9.326910762956086,
+    "max_drawdown_pct": 16.397156535407486,
+    "positive_month_rate_pct": 60.56338028169014,
+    "trade_events": 64,
+    "turnover_sum": 34.29415702222367,
+    "annual_returns_pct": {
+      "2010": 7.290246609644635,
+      "2011": 17.998955152180706,
+      "2012": 3.788539382987355,
+      "2013": 29.209929079535346,
+      "2014": 11.032230553976884,
+      "2015": -9.520004481187073
+    }
+  },
+  "development_10bps": {
+    "final_equity": 4148.6152167701375,
+    "total_return_pct": 65.9446086708055,
+    "cagr_pct": 8.82682470483358,
+    "max_drawdown_pct": 16.397156535407465,
+    "positive_month_rate_pct": 59.154929577464785,
+    "trade_events": 64,
+    "turnover_sum": 34.29415702222367,
+    "annual_returns_pct": {
+      "2010": 6.9479619354406275,
+      "2011": 17.45205051059042,
+      "2012": 3.134597660035765,
+      "2013": 28.863056256724295,
+      "2014": 10.65198584630025,
+      "2015": -10.16656367068498
+    }
+  },
+  "validation_2bps": {
+    "final_equity": 2278.1555617067133,
+    "total_return_pct": -8.873777531731463,
+    "cagr_pct": -2.3025691048828345,
+    "max_drawdown_pct": 29.45049885981791,
+    "positive_month_rate_pct": 57.446808510638306,
+    "trade_events": 47,
+    "turnover_sum": 32.4957407536371,
+    "annual_returns_pct": {
+      "2016": -3.7877399583527427,
+      "2017": 17.94831377665398,
+      "2018": -10.781173094295193,
+      "2019": -9.99540003601922
+    }
+  },
+  "validation_10bps": {
+    "final_equity": 2219.6470595264036,
+    "total_return_pct": -11.214117618943853,
+    "cagr_pct": -2.9377118733629137,
+    "max_drawdown_pct": 30.391164324095353,
+    "positive_month_rate_pct": 57.446808510638306,
+    "trade_events": 47,
+    "turnover_sum": 32.4957407536371,
+    "annual_returns_pct": {
+      "2016": -4.617185098916055,
+      "2017": 17.584678661752797,
+      "2018": -11.42938558582831,
+      "2019": -10.621433253252889
+    }
+  },
+  "holdout1_2bps": {
+    "final_equity": 3177.7122864876983,
+    "total_return_pct": 27.10849145950793,
+    "cagr_pct": 6.197707203911063,
+    "max_drawdown_pct": 20.59594124490297,
+    "positive_month_rate_pct": 63.829787234042556,
+    "trade_events": 48,
+    "turnover_sum": 41.051676180086595,
+    "annual_returns_pct": {
+      "2020": 11.878127011593653,
+      "2021": 17.84857077556865,
+      "2022": 0.43632130611885867,
+      "2023": -4.0125929397195055
+    }
+  },
+  "holdout1_10bps": {
+    "final_equity": 3074.959764930519,
+    "total_return_pct": 22.998390597220776,
+    "cagr_pct": 5.326234711205369,
+    "max_drawdown_pct": 21.059223564711772,
+    "positive_month_rate_pct": 63.829787234042556,
+    "trade_events": 48,
+    "turnover_sum": 41.051676180086595,
+    "annual_returns_pct": {
+      "2020": 10.922341569431971,
+      "2021": 17.313677766714285,
+      "2022": -0.3922932156790959,
+      "2023": -5.105988068730982
+    }
+  },
+  "holdout2_2bps": {
+    "final_equity": 2981.691785094647,
+    "total_return_pct": 19.26767140378589,
+    "cagr_pct": 7.086313733652871,
+    "max_drawdown_pct": 13.680079787522004,
+    "positive_month_rate_pct": 63.33333333333333,
+    "trade_events": 31,
+    "turnover_sum": 19.412369585829772,
+    "annual_returns_pct": {
+      "2024": 13.407077712724004,
+      "2025": 5.708757686032939,
+      "2026": -0.5117912633069488
+    }
+  },
+  "holdout2_10bps": {
+    "final_equity": 2935.708154143755,
+    "total_return_pct": 17.428326165750207,
+    "cagr_pct": 6.441555794904752,
+    "max_drawdown_pct": 13.933186340263394,
+    "positive_month_rate_pct": 63.33333333333333,
+    "trade_events": 31,
+    "turnover_sum": 19.412369585829772,
+    "annual_returns_pct": {
+      "2024": 12.830192521717866,
+      "2025": 5.127589755931261,
+      "2026": -1.0009940762789271
+    }
+  },
+  "gate_checks": {
+    "development_2010_2015_all_positive": false,
+    "validation_2016_positive_10bps": false,
+    "validation_2017_positive_10bps": true,
+    "validation_2018_positive_10bps": false,
+    "validation_2019_positive_10bps": false,
+    "validation_drawdown": false,
+    "holdout1_2020_positive_10bps": true,
+    "holdout1_2021_positive_10bps": true,
+    "holdout1_2022_positive_10bps": false,
+    "holdout1_2023_positive_10bps": false,
+    "holdout1_drawdown": false,
+    "holdout2_2024_positive_10bps": true,
+    "holdout2_2025_positive_10bps": true,
+    "holdout2_2026_positive_10bps": false,
+    "holdout2_drawdown": true
+  },
+  "gate": "FAIL",
+  "research_only": true,
+  "note": "Inverse ETFs can have path-dependent decay; PASS would require independent data checks and paper trading."
+}
