@@ -53,10 +53,21 @@ jobs:
           ALPACA_PAPER_API_SECRET_KEY: ${{ secrets.ALPACA_PAPER_API_SECRET_KEY }}
           ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
           ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
-        run: python phase6b_paper_trader.py
+        run: |
+          python phase6b_paper_trader.py
+          echo "--- Phase 6B status ---"
+          cat phase6b_paper_status.md
 
       - name: Commit paper status and state
         run: |
+          mkdir -p /tmp/phase6b-output
+          cp phase6b_paper_status.json phase6b_paper_status.md phase6b_paper_log.jsonl /tmp/phase6b-output/
+          if [ -f phase6b_paper_state.json ]; then cp phase6b_paper_state.json /tmp/phase6b-output/; fi
+
+          git fetch origin main
+          git reset --hard origin/main
+          cp /tmp/phase6b-output/* .
+
           git config user.name "MarketPulse Bot"
           git config user.email "actions@users.noreply.github.com"
           git add phase6b_paper_status.json phase6b_paper_status.md phase6b_paper_log.jsonl
@@ -65,5 +76,5 @@ jobs:
             echo "No Phase 6B state changes"
           else
             git commit -m "Update Phase 6B paper trading status"
-            git push
+            git push origin HEAD:main
           fi
