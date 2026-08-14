@@ -1,0 +1,66 @@
+name: MarketPulse Phase 6A Independent Validation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - phase6a_independent_validation.py
+      - .github/workflows/phase6a-independent-validation.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: phase6a-independent-validation
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install numpy pandas yfinance
+
+      - name: Validate Alpaca Market Data credentials
+        env:
+          ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
+          ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+        run: |
+          python - <<'PY'
+          import os, urllib.request
+          h={'APCA-API-KEY-ID':os.environ['ALPACA_API_KEY_ID'],'APCA-API-SECRET-KEY':os.environ['ALPACA_API_SECRET_KEY']}
+          u='https://data.alpaca.markets/v2/stocks/SPY/bars?timeframe=1Day&start=2026-07-01T00%3A00%3A00Z&end=2026-07-10T00%3A00%3A00Z&feed=iex&adjustment=all&limit=1'
+          with urllib.request.urlopen(urllib.request.Request(u,headers=h),timeout=30) as r:
+              r.read(); print('Market Data API: AUTH OK',r.status)
+          PY
+
+      - name: Syntax check Phase 6A
+        run: python -m py_compile phase6a_independent_validation.py
+
+      - name: Run independent-source validation
+        env:
+          ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
+          ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+        run: python phase6a_independent_validation.py
+
+      - name: Commit Phase 6A outputs
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add phase6a_results.json phase6a_summary.md
+          if git diff --cached --quiet; then
+            echo "No Phase 6A output changes"
+          else
+            git commit -m "Update Phase 6A independent validation results"
+            git push
+          fi
