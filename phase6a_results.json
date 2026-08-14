@@ -1,0 +1,619 @@
+{
+  "phase": "6A",
+  "strategy": "frozen Phase 5H",
+  "source_a": "Yahoo Finance via yfinance, auto-adjusted",
+  "source_b": "Alpaca IEX daily bars, adjustment=all",
+  "evaluation": {
+    "start": "2022-01-01",
+    "end": "2026-07-31"
+  },
+  "yahoo": {
+    "final_equity": 3105.917051641431,
+    "total_return_pct": 24.236682065657234,
+    "max_drawdown_pct": 3.720193035280017,
+    "annual_returns_pct": {
+      "2022": 0.5285098945432498,
+      "2023": 2.3437620439388462,
+      "2024": 9.697028968571498,
+      "2025": 6.658191262344171,
+      "2026": 3.2072347853253635
+    }
+  },
+  "alpaca": {
+    "final_equity": 3097.650739393058,
+    "total_return_pct": 23.90602957572232,
+    "max_drawdown_pct": 3.7266081891725755,
+    "annual_returns_pct": {
+      "2022": 0.4493387808365501,
+      "2023": 2.2947794875696426,
+      "2024": 9.690105269043814,
+      "2025": 6.6921064835167465,
+      "2026": 3.036748406704337
+    }
+  },
+  "annual_abs_diff_pp": {
+    "2022": 0.07917111370669971,
+    "2023": 0.04898255636920368,
+    "2024": 0.006923699527684235,
+    "2025": 0.03391522117257573,
+    "2026": 0.17048637862102645
+  },
+  "annual_sign_match": {
+    "2022": true,
+    "2023": true,
+    "2024": true,
+    "2025": true,
+    "2026": true
+  },
+  "signal_agreement": {
+    "months": 55,
+    "overall_agreement": 0.9636363636363636,
+    "risk_on_off_agreement": 1.0,
+    "trend_close_agreement": 1.0,
+    "sector_side_agreement": 0.9636363636363636,
+    "mean_trend_l1": 0.0019638091281344236,
+    "details": [
+      {
+        "date": "2022-01-03",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.00485857232156614,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2022-02-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0018279003939726812,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2022-03-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0,
+        "yahoo_risk": 0.0,
+        "alpaca_risk": 0.0
+      },
+      {
+        "date": "2022-04-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0014988567936910363,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2022-05-02",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": false,
+        "overall": false,
+        "trend_l1": 0.0,
+        "yahoo_risk": 0.0,
+        "alpaca_risk": 0.0
+      },
+      {
+        "date": "2022-06-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0,
+        "yahoo_risk": 0.0,
+        "alpaca_risk": 0.0
+      },
+      {
+        "date": "2022-07-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0,
+        "yahoo_risk": 0.0,
+        "alpaca_risk": 0.0
+      },
+      {
+        "date": "2022-08-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0,
+        "yahoo_risk": 0.0,
+        "alpaca_risk": 0.0
+      },
+      {
+        "date": "2022-09-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0,
+        "yahoo_risk": 0.0,
+        "alpaca_risk": 0.0
+      },
+      {
+        "date": "2022-10-03",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0,
+        "yahoo_risk": 0.0,
+        "alpaca_risk": 0.0
+      },
+      {
+        "date": "2022-11-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0,
+        "yahoo_risk": 0.0,
+        "alpaca_risk": 0.0
+      },
+      {
+        "date": "2022-12-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0,
+        "yahoo_risk": 0.0,
+        "alpaca_risk": 0.0
+      },
+      {
+        "date": "2023-01-03",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0,
+        "yahoo_risk": 0.0,
+        "alpaca_risk": 0.0
+      },
+      {
+        "date": "2023-02-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0,
+        "yahoo_risk": 0.0,
+        "alpaca_risk": 0.0
+      },
+      {
+        "date": "2023-03-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0,
+        "yahoo_risk": 0.0,
+        "alpaca_risk": 0.0
+      },
+      {
+        "date": "2023-04-03",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0,
+        "yahoo_risk": 0.0,
+        "alpaca_risk": 0.0
+      },
+      {
+        "date": "2023-05-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.003486419082621109,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2023-06-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0011194528064099873,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2023-07-03",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.002864611559933311,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2023-08-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.003017049485594704,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2023-09-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.002824746665501185,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2023-10-02",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0032208986741872336,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2023-11-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0,
+        "yahoo_risk": 0.0,
+        "alpaca_risk": 0.0
+      },
+      {
+        "date": "2023-12-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0006437095337261667,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2024-01-02",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0014980343479621405,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2024-02-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0014990576599247865,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2024-03-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0022145027166215053,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2024-04-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0034344898439561886,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2024-05-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.002969627877763531,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2024-06-03",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0023089030461168406,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2024-07-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0015978585303374829,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2024-08-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0022739553792434433,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2024-09-03",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0023182667375704624,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2024-10-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.003300620699921264,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2024-11-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0012469548362072647,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2024-12-02",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0027198116978251405,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2025-01-02",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0060074714056304185,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2025-02-03",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.005988016033438279,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2025-03-03",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.00321967385336204,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2025-04-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0,
+        "yahoo_risk": 0.0,
+        "alpaca_risk": 0.0
+      },
+      {
+        "date": "2025-05-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0,
+        "yahoo_risk": 0.0,
+        "alpaca_risk": 0.0
+      },
+      {
+        "date": "2025-06-02",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.01529756885439841,
+        "yahoo_risk": 0.3662112657052864,
+        "alpaca_risk": 0.3738600501324856
+      },
+      {
+        "date": "2025-07-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0006337896544471935,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2025-08-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0023531890249170045,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2025-09-02",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0028971622354217533,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2025-10-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0020723777394300244,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2025-11-03",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0026255212200569575,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2025-12-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0007503957560714564,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2026-01-02",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0021890588317724294,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2026-02-02",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.003302049851687805,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2026-03-02",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0027504019356067375,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2026-04-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0,
+        "yahoo_risk": 0.0,
+        "alpaca_risk": 0.0
+      },
+      {
+        "date": "2026-05-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0010222291496387176,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2026-06-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": false,
+        "overall": false,
+        "trend_l1": 0.001152880545575885,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      },
+      {
+        "date": "2026-07-01",
+        "risk_on_same": true,
+        "trend_close": true,
+        "sector_side_same": true,
+        "overall": true,
+        "trend_l1": 0.0030034152652845605,
+        "yahoo_risk": 0.5,
+        "alpaca_risk": 0.5
+      }
+    ]
+  },
+  "gate_checks": {
+    "all_annual_signs_match": true,
+    "both_cumulative_positive": true,
+    "annual_return_difference_within_3pp": true,
+    "drawdown_difference_within_2pp": true,
+    "monthly_signal_agreement_at_least_85pct": true,
+    "risk_on_off_agreement_at_least_90pct": true,
+    "sector_side_agreement_at_least_80pct": true
+  },
+  "gate": "PASS",
+  "paper_trading_authorized": true
+}
