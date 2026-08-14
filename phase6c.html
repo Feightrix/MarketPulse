@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>MarketPulse — Forward Test</title>
+<style>
+:root{color-scheme:dark;--bg:#071018;--panel:#0d1822;--line:#20313f;--text:#eef6fb;--muted:#8ea4b4;--good:#5ee6a8;--warn:#ffd166;--bad:#ff6b6b;--accent:#4fd1ff}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 15% 0,#0f2534 0,#071018 35%,#050b11 100%);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);min-height:100vh}.wrap{max-width:1120px;margin:0 auto;padding:42px 22px 64px}.brand{display:flex;justify-content:space-between;gap:24px;align-items:flex-start;margin-bottom:28px}.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:800}.brand h1{font-size:clamp(34px,6vw,64px);line-height:.98;margin:8px 0 10px;letter-spacing:-.045em}.sub{color:var(--muted);max-width:710px;font-size:15px;line-height:1.55}.lock{border:1px solid var(--line);background:#0a131b;border-radius:999px;padding:9px 13px;font-size:12px;font-weight:800;white-space:nowrap}.status{border:1px solid var(--line);background:linear-gradient(135deg,#0f1d28,#0b141c);border-radius:20px;padding:24px;margin-bottom:18px;display:flex;justify-content:space-between;gap:18px;align-items:center}.status strong{font-size:22px}.status small{display:block;color:var(--muted);margin-top:6px}.badge{padding:9px 12px;border-radius:10px;background:#122330;font-size:12px;font-weight:900;letter-spacing:.04em}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{border:1px solid var(--line);background:rgba(13,24,34,.92);border-radius:18px;padding:19px;min-height:130px}.card .k{font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:var(--muted);font-weight:800}.card .v{font-size:30px;font-weight:850;letter-spacing:-.04em;margin-top:12px}.card .d{font-size:12px;color:var(--muted);margin-top:8px}.wide{grid-column:span 2}.section{margin-top:28px}.section h2{font-size:14px;text-transform:uppercase;letter-spacing:.13em;color:var(--muted);margin:0 0 12px}.gate{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.check{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#0a141c;display:flex;justify-content:space-between;gap:12px;font-size:13px}.pass{color:var(--good);font-weight:900}.wait{color:var(--warn);font-weight:900}.bad{color:var(--bad)!important}.good{color:var(--good)!important}.footer{color:var(--muted);font-size:12px;line-height:1.5;margin-top:26px;border-top:1px solid var(--line);padding-top:18px}@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}.brand{display:block}.lock{display:inline-block;margin-top:14px}}@media(max-width:520px){.grid,.gate{grid-template-columns:1fr}.wide{grid-column:span 1}.status{display:block}.badge{display:inline-block;margin-top:14px}}
+</style>
+</head>
+<body><main class="wrap">
+<div class="brand"><div><div class="eyebrow">MarketPulse · Phase 6C</div><h1>Forward Test</h1><div class="sub">Frozen Phase 5H strategy. Real paper fills only. No parameter tuning. Live-money trading remains locked until the forward-test gate is mature and passes review.</div></div><div class="lock">🔒 LIVE MONEY LOCKED</div></div>
+<div class="status"><div><strong id="status">Loading…</strong><small id="timestamp">Reading latest paper-trading state</small></div><div class="badge" id="badge">FORWARD TEST</div></div>
+<div class="grid">
+<div class="card"><div class="k">Trading days</div><div class="v" id="days">—</div><div class="d">Required: 126</div></div>
+<div class="card"><div class="k">Rebalances</div><div class="v" id="rebalances">—</div><div class="d">Required: 6</div></div>
+<div class="card"><div class="k">Forward return</div><div class="v" id="return">—</div><div class="d">Must remain positive at review</div></div>
+<div class="card"><div class="k">Max drawdown</div><div class="v" id="dd">—</div><div class="d">Limit: 5.00%</div></div>
+<div class="card"><div class="k">Positive months</div><div class="v" id="months">—</div><div class="d">Required: ≥66.7%</div></div>
+<div class="card"><div class="k">Worst month</div><div class="v" id="worst">—</div><div class="d">Floor: −2.50%</div></div>
+<div class="card"><div class="k">Fill rate</div><div class="v" id="fills">—</div><div class="d">Required: ≥99%</div></div>
+<div class="card"><div class="k">Failed orders</div><div class="v" id="failed">—</div><div class="d">Required: 0</div></div>
+<div class="card wide"><div class="k">Median adverse slippage</div><div class="v" id="median">—</div><div class="d">Limit: 15 bps</div></div>
+<div class="card wide"><div class="k">95th percentile adverse slippage</div><div class="v" id="p95">—</div><div class="d">Limit: 30 bps</div></div>
+</div>
+<section class="section"><h2>Promotion gate</h2><div class="gate" id="gate"></div></section>
+<div class="footer">Phase 6C may only mark MarketPulse <b>PROMOTION_REVIEW_ELIGIBLE</b>. It cannot enable live trading. Paper trading is simulated and does not guarantee future or live results.</div>
+</main>
+<script>
+const pct=(x,d=2)=>x==null?'—':`${x>=0?'+':''}${Number(x).toFixed(d)}%`;
+const bps=x=>x==null?'N/A':`${Number(x).toFixed(2)} bps`;
+function tone(el,val,goodWhenPositive=true){if(val==null)return;el.classList.remove('good','bad');if(goodWhenPositive?(val>0):(val<=0))el.classList.add('good');else el.classList.add('bad')}
+fetch(`phase6c_forward_status.json?t=${Date.now()}`).then(r=>r.json()).then(s=>{
+ document.getElementById('status').textContent=(s.status||'UNKNOWN').replaceAll('_',' ');
+ document.getElementById('timestamp').textContent=s.timestamp_utc?`Updated ${new Date(s.timestamp_utc).toLocaleString()}`:'No update yet';
+ const p=s.performance||{},e=s.execution||{};
+ document.getElementById('days').textContent=`${p.trading_days||0} / 126`;
+ document.getElementById('rebalances').textContent=`${s.rebalance_count||0} / 6`;
+ const ret=document.getElementById('return');ret.textContent=pct(p.cumulative_return_pct);tone(ret,p.cumulative_return_pct,true);
+ const dd=document.getElementById('dd');dd.textContent=pct(p.max_drawdown_pct);if(p.max_drawdown_pct!=null)dd.classList.add(p.max_drawdown_pct<=5?'good':'bad');
+ document.getElementById('months').textContent=p.completed_months?`${Number(p.positive_month_rate_pct).toFixed(1)}%`:'N/A';
+ document.getElementById('worst').textContent=p.completed_months?pct(p.worst_month_pct):'N/A';
+ document.getElementById('fills').textContent=`${Number(e.fill_rate_pct??100).toFixed(1)}%`;
+ document.getElementById('failed').textContent=e.failed_order_count??0;
+ document.getElementById('median').textContent=bps(e.median_adverse_slippage_bps);
+ document.getElementById('p95').textContent=bps(e.p95_adverse_slippage_bps);
+ const gate=document.getElementById('gate');gate.innerHTML='';Object.entries(s.gate_checks||{}).forEach(([k,v])=>{const d=document.createElement('div');d.className='check';d.innerHTML=`<span>${k.replaceAll('_',' ')}</span><span class="${v?'pass':'wait'}">${v?'PASS':'WAIT/FAIL'}</span>`;gate.appendChild(d)});
+ const badge=document.getElementById('badge');badge.textContent=s.live_trading_locked?'LIVE LOCKED':'CHECK LOCK';
+}).catch(err=>{document.getElementById('status').textContent='STATUS NOT AVAILABLE';document.getElementById('timestamp').textContent=String(err)});
+</script></body></html>
