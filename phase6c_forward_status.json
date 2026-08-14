@@ -1,0 +1,10 @@
+{
+  "live_trading_locked": true,
+  "paper_base": "https://paper-api.alpaca.markets",
+  "phase": "6C",
+  "problems": [
+    "No completed Phase 6B paper rebalance has occurred yet"
+  ],
+  "status": "WAITING_FIRST_PAPER_REBALANCE",
+  "timestamp_utc": "2026-08-14T04:21:07.897406+00:00"
+}
