@@ -1,0 +1,65 @@
+name: MarketPulse Phase 4D High-Expectancy Regime Continuation
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'phase4d_expectancy_backtest.py'
+      - '.github/workflows/phase4d-expectancy.yml'
+
+concurrency:
+  group: marketpulse-phase4d
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install numpy pandas
+
+      - name: Validate Alpaca Market Data credentials
+        env:
+          ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
+          ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+        run: |
+          python - <<'PY'
+          import os, urllib.request
+          h={'APCA-API-KEY-ID':os.environ['ALPACA_API_KEY_ID'],'APCA-API-SECRET-KEY':os.environ['ALPACA_API_SECRET_KEY']}
+          u='https://data.alpaca.markets/v2/stocks/QQQ/bars?timeframe=1Min&start=2026-07-01T14%3A00%3A00Z&end=2026-07-01T15%3A00%3A00Z&feed=iex&adjustment=all&limit=1'
+          with urllib.request.urlopen(urllib.request.Request(u,headers=h),timeout=30) as r:
+              r.read(); print('Market Data API: AUTH OK',r.status)
+          PY
+
+      - name: Syntax check Phase 4D
+        run: python -m py_compile phase4d_expectancy_backtest.py
+
+      - name: Run Phase 4D historical research
+        env:
+          ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
+          ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+        run: python phase4d_expectancy_backtest.py
+
+      - name: Commit Phase 4D research outputs
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add phase4d_results.json phase4d_summary.md
+          if git diff --cached --quiet; then
+            echo "No result changes to commit"
+          else
+            git commit -m "Update Phase 4D high-expectancy research results"
+            git push
+          fi
