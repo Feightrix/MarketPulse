@@ -1,0 +1,155 @@
+{
+  "phase": "5G",
+  "strategy": "Phase 5F vol-target trend plus breadth/SPY safety gate",
+  "locked_5f": {
+    "lookback": 252,
+    "trend_sma": 150,
+    "vol_window": 42,
+    "target_vol": 0.08,
+    "risk_cap": 0.5
+  },
+  "selected_gate": {
+    "breadth_min": 2,
+    "spy_sma": 200
+  },
+  "candidate_count": 10,
+  "valid_development_candidates": 10,
+  "development_2bps": {
+    "final_equity": 3634.2421214643614,
+    "total_return_pct": 45.369684858574466,
+    "cagr_pct": 5.493681247534221,
+    "max_drawdown_pct": 4.580886520875172,
+    "positive_month_rate_pct": 69.87951807228916,
+    "trade_events": 56,
+    "annual_returns_pct": {
+      "2008": 1.5856275580029333,
+      "2009": 3.3105487430507674,
+      "2010": 3.89633504279967,
+      "2011": 6.031773166347221,
+      "2012": 3.6133879280818126,
+      "2013": 12.579495203716418,
+      "2014": 7.791741662907592
+    }
+  },
+  "development_10bps": {
+    "final_equity": 3598.135472404673,
+    "total_return_pct": 43.925418896186905,
+    "cagr_pct": 5.343209297287199,
+    "max_drawdown_pct": 4.584440898659525,
+    "positive_month_rate_pct": 68.67469879518072,
+    "trade_events": 56,
+    "annual_returns_pct": {
+      "2008": 1.5856275580029333,
+      "2009": 3.2174498398897855,
+      "2010": 3.673360194183539,
+      "2011": 5.877476301037299,
+      "2012": 3.373207211199647,
+      "2013": 12.423461052359542,
+      "2014": 7.601025807837325
+    }
+  },
+  "validation_2bps": {
+    "final_equity": 2787.948300071231,
+    "total_return_pct": 11.517932002849252,
+    "cagr_pct": 2.2069955068471536,
+    "max_drawdown_pct": 7.374852911656604,
+    "positive_month_rate_pct": 64.40677966101694,
+    "trade_events": 56,
+    "annual_returns_pct": {
+      "2015": -4.29996369689416,
+      "2016": 3.566847696324005,
+      "2017": 8.132444652992387,
+      "2018": -2.3790323652911005,
+      "2019": 6.589080882836562
+    }
+  },
+  "validation_10bps": {
+    "final_equity": 2747.4827791864586,
+    "total_return_pct": 9.899311167458347,
+    "cagr_pct": 1.9081946558246132,
+    "max_drawdown_pct": 7.524123759457957,
+    "positive_month_rate_pct": 64.40677966101694,
+    "trade_events": 56,
+    "annual_returns_pct": {
+      "2015": -4.659020184317308,
+      "2016": 3.28196200248263,
+      "2017": 7.953246576013284,
+      "2018": -2.658101398338586,
+      "2019": 6.207542407567912
+    }
+  },
+  "holdout1_2bps": {
+    "final_equity": 2882.0135683687563,
+    "total_return_pct": 15.280542734750258,
+    "cagr_pct": 3.6290194538003417,
+    "max_drawdown_pct": 4.533488103185435,
+    "positive_month_rate_pct": 61.702127659574465,
+    "trade_events": 35,
+    "annual_returns_pct": {
+      "2020": 5.230282514178386,
+      "2021": 7.168312427608825,
+      "2022": -0.9237805178012537,
+      "2023": 3.1761831045626687
+    }
+  },
+  "holdout1_10bps": {
+    "final_equity": 2844.6277470600958,
+    "total_return_pct": 13.785109882403823,
+    "cagr_pct": 3.2903745093594727,
+    "max_drawdown_pct": 4.594291448186705,
+    "positive_month_rate_pct": 61.702127659574465,
+    "trade_events": 35,
+    "annual_returns_pct": {
+      "2020": 4.844945978252979,
+      "2021": 6.87038270896323,
+      "2022": -1.2116831422884444,
+      "2023": 2.7957080597229567
+    }
+  },
+  "holdout2_2bps": {
+    "final_equity": 3137.4341981468096,
+    "total_return_pct": 25.497367925872382,
+    "cagr_pct": 9.215710607885153,
+    "max_drawdown_pct": 3.005083793683694,
+    "positive_month_rate_pct": 73.33333333333333,
+    "trade_events": 30,
+    "annual_returns_pct": {
+      "2024": 11.828836495970663,
+      "2025": 9.08981576437975,
+      "2026": 2.8718624730947884
+    }
+  },
+  "holdout2_10bps": {
+    "final_equity": 3113.074136776326,
+    "total_return_pct": 24.522965471053038,
+    "cagr_pct": 8.885778835832348,
+    "max_drawdown_pct": 3.0389340080537175,
+    "positive_month_rate_pct": 73.33333333333333,
+    "trade_events": 30,
+    "annual_returns_pct": {
+      "2024": 11.60866980982349,
+      "2025": 8.742139129152871,
+      "2026": 2.60148595262244
+    }
+  },
+  "gate_checks": {
+    "development_2008_2014_all_positive": true,
+    "validation_2015_positive_10bps": false,
+    "validation_2016_positive_10bps": true,
+    "validation_2017_positive_10bps": true,
+    "validation_2018_positive_10bps": false,
+    "validation_2019_positive_10bps": true,
+    "validation_drawdown": true,
+    "holdout1_2020_positive_10bps": true,
+    "holdout1_2021_positive_10bps": true,
+    "holdout1_2022_positive_10bps": false,
+    "holdout1_2023_positive_10bps": true,
+    "holdout1_drawdown": true,
+    "holdout2_2024_positive_10bps": true,
+    "holdout2_2025_positive_10bps": true,
+    "holdout2_2026_positive_10bps": true,
+    "holdout2_drawdown": true
+  },
+  "gate": "FAIL",
+  "research_only": true
+}
