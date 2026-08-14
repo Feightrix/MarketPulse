@@ -1,0 +1,69 @@
+name: MarketPulse Phase 6B Paper Trading
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - phase6b_paper_trader.py
+      - .github/workflows/phase6b-paper-trading.yml
+  workflow_dispatch:
+  schedule:
+    # 15:05 UTC is inside regular US market hours in both EST and EDT.
+    - cron: '5 15 * * 1-5'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: phase6b-paper-trading
+  cancel-in-progress: false
+
+jobs:
+  paper:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install numpy pandas
+
+      - name: Security check — paper endpoint only
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s=Path('phase6b_paper_trader.py').read_text()
+          assert 'https://paper-api.alpaca.markets' in s
+          assert 'https://api.alpaca.markets' not in s
+          print('Paper-only endpoint invariant: PASS')
+          PY
+
+      - name: Syntax check Phase 6B
+        run: python -m py_compile phase6b_paper_trader.py
+
+      - name: Run Phase 6B paper trader
+        env:
+          ALPACA_PAPER_API_KEY_ID: ${{ secrets.ALPACA_PAPER_API_KEY_ID }}
+          ALPACA_PAPER_API_SECRET_KEY: ${{ secrets.ALPACA_PAPER_API_SECRET_KEY }}
+          ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
+          ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+        run: python phase6b_paper_trader.py
+
+      - name: Commit paper status and state
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add phase6b_paper_status.json phase6b_paper_status.md phase6b_paper_log.jsonl
+          if [ -f phase6b_paper_state.json ]; then git add phase6b_paper_state.json; fi
+          if git diff --cached --quiet; then
+            echo "No Phase 6B state changes"
+          else
+            git commit -m "Update Phase 6B paper trading status"
+            git push
+          fi
