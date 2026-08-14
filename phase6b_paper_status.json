@@ -1,9 +1,124 @@
 {
   "phase": "6B",
-  "timestamp_utc": "2026-08-14T04:06:20.496075+00:00",
+  "timestamp_utc": "2026-08-14T04:17:05.651871+00:00",
   "paper_base": "https://paper-api.alpaca.markets",
-  "status": "PAPER_AUTH_FAILED",
-  "problems": [
-    "Paper API GET /v2/account failed: HTTP 401: {\"code\":40110000,\"message\":\"request is not authorized\"}"
-  ]
+  "account_equity": 100000.0,
+  "market_open": false,
+  "account_status": "ACTIVE",
+  "trading_blocked": false,
+  "signal_date": "2026-08-13",
+  "target_weights": {
+    "SPY": 0.11560654200874787,
+    "QQQ": 0.05938777639240522,
+    "IWM": 0.10450396601875182,
+    "XLE": 0.08614541577430126,
+    "XLP": 0.059356299805793794,
+    "BIL": 0.425,
+    "XLK": 0.024999999999999998,
+    "XLV": 0.024999999999999998,
+    "XLU": -0.024999999999999998,
+    "XLY": -0.024999999999999998
+  },
+  "trend_sleeve": {
+    "SPY": 0.13600769648087985,
+    "QQQ": 0.06986797222635908,
+    "IWM": 0.12294584237500215,
+    "XLE": 0.07193578326388385,
+    "XLP": 0.09924270565387505,
+    "BIL": 0.5
+  },
+  "neutral_sleeve": {
+    "XLK": 0.16666666666666666,
+    "XLE": 0.16666666666666666,
+    "XLV": 0.16666666666666666,
+    "XLU": -0.16666666666666666,
+    "XLP": -0.16666666666666666,
+    "XLY": -0.16666666666666666
+  },
+  "desired_quantities": {
+    "SPY": 14.862509,
+    "QQQ": 8.111865,
+    "IWM": 34.435207,
+    "XLE": 141.106332,
+    "XLP": 69.02698,
+    "BIL": 464.430117,
+    "XLK": 13.104786,
+    "XLV": 14.84781,
+    "XLU": -56.0,
+    "XLY": -21.0
+  },
+  "tracking": {
+    "SPY": {
+      "weight": 0.11560654200874787,
+      "target_dollars": 11560.654200874787,
+      "reference_price": 777.84,
+      "desired_qty": 14.862509,
+      "represented_dollars": 11560.65400056
+    },
+    "QQQ": {
+      "weight": 0.05938777639240522,
+      "target_dollars": 5938.777639240522,
+      "reference_price": 732.11,
+      "desired_qty": 8.111865,
+      "represented_dollars": 5938.77748515
+    },
+    "IWM": {
+      "weight": 0.10450396601875182,
+      "target_dollars": 10450.396601875182,
+      "reference_price": 303.48,
+      "desired_qty": 34.435207,
+      "represented_dollars": 10450.39662036
+    },
+    "XLE": {
+      "weight": 0.08614541577430126,
+      "target_dollars": 8614.541577430127,
+      "reference_price": 61.05,
+      "desired_qty": 141.106332,
+      "represented_dollars": 8614.5415686
+    },
+    "XLP": {
+      "weight": 0.059356299805793794,
+      "target_dollars": 5935.62998057938,
+      "reference_price": 85.99,
+      "desired_qty": 69.02698,
+      "represented_dollars": 5935.6300102
+    },
+    "BIL": {
+      "weight": 0.425,
+      "target_dollars": 42500.0,
+      "reference_price": 91.51,
+      "desired_qty": 464.430117,
+      "represented_dollars": 42500.00000667
+    },
+    "XLK": {
+      "weight": 0.024999999999999998,
+      "target_dollars": 2500.0,
+      "reference_price": 190.77,
+      "desired_qty": 13.104786,
+      "represented_dollars": 2500.00002522
+    },
+    "XLV": {
+      "weight": 0.024999999999999998,
+      "target_dollars": 2500.0,
+      "reference_price": 168.375,
+      "desired_qty": 14.84781,
+      "represented_dollars": 2500.0000087500002
+    },
+    "XLU": {
+      "weight": -0.024999999999999998,
+      "target_dollars": -2500.0,
+      "reference_price": 44.025,
+      "desired_qty": -56,
+      "represented_dollars": -2465.4
+    },
+    "XLY": {
+      "weight": -0.024999999999999998,
+      "target_dollars": -2500.0,
+      "reference_price": 118.44,
+      "desired_qty": -21,
+      "represented_dollars": -2487.24
+    }
+  },
+  "last_rebalance_month": null,
+  "status": "READY_WAITING_FOR_MARKET_OPEN"
 }
