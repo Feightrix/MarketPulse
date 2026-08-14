@@ -1,0 +1,75 @@
+name: MarketPulse Phase 6C Forward Monitor
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - phase6c_forward_monitor.py
+      - .github/workflows/phase6c-forward-monitor.yml
+      - phase6c.html
+  workflow_dispatch:
+  schedule:
+    # Runs after Phase 6B during regular US market hours in EST and EDT.
+    - cron: '25 15 * * 1-5'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: phase6c-forward-monitor
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install numpy pandas
+
+      - name: Security check — read-only paper endpoint
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s=Path('phase6c_forward_monitor.py').read_text()
+          assert 'https://paper-api.alpaca.markets' in s
+          assert 'https://api.alpaca.markets' not in s
+          assert 'method="POST"' not in s
+          assert 'method="DELETE"' not in s
+          assert 'method="PATCH"' not in s
+          print('Phase 6C read-only paper invariant: PASS')
+          PY
+
+      - name: Syntax check Phase 6C
+        run: python -m py_compile phase6c_forward_monitor.py
+
+      - name: Run forward-test monitor
+        env:
+          ALPACA_PAPER_API_KEY_ID: ${{ secrets.ALPACA_PAPER_API_KEY_ID }}
+          ALPACA_PAPER_API_SECRET_KEY: ${{ secrets.ALPACA_PAPER_API_SECRET_KEY }}
+        run: python phase6c_forward_monitor.py
+
+      - name: Commit forward-test status
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add phase6c_forward_status.json phase6c_forward_status.md
+          if [ -f phase6c_forward_log.jsonl ]; then git add phase6c_forward_log.jsonl; fi
+          if [ -f phase6c_forward_state.json ]; then git add phase6c_forward_state.json; fi
+          if git diff --cached --quiet; then
+            echo "No Phase 6C state changes"
+          else
+            git commit -m "Update Phase 6C forward-test status"
+            git pull --rebase origin main
+            git push origin main
+          fi
