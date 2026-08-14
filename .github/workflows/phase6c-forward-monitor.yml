@@ -24,9 +24,10 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
-      - name: Checkout
+      - name: Checkout current main
         uses: actions/checkout@v6
         with:
+          ref: main
           fetch-depth: 0
 
       - name: Set up Python
@@ -63,13 +64,21 @@ jobs:
         run: |
           git config user.name "MarketPulse Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add phase6c_forward_status.json phase6c_forward_status.md
-          if [ -f phase6c_forward_log.jsonl ]; then git add phase6c_forward_log.jsonl; fi
-          if [ -f phase6c_forward_state.json ]; then git add phase6c_forward_state.json; fi
+          mkdir -p /tmp/phase6c-output
+          for f in phase6c_forward_status.json phase6c_forward_status.md phase6c_forward_log.jsonl phase6c_forward_state.json; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/phase6c-output/$f"; fi
+          done
+          git fetch origin main
+          git reset --hard origin/main
+          for f in phase6c_forward_status.json phase6c_forward_status.md phase6c_forward_log.jsonl phase6c_forward_state.json; do
+            if [ -f "/tmp/phase6c-output/$f" ]; then
+              cp "/tmp/phase6c-output/$f" "$f"
+              git add "$f"
+            fi
+          done
           if git diff --cached --quiet; then
             echo "No Phase 6C state changes"
           else
             git commit -m "Update Phase 6C forward-test status"
-            git pull --rebase origin main
             git push origin main
           fi
