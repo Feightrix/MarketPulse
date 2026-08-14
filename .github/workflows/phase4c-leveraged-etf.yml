@@ -5,7 +5,12 @@ on:
   push:
     paths:
       - 'phase4c_leveraged_etf_backtest.py'
+      - 'phase4c_fast_runner.py'
       - '.github/workflows/phase4c-leveraged-etf.yml'
+
+concurrency:
+  group: marketpulse-phase4c
+  cancel-in-progress: true
 
 permissions:
   contents: write
@@ -43,7 +48,7 @@ jobs:
         env:
           ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
           ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
-        run: python phase4c_leveraged_etf_backtest.py
+        run: python phase4c_fast_runner.py
 
       - name: Commit Phase 4C research outputs
         run: |
