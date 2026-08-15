@@ -1,0 +1,83 @@
+name: MarketPulse Phase 6E $2500 Paper Trading
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - phase6e_2500_paper_trader.py
+      - .github/workflows/phase6e-2500-paper-trading.yml
+  workflow_dispatch:
+  schedule:
+    # Weekdays during regular US market hours: 11:05 AM EDT / 10:05 AM EST.
+    - cron: '5 15 * * 1-5'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: phase6e-2500-paper-trading
+  cancel-in-progress: false
+
+jobs:
+  paper-2500:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install numpy pandas
+
+      - name: Security check — dedicated $2500 paper only
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s = Path('phase6e_2500_paper_trader.py').read_text()
+          assert 'ALPACA_2500_PAPER_API_KEY_ID' in s
+          assert 'ALPACA_2500_PAPER_API_SECRET_KEY' in s
+          assert 'https://api.alpaca.markets' not in s
+          assert 'DESIGN_CAPITAL = 2500.0' in s
+          assert 'WRONG_PAPER_ACCOUNT' in s
+          print('Phase 6E dedicated $2,500 paper invariants: PASS')
+          PY
+
+      - name: Syntax check Phase 6E
+        run: python -m py_compile phase6e_2500_paper_trader.py
+
+      - name: Run Phase 6E $2500 paper trader
+        env:
+          ALPACA_2500_PAPER_API_KEY_ID: ${{ secrets.ALPACA_2500_PAPER_API_KEY_ID }}
+          ALPACA_2500_PAPER_API_SECRET_KEY: ${{ secrets.ALPACA_2500_PAPER_API_SECRET_KEY }}
+        run: python phase6e_2500_paper_trader.py
+
+      - name: Commit Phase 6E status and state
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          mkdir -p /tmp/phase6e-output
+          for f in phase6e_2500_status.json phase6e_2500_status.md phase6e_2500_log.jsonl phase6e_2500_state.json; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/phase6e-output/$f"; fi
+          done
+          git fetch origin main
+          git reset --hard origin/main
+          for f in phase6e_2500_status.json phase6e_2500_status.md phase6e_2500_log.jsonl phase6e_2500_state.json; do
+            if [ -f "/tmp/phase6e-output/$f" ]; then
+              cp "/tmp/phase6e-output/$f" "$f"
+              git add "$f"
+            fi
+          done
+          if git diff --cached --quiet; then
+            echo "No Phase 6E state changes"
+          else
+            git commit -m "Update Phase 6E $2500 paper status"
+            git push origin main
+          fi
