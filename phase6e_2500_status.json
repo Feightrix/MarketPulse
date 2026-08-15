@@ -1,0 +1,11 @@
+{
+  "design_capital": 2500.0,
+  "live_trading_locked": true,
+  "paper_base": "https://paper-api.alpaca.markets",
+  "phase": "6E",
+  "problems": [
+    "Dedicated $2,500 Alpaca paper credentials are not configured"
+  ],
+  "status": "WAITING_FOR_2500_PAPER_CREDENTIALS",
+  "timestamp_utc": "2026-08-15T04:18:30.431293+00:00"
+}
