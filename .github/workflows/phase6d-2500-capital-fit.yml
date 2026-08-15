@@ -1,0 +1,61 @@
+name: MarketPulse Phase 6D $2500 Capital Fit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - phase6d_2500_capital_fit.py
+      - .github/workflows/phase6d-2500-capital-fit.yml
+      - phase6b_paper_log.jsonl
+      - phase6c_forward_log.jsonl
+  workflow_dispatch:
+  schedule:
+    - cron: '30 21 * * 1-5'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: phase6d-2500-capital-fit
+  cancel-in-progress: false
+
+jobs:
+  capital-fit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Syntax check Phase 6D
+        run: python -m py_compile phase6d_2500_capital_fit.py
+
+      - name: Run $2500 capital-fit model
+        run: python phase6d_2500_capital_fit.py
+
+      - name: Commit Phase 6D results
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          mkdir -p /tmp/phase6d-output
+          cp phase6d_2500_capital_fit.json /tmp/phase6d-output/
+          cp phase6d_2500_capital_fit.md /tmp/phase6d-output/
+          git fetch origin main
+          git reset --hard origin/main
+          cp /tmp/phase6d-output/phase6d_2500_capital_fit.json .
+          cp /tmp/phase6d-output/phase6d_2500_capital_fit.md .
+          git add phase6d_2500_capital_fit.json phase6d_2500_capital_fit.md
+          if git diff --cached --quiet; then
+            echo "No Phase 6D changes"
+          else
+            git commit -m "Update Phase 6D $2500 capital-fit results"
+            git push origin main
+          fi
