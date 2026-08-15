@@ -9,8 +9,10 @@ on:
       - phase6c.html
   workflow_dispatch:
   schedule:
-    # Runs after Phase 6B during regular US market hours in EST and EDT.
-    - cron: '25 15 * * 1-5'
+    # Two UTC runs keep one snapshot just after the US close in both EDT and EST.
+    # The later run simply overwrites the same date if both execute after close.
+    - cron: '10 20 * * 1-5'
+    - cron: '10 21 * * 1-5'
 
 permissions:
   contents: write
