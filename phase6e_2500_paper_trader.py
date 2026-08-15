@@ -248,16 +248,13 @@ def main():
         status = {**common, "status": "READY_WAITING_FOR_MARKET_OPEN"}
         write_status(status); append_log(status); return
 
+    original_submit = core.submit_market
     try:
-        # Use the proven 6B executor, but give this account a distinct client-order namespace.
-        # execute_rebalance generates mp6b tags internally, so patch only the tag-producing submit path
-        # by temporarily replacing submit_market with a dedicated wrapper.
-        original_submit = core.submit_market
+        # Use the proven 6B executor but give this account a distinct order namespace.
         def submit_2500(sym, qty, side, tag):
             return original_submit(sym, qty, side, tag.replace("mp6b-", "mp6e-", 1))
         core.submit_market = submit_2500
         actions = core.execute_rebalance(desired, positions, now.strftime("%Y%m%d%H%M"))
-        core.submit_market = original_submit
         final_positions = core.current_positions()
         state.update({
             "initialized": True,
@@ -272,8 +269,9 @@ def main():
         status = {**common, "status": "REBALANCE_COMPLETE", "actions": actions,
                   "final_positions": final_positions, "rebalance_count": state["rebalance_count"]}
     except Exception as e:
-        core.submit_market = globals().get("original_submit", core.submit_market)
         status = {**common, "status": "REBALANCE_ERROR", "problems": [str(e)]}
+    finally:
+        core.submit_market = original_submit
 
     write_status(status)
     append_log(status)
