@@ -1,6 +1,78 @@
 {
   "account_equity": 2500.0,
   "account_status": "ACTIVE",
+  "actions": [
+    {
+      "action": "buy",
+      "order_id": "8b12570f-2551-4f33-b672-cf7cc42645c9",
+      "qty": 11.606948,
+      "status": "filled",
+      "symbol": "BIL"
+    },
+    {
+      "action": "buy",
+      "order_id": "96fbd63c-a03b-4b80-a8c7-2a6c6b5e054e",
+      "qty": 0.858513,
+      "status": "filled",
+      "symbol": "IWM"
+    },
+    {
+      "action": "buy",
+      "order_id": "3e50adc9-85e3-489e-9419-85f3a6f9caef",
+      "qty": 0.20436,
+      "status": "filled",
+      "symbol": "QQQ"
+    },
+    {
+      "action": "buy",
+      "order_id": "6770102c-a470-4847-a8e4-34f0c521932d",
+      "qty": 0.371074,
+      "status": "filled",
+      "symbol": "SPY"
+    },
+    {
+      "action": "buy",
+      "order_id": "a7e7818a-089a-425b-805f-76329bd05d66",
+      "qty": 3.466648,
+      "status": "filled",
+      "symbol": "XLE"
+    },
+    {
+      "action": "buy",
+      "order_id": "27d3a73c-51fd-46c6-9773-1f1a763f85e9",
+      "qty": 0.328904,
+      "status": "filled",
+      "symbol": "XLK"
+    },
+    {
+      "action": "buy",
+      "order_id": "f756c423-db72-47a3-b6d6-a983207d39bb",
+      "qty": 1.724978,
+      "status": "filled",
+      "symbol": "XLP"
+    },
+    {
+      "action": "sell",
+      "order_id": "3cf8092c-2762-4ba3-92d5-aae06412d0ea",
+      "qty": 1,
+      "status": "filled",
+      "symbol": "XLU"
+    },
+    {
+      "action": "buy",
+      "order_id": "35a95b50-9312-4ea7-b213-167e75b3e87d",
+      "qty": 0.373424,
+      "status": "filled",
+      "symbol": "XLV"
+    },
+    {
+      "action": "sell",
+      "order_id": "c20b33f3-1778-4b48-ba86-c49a2137bbcd",
+      "qty": 1,
+      "status": "filled",
+      "symbol": "XLY"
+    }
+  ],
   "capital_fit": {
     "checks": {
       "all_intended_net_shorts_represented": true,
@@ -31,9 +103,21 @@
     "XLV": 0.373424,
     "XLY": -1.0
   },
+  "final_positions": {
+    "BIL": 11.606948,
+    "IWM": 0.858513,
+    "QQQ": 0.20436,
+    "SPY": 0.371074,
+    "XLE": 3.466648,
+    "XLK": 0.328904,
+    "XLP": 1.724978,
+    "XLU": -1.0,
+    "XLV": 0.373424,
+    "XLY": -1.0
+  },
   "last_rebalance_month": null,
   "live_trading_locked": true,
-  "market_open": false,
+  "market_open": true,
   "neutral_sleeve": {
     "XLE": 0.16666666666666666,
     "XLK": 0.16666666666666666,
@@ -44,7 +128,7 @@
   },
   "paper_base": "https://paper-api.alpaca.markets",
   "phase": "6E",
-  "rebalance_count": 0,
+  "rebalance_count": 1,
   "represented_weights": {
     "BIL": 0.42500000796799997,
     "IWM": 0.10476949246799999,
@@ -58,7 +142,7 @@
     "XLY": -0.047282
   },
   "signal_date": "2026-08-14",
-  "status": "READY_WAITING_FOR_MARKET_OPEN",
+  "status": "REBALANCE_COMPLETE",
   "target_weights": {
     "BIL": 0.425,
     "IWM": 0.10476955240504032,
@@ -71,7 +155,7 @@
     "XLV": 0.024999999999999998,
     "XLY": -0.024999999999999998
   },
-  "timestamp_utc": "2026-08-16T12:34:54.813766+00:00",
+  "timestamp_utc": "2026-08-17T15:29:18.082538+00:00",
   "trading_blocked": false,
   "trend_sleeve": {
     "BIL": 0.5,

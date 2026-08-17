@@ -1,13 +1,13 @@
 # MarketPulse Phase 6E — Dedicated $2,500 Paper Account
 
-**Status: READY_WAITING_FOR_MARKET_OPEN**
+**Status: REBALANCE_COMPLETE**
 
-- Timestamp UTC: 2026-08-16T12:34:54.813766+00:00
+- Timestamp UTC: 2026-08-17T15:29:18.082538+00:00
 - Paper endpoint only: **https://paper-api.alpaca.markets**
 - Design capital: **$2,500.00**
 - Live-money trading: **LOCKED**
 - Paper equity: **$2,500.00**
-- Market open: **False**
+- Market open: **True**
 
 ## Capital fit
 - Gate: **PASS**
@@ -27,6 +27,18 @@
 - XLU: -1 shares
 - XLV: +0.373424 shares
 - XLY: -1 shares
+
+## Orders
+- BIL: buy 11.606948 — filled
+- IWM: buy 0.858513 — filled
+- QQQ: buy 0.20436 — filled
+- SPY: buy 0.371074 — filled
+- XLE: buy 3.466648 — filled
+- XLK: buy 0.328904 — filled
+- XLP: buy 1.724978 — filled
+- XLU: sell 1 — filled
+- XLV: buy 0.373424 — filled
+- XLY: sell 1 — filled
 
 This workflow can trade only the dedicated $2,500 Alpaca paper account credentials. It contains no live Trading API endpoint.
 Paper trading is simulated and does not guarantee live results.
