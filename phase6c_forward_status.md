@@ -2,17 +2,17 @@
 
 **Status: FORWARD_TEST_ACCUMULATING**
 
-- Timestamp UTC: 2026-08-17T20:38:50.741248+00:00
+- Timestamp UTC: 2026-08-17T21:36:38.836594+00:00
 - Paper endpoint only: **https://paper-api.alpaca.markets**
 - Real-money trading: **LOCKED**
 - Baseline: **2026-08-14T15:33:00.739322+00:00** at **$100,000.00**
-- Current equity: **$100,000.60**
+- Current equity: **$100,004.89**
 - Trading days observed: **2 / 126**
 - Rebalances observed: **1 / 6**
 
 ## Forward performance
 - Cumulative return: **+0.00%**
-- Max drawdown: **0.06%**
+- Max drawdown: **0.05%**
 - Positive completed months: **0.0%**
 - Worst completed month: **+0.00%**
 
