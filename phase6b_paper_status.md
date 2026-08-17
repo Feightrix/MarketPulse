@@ -2,18 +2,18 @@
 
 **Status: CURRENT_MONTH_ALREADY_REBALANCED**
 
-- Timestamp UTC: 2026-08-14T16:01:27.845525+00:00
+- Timestamp UTC: 2026-08-17T15:34:45.698210+00:00
 - Paper endpoint only: **https://paper-api.alpaca.markets**
-- Paper equity: **$100,045.55**
+- Paper equity: **$100,031.46**
 - Market open: **True**
 - Signal date: **2026-08-14**
 
 ## Target weights
 - BIL: +42.50%
 - SPY: +11.52%
-- IWM: +10.49%
-- XLE: +8.58%
-- QQQ: +5.97%
+- IWM: +10.48%
+- XLE: +8.59%
+- QQQ: +5.98%
 - XLP: +5.94%
 - XLK: +2.50%
 - XLV: +2.50%
