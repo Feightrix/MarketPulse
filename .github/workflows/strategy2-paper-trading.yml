@@ -85,3 +85,5 @@ jobs:
             git commit -m "Update Strategy 2 $2500 paper status"
             git push origin main
           fi
+
+# Bootstrap trigger: 2026-08-18
