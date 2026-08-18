@@ -1,0 +1,88 @@
+name: MarketPulse Phase 6F $2500 Forward Monitor
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - phase6f_monitor.py
+      - .github/workflows/phase6f-2500-forward-monitor.yml
+      - phase6f.html
+  workflow_dispatch:
+  schedule:
+    # Two runs handle EDT/EST safely. Daily snapshots are idempotent by Eastern date.
+    - cron: '10 20 * * 1-5'
+    - cron: '10 21 * * 1-5'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: phase6f-2500-forward-monitor
+  cancel-in-progress: false
+
+jobs:
+  monitor-2500:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install numpy
+
+      - name: Security check — read-only dedicated $2500 paper account
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s = Path('phase6f_monitor.py').read_text()
+          assert 'https://paper-api.alpaca.markets' in s
+          assert 'https://api.alpaca.markets' not in s
+          assert 'ALPACA_2500_PAPER_API_KEY_ID' in s
+          assert 'ALPACA_2500_PAPER_API_SECRET_KEY' in s
+          assert 'method="GET"' in s
+          assert 'method="POST"' not in s
+          assert 'method="DELETE"' not in s
+          assert 'method="PATCH"' not in s
+          print('Phase 6F read-only $2,500 paper invariant: PASS')
+          PY
+
+      - name: Syntax check Phase 6F
+        run: python -m py_compile phase6f_monitor.py
+
+      - name: Run Phase 6F $2500 forward monitor
+        env:
+          ALPACA_2500_PAPER_API_KEY_ID: ${{ secrets.ALPACA_2500_PAPER_API_KEY_ID }}
+          ALPACA_2500_PAPER_API_SECRET_KEY: ${{ secrets.ALPACA_2500_PAPER_API_SECRET_KEY }}
+        run: python phase6f_monitor.py
+
+      - name: Commit Phase 6F status
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          mkdir -p /tmp/phase6f-output
+          for f in phase6f_2500_forward_status.json phase6f_2500_forward_status.md phase6f_2500_forward_log.jsonl phase6f_2500_forward_state.json; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/phase6f-output/$f"; fi
+          done
+          git fetch origin main
+          git reset --hard origin/main
+          for f in phase6f_2500_forward_status.json phase6f_2500_forward_status.md phase6f_2500_forward_log.jsonl phase6f_2500_forward_state.json; do
+            if [ -f "/tmp/phase6f-output/$f" ]; then
+              cp "/tmp/phase6f-output/$f" "$f"
+              git add "$f"
+            fi
+          done
+          if git diff --cached --quiet; then
+            echo "No Phase 6F state changes"
+          else
+            git commit -m "Update Phase 6F $2500 forward status"
+            git push origin main
+          fi
