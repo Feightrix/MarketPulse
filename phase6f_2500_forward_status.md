@@ -2,21 +2,23 @@
 
 **Status: FORWARD_TEST_ACCUMULATING**
 
-- Timestamp UTC: 2026-08-18T01:13:15.565250+00:00
-- Dedicated paper equity: **$2,499.99**
-- Daily P/L: **$-0.01 (-0.0004%)**
-- Cumulative P/L: **$-0.01 (-0.0004%)**
-- Max drawdown: **0.00%**
+- Timestamp UTC: 2026-08-18T01:15:43.575482+00:00
+- Official close equity: **$2,498.98**
+- Daily P/L: **$-1.02 (-0.0408%)**
+- Cumulative P/L: **$-1.02 (-0.0408%)**
+- Max drawdown: **0.04%**
 - Trading days: **1 / 126**
 - Rebalances: **1 / 6**
-- Operating-floor buffer: **$299.99** above $2,200
+- Close mark source: **Phase 6E post-close fallback**
+- Operating-floor buffer: **$298.98** above $2,200
 
 ## Execution
 - Filled orders: **10 / 10**
 - Fill rate: **100.0%**
 - Failed orders: **0**
-- Median adverse slippage: **26.08 bps**
-- 95th percentile adverse slippage: **90.77 bps**
+- Slippage reference: **IEX bid/ask midpoint nearest order submission**
+- Median adverse slippage: **0.43 bps**
+- 95th percentile adverse slippage: **1.39 bps**
 - Executed-portfolio tracking L1 error: **0.39%**
 - Current capital-fit gate: **PASS**
 
@@ -41,8 +43,8 @@
 - WAIT/FAIL — worst_completed_month_above_minus_2_5pct
 - PASS — fill_rate_at_least_99pct
 - PASS — zero_failed_orders
-- WAIT/FAIL — median_adverse_slippage_at_most_15bps
-- WAIT/FAIL — p95_adverse_slippage_at_most_30bps
+- PASS — median_adverse_slippage_at_most_15bps
+- PASS — p95_adverse_slippage_at_most_30bps
 - PASS — executed_portfolio_tracking_at_most_5pct
 - PASS — current_capital_fit_gate_pass
 - PASS — equity_at_or_above_2200_operating_floor

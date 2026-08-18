@@ -13,6 +13,7 @@
   },
   "baseline_equity": 2500.0,
   "baseline_utc": "2026-08-17T15:29:18.082538+00:00",
+  "close_mark_source": "Phase 6E post-close fallback",
   "current_capital_fit": {
     "checks": {
       "all_intended_net_shorts_represented": true,
@@ -31,7 +32,7 @@
     "target_net_exposure_pct": 85.0
   },
   "current_capital_fit_gate": "PASS",
-  "current_equity": 2499.99,
+  "current_equity": 2498.98,
   "executed_tracking_l1_error_pct": 0.385346399021386,
   "executed_weights": {
     "BIL": 0.42500000796799997,
@@ -49,12 +50,13 @@
     "failed_order_count": 0,
     "fill_rate_pct": 100.0,
     "filled_order_count": 10,
-    "measured_slippage_orders": 10,
-    "median_adverse_slippage_bps": 26.083776097429734,
+    "measured_slippage_orders": 9,
+    "median_adverse_slippage_bps": 0.42638468426225984,
     "order_count": 10,
-    "p95_adverse_slippage_bps": 90.76833480684303,
+    "p95_adverse_slippage_bps": 1.3860246157419984,
+    "slippage_reference": "IEX bid/ask midpoint nearest order submission",
     "terminal_order_count": 10,
-    "worst_adverse_slippage_bps": 94.80812641083358
+    "worst_adverse_slippage_bps": 1.5504800524790419
   },
   "gate_checks": {
     "cumulative_return_positive": false,
@@ -63,25 +65,25 @@
     "executed_portfolio_tracking_at_most_5pct": true,
     "fill_rate_at_least_99pct": true,
     "max_drawdown_at_most_5pct": true,
-    "median_adverse_slippage_at_most_15bps": false,
+    "median_adverse_slippage_at_most_15bps": true,
     "minimum_126_trading_days": false,
     "minimum_6_rebalances": false,
-    "p95_adverse_slippage_at_most_30bps": false,
+    "p95_adverse_slippage_at_most_30bps": true,
     "positive_month_rate_at_least_66_7pct": false,
     "worst_completed_month_above_minus_2_5pct": false,
     "zero_failed_orders": true
   },
   "live_trading_locked": true,
-  "operating_floor_buffer_dollars": 299.9899999999998,
+  "operating_floor_buffer_dollars": 298.98,
   "operating_floor_dollars": 2200.0,
   "paper_base": "https://paper-api.alpaca.markets",
   "performance": {
     "completed_months": 0,
-    "cumulative_pnl_dollars": -0.010000000000218279,
-    "cumulative_return_pct": -0.00040000000001150227,
-    "daily_pnl_dollars": -0.010000000000218279,
-    "daily_return_pct": -0.00040000000001150227,
-    "max_drawdown_pct": 0.00040000000001150227,
+    "cumulative_pnl_dollars": -1.0199999999999818,
+    "cumulative_return_pct": -0.040799999999996395,
+    "daily_pnl_dollars": -1.0199999999999818,
+    "daily_return_pct": -0.040799999999996395,
+    "max_drawdown_pct": 0.040799999999996395,
     "monthly_returns_pct": {},
     "positive_day_rate_pct": 0.0,
     "positive_month_rate_pct": 0.0,
@@ -165,5 +167,5 @@
   "rebalance_count": 1,
   "status": "FORWARD_TEST_ACCUMULATING",
   "strategy_parameters_frozen": true,
-  "timestamp_utc": "2026-08-18T01:13:15.565250+00:00"
+  "timestamp_utc": "2026-08-18T01:15:43.575482+00:00"
 }
