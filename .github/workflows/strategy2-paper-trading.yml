@@ -1,0 +1,87 @@
+name: MarketPulse Strategy 2 $2500 Paper Trading
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - strategy2_paper_trader.py
+      - .github/workflows/strategy2-paper-trading.yml
+  workflow_dispatch:
+  schedule:
+    # Weekdays during regular US market hours: 11:10 AM EDT / 10:10 AM EST.
+    # Five minutes after Strategy 1 reduces simultaneous status-push collisions.
+    - cron: '10 15 * * 1-5'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: strategy2-2500-paper-trading
+  cancel-in-progress: false
+
+jobs:
+  strategy2-paper:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install numpy pandas
+
+      - name: Security check — Strategy 2 dedicated paper only
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s = Path('strategy2_paper_trader.py').read_text()
+          assert 'ALPACA_STRATEGY2_API_KEY_ID' in s
+          assert 'ALPACA_STRATEGY2_SECRET_KEY' in s
+          assert 'https://api.alpaca.markets' not in s
+          assert 'DESIGN_CAPITAL = 2500.0' in s
+          assert 'WRONG_PAPER_ACCOUNT' in s
+          assert 'mps2-' in s
+          assert 'CONTROL_BASELINE_SIGNAL_DATE = "2026-08-17"' in s
+          print('Strategy 2 dedicated $2,500 paper invariants: PASS')
+          PY
+
+      - name: Syntax check Strategy 2
+        run: python -m py_compile strategy2_paper_trader.py
+
+      - name: Run Strategy 2 paper trader
+        env:
+          ALPACA_STRATEGY2_API_KEY_ID: ${{ secrets.ALPACA_STRATEGY2_API_KEY_ID }}
+          ALPACA_STRATEGY2_SECRET_KEY: ${{ secrets.ALPACA_STRATEGY2_SECRET_KEY }}
+        run: python strategy2_paper_trader.py
+
+      - name: Commit Strategy 2 status and state
+        if: always()
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          mkdir -p /tmp/strategy2-output
+          for f in strategy2_status.json strategy2_status.md strategy2_log.jsonl strategy2_state.json; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/strategy2-output/$f"; fi
+          done
+          git fetch origin main
+          git reset --hard origin/main
+          for f in strategy2_status.json strategy2_status.md strategy2_log.jsonl strategy2_state.json; do
+            if [ -f "/tmp/strategy2-output/$f" ]; then
+              cp "/tmp/strategy2-output/$f" "$f"
+              git add "$f"
+            fi
+          done
+          if git diff --cached --quiet; then
+            echo "No Strategy 2 state changes"
+          else
+            git commit -m "Update Strategy 2 $2500 paper status"
+            git push origin main
+          fi
