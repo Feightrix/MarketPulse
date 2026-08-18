@@ -1,79 +1,6 @@
 {
-  "account_equity": 2500.0,
+  "account_equity": 2499.86,
   "account_status": "ACTIVE",
-  "actions": [
-    {
-      "action": "buy",
-      "order_id": "7621c596-9dce-4f0a-b623-37cad0478bf3",
-      "qty": 11.601578,
-      "status": "filled",
-      "symbol": "BIL"
-    },
-    {
-      "action": "buy",
-      "order_id": "bbf79e4d-8481-4312-9abc-fb20ac7b5b30",
-      "qty": 0.859844,
-      "status": "filled",
-      "symbol": "IWM"
-    },
-    {
-      "action": "buy",
-      "order_id": "8a9e13bb-b314-41d7-8233-a6ebf27659a4",
-      "qty": 0.206149,
-      "status": "filled",
-      "symbol": "QQQ"
-    },
-    {
-      "action": "buy",
-      "order_id": "4a77f927-d868-48cd-a069-8587b4e84c87",
-      "qty": 0.372274,
-      "status": "filled",
-      "symbol": "SPY"
-    },
-    {
-      "action": "buy",
-      "order_id": "a5cf0726-17c4-4a50-af19-46c582be7098",
-      "qty": 3.45758,
-      "status": "filled",
-      "symbol": "XLE"
-    },
-    {
-      "action": "buy",
-      "order_id": "a103ec0c-987a-4650-bc03-9c5f7d52940a",
-      "qty": 0.328347,
-      "status": "filled",
-      "symbol": "XLK"
-    },
-    {
-      "action": "buy",
-      "order_id": "4fc047e5-4596-4ba8-b824-607c6af125f3",
-      "qty": 1.725328,
-      "status": "filled",
-      "symbol": "XLP"
-    },
-    {
-      "action": "sell",
-      "order_id": "4c1c683e-54d8-4843-aab5-b15bbe98b486",
-      "qty": 1,
-      "status": "filled",
-      "symbol": "XLU"
-    },
-    {
-      "action": "buy",
-      "order_id": "9fe42f4d-f99e-4d90-9028-fa692cde9aff",
-      "qty": 0.373942,
-      "status": "filled",
-      "symbol": "XLV"
-    },
-    {
-      "action": "sell",
-      "order_id": "f33ef33a-f97b-4ba8-9401-24060c38b9a2",
-      "qty": 1,
-      "status": "filled",
-      "symbol": "XLY"
-    }
-  ],
-  "baseline_source": "Strategy 1 control quantities from 2026-08-17",
   "capital_fit": {
     "checks": {
       "all_intended_net_shorts_represented": true,
@@ -84,60 +11,55 @@
       "single_short_weight_at_most_5pct": true
     },
     "gate": "PASS",
-    "l1_tracking_error_pct": 2.9388867982000004,
-    "largest_single_short_pct": 4.6692,
-    "represented_gross_exposure_pct": 96.3995132018,
-    "represented_net_exposure_pct": 83.52711320179999,
+    "l1_tracking_error_pct": 2.902385680612291,
+    "largest_single_short_pct": 4.669461489843431,
+    "represented_gross_exposure_pct": 96.43655998435912,
+    "represented_net_exposure_pct": 83.56343908958902,
     "target_gross_exposure_pct": 95.0,
     "target_net_exposure_pct": 85.0
   },
   "design_capital": 2500.0,
   "desired_quantities": {
-    "BIL": 11.601578,
-    "IWM": 0.859844,
-    "QQQ": 0.206149,
-    "SPY": 0.372274,
-    "XLE": 3.45758,
-    "XLK": 0.328347,
-    "XLP": 1.725328,
+    "BIL": 11.605664,
+    "IWM": 0.860146,
+    "QQQ": 0.206221,
+    "SPY": 0.372405,
+    "XLE": 3.458797,
+    "XLK": 0.328462,
+    "XLP": 1.725935,
     "XLU": -1.0,
-    "XLV": 0.373942,
+    "XLV": 0.374074,
     "XLY": -1.0
   },
   "experiment": "BASELINE_CLONE",
-  "final_positions": {
-    "BIL": 11.601578,
-    "IWM": 0.859844,
-    "QQQ": 0.206149,
-    "SPY": 0.372274,
-    "XLE": 3.45758,
-    "XLK": 0.328347,
-    "XLP": 1.725328,
-    "XLU": -1.0,
-    "XLV": 0.373942,
-    "XLY": -1.0
-  },
-  "last_rebalance_month": null,
+  "last_rebalance_month": "2026-08",
   "live_trading_locked": true,
   "market_open": true,
-  "neutral_sleeve": null,
+  "neutral_sleeve": {
+    "XLE": 0.16666666666666666,
+    "XLK": 0.16666666666666666,
+    "XLP": -0.16666666666666666,
+    "XLU": -0.16666666666666666,
+    "XLV": 0.16666666666666666,
+    "XLY": -0.16666666666666666
+  },
   "paper_base": "https://paper-api.alpaca.markets",
   "phase": "S2",
   "rebalance_count": 1,
   "represented_weights": {
-    "BIL": 0.42482658320399996,
-    "IWM": 0.10457422728000001,
-    "QQQ": 0.060190972722000004,
-    "SPY": 0.11505053515199999,
-    "XLE": 0.08656397288,
-    "XLK": 0.024989833476000003,
-    "XLP": 0.058447211328,
-    "XLU": -0.017669999999999998,
-    "XLV": 0.024989795975999998,
-    "XLY": -0.046692000000000004
+    "BIL": 0.4250000043522438,
+    "IWM": 0.10461681506164344,
+    "QQQ": 0.060215367198563116,
+    "SPY": 0.11509746589809028,
+    "XLE": 0.08659929125231014,
+    "XLK": 0.02499998589521013,
+    "XLP": 0.058471048438712564,
+    "XLU": -0.01767098957541622,
+    "XLV": 0.025000017272967287,
+    "XLY": -0.04669461489843431
   },
   "signal_date": "2026-08-17",
-  "status": "REBALANCE_COMPLETE",
+  "status": "CURRENT_MONTH_ALREADY_REBALANCED",
   "strategy": "2",
   "target_weights": {
     "BIL": 0.425,
@@ -145,13 +67,20 @@
     "QQQ": 0.06021541089438376,
     "SPY": 0.11509737409687856,
     "XLE": 0.08659929638829342,
-    "XLK": 0.025,
+    "XLK": 0.024999999999999998,
     "XLP": 0.05847106148362846,
-    "XLU": -0.025,
-    "XLV": 0.025,
-    "XLY": -0.025
+    "XLU": -0.024999999999999998,
+    "XLV": 0.024999999999999998,
+    "XLY": -0.024999999999999998
   },
-  "timestamp_utc": "2026-08-18T13:38:24.891146+00:00",
+  "timestamp_utc": "2026-08-18T13:39:22.637025+00:00",
   "trading_blocked": false,
-  "trend_sleeve": null
+  "trend_sleeve": {
+    "BIL": 0.5,
+    "IWM": 0.1230786554550774,
+    "QQQ": 0.0708416598757456,
+    "SPY": 0.13540867540809243,
+    "XLE": 0.07246976045681579,
+    "XLP": 0.09820124880426878
+  }
 }
