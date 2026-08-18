@@ -1,0 +1,11 @@
+{
+  "baseline_control_signal_date": "2026-08-17",
+  "baseline_equity": 2500.0,
+  "baseline_utc": "2026-08-18T13:38:24.891146+00:00",
+  "experiment": "BASELINE_CLONE",
+  "initialized": true,
+  "last_rebalance_month": "2026-08",
+  "last_rebalance_utc": "2026-08-18T13:38:24.891146+00:00",
+  "last_signal_date": "2026-08-17",
+  "rebalance_count": 1
+}
