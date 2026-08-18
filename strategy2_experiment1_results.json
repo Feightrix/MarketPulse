@@ -1,0 +1,130 @@
+{
+  "experiment": "S2-E1-RISK-CAP",
+  "single_changed_variable": "RISK_CAP",
+  "control_value": 0.5,
+  "candidate_value": 0.6,
+  "all_other_strategy_parameters": "frozen Phase 5H",
+  "transaction_cost_stress_bps": 10.0,
+  "control": {
+    "development_2008_2014": {
+      "final_equity": 3373.302629888502,
+      "total_return_pct": 34.93210519554009,
+      "cagr_pct": 4.375995559124624,
+      "max_drawdown_pct": 4.489927603899302,
+      "positive_month_rate_pct": 62.65060240963856,
+      "annual_returns_pct": {
+        "2008": 1.5338808113107616,
+        "2009": 1.1870703795105575,
+        "2010": 3.150842589658054,
+        "2011": 4.4576555826622455,
+        "2012": 2.4594052718504456,
+        "2013": 11.603006074824162,
+        "2014": 6.595411476700397
+      }
+    },
+    "validation_2015_2019": {
+      "final_equity": 2668.610396094787,
+      "total_return_pct": 6.744415843791485,
+      "cagr_pct": 1.3155312563084776,
+      "max_drawdown_pct": 6.836364336684553,
+      "positive_month_rate_pct": 57.6271186440678,
+      "annual_returns_pct": {
+        "2015": -3.353443661150546,
+        "2016": 0.9659157146350683,
+        "2017": 6.3208694734130155,
+        "2018": -2.4845912087818722,
+        "2019": 5.509660866942934
+      }
+    },
+    "holdout1_2020_2023": {
+      "final_equity": 2845.2278492886744,
+      "total_return_pct": 13.809113971546982,
+      "cagr_pct": 3.2958365634911058,
+      "max_drawdown_pct": 3.8016393300778772,
+      "positive_month_rate_pct": 55.319148936170215,
+      "annual_returns_pct": {
+        "2020": 5.270970787895357,
+        "2021": 4.840718612047579,
+        "2022": 0.7165858907731693,
+        "2023": 2.385258167952764
+      }
+    },
+    "holdout2_2024_2026": {
+      "final_equity": 3042.618760108698,
+      "total_return_pct": 21.704750404347916,
+      "cagr_pct": 7.931303116464683,
+      "max_drawdown_pct": 2.992799126578649,
+      "positive_month_rate_pct": 70.0,
+      "annual_returns_pct": {
+        "2024": 10.389746952227718,
+        "2025": 6.81786218123801,
+        "2026": 3.213120932322311
+      }
+    }
+  },
+  "candidate": {
+    "development_2008_2014": {
+      "final_equity": 3567.4736383853883,
+      "total_return_pct": 42.69894553541553,
+      "cagr_pct": 5.214408696003114,
+      "max_drawdown_pct": 5.231181507158467,
+      "positive_month_rate_pct": 62.65060240963856,
+      "annual_returns_pct": {
+        "2008": 1.5338808113107616,
+        "2009": 1.6502335667470058,
+        "2010": 3.3337333043940154,
+        "2011": 5.522801753192885,
+        "2012": 3.0612939051728683,
+        "2013": 13.855424372596104,
+        "2014": 8.059672307517097
+      }
+    },
+    "validation_2015_2019": {
+      "final_equity": 2700.3054389193844,
+      "total_return_pct": 8.012217556775369,
+      "cagr_pct": 1.5553563981495655,
+      "max_drawdown_pct": 7.861581826234454,
+      "positive_month_rate_pct": 61.016949152542374,
+      "annual_returns_pct": {
+        "2015": -4.076999938755033,
+        "2016": 1.4794741257866617,
+        "2017": 7.610330960249434,
+        "2018": -2.9815493512889035,
+        "2019": 6.282954695384357
+      }
+    },
+    "holdout1_2020_2023": {
+      "final_equity": 2857.1287434201527,
+      "total_return_pct": 14.285149736806101,
+      "cagr_pct": 3.403979105211219,
+      "max_drawdown_pct": 4.804628932237676,
+      "positive_month_rate_pct": 57.446808510638306,
+      "annual_returns_pct": {
+        "2020": 5.630764962701917,
+        "2021": 5.802340915328563,
+        "2022": 0.24337632107491736,
+        "2023": 2.0113310274131546
+      }
+    },
+    "holdout2_2024_2026": {
+      "final_equity": 3098.4248466554077,
+      "total_return_pct": 23.936993866216305,
+      "cagr_pct": 8.696239965088637,
+      "max_drawdown_pct": 3.554315883702286,
+      "positive_month_rate_pct": 70.0,
+      "annual_returns_pct": {
+        "2024": 11.533681018209485,
+        "2025": 7.5738146653615335,
+        "2026": 3.2971532109865587
+      }
+    }
+  },
+  "checks": {
+    "recent_holdout_return_improves": true,
+    "recent_holdout_drawdown_not_over_control_plus_1pp": true,
+    "prior_holdout_return_not_worse_by_more_than_1pp": true,
+    "prior_holdout_drawdown_not_over_control_plus_1pp": false
+  },
+  "gate": "FAIL",
+  "activate_candidate": false
+}
