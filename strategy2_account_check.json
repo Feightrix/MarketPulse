@@ -1,0 +1,13 @@
+{
+  "account_status": "ACTIVE",
+  "design_capital": 2500.0,
+  "equity": 2500.0,
+  "open_order_count": 0,
+  "order_submission_enabled": false,
+  "paper_base": "https://paper-api.alpaca.markets",
+  "position_count": 0,
+  "status": "PASS",
+  "strategy": "2",
+  "timestamp_utc": "2026-08-18T01:52:47.674724+00:00",
+  "trading_blocked": false
+}
