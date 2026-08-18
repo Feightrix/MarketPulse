@@ -18,8 +18,8 @@ Everything else remains frozen to the control strategy. Results below use 10 bps
 - Candidate: return +14.29% | CAGR +3.40% | DD 4.80%
 
 ## holdout2_2024_2026
-- Control: return +21.70% | CAGR +7.93% | DD 2.99%
-- Candidate: return +23.94% | CAGR +8.70% | DD 3.55%
+- Control: return +21.64% | CAGR +7.90% | DD 2.99%
+- Candidate: return +23.86% | CAGR +8.66% | DD 3.55%
 
 ## Predeclared activation checks
 - PASS — recent_holdout_return_improves
