@@ -1,3 +1,4 @@
+# Strategy 2 Experiment 1: one-variable risk-cap A/B test.
 import json
 import phase5h_sector_neutral_ensemble as base
 
