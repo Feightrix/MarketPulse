@@ -1,19 +1,19 @@
 {
   "actual_weights": {
-    "BIL": 0.42504813579254325,
-    "IWM": 0.1044436753747015,
-    "QQQ": 0.059680715522862096,
-    "SPY": 0.11468162072648291,
-    "XLE": 0.08705481261925048,
-    "XLK": 0.02501785407141629,
-    "XLP": 0.05842868851475406,
-    "XLU": -0.017672070688282755,
-    "XLV": 0.02495229140916564,
-    "XLY": -0.04670018680074721
+    "BIL": 0.4255997152297988,
+    "IWM": 0.10324506378291778,
+    "QQQ": 0.05873175848603184,
+    "SPY": 0.11406800640833081,
+    "XLE": 0.08841740062080705,
+    "XLK": 0.02444303073996195,
+    "XLP": 0.05909867547812156,
+    "XLU": -0.01764293581656153,
+    "XLV": 0.025378025032542304,
+    "XLY": -0.046604585961750274
   },
   "baseline_equity": 2500.0,
   "baseline_utc": "2026-08-17T15:29:18.082538+00:00",
-  "close_mark_source": "Phase 6E post-close fallback",
+  "close_mark_source": "Phase 6F 4pm ET close-window read",
   "current_capital_fit": {
     "checks": {
       "all_intended_net_shorts_represented": true,
@@ -24,16 +24,16 @@
       "single_short_weight_at_most_5pct": true
     },
     "gate": "PASS",
-    "l1_tracking_error_pct": 2.903421961960487,
-    "largest_single_short_pct": 4.671105811170958,
-    "represented_gross_exposure_pct": 96.43886025678476,
-    "represented_net_exposure_pct": 83.56120617391896,
+    "l1_tracking_error_pct": 2.910828202375635,
+    "largest_single_short_pct": 4.690091418224355,
+    "represented_gross_exposure_pct": 96.46937324114062,
+    "represented_net_exposure_pct": 83.53060983086428,
     "target_gross_exposure_pct": 95.0,
-    "target_net_exposure_pct": 85.0
+    "target_net_exposure_pct": 85.00000000000001
   },
   "current_capital_fit_gate": "PASS",
-  "current_equity": 2498.98,
-  "executed_tracking_l1_error_pct": 0.385346399021386,
+  "current_equity": 2496.75,
+  "executed_tracking_l1_error_pct": 0.8853000929472405,
   "executed_weights": {
     "BIL": 0.42500000796799997,
     "IWM": 0.10476949246799999,
@@ -74,20 +74,20 @@
     "zero_failed_orders": true
   },
   "live_trading_locked": true,
-  "operating_floor_buffer_dollars": 298.98,
+  "operating_floor_buffer_dollars": 296.75,
   "operating_floor_dollars": 2200.0,
   "paper_base": "https://paper-api.alpaca.markets",
   "performance": {
     "completed_months": 0,
-    "cumulative_pnl_dollars": -1.0199999999999818,
-    "cumulative_return_pct": -0.040799999999996395,
-    "daily_pnl_dollars": -1.0199999999999818,
-    "daily_return_pct": -0.040799999999996395,
-    "max_drawdown_pct": 0.040799999999996395,
+    "cumulative_pnl_dollars": -3.25,
+    "cumulative_return_pct": -0.12999999999999678,
+    "daily_pnl_dollars": -2.230000000000018,
+    "daily_return_pct": -0.08923640845465153,
+    "max_drawdown_pct": 0.12999999999999678,
     "monthly_returns_pct": {},
     "positive_day_rate_pct": 0.0,
     "positive_month_rate_pct": 0.0,
-    "trading_days": 1,
+    "trading_days": 2,
     "worst_completed_month_pct": 0.0
   },
   "phase": "6F",
@@ -101,71 +101,71 @@
     },
     "IWM": {
       "avg_entry_price": 303.618,
-      "current_price": 304.14,
-      "market_value": 261.108144,
+      "current_price": 300.26,
+      "market_value": 257.777113,
       "qty": 0.858513,
-      "unrealized_pl": 0.448144
+      "unrealized_pl": -2.882887
     },
     "QQQ": {
       "avg_entry_price": 734.344,
-      "current_price": 730.09,
-      "market_value": 149.201192,
+      "current_price": 717.55,
+      "market_value": 146.638518,
       "qty": 0.20436,
-      "unrealized_pl": -0.869348
+      "unrealized_pl": -3.432022
     },
     "SPY": {
       "avg_entry_price": 775.764,
-      "current_price": 772.63,
-      "market_value": 286.702905,
+      "current_price": 767.5,
+      "market_value": 284.799295,
       "qty": 0.371074,
-      "unrealized_pl": -1.162946
+      "unrealized_pl": -3.066556
     },
     "XLE": {
       "avg_entry_price": 62.11,
-      "current_price": 62.78,
-      "market_value": 217.636161,
+      "current_price": 63.68,
+      "market_value": 220.756145,
       "qty": 3.466648,
-      "unrealized_pl": 2.322654
+      "unrealized_pl": 5.442638
     },
     "XLK": {
       "avg_entry_price": 191.656,
-      "current_price": 190.16,
-      "market_value": 62.544385,
+      "current_price": 185.55,
+      "market_value": 61.028137,
       "qty": 0.328904,
-      "unrealized_pl": -0.49204
+      "unrealized_pl": -2.008288
     },
     "XLP": {
       "avg_entry_price": 84.8,
-      "current_price": 84.68,
-      "market_value": 146.071137,
+      "current_price": 85.54,
+      "market_value": 147.554618,
       "qty": 1.724978,
-      "unrealized_pl": -0.206997
+      "unrealized_pl": 1.276484
     },
     "XLU": {
       "avg_entry_price": 43.88,
-      "current_price": 44.18,
-      "market_value": -44.18,
+      "current_price": 44.05,
+      "market_value": -44.05,
       "qty": -1.0,
-      "unrealized_pl": -0.3
+      "unrealized_pl": -0.17
     },
     "XLV": {
       "avg_entry_price": 167.716,
-      "current_price": 167.05,
-      "market_value": 62.380479,
+      "current_price": 169.68,
+      "market_value": 63.362584,
       "qty": 0.373424,
-      "unrealized_pl": -0.248701
+      "unrealized_pl": 0.733404
     },
     "XLY": {
       "avg_entry_price": 117.26,
-      "current_price": 116.75,
-      "market_value": -116.75,
+      "current_price": 116.36,
+      "market_value": -116.36,
       "qty": -1.0,
-      "unrealized_pl": 0.51
+      "unrealized_pl": 0.9
     }
   },
   "promotion_is_review_only": true,
   "rebalance_count": 1,
   "status": "FORWARD_TEST_ACCUMULATING",
   "strategy_parameters_frozen": true,
-  "timestamp_utc": "2026-08-18T01:16:46.166551+00:00"
+  "timestamp_utc": "2026-08-18T20:35:43.417071+00:00"
 }
