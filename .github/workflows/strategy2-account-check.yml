@@ -1,0 +1,90 @@
+name: MarketPulse Strategy 2 Account Check
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - strategy2_account_check.py
+      - .github/workflows/strategy2-account-check.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: strategy2-account-check
+  cancel-in-progress: false
+
+jobs:
+  verify-strategy2:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Security check — Strategy 2 paper only
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s = Path('strategy2_account_check.py').read_text()
+          assert 'ALPACA_STRATEGY2_API_KEY_ID' in s
+          assert 'ALPACA_STRATEGY2_SECRET_KEY' in s
+          assert 'https://paper-api.alpaca.markets' in s
+          assert 'https://api.alpaca.markets' not in s
+          assert 'order_submission_enabled": False' in s
+          assert 'method="GET"' in s
+          print('Strategy 2 read-only paper invariants: PASS')
+          PY
+
+      - name: Syntax check Strategy 2 account verifier
+        run: python -m py_compile strategy2_account_check.py
+
+      - name: Verify Strategy 2 account
+        env:
+          ALPACA_STRATEGY2_API_KEY_ID: ${{ secrets.ALPACA_STRATEGY2_API_KEY_ID }}
+          ALPACA_STRATEGY2_SECRET_KEY: ${{ secrets.ALPACA_STRATEGY2_SECRET_KEY }}
+        run: python strategy2_account_check.py
+
+      - name: Fail if Strategy 2 account check did not pass
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          status = json.loads(Path('strategy2_account_check.json').read_text())
+          print(json.dumps(status, indent=2))
+          if status.get('status') != 'PASS':
+              raise SystemExit('Strategy 2 account verification BLOCKED')
+          PY
+
+      - name: Commit Strategy 2 verification status
+        if: always()
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          mkdir -p /tmp/strategy2-output
+          for f in strategy2_account_check.json strategy2_account_check.md; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/strategy2-output/$f"; fi
+          done
+          git fetch origin main
+          git reset --hard origin/main
+          for f in strategy2_account_check.json strategy2_account_check.md; do
+            if [ -f "/tmp/strategy2-output/$f" ]; then
+              cp "/tmp/strategy2-output/$f" "$f"
+              git add "$f"
+            fi
+          done
+          if git diff --cached --quiet; then
+            echo "No Strategy 2 status changes"
+          else
+            git commit -m "Update Strategy 2 account check"
+            git push origin main
+          fi
