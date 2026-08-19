@@ -8,7 +8,7 @@ on:
       - .github/workflows/strategy2-xlu-repair.yml
   workflow_dispatch:
   schedule:
-    # 9:35 AM EDT on weekdays. The script is idempotent and only acts on the exact known XLU drift.
+    # 9:35 AM EDT on weekdays. Order authorization is hard-expired in code after 2026-08-20.
     - cron: '35 13 * * 1-5'
 
 permissions:
@@ -45,8 +45,10 @@ jobs:
           assert 'ALPACA_STRATEGY2_SECRET_KEY' in s
           assert 'REPAIR_SYMBOL = "XLU"' in s
           assert 'REPAIR_EXPECTED_QTY = -1.0' in s
+          assert 'REPAIR_AUTHORIZED_LOCAL_DATE = "2026-08-20"' in s
           assert 'len(drift) == 1' in s
           assert 'if not clock.get("is_open")' in s
+          assert 'BLOCKED_AUTHORIZATION_EXPIRED' in s
           assert '"POST",\n        "/v2/orders"' in s
           assert '"qty": "1"' in s
           assert '"side": "sell"' in s
