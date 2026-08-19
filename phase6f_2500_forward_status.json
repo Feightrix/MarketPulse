@@ -24,10 +24,10 @@
       "single_short_weight_at_most_5pct": true
     },
     "gate": "PASS",
-    "l1_tracking_error_pct": 2.9817995454404187,
-    "largest_single_short_pct": 4.736587626970997,
-    "represented_gross_exposure_pct": 96.49137878055895,
-    "represented_net_exposure_pct": 83.50856931497597,
+    "l1_tracking_error_pct": 2.983059381609874,
+    "largest_single_short_pct": 4.744283176777456,
+    "represented_gross_exposure_pct": 96.50552453273271,
+    "represented_net_exposure_pct": 83.49445093813509,
     "target_gross_exposure_pct": 95.0,
     "target_net_exposure_pct": 85.0
   },
@@ -167,5 +167,5 @@
   "rebalance_count": 1,
   "status": "FORWARD_TEST_ACCUMULATING",
   "strategy_parameters_frozen": true,
-  "timestamp_utc": "2026-08-19T20:40:11.725317+00:00"
+  "timestamp_utc": "2026-08-19T21:36:53.459657+00:00"
 }
