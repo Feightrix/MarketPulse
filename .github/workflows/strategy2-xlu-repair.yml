@@ -1,0 +1,86 @@
+name: MarketPulse Strategy 2 One-Time XLU Repair
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - strategy2_xlu_repair.py
+      - .github/workflows/strategy2-xlu-repair.yml
+  workflow_dispatch:
+  schedule:
+    # 9:35 AM EDT on weekdays. The script is idempotent and only acts on the exact known XLU drift.
+    - cron: '35 13 * * 1-5'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: strategy2-xlu-repair
+  cancel-in-progress: false
+
+jobs:
+  repair-xlu:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Security check — exact one-symbol paper repair only
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s = Path('strategy2_xlu_repair.py').read_text()
+          assert 'https://paper-api.alpaca.markets' in s
+          assert 'https://api.alpaca.markets' not in s
+          assert 'ALPACA_STRATEGY2_API_KEY_ID' in s
+          assert 'ALPACA_STRATEGY2_SECRET_KEY' in s
+          assert 'REPAIR_SYMBOL = "XLU"' in s
+          assert 'REPAIR_EXPECTED_QTY = -1.0' in s
+          assert 'len(drift) == 1' in s
+          assert 'if not clock.get("is_open")' in s
+          assert '"POST",\n        "/v2/orders"' in s
+          assert '"qty": "1"' in s
+          assert '"side": "sell"' in s
+          assert '"extended_hours": False' in s
+          assert 'method="DELETE"' not in s
+          print('Strategy 2 one-time XLU repair invariants: PASS')
+          PY
+
+      - name: Syntax check
+        run: python -m py_compile strategy2_xlu_repair.py
+
+      - name: Run guarded XLU repair
+        env:
+          ALPACA_STRATEGY2_API_KEY_ID: ${{ secrets.ALPACA_STRATEGY2_API_KEY_ID }}
+          ALPACA_STRATEGY2_SECRET_KEY: ${{ secrets.ALPACA_STRATEGY2_SECRET_KEY }}
+        run: python strategy2_xlu_repair.py
+
+      - name: Commit repair status
+        if: always()
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          if [ ! -f strategy2_xlu_repair_status.json ]; then
+            echo 'Repair status file was not produced'
+            exit 1
+          fi
+          cp strategy2_xlu_repair_status.json /tmp/strategy2_xlu_repair_status.json
+          git fetch origin main
+          git reset --hard origin/main
+          cp /tmp/strategy2_xlu_repair_status.json strategy2_xlu_repair_status.json
+          git add strategy2_xlu_repair_status.json
+          if git diff --cached --quiet; then
+            echo "No repair status changes"
+          else
+            git commit -m "Update Strategy 2 XLU repair status"
+            git push origin main
+          fi
