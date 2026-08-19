@@ -1,0 +1,74 @@
+name: MarketPulse Read-Only Paper Reconciliation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - reconcile_paper_accounts.py
+      - .github/workflows/reconcile-paper-accounts.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: marketpulse-paper-reconciliation
+  cancel-in-progress: false
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Security check — GET only and paper only
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s = Path('reconcile_paper_accounts.py').read_text()
+          assert 'https://paper-api.alpaca.markets' in s
+          assert 'https://api.alpaca.markets' not in s
+          assert 'method="GET"' in s
+          assert 'method="POST"' not in s
+          assert 'method="DELETE"' not in s
+          assert 'ALPACA_2500_PAPER_API_KEY_ID' in s
+          assert 'ALPACA_STRATEGY2_API_KEY_ID' in s
+          print('Read-only reconciliation invariants: PASS')
+          PY
+
+      - name: Syntax check
+        run: python -m py_compile reconcile_paper_accounts.py
+
+      - name: Reconcile both paper accounts
+        env:
+          ALPACA_2500_PAPER_API_KEY_ID: ${{ secrets.ALPACA_2500_PAPER_API_KEY_ID }}
+          ALPACA_2500_PAPER_API_SECRET_KEY: ${{ secrets.ALPACA_2500_PAPER_API_SECRET_KEY }}
+          ALPACA_STRATEGY2_API_KEY_ID: ${{ secrets.ALPACA_STRATEGY2_API_KEY_ID }}
+          ALPACA_STRATEGY2_SECRET_KEY: ${{ secrets.ALPACA_STRATEGY2_SECRET_KEY }}
+        run: python reconcile_paper_accounts.py
+
+      - name: Commit sanitized reconciliation output
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          cp paper_account_reconciliation.json /tmp/paper_account_reconciliation.json
+          git fetch origin main
+          git reset --hard origin/main
+          cp /tmp/paper_account_reconciliation.json paper_account_reconciliation.json
+          git add paper_account_reconciliation.json
+          if git diff --cached --quiet; then
+            echo "No reconciliation changes"
+          else
+            git commit -m "Update paper account reconciliation"
+            git push origin main
+          fi
