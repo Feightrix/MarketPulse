@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - strategy2_paper_trader.py
+      - position_reconciliation_guard.py
       - .github/workflows/strategy2-paper-trading.yml
   workflow_dispatch:
   schedule:
@@ -43,6 +44,7 @@ jobs:
           python - <<'PY'
           from pathlib import Path
           s = Path('strategy2_paper_trader.py').read_text()
+          g = Path('position_reconciliation_guard.py').read_text()
           assert 'ALPACA_STRATEGY2_API_KEY_ID' in s
           assert 'ALPACA_STRATEGY2_SECRET_KEY' in s
           assert 'https://api.alpaca.markets' not in s
@@ -50,11 +52,30 @@ jobs:
           assert 'WRONG_PAPER_ACCOUNT' in s
           assert 'mps2-' in s
           assert 'CONTROL_BASELINE_SIGNAL_DATE = "2026-08-17"' in s
-          print('Strategy 2 dedicated $2,500 paper invariants: PASS')
+          assert 'https://paper-api.alpaca.markets' in g
+          assert 'https://api.alpaca.markets' not in g
+          assert 'method="GET"' in g
+          assert 'method="POST"' not in g
+          assert 'method="DELETE"' not in g
+          assert 'POSITION_DRIFT_BLOCKED' in g
+          print('Strategy 2 dedicated $2,500 paper + position guard invariants: PASS')
           PY
 
-      - name: Syntax check Strategy 2
-        run: python -m py_compile strategy2_paper_trader.py
+      - name: Syntax check Strategy 2 and position guard
+        run: python -m py_compile strategy2_paper_trader.py position_reconciliation_guard.py
+
+      - name: Reconcile actual Strategy 2 positions
+        env:
+          ALPACA_STRATEGY2_API_KEY_ID: ${{ secrets.ALPACA_STRATEGY2_API_KEY_ID }}
+          ALPACA_STRATEGY2_SECRET_KEY: ${{ secrets.ALPACA_STRATEGY2_SECRET_KEY }}
+        run: |
+          python position_reconciliation_guard.py \
+            --label "Strategy 2" \
+            --state-file strategy2_state.json \
+            --log-file strategy2_log.jsonl \
+            --status-file strategy2_status.json \
+            --key-env ALPACA_STRATEGY2_API_KEY_ID \
+            --secret-env ALPACA_STRATEGY2_SECRET_KEY
 
       - name: Run Strategy 2 paper trader
         env:
