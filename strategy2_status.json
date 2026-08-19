@@ -1,5 +1,5 @@
 {
-  "account_equity": 2546.73,
+  "account_equity": 2544.22,
   "account_status": "ACTIVE",
   "capital_fit": {
     "checks": {
@@ -45,6 +45,44 @@
   },
   "paper_base": "https://paper-api.alpaca.markets",
   "phase": "S2",
+  "position_reconciliation": {
+    "actual_positions": {
+      "BIL": 11.601578,
+      "IWM": 0.859844,
+      "QQQ": 0.206149,
+      "SPY": 0.372274,
+      "XLE": 3.45758,
+      "XLK": 0.328347,
+      "XLP": 1.725328,
+      "XLV": 0.373942,
+      "XLY": -1.0
+    },
+    "drift": [
+      {
+        "actual_qty": 0.0,
+        "delta_qty": 1.0,
+        "expected_qty": -1.0,
+        "symbol": "XLU"
+      }
+    ],
+    "expected_positions": {
+      "BIL": 11.601578,
+      "IWM": 0.859844,
+      "QQQ": 0.206149,
+      "SPY": 0.372274,
+      "XLE": 3.45758,
+      "XLK": 0.328347,
+      "XLP": 1.725328,
+      "XLU": -1.0,
+      "XLV": 0.373942,
+      "XLY": -1.0
+    },
+    "gate": "FAIL",
+    "source": "last successful rebalance final_positions"
+  },
+  "problems": [
+    "Broker positions differ from last successful rebalance: XLU expected -1, actual +0"
+  ],
   "rebalance_count": 1,
   "represented_weights": {
     "BIL": 0.4249999969843682,
@@ -59,7 +97,7 @@
     "XLY": -0.04652436654062268
   },
   "signal_date": "2026-08-19",
-  "status": "CURRENT_MONTH_ALREADY_REBALANCED",
+  "status": "POSITION_DRIFT_BLOCKED",
   "strategy": "2",
   "target_weights": {
     "BIL": 0.425,
@@ -73,7 +111,7 @@
     "XLV": 0.024999999999999998,
     "XLY": -0.024999999999999998
   },
-  "timestamp_utc": "2026-08-19T15:40:35.221783+00:00",
+  "timestamp_utc": "2026-08-19T21:09:36.602230+00:00",
   "trading_blocked": false,
   "trend_sleeve": {
     "BIL": 0.5,
