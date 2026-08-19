@@ -72,3 +72,5 @@ jobs:
             git commit -m "Update paper account reconciliation"
             git push origin main
           fi
+
+# Manual retrigger marker: 2026-08-19
