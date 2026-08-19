@@ -1,0 +1,40 @@
+{
+  "actual_positions": {
+    "BIL": 11.601578,
+    "IWM": 0.859844,
+    "QQQ": 0.206149,
+    "SPY": 0.372274,
+    "XLE": 3.45758,
+    "XLK": 0.328347,
+    "XLP": 1.725328,
+    "XLV": 0.373942,
+    "XLY": -1.0
+  },
+  "drift": [
+    {
+      "actual_qty": 0.0,
+      "delta_qty": 1.0,
+      "expected_qty": -1.0,
+      "symbol": "XLU"
+    }
+  ],
+  "expected_positions": {
+    "BIL": 11.601578,
+    "IWM": 0.859844,
+    "QQQ": 0.206149,
+    "SPY": 0.372274,
+    "XLE": 3.45758,
+    "XLK": 0.328347,
+    "XLP": 1.725328,
+    "XLU": -1.0,
+    "XLV": 0.373942,
+    "XLY": -1.0
+  },
+  "live_trading_locked": true,
+  "order_submitted": false,
+  "paper_base": "https://paper-api.alpaca.markets",
+  "repair_expected_qty": -1.0,
+  "repair_symbol": "XLU",
+  "status": "WAITING_FOR_MARKET_OPEN",
+  "timestamp_utc": "2026-08-19T21:18:21.666663+00:00"
+}
