@@ -33,8 +33,9 @@
   "live_trading_locked": true,
   "order_submitted": false,
   "paper_base": "https://paper-api.alpaca.markets",
+  "repair_authorized_local_date": "2026-08-20",
   "repair_expected_qty": -1.0,
   "repair_symbol": "XLU",
   "status": "WAITING_FOR_MARKET_OPEN",
-  "timestamp_utc": "2026-08-19T21:18:21.666663+00:00"
+  "timestamp_utc": "2026-08-19T21:19:29.489173+00:00"
 }
