@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - phase6e_2500_paper_trader.py
+      - position_reconciliation_guard.py
       - .github/workflows/phase6e-2500-paper-trading.yml
   workflow_dispatch:
   schedule:
@@ -42,16 +43,36 @@ jobs:
           python - <<'PY'
           from pathlib import Path
           s = Path('phase6e_2500_paper_trader.py').read_text()
+          g = Path('position_reconciliation_guard.py').read_text()
           assert 'ALPACA_2500_PAPER_API_KEY_ID' in s
           assert 'ALPACA_2500_PAPER_API_SECRET_KEY' in s
           assert 'https://api.alpaca.markets' not in s
           assert 'DESIGN_CAPITAL = 2500.0' in s
           assert 'WRONG_PAPER_ACCOUNT' in s
-          print('Phase 6E dedicated $2,500 paper invariants: PASS')
+          assert 'https://paper-api.alpaca.markets' in g
+          assert 'https://api.alpaca.markets' not in g
+          assert 'method="GET"' in g
+          assert 'method="POST"' not in g
+          assert 'method="DELETE"' not in g
+          assert 'POSITION_DRIFT_BLOCKED' in g
+          print('Phase 6E dedicated $2,500 paper + position guard invariants: PASS')
           PY
 
-      - name: Syntax check Phase 6E
-        run: python -m py_compile phase6e_2500_paper_trader.py
+      - name: Syntax check Phase 6E and position guard
+        run: python -m py_compile phase6e_2500_paper_trader.py position_reconciliation_guard.py
+
+      - name: Reconcile actual Control positions
+        env:
+          ALPACA_2500_PAPER_API_KEY_ID: ${{ secrets.ALPACA_2500_PAPER_API_KEY_ID }}
+          ALPACA_2500_PAPER_API_SECRET_KEY: ${{ secrets.ALPACA_2500_PAPER_API_SECRET_KEY }}
+        run: |
+          python position_reconciliation_guard.py \
+            --label "Strategy 1 / Control" \
+            --state-file phase6e_2500_state.json \
+            --log-file phase6e_2500_log.jsonl \
+            --status-file phase6e_2500_status.json \
+            --key-env ALPACA_2500_PAPER_API_KEY_ID \
+            --secret-env ALPACA_2500_PAPER_API_SECRET_KEY
 
       - name: Run Phase 6E $2500 paper trader
         env:
@@ -60,6 +81,7 @@ jobs:
         run: python phase6e_2500_paper_trader.py
 
       - name: Commit Phase 6E status and state
+        if: always()
         run: |
           git config user.name "MarketPulse Bot"
           git config user.email "actions@users.noreply.github.com"
