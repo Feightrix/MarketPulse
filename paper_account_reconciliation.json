@@ -1,14 +1,14 @@
 {
   "control": {
     "account": {
-      "buying_power": 7103.52,
+      "buying_power": 7103.37,
       "cash": 412.63,
-      "equity": 2499.34,
-      "initial_margin": 1205.77,
+      "equity": 2499.29,
+      "initial_margin": 1205.74,
       "last_equity": 2496.95677965,
-      "long_market_value": 2249.12,
-      "maintenance_margin": 723.46,
-      "portfolio_value": 2499.34,
+      "long_market_value": 2249.07,
+      "maintenance_margin": 723.45,
+      "portfolio_value": 2499.29,
       "short_market_value": -162.41,
       "status": "ACTIVE",
       "trading_blocked": false
@@ -42,24 +42,24 @@
       {
         "avg_entry_price": 734.344,
         "cost_basis": 150.07054,
-        "current_price": 716.0,
-        "market_value": 146.32176,
+        "current_price": 715.96,
+        "market_value": 146.313586,
         "qty": 0.20436,
         "side": "long",
         "symbol": "QQQ",
-        "unrealized_pl": -3.74878,
-        "unrealized_plpc": -0.02498
+        "unrealized_pl": -3.756954,
+        "unrealized_plpc": -0.02503
       },
       {
         "avg_entry_price": 775.764,
         "cost_basis": 287.865851,
-        "current_price": 768.79,
-        "market_value": 285.27798,
+        "current_price": 768.67,
+        "market_value": 285.233452,
         "qty": 0.371074,
         "side": "long",
         "symbol": "SPY",
-        "unrealized_pl": -2.587871,
-        "unrealized_plpc": -0.00899
+        "unrealized_pl": -2.632399,
+        "unrealized_plpc": -0.00914
       },
       {
         "avg_entry_price": 62.11,
@@ -339,18 +339,18 @@
         "transaction_time": "2026-08-17T15:29:41.831776Z"
       }
     ],
-    "timestamp_utc": "2026-08-19T20:17:31.390855+00:00"
+    "timestamp_utc": "2026-08-19T20:18:06.699698+00:00"
   },
   "strategy2": {
     "account": {
-      "buying_power": 7334.82,
+      "buying_power": 7334.67,
       "cash": 412.14,
-      "equity": 2544.43,
-      "initial_margin": 1184.54,
+      "equity": 2544.37,
+      "initial_margin": 1184.51,
       "last_equity": 2498.01630653,
-      "long_market_value": 2250.68,
-      "maintenance_margin": 710.72,
-      "portfolio_value": 2544.43,
+      "long_market_value": 2250.63,
+      "maintenance_margin": 710.71,
+      "portfolio_value": 2544.37,
       "short_market_value": -118.39,
       "status": "ACTIVE",
       "trading_blocked": false
@@ -373,35 +373,35 @@
       {
         "avg_entry_price": 302.336,
         "cost_basis": 259.961796,
-        "current_price": 301.5931,
-        "market_value": 259.323017,
+        "current_price": 301.57,
+        "market_value": 259.303155,
         "qty": 0.859844,
         "side": "long",
         "symbol": "IWM",
-        "unrealized_pl": -0.638779,
-        "unrealized_plpc": -0.00246
+        "unrealized_pl": -0.658641,
+        "unrealized_plpc": -0.00253
       },
       {
         "avg_entry_price": 721.042,
         "cost_basis": 148.642087,
-        "current_price": 716.0,
-        "market_value": 147.602684,
+        "current_price": 715.96,
+        "market_value": 147.594438,
         "qty": 0.206149,
         "side": "long",
         "symbol": "QQQ",
-        "unrealized_pl": -1.039403,
-        "unrealized_plpc": -0.00699
+        "unrealized_pl": -1.047649,
+        "unrealized_plpc": -0.00705
       },
       {
         "avg_entry_price": 768.818,
         "cost_basis": 286.210952,
-        "current_price": 768.79,
-        "market_value": 286.200528,
+        "current_price": 768.67,
+        "market_value": 286.155856,
         "qty": 0.372274,
         "side": "long",
         "symbol": "SPY",
-        "unrealized_pl": -0.010424,
-        "unrealized_plpc": -4e-05
+        "unrealized_pl": -0.055096,
+        "unrealized_plpc": -0.00019
       },
       {
         "avg_entry_price": 63.558677,
@@ -670,6 +670,6 @@
         "transaction_time": "2026-08-18T13:38:48.526376Z"
       }
     ],
-    "timestamp_utc": "2026-08-19T20:17:31.871753+00:00"
+    "timestamp_utc": "2026-08-19T20:18:08.363517+00:00"
   }
 }
