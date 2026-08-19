@@ -5,12 +5,14 @@ import urllib.error
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 PAPER_BASE = "https://paper-api.alpaca.markets"
 STATUS_FILE = "strategy2_xlu_repair_status.json"
 LOG_FILE = "strategy2_log.jsonl"
 REPAIR_SYMBOL = "XLU"
 REPAIR_EXPECTED_QTY = -1.0
+REPAIR_AUTHORIZED_LOCAL_DATE = "2026-08-20"
 QTY_TOLERANCE = 1e-5
 CLIENT_ORDER_ID = "mps2-repair-xlu-20260819"
 
@@ -49,6 +51,7 @@ def write_status(status, **extra):
         "live_trading_locked": True,
         "repair_symbol": REPAIR_SYMBOL,
         "repair_expected_qty": REPAIR_EXPECTED_QTY,
+        "repair_authorized_local_date": REPAIR_AUTHORIZED_LOCAL_DATE,
         "status": status,
         **extra,
     }
@@ -112,12 +115,10 @@ def main():
     actual = actual_positions(rows)
     drift = compare(expected, actual)
 
-    # Idempotent exit: if the XLU short has already returned and everything matches, do nothing.
     if not drift:
         write_status("ALREADY_REPAIRED", expected_positions=expected, actual_positions=actual, post_repair_reconciliation="PASS")
         return
 
-    # This authorization is deliberately narrow: only the known missing XLU short may be repaired.
     exact_known_drift = (
         len(drift) == 1
         and drift[0]["symbol"] == REPAIR_SYMBOL
@@ -132,6 +133,25 @@ def main():
     if not clock.get("is_open"):
         write_status(
             "WAITING_FOR_MARKET_OPEN",
+            expected_positions=expected,
+            actual_positions=actual,
+            drift=drift,
+            order_submitted=False,
+        )
+        return
+
+    clock_ts = str(clock.get("timestamp") or "")
+    try:
+        clock_dt = datetime.fromisoformat(clock_ts.replace("Z", "+00:00"))
+        repair_local_date = clock_dt.astimezone(ZoneInfo("America/New_York")).date().isoformat()
+    except Exception as e:
+        write_status("BLOCKED_CLOCK_DATE_PARSE", problem=str(e), clock_timestamp=clock_ts)
+        return
+
+    if repair_local_date != REPAIR_AUTHORIZED_LOCAL_DATE:
+        write_status(
+            "BLOCKED_AUTHORIZATION_EXPIRED",
+            repair_local_date=repair_local_date,
             expected_positions=expected,
             actual_positions=actual,
             drift=drift,
