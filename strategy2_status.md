@@ -2,32 +2,32 @@
 
 **Status: CURRENT_MONTH_ALREADY_REBALANCED**
 
-- Timestamp UTC: 2026-08-18T15:41:03.694864+00:00
+- Timestamp UTC: 2026-08-19T15:40:35.221783+00:00
 - Paper endpoint only: **https://paper-api.alpaca.markets**
 - Design capital: **$2,500.00**
 - Experiment: **BASELINE_CLONE**
 - Live-money trading: **LOCKED**
-- Paper equity: **$2,496.58**
+- Paper equity: **$2,546.73**
 - Market open: **True**
-- Signal date: **2026-08-18**
+- Signal date: **2026-08-19**
 
 ## Capital fit
 - Gate: **PASS**
-- L1 tracking error: **2.92%**
-- Net exposure: target **85.00%** / represented **83.52%**
-- Gross exposure: target **95.00%** / represented **96.48%**
-- Largest short: **4.70%**
+- L1 tracking error: **2.93%**
+- Net exposure: target **85.00%** / represented **83.62%**
+- Gross exposure: target **95.00%** / represented **96.38%**
+- Largest short: **4.65%**
 
 ## $2,500-sized quantities
-- BIL: +11.5892 shares
-- IWM: +0.856975 shares
-- QQQ: +0.208094 shares
-- SPY: +0.38351 shares
-- XLE: +3.39358 shares
-- XLK: +0.337467 shares
-- XLP: +1.68186 shares
+- BIL: +11.8213 shares
+- IWM: +0.918995 shares
+- QQQ: +0.212856 shares
+- SPY: +0.387028 shares
+- XLE: +3.3632 shares
+- XLK: +0.345704 shares
+- XLP: +1.59778 shares
 - XLU: -1 shares
-- XLV: +0.367339 shares
+- XLV: +0.364245 shares
 - XLY: -1 shares
 
 Strategy 2 is isolated to its dedicated Alpaca paper credentials and has no live Trading API endpoint.
