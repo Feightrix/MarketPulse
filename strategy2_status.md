@@ -1,34 +1,37 @@
-# MarketPulse Strategy 2 — $2,500 Paper Account
+# MarketPulse Strategy 2 — Exact Control Inverse Shadow
 
-**Status: CURRENT_MONTH_ALREADY_REBALANCED**
+**Status: EXACT_INVERSE_INITIALIZED**
 
-- Timestamp UTC: 2026-08-20T15:44:57.255176+00:00
-- Paper endpoint only: **https://paper-api.alpaca.markets**
-- Design capital: **$2,500.00**
-- Experiment: **BASELINE_CLONE**
-- Live-money trading: **LOCKED**
-- Paper equity: **$2,497.60**
-- Market open: **True**
+- Timestamp UTC: 2026-08-20T17:50:59.810589+00:00
+- Experiment: **EXACT_CONTROL_INVERSE_SHADOW**
+- Execution mode: **synthetic_fractional_short_shadow**
+- Exact inverse shadow equity: **$2,495.17**
+- Flat broker cash equity: **$2,495.17**
 - Signal date: **2026-08-20**
+- Gross exposure: **95.00%**
+- Net exposure: **-85.00%**
+- Live-money trading: **LOCKED**
 
-## Capital fit
-- Gate: **PASS**
-- L1 tracking error: **2.90%**
-- Net exposure: target **85.00%** / represented **83.56%**
-- Gross exposure: target **95.00%** / represented **96.44%**
-- Largest short: **4.67%**
+## Inversion rule
+Every Control target weight is multiplied by **-1.0**. Longs become equal-sized synthetic shorts; shorts become equal-sized synthetic longs.
+Fractional synthetic shorts are allowed in the shadow ledger so the inversion is exact rather than distorted by whole-share broker constraints.
 
-## $2,500-sized quantities
-- BIL: +11.592 shares
-- IWM: +0.907647 shares
-- QQQ: +0.211794 shares
-- SPY: +0.383985 shares
-- XLE: +3.26993 shares
-- XLK: +0.340811 shares
-- XLP: +1.58603 shares
-- XLU: -1 shares
-- XLV: +0.356698 shares
-- XLY: -1 shares
+## Exit-rule inversion
+- Control stop-loss rule: **NONE**
+- Control profit-target rule: **NONE**
+- Therefore there are no stop-loss / profit-target rules to reverse in this version.
 
-Strategy 2 is isolated to its dedicated Alpaca paper credentials and has no live Trading API endpoint.
-Paper trading is simulated and does not guarantee live results.
+## Current exact inverse target weights
+- BIL: -42.500%
+- SPY: -11.740%
+- IWM: -10.816%
+- XLE: -8.478%
+- QQQ: -6.026%
+- XLP: -5.440%
+- XLK: -2.500%
+- XLV: -2.500%
+- XLU: +2.500%
+- XLY: +2.500%
+
+The broker account is intentionally flat; Strategy 2 performance is measured by the synthetic exact-inverse NAV.
+This is a paper-research experiment, not a hedge and not a live-money strategy.
