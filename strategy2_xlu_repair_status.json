@@ -1,16 +1,67 @@
 {
-  "actual_positions": {
-    "BIL": 11.601578,
-    "IWM": 0.859844,
-    "QQQ": 0.206149,
-    "SPY": 0.372274,
-    "XLE": 3.45758,
-    "XLK": 0.328347,
-    "XLP": 1.725328,
-    "XLU": -1.0,
-    "XLV": 0.373942,
-    "XLY": -1.0
-  },
+  "actual_positions": {},
+  "drift": [
+    {
+      "actual_qty": 0.0,
+      "delta_qty": -11.601578,
+      "expected_qty": 11.601578,
+      "symbol": "BIL"
+    },
+    {
+      "actual_qty": 0.0,
+      "delta_qty": -0.859844,
+      "expected_qty": 0.859844,
+      "symbol": "IWM"
+    },
+    {
+      "actual_qty": 0.0,
+      "delta_qty": -0.206149,
+      "expected_qty": 0.206149,
+      "symbol": "QQQ"
+    },
+    {
+      "actual_qty": 0.0,
+      "delta_qty": -0.372274,
+      "expected_qty": 0.372274,
+      "symbol": "SPY"
+    },
+    {
+      "actual_qty": 0.0,
+      "delta_qty": -3.45758,
+      "expected_qty": 3.45758,
+      "symbol": "XLE"
+    },
+    {
+      "actual_qty": 0.0,
+      "delta_qty": -0.328347,
+      "expected_qty": 0.328347,
+      "symbol": "XLK"
+    },
+    {
+      "actual_qty": 0.0,
+      "delta_qty": -1.725328,
+      "expected_qty": 1.725328,
+      "symbol": "XLP"
+    },
+    {
+      "actual_qty": 0.0,
+      "delta_qty": 1.0,
+      "expected_qty": -1.0,
+      "symbol": "XLU"
+    },
+    {
+      "actual_qty": 0.0,
+      "delta_qty": -0.373942,
+      "expected_qty": 0.373942,
+      "symbol": "XLV"
+    },
+    {
+      "actual_qty": 0.0,
+      "delta_qty": 1.0,
+      "expected_qty": -1.0,
+      "symbol": "XLY"
+    }
+  ],
   "expected_positions": {
     "BIL": 11.601578,
     "IWM": 0.859844,
@@ -25,10 +76,9 @@
   },
   "live_trading_locked": true,
   "paper_base": "https://paper-api.alpaca.markets",
-  "post_repair_reconciliation": "PASS",
   "repair_authorized_local_date": "2026-08-20",
   "repair_expected_qty": -1.0,
   "repair_symbol": "XLU",
-  "status": "ALREADY_REPAIRED",
-  "timestamp_utc": "2026-08-20T14:08:42.721548+00:00"
+  "status": "BLOCKED_UNEXPECTED_DRIFT",
+  "timestamp_utc": "2026-08-20T23:49:59.790314+00:00"
 }
