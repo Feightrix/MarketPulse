@@ -1,11 +1,11 @@
 # MarketPulse Strategy 2 — Exact Control Inverse Shadow
 
-**Status: EXACT_INVERSE_INITIALIZED**
+**Status: EXACT_INVERSE_HOLD**
 
-- Timestamp UTC: 2026-08-20T17:50:59.810589+00:00
+- Timestamp UTC: 2026-08-20T17:51:32.081930+00:00
 - Experiment: **EXACT_CONTROL_INVERSE_SHADOW**
 - Execution mode: **synthetic_fractional_short_shadow**
-- Exact inverse shadow equity: **$2,495.17**
+- Exact inverse shadow equity: **$2,494.87**
 - Flat broker cash equity: **$2,495.17**
 - Signal date: **2026-08-20**
 - Gross exposure: **95.00%**
@@ -24,10 +24,10 @@ Fractional synthetic shorts are allowed in the shadow ledger so the inversion is
 ## Current exact inverse target weights
 - BIL: -42.500%
 - SPY: -11.740%
-- IWM: -10.816%
-- XLE: -8.478%
-- QQQ: -6.026%
-- XLP: -5.440%
+- IWM: -10.828%
+- XLE: -8.474%
+- QQQ: -6.023%
+- XLP: -5.435%
 - XLK: -2.500%
 - XLV: -2.500%
 - XLU: +2.500%
