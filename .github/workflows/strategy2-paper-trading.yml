@@ -1,27 +1,25 @@
-name: MarketPulse Strategy 2 $2500 Paper Trading
+name: MarketPulse Strategy 2 Exact Control Inverse Shadow
 
 on:
   push:
     branches: [main]
     paths:
-      - strategy2_paper_trader.py
-      - position_reconciliation_guard.py
+      - strategy2_inverse_shadow.py
       - .github/workflows/strategy2-paper-trading.yml
   workflow_dispatch:
   schedule:
-    # Weekdays during regular US market hours: 11:10 AM EDT / 10:10 AM EST.
-    # Five minutes after Strategy 1 reduces simultaneous status-push collisions.
+    # Same observation cadence as before: 11:10 AM EDT / 10:10 AM EST weekdays.
     - cron: '10 15 * * 1-5'
 
 permissions:
   contents: write
 
 concurrency:
-  group: strategy2-2500-paper-trading
+  group: strategy2-exact-inverse-shadow
   cancel-in-progress: false
 
 jobs:
-  strategy2-paper:
+  strategy2-inverse-shadow:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
@@ -39,72 +37,54 @@ jobs:
       - name: Install dependencies
         run: pip install numpy pandas
 
-      - name: Security check — Strategy 2 dedicated paper only
+      - name: Security check — exact inverse shadow, no broker orders
         run: |
           python - <<'PY'
           from pathlib import Path
-          s = Path('strategy2_paper_trader.py').read_text()
-          g = Path('position_reconciliation_guard.py').read_text()
+          s = Path('strategy2_inverse_shadow.py').read_text()
+          core = Path('phase6b_paper_trader.py').read_text()
+          assert 'EXACT_CONTROL_INVERSE_SHADOW' in s
+          assert 'synthetic_fractional_short_shadow' in s
+          assert 'return {s: -float(w)' in s
           assert 'ALPACA_STRATEGY2_API_KEY_ID' in s
           assert 'ALPACA_STRATEGY2_SECRET_KEY' in s
-          assert 'https://api.alpaca.markets' not in s
-          assert 'DESIGN_CAPITAL = 2500.0' in s
-          assert 'WRONG_PAPER_ACCOUNT' in s
-          assert 'mps2-' in s
-          assert 'CONTROL_BASELINE_SIGNAL_DATE = "2026-08-17"' in s
-          assert 'https://paper-api.alpaca.markets' in g
-          assert 'https://api.alpaca.markets' not in g
-          assert 'method="GET"' in g
-          assert 'method="POST"' not in g
-          assert 'method="DELETE"' not in g
-          assert 'POSITION_DRIFT_BLOCKED' in g
-          print('Strategy 2 dedicated $2,500 paper + position guard invariants: PASS')
+          assert 'core.api("POST"' not in s
+          assert 'core.api("DELETE"' not in s
+          assert 'submit_market' not in s
+          assert 'close_position' not in s
+          assert 'PAPER_BASE = "https://paper-api.alpaca.markets"' in core
+          print('Strategy 2 exact inverse shadow invariants: PASS')
           PY
 
-      - name: Syntax check Strategy 2 and position guard
-        run: python -m py_compile strategy2_paper_trader.py position_reconciliation_guard.py
+      - name: Syntax check
+        run: python -m py_compile strategy2_inverse_shadow.py
 
-      - name: Reconcile actual Strategy 2 positions
+      - name: Run exact inverse shadow
         env:
           ALPACA_STRATEGY2_API_KEY_ID: ${{ secrets.ALPACA_STRATEGY2_API_KEY_ID }}
           ALPACA_STRATEGY2_SECRET_KEY: ${{ secrets.ALPACA_STRATEGY2_SECRET_KEY }}
-        run: |
-          python position_reconciliation_guard.py \
-            --label "Strategy 2" \
-            --state-file strategy2_state.json \
-            --log-file strategy2_log.jsonl \
-            --status-file strategy2_status.json \
-            --key-env ALPACA_STRATEGY2_API_KEY_ID \
-            --secret-env ALPACA_STRATEGY2_SECRET_KEY
+        run: python strategy2_inverse_shadow.py
 
-      - name: Run Strategy 2 paper trader
-        env:
-          ALPACA_STRATEGY2_API_KEY_ID: ${{ secrets.ALPACA_STRATEGY2_API_KEY_ID }}
-          ALPACA_STRATEGY2_SECRET_KEY: ${{ secrets.ALPACA_STRATEGY2_SECRET_KEY }}
-        run: python strategy2_paper_trader.py
-
-      - name: Commit Strategy 2 status and state
+      - name: Commit Strategy 2 inverse status and state
         if: always()
         run: |
           git config user.name "MarketPulse Bot"
           git config user.email "actions@users.noreply.github.com"
-          mkdir -p /tmp/strategy2-output
-          for f in strategy2_status.json strategy2_status.md strategy2_log.jsonl strategy2_state.json; do
-            if [ -f "$f" ]; then cp "$f" "/tmp/strategy2-output/$f"; fi
+          mkdir -p /tmp/strategy2-inverse-output
+          for f in strategy2_status.json strategy2_status.md strategy2_inverse_state.json strategy2_inverse_log.jsonl; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/strategy2-inverse-output/$f"; fi
           done
           git fetch origin main
           git reset --hard origin/main
-          for f in strategy2_status.json strategy2_status.md strategy2_log.jsonl strategy2_state.json; do
-            if [ -f "/tmp/strategy2-output/$f" ]; then
-              cp "/tmp/strategy2-output/$f" "$f"
+          for f in strategy2_status.json strategy2_status.md strategy2_inverse_state.json strategy2_inverse_log.jsonl; do
+            if [ -f "/tmp/strategy2-inverse-output/$f" ]; then
+              cp "/tmp/strategy2-inverse-output/$f" "$f"
               git add "$f"
             fi
           done
           if git diff --cached --quiet; then
-            echo "No Strategy 2 state changes"
+            echo "No Strategy 2 inverse state changes"
           else
-            git commit -m "Update Strategy 2 $2500 paper status"
+            git commit -m "Update Strategy 2 exact inverse shadow"
             git push origin main
           fi
-
-# Bootstrap trigger: 2026-08-18
