@@ -1,0 +1,97 @@
+name: MarketPulse Strategy 2 Break-Even Trailing Monitor
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - strategy2_trailing_monitor.py
+      - .github/workflows/strategy2-trailing-monitor.yml
+  workflow_dispatch:
+  schedule:
+    # Hourly rolling monitor windows. The script checks Alpaca's market clock,
+    # so this covers both EDT and EST without trading outside regular hours.
+    - cron: '35 13-21 * * 1-5'
+
+permissions:
+  contents: write
+
+concurrency:
+  # Share Strategy 2's execution lock so the monthly inverse engine and the
+  # trailing monitor cannot write the same state/status files simultaneously.
+  group: strategy2-2500-paper-trading
+  cancel-in-progress: false
+
+jobs:
+  trailing-monitor:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 65
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install numpy pandas
+
+      - name: Security and experiment invariants
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s = Path('strategy2_trailing_monitor.py').read_text()
+          assert 'EXACT_CONTROL_INVERSE_WITH_BREAKEVEN_TRAIL' in s
+          assert 'ARM_PROFIT_PCT = 0.004' in s
+          assert 'BASE_TRAIL_PCT = 0.003' in s
+          assert 'TIGHTEN_PROFIT_PCT = 0.010' in s
+          assert 'TIGHT_TRAIL_PCT = 0.002' in s
+          assert 'STOP_EXECUTION_COST_BPS = 10.0' in s
+          assert 'ALPACA_STRATEGY2_API_KEY_ID' in s
+          assert 'ALPACA_STRATEGY2_SECRET_KEY' in s
+          assert 'feed": "iex"' in s
+          assert 'core.submit_market' not in s
+          assert 'core.close_position' not in s
+          assert 'core.api("POST"' not in s
+          assert 'core.api("DELETE"' not in s
+          assert 'https://api.alpaca.markets' not in s
+          assert 'Strategy 2 broker account must remain flat' in s
+          print('Strategy 2 exact-inverse trailing overlay invariants: PASS')
+          PY
+
+      - name: Syntax check
+        run: python -m py_compile strategy2_trailing_monitor.py
+
+      - name: Monitor exact inverse profit locks
+        env:
+          ALPACA_STRATEGY2_API_KEY_ID: ${{ secrets.ALPACA_STRATEGY2_API_KEY_ID }}
+          ALPACA_STRATEGY2_SECRET_KEY: ${{ secrets.ALPACA_STRATEGY2_SECRET_KEY }}
+        run: python strategy2_trailing_monitor.py
+
+      - name: Commit Strategy 2 trailing state
+        if: always()
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          mkdir -p /tmp/strategy2-trailing-output
+          for f in strategy2_inverse_state.json strategy2_status.json strategy2_status.md strategy2_inverse_log.jsonl; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/strategy2-trailing-output/$f"; fi
+          done
+          git fetch origin main
+          git reset --hard origin/main
+          for f in strategy2_inverse_state.json strategy2_status.json strategy2_status.md strategy2_inverse_log.jsonl; do
+            if [ -f "/tmp/strategy2-trailing-output/$f" ]; then
+              cp "/tmp/strategy2-trailing-output/$f" "$f"
+              git add "$f"
+            fi
+          done
+          if git diff --cached --quiet; then
+            echo "No Strategy 2 trailing changes"
+          else
+            git commit -m "Update Strategy 2 trailing monitor"
+            git push origin main
+          fi
