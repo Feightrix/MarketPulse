@@ -1,0 +1,80 @@
+name: MarketPulse Strategy 2 Transition to Exact Inverse Shadow
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - strategy2_inverse_transition.py
+      - .github/workflows/strategy2-inverse-transition.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: strategy2-inverse-transition
+  cancel-in-progress: false
+
+jobs:
+  flatten-strategy2:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install numpy pandas
+
+      - name: Security check — Strategy 2 paper transition only
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s = Path('strategy2_inverse_transition.py').read_text()
+          core = Path('phase6b_paper_trader.py').read_text()
+          assert 'ALPACA_STRATEGY2_API_KEY_ID' in s
+          assert 'ALPACA_STRATEGY2_SECRET_KEY' in s
+          assert 'https://api.alpaca.markets' not in s
+          assert 'PAPER_BASE = "https://paper-api.alpaca.markets"' in core
+          assert 'close_for_inverse_transition' in s
+          assert 'FLAT_READY_FOR_EXACT_INVERSE_SHADOW' in s
+          print('Strategy 2 inverse transition invariants: PASS')
+          PY
+
+      - name: Syntax check
+        run: python -m py_compile strategy2_inverse_transition.py
+
+      - name: Flatten Strategy 2 paper account
+        env:
+          ALPACA_STRATEGY2_API_KEY_ID: ${{ secrets.ALPACA_STRATEGY2_API_KEY_ID }}
+          ALPACA_STRATEGY2_SECRET_KEY: ${{ secrets.ALPACA_STRATEGY2_SECRET_KEY }}
+        run: python strategy2_inverse_transition.py
+
+      - name: Commit transition status
+        if: always()
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          if [ ! -f strategy2_inverse_transition_status.json ]; then
+            echo 'Transition status file was not produced'
+            exit 1
+          fi
+          cp strategy2_inverse_transition_status.json /tmp/strategy2_inverse_transition_status.json
+          git fetch origin main
+          git reset --hard origin/main
+          cp /tmp/strategy2_inverse_transition_status.json strategy2_inverse_transition_status.json
+          git add strategy2_inverse_transition_status.json
+          if git diff --cached --quiet; then
+            echo "No transition status changes"
+          else
+            git commit -m "Update Strategy 2 inverse transition status"
+            git push origin main
+          fi
