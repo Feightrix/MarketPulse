@@ -2,17 +2,17 @@
 
 **Status: FORWARD_TEST_ACCUMULATING**
 
-- Timestamp UTC: 2026-08-19T21:36:38.585963+00:00
+- Timestamp UTC: 2026-08-20T20:41:09.812693+00:00
 - Paper endpoint only: **https://paper-api.alpaca.markets**
 - Real-money trading: **LOCKED**
 - Baseline: **2026-08-14T15:33:00.739322+00:00** at **$100,000.00**
-- Current equity: **$100,029.39**
-- Trading days observed: **4 / 126**
+- Current equity: **$99,702.01**
+- Trading days observed: **5 / 126**
 - Rebalances observed: **1 / 6**
 
 ## Forward performance
-- Cumulative return: **+0.03%**
-- Max drawdown: **0.19%**
+- Cumulative return: **-0.30%**
+- Max drawdown: **0.35%**
 - Positive completed months: **0.0%**
 - Worst completed month: **+0.00%**
 
@@ -22,12 +22,12 @@
 - Failed orders: **0**
 - Median adverse slippage: **0.03 bps**
 - 95th percentile adverse slippage: **2.28 bps**
-- Current target tracking L1 error: **2.08%**
+- Current target tracking L1 error: **2.40%**
 
 ## Promotion gate
 - WAIT/FAIL — minimum_126_trading_days
 - WAIT/FAIL — minimum_6_rebalances
-- PASS — cumulative_return_positive
+- WAIT/FAIL — cumulative_return_positive
 - PASS — max_drawdown_at_most_5pct
 - WAIT/FAIL — positive_month_rate_at_least_66_7pct
 - WAIT/FAIL — worst_completed_month_above_minus_2_5pct
