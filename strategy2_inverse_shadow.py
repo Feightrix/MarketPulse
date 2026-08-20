@@ -216,3 +216,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Manual initialization trigger: 2026-08-20T13:50-04:00
