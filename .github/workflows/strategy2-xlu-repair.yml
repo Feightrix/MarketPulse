@@ -7,9 +7,6 @@ on:
       - strategy2_xlu_repair.py
       - .github/workflows/strategy2-xlu-repair.yml
   workflow_dispatch:
-  schedule:
-    # 9:35 AM EDT on weekdays. Order authorization is hard-expired in code after 2026-08-20.
-    - cron: '35 13 * * 1-5'
 
 permissions:
   contents: write
