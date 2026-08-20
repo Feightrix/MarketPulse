@@ -1,5 +1,5 @@
 {
-  "account_equity": 2544.22,
+  "account_equity": 2497.6,
   "account_status": "ACTIVE",
   "capital_fit": {
     "checks": {
@@ -11,24 +11,24 @@
       "single_short_weight_at_most_5pct": true
     },
     "gate": "PASS",
-    "l1_tracking_error_pct": 2.9290803071890337,
-    "largest_single_short_pct": 4.652436654062268,
-    "represented_gross_exposure_pct": 96.37582016389644,
-    "represented_net_exposure_pct": 83.62417393520319,
+    "l1_tracking_error_pct": 2.903599209420091,
+    "largest_single_short_pct": 4.671684817424728,
+    "represented_gross_exposure_pct": 96.43978993173447,
+    "represented_net_exposure_pct": 83.56022554992792,
     "target_gross_exposure_pct": 95.0,
     "target_net_exposure_pct": 85.0
   },
   "design_capital": 2500.0,
   "desired_quantities": {
-    "BIL": 11.821322,
-    "IWM": 0.918995,
-    "QQQ": 0.212856,
-    "SPY": 0.387028,
-    "XLE": 3.363198,
-    "XLK": 0.345704,
-    "XLP": 1.597779,
+    "BIL": 11.592006,
+    "IWM": 0.907647,
+    "QQQ": 0.211794,
+    "SPY": 0.383985,
+    "XLE": 3.269928,
+    "XLK": 0.340811,
+    "XLP": 1.586025,
     "XLU": -1.0,
-    "XLV": 0.364245,
+    "XLV": 0.356698,
     "XLY": -1.0
   },
   "experiment": "BASELINE_CLONE",
@@ -45,80 +45,42 @@
   },
   "paper_base": "https://paper-api.alpaca.markets",
   "phase": "S2",
-  "position_reconciliation": {
-    "actual_positions": {
-      "BIL": 11.601578,
-      "IWM": 0.859844,
-      "QQQ": 0.206149,
-      "SPY": 0.372274,
-      "XLE": 3.45758,
-      "XLK": 0.328347,
-      "XLP": 1.725328,
-      "XLV": 0.373942,
-      "XLY": -1.0
-    },
-    "drift": [
-      {
-        "actual_qty": 0.0,
-        "delta_qty": 1.0,
-        "expected_qty": -1.0,
-        "symbol": "XLU"
-      }
-    ],
-    "expected_positions": {
-      "BIL": 11.601578,
-      "IWM": 0.859844,
-      "QQQ": 0.206149,
-      "SPY": 0.372274,
-      "XLE": 3.45758,
-      "XLK": 0.328347,
-      "XLP": 1.725328,
-      "XLU": -1.0,
-      "XLV": 0.373942,
-      "XLY": -1.0
-    },
-    "gate": "FAIL",
-    "source": "last successful rebalance final_positions"
-  },
-  "problems": [
-    "Broker positions differ from last successful rebalance: XLU expected -1, actual +0"
-  ],
   "rebalance_count": 1,
   "represented_weights": {
-    "BIL": 0.4249999969843682,
-    "IWM": 0.10918688164823126,
-    "QQQ": 0.05996790057838876,
-    "SPY": 0.11710243947336386,
-    "XLE": 0.0844520275411999,
-    "XLK": 0.025000021863330623,
-    "XLP": 0.05429072016468177,
-    "XLU": -0.017233864602843648,
-    "XLV": 0.024999982241933772,
-    "XLY": -0.04652436654062268
+    "BIL": 0.4249999957639333,
+    "IWM": 0.10820826822549648,
+    "QQQ": 0.060248846516656,
+    "SPY": 0.11768611378923768,
+    "XLE": 0.08444520980140936,
+    "XLK": 0.02499999331758488,
+    "XLP": 0.05441165603979821,
+    "XLU": -0.017680973734785395,
+    "XLV": 0.024999993954196033,
+    "XLY": -0.04671684817424728
   },
-  "signal_date": "2026-08-19",
-  "status": "POSITION_DRIFT_BLOCKED",
+  "signal_date": "2026-08-20",
+  "status": "CURRENT_MONTH_ALREADY_REBALANCED",
   "strategy": "2",
   "target_weights": {
     "BIL": 0.425,
-    "IWM": 0.10918690874191604,
-    "QQQ": 0.05996780305059551,
-    "SPY": 0.11710255692528761,
-    "XLE": 0.08445201638807427,
+    "IWM": 0.10820821389988235,
+    "QQQ": 0.060248805025120505,
+    "SPY": 0.11768611694816546,
+    "XLE": 0.08444520933935935,
     "XLK": 0.024999999999999998,
-    "XLP": 0.05429071489412653,
+    "XLP": 0.05441165478747234,
     "XLU": -0.024999999999999998,
     "XLV": 0.024999999999999998,
     "XLY": -0.024999999999999998
   },
-  "timestamp_utc": "2026-08-19T21:09:36.602230+00:00",
+  "timestamp_utc": "2026-08-20T15:44:57.255176+00:00",
   "trading_blocked": false,
   "trend_sleeve": {
     "BIL": 0.5,
-    "IWM": 0.12845518675519535,
-    "QQQ": 0.07055035653011237,
-    "SPY": 0.13776771402975013,
-    "XLE": 0.06994354869185208,
-    "XLP": 0.09328319399309003
+    "IWM": 0.12730378105868512,
+    "QQQ": 0.07088094708837707,
+    "SPY": 0.13845425523313584,
+    "XLE": 0.06993554039924631,
+    "XLP": 0.09342547622055569
   }
 }
