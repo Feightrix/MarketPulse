@@ -1,0 +1,73 @@
+{
+  "account_equity": 2495.17,
+  "actions": [
+    {
+      "action": "close_for_inverse_transition",
+      "order_id": "b5e679b7-d403-4f29-996c-ba85cbc5c820",
+      "status": "filled",
+      "symbol": "BIL"
+    },
+    {
+      "action": "close_for_inverse_transition",
+      "order_id": "e6fbce07-8181-4c4a-9a0f-bf9867bfe83c",
+      "status": "filled",
+      "symbol": "IWM"
+    },
+    {
+      "action": "close_for_inverse_transition",
+      "order_id": "367f6dd0-b842-44f0-ae67-b5ce4127dd65",
+      "status": "filled",
+      "symbol": "QQQ"
+    },
+    {
+      "action": "close_for_inverse_transition",
+      "order_id": "1c2b4bb1-f017-4eeb-8d56-d1c92b83fe5c",
+      "status": "filled",
+      "symbol": "SPY"
+    },
+    {
+      "action": "close_for_inverse_transition",
+      "order_id": "4f60e7df-89cf-4fe2-825f-691beda80636",
+      "status": "filled",
+      "symbol": "XLE"
+    },
+    {
+      "action": "close_for_inverse_transition",
+      "order_id": "1cf4d1cf-b5e5-458f-9c78-bcbba182455b",
+      "status": "filled",
+      "symbol": "XLK"
+    },
+    {
+      "action": "close_for_inverse_transition",
+      "order_id": "516f10de-7349-47fe-b3e5-c20dbe0f50a4",
+      "status": "filled",
+      "symbol": "XLP"
+    },
+    {
+      "action": "close_for_inverse_transition",
+      "order_id": "86badf45-3d1e-4819-b0a6-2e7c767a89eb",
+      "status": "filled",
+      "symbol": "XLU"
+    },
+    {
+      "action": "close_for_inverse_transition",
+      "order_id": "8e4058d8-d636-4abb-9e80-02e086e2f9e2",
+      "status": "filled",
+      "symbol": "XLV"
+    },
+    {
+      "action": "close_for_inverse_transition",
+      "order_id": "96348c86-adc5-4197-bee7-2a2b7b4622a7",
+      "status": "filled",
+      "symbol": "XLY"
+    }
+  ],
+  "cash": 2495.17,
+  "final_positions": {},
+  "live_trading_locked": true,
+  "order_submitted": true,
+  "paper_base": "https://paper-api.alpaca.markets",
+  "status": "FLAT_READY_FOR_EXACT_INVERSE_SHADOW",
+  "timestamp_utc": "2026-08-20T17:48:57.184619+00:00",
+  "transition": "STRATEGY2_BASELINE_TO_EXACT_INVERSE_SHADOW"
+}
