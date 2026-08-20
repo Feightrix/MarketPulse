@@ -2,19 +2,20 @@
   "activation_equity": 2495.17,
   "activation_utc": "2026-08-20T17:50:59.810589+00:00",
   "cash": 4616.0645,
-  "experiment": "EXACT_CONTROL_INVERSE_SHADOW",
+  "experiment": "EXACT_CONTROL_INVERSE_WITH_BREAKEVEN_TRAIL",
   "initialized": true,
+  "last_monitor_utc": "2026-08-20T23:49:45.895754+00:00",
   "last_prices": {
     "BIL": 91.575,
-    "IWM": 297.885,
-    "QQQ": 711.34,
-    "SPY": 764.945,
-    "XLE": 63.9,
-    "XLK": 183.43,
-    "XLP": 85.7,
-    "XLU": 43.99,
-    "XLV": 173.91,
-    "XLY": 116.665
+    "IWM": 297.61,
+    "QQQ": 710.84,
+    "SPY": 762.72,
+    "XLE": 63.76,
+    "XLK": 183.3,
+    "XLP": 85.33,
+    "XLU": 43.77,
+    "XLV": 172.42,
+    "XLY": 116.67
   },
   "last_rebalance_month": "2026-08",
   "last_signal_date": "2026-08-20",
@@ -31,7 +32,7 @@
     "XLY": 0.5346869240989157
   },
   "rebalance_count": 1,
-  "shadow_equity": 2494.870784171653,
+  "shadow_equity": 2497.397205412142,
   "target_weights": {
     "BIL": -0.425,
     "IWM": -0.10827553332997425,
@@ -43,5 +44,45 @@
     "XLU": 0.024999999999999998,
     "XLV": -0.024999999999999998,
     "XLY": 0.024999999999999998
-  }
+  },
+  "trailing_armed": {
+    "BIL": false,
+    "IWM": false,
+    "QQQ": false,
+    "SPY": false,
+    "XLE": false,
+    "XLK": false,
+    "XLP": false,
+    "XLU": false,
+    "XLV": false,
+    "XLY": false
+  },
+  "trailing_best_prices": {
+    "BIL": 91.575,
+    "IWM": 297.61,
+    "QQQ": 710.84,
+    "SPY": 762.72,
+    "XLE": 63.76,
+    "XLK": 183.3,
+    "XLP": 85.33,
+    "XLU": 43.77,
+    "XLV": 172.42,
+    "XLY": 116.67
+  },
+  "trailing_cycle_month": "2026-08",
+  "trailing_entry_prices": {
+    "BIL": 91.575,
+    "IWM": 297.61,
+    "QQQ": 710.84,
+    "SPY": 762.72,
+    "XLE": 63.76,
+    "XLK": 183.3,
+    "XLP": 85.33,
+    "XLU": 43.77,
+    "XLV": 172.42,
+    "XLY": 116.67
+  },
+  "trailing_stop_events": [],
+  "trailing_stop_prices": {},
+  "trailing_stopped_symbols": {}
 }
