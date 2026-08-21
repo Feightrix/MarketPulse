@@ -1,5 +1,5 @@
 {
-  "account_equity": 2491.5642887788135,
+  "account_equity": 2492.225718224233,
   "account_status": "ACTIVE",
   "active_symbol_count": 7,
   "break_even_guaranteed": false,
@@ -64,7 +64,7 @@
     "XLV": -0.35883139668660835
   },
   "signal_date": "2026-08-20",
-  "status": "TRAILING_STOP_TRIGGERED",
+  "status": "TRAILING_MONITOR_OK",
   "stop_loss_rule": "NONE_IN_CONTROL",
   "stopped_symbol_count": 3,
   "strategy": "2",
@@ -80,7 +80,7 @@
     "XLV": -0.024999999999999998,
     "XLY": 0.024999999999999998
   },
-  "timestamp_utc": "2026-08-21T16:00:34.549115+00:00",
+  "timestamp_utc": "2026-08-21T16:55:22.561532+00:00",
   "trading_blocked": false,
   "trailing_armed": {
     "BIL": false,
@@ -200,32 +200,5 @@
       "timestamp_utc": "2026-08-21T15:12:43.860509+00:00"
     }
   },
-  "triggered_this_run": [
-    {
-      "best_price": 118.37,
-      "entry_price": 116.67,
-      "modeled_execution_cost_bps": 10.0,
-      "modeled_exit_price": 117.99189,
-      "observed_trigger_price": 118.11,
-      "realized_return_pct": 1.1330161995371624,
-      "reason": "BREAKEVEN_TRAILING_STOP",
-      "side": "long",
-      "stop_price": 118.13326,
-      "symbol": "XLY",
-      "timestamp_utc": "2026-08-21T15:12:43.860509+00:00"
-    },
-    {
-      "best_price": 63.39,
-      "entry_price": 63.76,
-      "modeled_execution_cost_bps": 10.0,
-      "modeled_exit_price": 63.65859499999999,
-      "observed_trigger_price": 63.595,
-      "realized_return_pct": 0.1592950645549207,
-      "reason": "BREAKEVEN_TRAILING_STOP",
-      "side": "short",
-      "stop_price": 63.580169999999995,
-      "symbol": "XLE",
-      "timestamp_utc": "2026-08-21T15:14:46.106279+00:00"
-    }
-  ]
+  "triggered_this_run": []
 }

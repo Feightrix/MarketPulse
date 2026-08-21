@@ -1,8 +1,8 @@
 # MarketPulse Strategy 2 — Exact Inverse + Break-Even Trail
 
-**Status: TRAILING_STOP_TRIGGERED**
+**Status: TRAILING_MONITOR_OK**
 
-- Shadow equity: **$2,491.56**
+- Shadow equity: **$2,492.23**
 - Broker cash equity: **$2,495.10**
 - Active positions: **7**
 - Stopped this monthly cycle: **3**
