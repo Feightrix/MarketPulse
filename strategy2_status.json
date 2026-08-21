@@ -1,5 +1,5 @@
 {
-  "account_equity": 2491.6840948432537,
+  "account_equity": 2491.347220851131,
   "account_status": "ACTIVE",
   "active_symbol_count": 7,
   "break_even_guaranteed": false,
@@ -47,7 +47,7 @@
   "last_rebalance_month": "2026-08",
   "live_trading_locked": true,
   "market_open": true,
-  "monitor_samples": 55,
+  "monitor_samples": 52,
   "net_exposure_pct": -85.0,
   "paper_base": "https://paper-api.alpaca.markets",
   "phase": "S2",
@@ -80,7 +80,7 @@
     "XLV": -0.024999999999999998,
     "XLY": 0.024999999999999998
   },
-  "timestamp_utc": "2026-08-21T18:53:02.297273+00:00",
+  "timestamp_utc": "2026-08-21T20:00:29.610365+00:00",
   "trading_blocked": false,
   "trailing_armed": {
     "BIL": false,
