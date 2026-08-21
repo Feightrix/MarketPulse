@@ -4,12 +4,12 @@
   "cash": 4406.251092560541,
   "experiment": "EXACT_CONTROL_INVERSE_WITH_BREAKEVEN_TRAIL",
   "initialized": true,
-  "last_monitor_utc": "2026-08-21T20:00:53.706846+00:00",
+  "last_monitor_utc": "2026-08-21T20:52:02.766522+00:00",
   "last_prices": {
     "BIL": 91.6,
-    "IWM": 299.94,
-    "QQQ": 713.2,
-    "SPY": 765.59,
+    "IWM": 299.95,
+    "QQQ": 713.14,
+    "SPY": 765.55,
     "XLP": 85.985,
     "XLU": 42.755,
     "XLV": 174.615
@@ -26,7 +26,7 @@
     "XLV": -0.35883139668660835
   },
   "rebalance_count": 1,
-  "shadow_equity": 2491.3548820466385,
+  "shadow_equity": 2491.373828341417,
   "target_weights": {
     "BIL": -0.425,
     "IWM": -0.10827553332997425,
