@@ -1,5 +1,5 @@
 {
-  "account_equity": 2492.225718224233,
+  "account_equity": 2492.193276554487,
   "account_status": "ACTIVE",
   "active_symbol_count": 7,
   "break_even_guaranteed": false,
@@ -80,7 +80,7 @@
     "XLV": -0.024999999999999998,
     "XLY": 0.024999999999999998
   },
-  "timestamp_utc": "2026-08-21T16:55:22.561532+00:00",
+  "timestamp_utc": "2026-08-21T17:57:10.581444+00:00",
   "trading_blocked": false,
   "trailing_armed": {
     "BIL": false,

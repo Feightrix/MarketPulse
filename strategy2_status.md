@@ -2,7 +2,7 @@
 
 **Status: TRAILING_MONITOR_OK**
 
-- Shadow equity: **$2,492.23**
+- Shadow equity: **$2,492.19**
 - Broker cash equity: **$2,495.10**
 - Active positions: **7**
 - Stopped this monthly cycle: **3**
