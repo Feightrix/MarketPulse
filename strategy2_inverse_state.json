@@ -1,21 +1,20 @@
 {
   "activation_equity": 2495.17,
   "activation_utc": "2026-08-20T17:50:59.810589+00:00",
-  "cash": 4616.0645,
+  "cash": 4553.908816170979,
   "experiment": "EXACT_CONTROL_INVERSE_WITH_BREAKEVEN_TRAIL",
   "initialized": true,
-  "last_monitor_utc": "2026-08-20T23:49:45.895754+00:00",
+  "last_monitor_utc": "2026-08-21T15:02:07.828108+00:00",
   "last_prices": {
-    "BIL": 91.575,
-    "IWM": 297.61,
-    "QQQ": 710.84,
-    "SPY": 762.72,
-    "XLE": 63.76,
-    "XLK": 183.3,
-    "XLP": 85.33,
-    "XLU": 43.77,
-    "XLV": 172.42,
-    "XLY": 116.67
+    "BIL": 91.6,
+    "IWM": 298.73,
+    "QQQ": 712.02,
+    "SPY": 765.82,
+    "XLE": 63.64,
+    "XLP": 85.94,
+    "XLU": 43.215,
+    "XLV": 175.52,
+    "XLY": 118.23
   },
   "last_rebalance_month": "2026-08",
   "last_signal_date": "2026-08-20",
@@ -25,14 +24,13 @@
     "QQQ": -0.21145703744362856,
     "SPY": -0.38305977536318175,
     "XLE": -3.310573290898985,
-    "XLK": -0.3400711443057297,
     "XLP": -1.5840091615379506,
     "XLU": 1.4180325073880427,
     "XLV": -0.35883139668660835,
     "XLY": 0.5346869240989157
   },
   "rebalance_count": 1,
-  "shadow_equity": 2497.397205412142,
+  "shadow_equity": 2493.2006907043865,
   "target_weights": {
     "BIL": -0.425,
     "IWM": -0.10827553332997425,
@@ -51,23 +49,21 @@
     "QQQ": false,
     "SPY": false,
     "XLE": false,
-    "XLK": false,
     "XLP": false,
     "XLU": false,
     "XLV": false,
-    "XLY": false
+    "XLY": true
   },
   "trailing_best_prices": {
     "BIL": 91.575,
     "IWM": 297.61,
-    "QQQ": 710.84,
+    "QQQ": 709.36,
     "SPY": 762.72,
-    "XLE": 63.76,
-    "XLK": 183.3,
+    "XLE": 63.64,
     "XLP": 85.33,
     "XLU": 43.77,
     "XLV": 172.42,
-    "XLY": 116.67
+    "XLY": 118.23
   },
   "trailing_cycle_month": "2026-08",
   "trailing_entry_prices": {
@@ -76,13 +72,42 @@
     "QQQ": 710.84,
     "SPY": 762.72,
     "XLE": 63.76,
-    "XLK": 183.3,
     "XLP": 85.33,
     "XLU": 43.77,
     "XLV": 172.42,
     "XLY": 116.67
   },
-  "trailing_stop_events": [],
-  "trailing_stop_prices": {},
-  "trailing_stopped_symbols": {}
+  "trailing_stop_events": [
+    {
+      "best_price": 182.0,
+      "entry_price": 183.3,
+      "modeled_execution_cost_bps": 10.0,
+      "modeled_exit_price": 182.77258999999998,
+      "observed_trigger_price": 182.59,
+      "realized_return_pct": 0.2885607738009499,
+      "reason": "BREAKEVEN_TRAILING_STOP",
+      "side": "short",
+      "stop_price": 182.546,
+      "symbol": "XLK",
+      "timestamp_utc": "2026-08-21T14:26:49.655258+00:00"
+    }
+  ],
+  "trailing_stop_prices": {
+    "XLY": 117.99354000000001
+  },
+  "trailing_stopped_symbols": {
+    "XLK": {
+      "best_price": 182.0,
+      "entry_price": 183.3,
+      "modeled_execution_cost_bps": 10.0,
+      "modeled_exit_price": 182.77258999999998,
+      "observed_trigger_price": 182.59,
+      "realized_return_pct": 0.2885607738009499,
+      "reason": "BREAKEVEN_TRAILING_STOP",
+      "side": "short",
+      "stop_price": 182.546,
+      "symbol": "XLK",
+      "timestamp_utc": "2026-08-21T14:26:49.655258+00:00"
+    }
+  }
 }
