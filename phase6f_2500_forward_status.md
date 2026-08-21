@@ -2,15 +2,15 @@
 
 **Status: FORWARD_TEST_ACCUMULATING**
 
-- Timestamp UTC: 2026-08-20T21:39:40.502141+00:00
-- Official close equity: **$2,491.76**
-- Daily P/L: **$-7.54 (-0.3017%)**
-- Cumulative P/L: **$-8.24 (-0.3296%)**
+- Timestamp UTC: 2026-08-21T20:36:31.017752+00:00
+- Official close equity: **$2,496.53**
+- Daily P/L: **$+4.77 (+0.1914%)**
+- Cumulative P/L: **$-3.47 (-0.1388%)**
 - Max drawdown: **0.33%**
-- Trading days: **4 / 126**
+- Trading days: **5 / 126**
 - Rebalances: **1 / 6**
 - Close mark source: **Phase 6F 4pm ET close-window read**
-- Operating-floor buffer: **$291.76** above $2,200
+- Operating-floor buffer: **$296.53** above $2,200
 
 ## Execution
 - Filled orders: **10 / 10**
@@ -19,20 +19,20 @@
 - Slippage reference: **IEX bid/ask midpoint nearest order submission**
 - Median adverse slippage: **0.43 bps**
 - 95th percentile adverse slippage: **1.39 bps**
-- Executed-portfolio tracking L1 error: **1.23%**
+- Executed-portfolio tracking L1 error: **1.04%**
 - Current capital-fit gate: **PASS**
 
 ## Holdings
-- BIL: +11.6069 shares | value $+1,062.87 | unrealized $+0.25
-- IWM: +0.858513 shares | value $+255.42 | unrealized $-5.24
-- QQQ: +0.20436 shares | value $+145.29 | unrealized $-4.78
-- SPY: +0.371074 shares | value $+283.07 | unrealized $-4.79
-- XLE: +3.46665 shares | value $+221.07 | unrealized $+5.75
-- XLK: +0.328904 shares | value $+60.22 | unrealized $-2.82
-- XLP: +1.72498 shares | value $+147.31 | unrealized $+1.03
-- XLU: -1 shares | value $-43.89 | unrealized $-0.01
-- XLV: +0.373424 shares | value $+64.45 | unrealized $+1.82
-- XLY: -1 shares | value $-116.68 | unrealized $+0.58
+- BIL: +11.6069 shares | value $+1,063.20 | unrealized $+0.58
+- IWM: +0.858513 shares | value $+257.48 | unrealized $-3.18
+- QQQ: +0.20436 shares | value $+145.71 | unrealized $-4.36
+- SPY: +0.371074 shares | value $+284.03 | unrealized $-3.83
+- XLE: +3.46665 shares | value $+220.55 | unrealized $+5.23
+- XLK: +0.328904 shares | value $+60.30 | unrealized $-2.74
+- XLP: +1.72498 shares | value $+148.33 | unrealized $+2.05
+- XLU: -1 shares | value $-42.82 | unrealized $+1.06
+- XLV: +0.373424 shares | value $+65.14 | unrealized $+2.51
+- XLY: -1 shares | value $-118.02 | unrealized $-0.76
 
 ## Forward-test gate
 - WAIT/FAIL — minimum_126_trading_days
