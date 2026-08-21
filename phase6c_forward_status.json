@@ -1,19 +1,19 @@
 {
   "actual_weights": {
-    "BIL": 0.42634370406398076,
-    "IWM": 0.10297572887406925,
-    "QQQ": 0.05840087007797027,
-    "SPY": 0.11356473705217239,
-    "XLE": 0.0888947876150124,
-    "XLK": 0.024200429874395166,
-    "XLP": 0.05895524373354727,
-    "XLU": -0.02465763381552887,
-    "XLV": 0.025822066186978212,
-    "XLY": -0.0245722165116454
+    "BIL": 0.42548030763639905,
+    "IWM": 0.1035920981804585,
+    "QQQ": 0.058432808779296984,
+    "SPY": 0.11370606735958616,
+    "XLE": 0.08827326100166186,
+    "XLK": 0.024194267750387695,
+    "XLP": 0.059297858606043766,
+    "XLU": -0.023997844377977876,
+    "XLV": 0.02608623745801495,
+    "XLY": -0.024798258132535337
   },
   "baseline_date": "2026-08-14T15:33:00.739322+00:00",
   "baseline_equity": 100000.0,
-  "current_equity": 99717.5,
+  "current_equity": 99943.31,
   "execution": {
     "failed_order_count": 0,
     "fill_rate_pct": 100.0,
@@ -34,7 +34,7 @@
     "minimum_6_rebalances": false,
     "p95_adverse_slippage_at_most_30bps": true,
     "positive_month_rate_at_least_66_7pct": false,
-    "tracking_l1_error_at_most_8pct": true,
+    "tracking_l1_error_at_most_8pct": false,
     "worst_completed_month_above_minus_2_5pct": false,
     "zero_failed_orders": true
   },
@@ -42,12 +42,12 @@
   "paper_base": "https://paper-api.alpaca.markets",
   "performance": {
     "completed_months": 0,
-    "cumulative_return_pct": -0.28249999999999664,
+    "cumulative_return_pct": -0.05669000000000368,
     "max_drawdown_pct": 0.33824082190829774,
     "monthly_returns_pct": {},
-    "positive_day_rate_pct": 25.0,
+    "positive_day_rate_pct": 40.0,
     "positive_month_rate_pct": 0.0,
-    "trading_days": 5,
+    "trading_days": 6,
     "worst_month_pct": 0.0
   },
   "phase": "6C",
@@ -57,16 +57,17 @@
   "strategy_parameters_frozen": true,
   "target_weights": {
     "BIL": 0.425,
-    "IWM": 0.10820821389988235,
-    "QQQ": 0.060248805025120505,
-    "SPY": 0.11768611694816546,
-    "XLE": 0.08444520933935935,
+    "GLD": 0.0518116744605328,
+    "IWM": 0.092629479145404,
+    "QQQ": 0.05395977725181217,
+    "SPY": 0.1044151530050461,
+    "XLE": 0.07982162285392828,
     "XLK": 0.024999999999999998,
-    "XLP": 0.05441165478747234,
+    "XLP": 0.042362293283276634,
     "XLU": -0.024999999999999998,
     "XLV": 0.024999999999999998,
     "XLY": -0.024999999999999998
   },
-  "timestamp_utc": "2026-08-20T21:38:58.842092+00:00",
-  "tracking_l1_error_pct": 2.3930457140073917
+  "timestamp_utc": "2026-08-21T21:35:36.030927+00:00",
+  "tracking_l1_error_pct": 10.550161768162598
 }
