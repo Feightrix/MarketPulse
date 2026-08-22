@@ -1,0 +1,85 @@
+name: MarketPulse Strategy 2 Experiment 7 Long Martingale
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - strategy2_experiment7_long_martingale.py
+      - .github/workflows/strategy2-experiment7-long-martingale.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: strategy2-experiment7-long-martingale
+  cancel-in-progress: true
+
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install numpy pandas yfinance
+
+      - name: Verify locked martingale protocol
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s = Path('strategy2_experiment7_long_martingale.py').read_text()
+          assert 'INITIAL_FRACTION = 1.0 / 7.0' in s
+          assert 'ADD1_FRACTION = 2.0 / 7.0' in s
+          assert 'ADD2_FRACTION = 4.0 / 7.0' in s
+          assert 'ADD_TRIGGER_PCT = 0.02' in s
+          assert 'PROFIT_TARGET_PCT = 0.01' in s
+          assert 'MAX_TRANCHES = 3' in s
+          assert 'COST_BPS = 10.0' in s
+          assert 'long_only": True' in s
+          assert 'leverage": False' in s
+          assert 'broker_orders": False' in s
+          assert '/v2/orders' not in s
+          assert 'paper-api.alpaca.markets' not in s
+          assert 'api.alpaca.markets' not in s
+          print('Long-only martingale research invariants: PASS')
+          PY
+
+      - name: Syntax check
+        run: python -m py_compile strategy2_experiment7_long_martingale.py
+
+      - name: Run long-only martingale backtest
+        run: python strategy2_experiment7_long_martingale.py
+
+      - name: Commit Experiment 7 results
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          mkdir -p /tmp/s2e7
+          for f in strategy2_experiment7_long_martingale_results.json strategy2_experiment7_long_martingale_summary.md; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/s2e7/$f"; fi
+          done
+          git fetch origin main
+          git reset --hard origin/main
+          for f in strategy2_experiment7_long_martingale_results.json strategy2_experiment7_long_martingale_summary.md; do
+            if [ -f "/tmp/s2e7/$f" ]; then
+              cp "/tmp/s2e7/$f" "$f"
+              git add "$f"
+            fi
+          done
+          if git diff --cached --quiet; then
+            echo "No Experiment 7 result changes"
+          else
+            git commit -m "Record long-only martingale results"
+            git push origin main
+          fi
