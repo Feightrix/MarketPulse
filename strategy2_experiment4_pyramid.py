@@ -74,7 +74,6 @@ def pyramid_trend_curve(o, c, start, end):
             op = o.iloc[i]
             cl = c.iloc[i]
 
-            # Carry existing holdings through the overnight gap first.
             overnight = {s: float(op[s] / prev[s] - 1.0) for s in w}
             eq *= 1.0 + sum(float(w[s]) * overnight[s] for s in w)
             w = base.drift(w, overnight)
@@ -91,7 +90,6 @@ def pyramid_trend_curve(o, c, start, end):
                 }
                 pyramids = {s: 0 for s in entry_open}
             elif monthly_base:
-                # Signal/trigger is measured on yesterday's close and executed at today's open.
                 valid_now = base.trend_target(c, i - 1)
                 for s, base_weight in sorted(monthly_base.items()):
                     if s == base.DEFENSIVE or float(base_weight) <= 1e-12:
@@ -230,3 +228,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# One-time trigger: 2026-08-22
