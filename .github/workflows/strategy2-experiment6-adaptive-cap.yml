@@ -1,0 +1,85 @@
+name: MarketPulse Strategy 2 Experiment 6 Adaptive Cap
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - strategy2_experiment6_adaptive_cap.py
+      - .github/workflows/strategy2-experiment6-adaptive-cap.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: strategy2-experiment6-adaptive-cap
+  cancel-in-progress: true
+
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install numpy pandas yfinance
+
+      - name: Verify locked research protocol
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s = Path('strategy2_experiment6_adaptive_cap.py').read_text()
+          assert 'BASE_CAP = 0.575' in s
+          assert 'OFFENSIVE_CAP = 0.60' in s
+          assert 'DEFENSIVE_CAP = 0.50' in s
+          assert 'TARGET_VOL = 0.08' in s
+          assert 'OFFENSIVE_MIN_BREADTH = 5' in s
+          assert 'OFFENSIVE_MAX_PORTFOLIO_VOL = 0.15' in s
+          assert 'DEFENSIVE_MAX_BREADTH = 3' in s
+          assert 'DEFENSIVE_MIN_PORTFOLIO_VOL = 0.20' in s
+          assert 'COST_BPS = 10.0' in s
+          assert 'single_changed_mechanism": "adaptive RISK_CAP regime"' in s
+          assert '/v2/orders' not in s
+          assert 'paper-api.alpaca.markets' not in s
+          assert 'api.alpaca.markets' not in s
+          print('Adaptive risk-cap research invariants: PASS')
+          PY
+
+      - name: Syntax check
+        run: python -m py_compile strategy2_experiment6_adaptive_cap.py
+
+      - name: Run adaptive cap backtest
+        run: python strategy2_experiment6_adaptive_cap.py
+
+      - name: Commit Experiment 6 results
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          mkdir -p /tmp/s2e6
+          for f in strategy2_experiment6_adaptive_cap_results.json strategy2_experiment6_adaptive_cap_summary.md; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/s2e6/$f"; fi
+          done
+          git fetch origin main
+          git reset --hard origin/main
+          for f in strategy2_experiment6_adaptive_cap_results.json strategy2_experiment6_adaptive_cap_summary.md; do
+            if [ -f "/tmp/s2e6/$f" ]; then
+              cp "/tmp/s2e6/$f" "$f"
+              git add "$f"
+            fi
+          done
+          if git diff --cached --quiet; then
+            echo "No Experiment 6 result changes"
+          else
+            git commit -m "Record adaptive risk-cap results"
+            git push origin main
+          fi
