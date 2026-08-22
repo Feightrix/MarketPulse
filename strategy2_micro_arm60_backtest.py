@@ -5,6 +5,7 @@ import strategy2_micro_blind_backtest as base
 
 # Follow-up test after the original blind result. This is NOT a blind test.
 # Only the profit-lock arm threshold changes from 0.35% to 0.60%.
+# Trigger marker: workflow available on main.
 base.ARM_PROFIT_PCT = 0.0060
 base.RESULT_FILE = "strategy2_micro_arm60_results.json"
 base.SUMMARY_FILE = "strategy2_micro_arm60_summary.md"
