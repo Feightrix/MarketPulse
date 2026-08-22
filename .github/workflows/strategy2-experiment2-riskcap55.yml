@@ -78,3 +78,5 @@ jobs:
             git commit -m "Record Strategy 2 55% risk-cap results"
             git push origin main
           fi
+
+# Manual retrigger marker: 2026-08-21-2342-ET
