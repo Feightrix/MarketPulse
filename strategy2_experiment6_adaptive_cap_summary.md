@@ -18,7 +18,7 @@ Locked rule before results:
 
 ## validation_2015_2019
 - Control 50%: return +6.744% | CAGR +1.316% | DD 6.836% | avg day $+0.134
-- Base 57.5%: return +7.583% | CAGR +1.474% | DD 7.725% | avg day $+0.151
+- Base 57.5%: return +7.583% | CAGR +1.475% | DD 7.725% | avg day $+0.151
 - Adaptive: return +8.612% | CAGR +1.668% | DD 7.485% | avg day $+0.171
 - Adaptive best/worst day: $+40.13 / $-45.69
 - Monthly regimes: {'defensive_50': 2, 'normal_57_5': 9, 'offensive_60': 40}
@@ -26,7 +26,7 @@ Locked rule before results:
 ## holdout1_2020_2023
 - Control 50%: return +13.809% | CAGR +3.296% | DD 3.802% | avg day $+0.344
 - Base 57.5%: return +14.280% | CAGR +3.403% | DD 4.555% | avg day $+0.355
-- Adaptive: return +13.075% | CAGR +3.128% | DD 4.442% | avg day $+0.325
+- Adaptive: return +13.074% | CAGR +3.128% | DD 4.442% | avg day $+0.325
 - Adaptive best/worst day: $+37.27 / $-37.60
 - Monthly regimes: {'defensive_50': 5, 'normal_57_5': 9, 'offensive_60': 17}
 
