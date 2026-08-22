@@ -1,25 +1,25 @@
-name: MarketPulse Strategy 2 Exact Control Inverse Shadow
+name: MarketPulse Strategy 2 Control Clone Micro Profit Lock
 
 on:
   push:
     branches: [main]
     paths:
-      - strategy2_inverse_shadow.py
+      - strategy2_micro_profitlock.py
       - .github/workflows/strategy2-paper-trading.yml
   workflow_dispatch:
   schedule:
-    # Same observation cadence as before: 11:10 AM EDT / 10:10 AM EST weekdays.
+    # Strategy 2 manager / Control-template sync.
     - cron: '10 15 * * 1-5'
 
 permissions:
   contents: write
 
 concurrency:
-  group: strategy2-exact-inverse-shadow
+  group: strategy2-micro-profit-lock
   cancel-in-progress: false
 
 jobs:
-  strategy2-inverse-shadow:
+  strategy2-manager:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
@@ -37,15 +37,16 @@ jobs:
       - name: Install dependencies
         run: pip install numpy pandas
 
-      - name: Security check — exact inverse shadow, no broker orders
+      - name: Security check — Control clone shadow, no broker orders
         run: |
           python - <<'PY'
           from pathlib import Path
-          s = Path('strategy2_inverse_shadow.py').read_text()
+          s = Path('strategy2_micro_profitlock.py').read_text()
           core = Path('phase6b_paper_trader.py').read_text()
-          assert 'EXACT_CONTROL_INVERSE_SHADOW' in s
-          assert 'synthetic_fractional_short_shadow' in s
-          assert 'return {s: -float(w)' in s
+          assert 'CONTROL_CLONE_MICRO_PROFIT_LOCK' in s
+          assert 'phase6e_2500_log.jsonl' in s
+          assert 'REBALANCE_COMPLETE' in s
+          assert 'final_positions' in s
           assert 'ALPACA_STRATEGY2_API_KEY_ID' in s
           assert 'ALPACA_STRATEGY2_SECRET_KEY' in s
           assert 'core.api("POST"' not in s
@@ -53,38 +54,39 @@ jobs:
           assert 'submit_market' not in s
           assert 'close_position' not in s
           assert 'PAPER_BASE = "https://paper-api.alpaca.markets"' in core
-          print('Strategy 2 exact inverse shadow invariants: PASS')
+          assert 'Strategy 2 broker account must remain flat' in s
+          print('Strategy 2 Control-clone micro manager invariants: PASS')
           PY
 
       - name: Syntax check
-        run: python -m py_compile strategy2_inverse_shadow.py
+        run: python -m py_compile strategy2_micro_profitlock.py
 
-      - name: Run exact inverse shadow
+      - name: Run Strategy 2 micro manager
         env:
           ALPACA_STRATEGY2_API_KEY_ID: ${{ secrets.ALPACA_STRATEGY2_API_KEY_ID }}
           ALPACA_STRATEGY2_SECRET_KEY: ${{ secrets.ALPACA_STRATEGY2_SECRET_KEY }}
-        run: python strategy2_inverse_shadow.py
+        run: python strategy2_micro_profitlock.py
 
-      - name: Commit Strategy 2 inverse status and state
+      - name: Commit Strategy 2 micro status and state
         if: always()
         run: |
           git config user.name "MarketPulse Bot"
           git config user.email "actions@users.noreply.github.com"
-          mkdir -p /tmp/strategy2-inverse-output
-          for f in strategy2_status.json strategy2_status.md strategy2_inverse_state.json strategy2_inverse_log.jsonl; do
-            if [ -f "$f" ]; then cp "$f" "/tmp/strategy2-inverse-output/$f"; fi
+          mkdir -p /tmp/strategy2-micro-output
+          for f in strategy2_status.json strategy2_status.md strategy2_micro_state.json strategy2_micro_log.jsonl; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/strategy2-micro-output/$f"; fi
           done
           git fetch origin main
           git reset --hard origin/main
-          for f in strategy2_status.json strategy2_status.md strategy2_inverse_state.json strategy2_inverse_log.jsonl; do
-            if [ -f "/tmp/strategy2-inverse-output/$f" ]; then
-              cp "/tmp/strategy2-inverse-output/$f" "$f"
+          for f in strategy2_status.json strategy2_status.md strategy2_micro_state.json strategy2_micro_log.jsonl; do
+            if [ -f "/tmp/strategy2-micro-output/$f" ]; then
+              cp "/tmp/strategy2-micro-output/$f" "$f"
               git add "$f"
             fi
           done
           if git diff --cached --quiet; then
-            echo "No Strategy 2 inverse state changes"
+            echo "No Strategy 2 micro state changes"
           else
-            git commit -m "Update Strategy 2 exact inverse shadow"
+            git commit -m "Update Strategy 2 micro profit-lock state"
             git push origin main
           fi
