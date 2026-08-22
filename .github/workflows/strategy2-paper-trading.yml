@@ -1,25 +1,25 @@
-name: MarketPulse Strategy 2 Control Clone Micro Profit Lock
+name: MarketPulse Strategy 2 Risk Cap 57.5 Shadow
 
 on:
   push:
     branches: [main]
     paths:
-      - strategy2_micro_profitlock.py
+      - strategy2_riskcap575_shadow.py
       - .github/workflows/strategy2-paper-trading.yml
   workflow_dispatch:
   schedule:
-    # Strategy 2 manager / Control-template sync.
+    # Five minutes after frozen Strategy 1 Control.
     - cron: '10 15 * * 1-5'
 
 permissions:
   contents: write
 
 concurrency:
-  group: strategy2-micro-profit-lock
+  group: strategy2-riskcap575-shadow
   cancel-in-progress: false
 
 jobs:
-  strategy2-manager:
+  strategy2-shadow:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
@@ -37,16 +37,16 @@ jobs:
       - name: Install dependencies
         run: pip install numpy pandas
 
-      - name: Security check — Control clone shadow, no broker orders
+      - name: Security and experiment invariants
         run: |
           python - <<'PY'
           from pathlib import Path
-          s = Path('strategy2_micro_profitlock.py').read_text()
+          s = Path('strategy2_riskcap575_shadow.py').read_text()
           core = Path('phase6b_paper_trader.py').read_text()
-          assert 'CONTROL_CLONE_MICRO_PROFIT_LOCK' in s
-          assert 'phase6e_2500_log.jsonl' in s
-          assert 'REBALANCE_COMPLETE' in s
-          assert 'final_positions' in s
+          assert 'CONTROL_CLONE_RISK_CAP_57_5' in s
+          assert 'RISK_CAP = 0.575' in s
+          assert 'profit_lock_active": False' in s
+          assert 'pyramiding_active": False' in s
           assert 'ALPACA_STRATEGY2_API_KEY_ID' in s
           assert 'ALPACA_STRATEGY2_SECRET_KEY' in s
           assert 'core.api("POST"' not in s
@@ -54,39 +54,38 @@ jobs:
           assert 'submit_market' not in s
           assert 'close_position' not in s
           assert 'PAPER_BASE = "https://paper-api.alpaca.markets"' in core
-          assert 'Strategy 2 broker account must remain flat' in s
-          print('Strategy 2 Control-clone micro manager invariants: PASS')
+          print('Strategy 2 57.5% risk-cap shadow invariants: PASS')
           PY
 
       - name: Syntax check
-        run: python -m py_compile strategy2_micro_profitlock.py
+        run: python -m py_compile strategy2_riskcap575_shadow.py
 
-      - name: Run Strategy 2 micro manager
+      - name: Run Strategy 2 shadow
         env:
           ALPACA_STRATEGY2_API_KEY_ID: ${{ secrets.ALPACA_STRATEGY2_API_KEY_ID }}
           ALPACA_STRATEGY2_SECRET_KEY: ${{ secrets.ALPACA_STRATEGY2_SECRET_KEY }}
-        run: python strategy2_micro_profitlock.py
+        run: python strategy2_riskcap575_shadow.py
 
-      - name: Commit Strategy 2 micro status and state
+      - name: Commit Strategy 2 status and state
         if: always()
         run: |
           git config user.name "MarketPulse Bot"
           git config user.email "actions@users.noreply.github.com"
-          mkdir -p /tmp/strategy2-micro-output
-          for f in strategy2_status.json strategy2_status.md strategy2_micro_state.json strategy2_micro_log.jsonl; do
-            if [ -f "$f" ]; then cp "$f" "/tmp/strategy2-micro-output/$f"; fi
+          mkdir -p /tmp/strategy2-riskcap575-output
+          for f in strategy2_status.json strategy2_status.md strategy2_riskcap575_state.json strategy2_riskcap575_log.jsonl; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/strategy2-riskcap575-output/$f"; fi
           done
           git fetch origin main
           git reset --hard origin/main
-          for f in strategy2_status.json strategy2_status.md strategy2_micro_state.json strategy2_micro_log.jsonl; do
-            if [ -f "/tmp/strategy2-micro-output/$f" ]; then
-              cp "/tmp/strategy2-micro-output/$f" "$f"
+          for f in strategy2_status.json strategy2_status.md strategy2_riskcap575_state.json strategy2_riskcap575_log.jsonl; do
+            if [ -f "/tmp/strategy2-riskcap575-output/$f" ]; then
+              cp "/tmp/strategy2-riskcap575-output/$f" "$f"
               git add "$f"
             fi
           done
           if git diff --cached --quiet; then
-            echo "No Strategy 2 micro state changes"
+            echo "No Strategy 2 risk-cap state changes"
           else
-            git commit -m "Update Strategy 2 micro profit-lock state"
+            git commit -m "Update Strategy 2 57.5% risk-cap shadow"
             git push origin main
           fi
