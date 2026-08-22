@@ -1,18 +1,30 @@
-# MarketPulse Strategy 2 — Control Clone + Micro Profit Lock
+# MarketPulse Strategy 2 — Strategy 1 Clone at 57.5% Risk Cap
 
-**Status: MICRO_PROFIT_LOCK_MONITOR_OK**
+**Status: RISK_CAP_57_5_INITIALIZED**
 
+- Experiment: **CONTROL_CLONE_RISK_CAP_57_5**
+- Risk cap: **57.5%**
 - Shadow equity: **$2,495.10**
-- Broker cash equity: **$2,495.10**
-- Active symbols: **0**
-- Today's entries: **0**
-- Today's exits / round trips: **0**
-- Today's realized P&L: **$+0.00**
-- Today's modeled execution costs: **$0.00**
-- Arm after: **+0.60%**
-- Base trail: **0.10%**
-- Re-entry cooldown: **30 sec**
-- Daily round-trip cap: **200**
-- Daily drawdown kill: **1.25%**
+- Flat broker cash equity: **$2,495.10**
+- Signal date: **2026-08-21**
+- Gross exposure: **95.00%**
+- Net exposure: **+85.00%**
+- Profit-lock overlay: **OFF**
+- Pyramiding overlay: **OFF (research only)**
+- Live-money trading: **LOCKED**
 
-High turnover is opportunity-driven, not guaranteed. Modeled costs can overwhelm small gross wins.
+## Current target weights
+- BIL: +36.125%
+- GLD: +5.946%
+- IWM: +10.639%
+- QQQ: +6.212%
+- SPY: +12.049%
+- XLE: +8.803%
+- XLK: +2.500%
+- XLP: +5.225%
+- XLU: -2.500%
+- XLV: +2.500%
+- XLY: -2.500%
+
+Only RISK_CAP differs from frozen Strategy 1: 50.0% → 57.5%.
+The Alpaca Strategy 2 broker account remains flat; performance is measured by the synthetic shadow NAV.
