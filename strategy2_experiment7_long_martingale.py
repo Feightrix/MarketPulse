@@ -1,3 +1,4 @@
+# Trigger marker: workflow installed on main; no research parameter change.
 import json
 import math
 import numpy as np
@@ -136,7 +137,6 @@ def simulate_sleeve(o, c, sym, start, end, martingale=True):
                 pending = "BUY_INITIAL"
             continue
 
-        # Exit takes priority over adds. All decisions use today's close and execute next open.
         if not sig:
             pending = "SELL_TREND_BREAK"
             continue
@@ -147,7 +147,6 @@ def simulate_sleeve(o, c, sym, start, end, martingale=True):
             if cl <= last_fill * (1.0 - ADD_TRIGGER_PCT):
                 pending = "BUY_ADD1" if tranches == 1 else "BUY_ADD2"
 
-    # Mark final equity; no forced liquidation beyond the curve.
     series = pd.Series([x[1] for x in curve], index=pd.to_datetime([x[0] for x in curve]), dtype=float)
     return series, {
         "cycles": cycles,
