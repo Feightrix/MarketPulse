@@ -1,0 +1,16 @@
+{
+  "research_only": true,
+  "symbol": "NVDA",
+  "period": [
+    "2026-07-20",
+    "2026-07-24"
+  ],
+  "status": "PASS",
+  "news_items": 86,
+  "bar_rows": 390,
+  "sample_headlines": [
+    "SpaceX Has Fallen 45% Since Its Peak: Gary Black Says Investors Are Breaking the 'Number One Rule in Investing'",
+    "Experts Warn AI Could Hurt Critical Thinking as Workplace Adoption Surges",
+    "Investigating NVIDIA's Standing In Semiconductors &amp; Semiconductor Equipment Industry Compared To Competitors"
+  ]
+}
