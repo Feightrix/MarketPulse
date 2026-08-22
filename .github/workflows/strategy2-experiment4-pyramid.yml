@@ -1,0 +1,84 @@
+name: MarketPulse Strategy 2 Experiment 4 Controlled Pyramid
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - strategy2_experiment4_pyramid.py
+      - .github/workflows/strategy2-experiment4-pyramid.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: strategy2-experiment4-pyramid
+  cancel-in-progress: true
+
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install numpy pandas yfinance
+
+      - name: Verify locked research protocol
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s = Path('strategy2_experiment4_pyramid.py').read_text()
+          assert 'CONTROL_CAP = 0.50' in s
+          assert 'BASE_CAP = 0.575' in s
+          assert 'PYRAMID_TRIGGER_PCT = 0.03' in s
+          assert 'PYRAMID_ADD_FRACTION_OF_BASE_WEIGHT = 0.25' in s
+          assert 'PYRAMID_ADD_CAP_ABS_WEIGHT = 0.025' in s
+          assert 'MAX_PYRAMIDS_PER_SYMBOL_PER_MONTH = 1' in s
+          assert 'COST_BPS = 10.0' in s
+          assert 'funding_source": "BIL only"' in s
+          assert 'leverage_added": False' in s
+          assert '/v2/orders' not in s
+          assert 'paper-api.alpaca.markets' not in s
+          assert 'api.alpaca.markets' not in s
+          print('Controlled pyramid research invariants: PASS')
+          PY
+
+      - name: Syntax check
+        run: python -m py_compile strategy2_experiment4_pyramid.py
+
+      - name: Run controlled pyramid backtest
+        run: python strategy2_experiment4_pyramid.py
+
+      - name: Commit Experiment 4 results
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          mkdir -p /tmp/s2e4
+          for f in strategy2_experiment4_pyramid_results.json strategy2_experiment4_pyramid_summary.md; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/s2e4/$f"; fi
+          done
+          git fetch origin main
+          git reset --hard origin/main
+          for f in strategy2_experiment4_pyramid_results.json strategy2_experiment4_pyramid_summary.md; do
+            if [ -f "/tmp/s2e4/$f" ]; then
+              cp "/tmp/s2e4/$f" "$f"
+              git add "$f"
+            fi
+          done
+          if git diff --cached --quiet; then
+            echo "No Experiment 4 result changes"
+          else
+            git commit -m "Record controlled pyramiding results"
+            git push origin main
+          fi
