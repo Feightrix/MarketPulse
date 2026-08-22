@@ -1,0 +1,106 @@
+{
+  "experiment": "S2-E8-NEWS-MOMENTUM-2026-YTD-BULK-PILOT",
+  "research_only": true,
+  "full_validation": false,
+  "data_plumbing": "bulk historical IEX minute bars; consolidated historical news pull",
+  "strategy_rules": "identical to locked Experiment 8",
+  "universe": [
+    "NVDA",
+    "TSLA",
+    "AAPL",
+    "AMD",
+    "META",
+    "AMZN",
+    "NFLX",
+    "GOOGL"
+  ],
+  "period": [
+    "2026-01-01",
+    "2026-07-31"
+  ],
+  "stats": {
+    "starting_equity": 2500.0,
+    "ending_equity": 2480.2272505796986,
+    "total_return_pct": -0.7909099768120487,
+    "max_drawdown_pct": 0.7909099768120487,
+    "trades": 1,
+    "wins": 0,
+    "losses": 1,
+    "win_rate_pct": 0.0,
+    "gross_profit_dollars": 0.0,
+    "gross_loss_dollars": 19.772749420301444,
+    "profit_factor": 0.0,
+    "avg_trade_pnl_dollars": -19.772749420301444,
+    "avg_winner_dollars": 0.0,
+    "avg_loser_dollars": 19.772749420301444,
+    "avg_winner_to_loser": 0.0,
+    "best_trade_dollars": -19.772749420301444,
+    "worst_trade_dollars": -19.772749420301444,
+    "avg_r_multiple": -1.0545466357494104,
+    "max_confidence_score": 74.45518095769897,
+    "eligible_news_events": 2327,
+    "confirmed_events": 1,
+    "top_10_trades": [
+      {
+        "symbol": "GOOGL",
+        "event_time_et": "2026-01-12T10:20:55-05:00",
+        "headline": "'Apple Picks Google's Gemini To Run AI-Powered Siri Coming This Year' - CNBC",
+        "source": "benzinga",
+        "groups": [
+          "product"
+        ],
+        "confidence_score": 74.45518095769897,
+        "reaction_pct": 1.5827513647037383,
+        "relative_strength_pct": 1.546503195236304,
+        "relative_volume": 3.9333624575124397,
+        "entry_time_et": "2026-01-12T10:26:00-05:00",
+        "entry_fill": 333.45311999999996,
+        "initial_stop": 327.45,
+        "shares": 3.1233758445608455,
+        "notional": 1041.4994203014487,
+        "exit_time_et": "2026-01-12T10:34:00-05:00",
+        "exit_fill": 327.12255,
+        "exit_reason": "TRAIL_OR_STOP",
+        "pnl_dollars": -19.772749420301444,
+        "return_on_equity_pct": -0.7909099768120579,
+        "r_multiple": -1.0545466357494104
+      }
+    ],
+    "bottom_10_trades": [
+      {
+        "symbol": "GOOGL",
+        "event_time_et": "2026-01-12T10:20:55-05:00",
+        "headline": "'Apple Picks Google's Gemini To Run AI-Powered Siri Coming This Year' - CNBC",
+        "source": "benzinga",
+        "groups": [
+          "product"
+        ],
+        "confidence_score": 74.45518095769897,
+        "reaction_pct": 1.5827513647037383,
+        "relative_strength_pct": 1.546503195236304,
+        "relative_volume": 3.9333624575124397,
+        "entry_time_et": "2026-01-12T10:26:00-05:00",
+        "entry_fill": 333.45311999999996,
+        "initial_stop": 327.45,
+        "shares": 3.1233758445608455,
+        "notional": 1041.4994203014487,
+        "exit_time_et": "2026-01-12T10:34:00-05:00",
+        "exit_fill": 327.12255,
+        "exit_reason": "TRAIL_OR_STOP",
+        "pnl_dollars": -19.772749420301444,
+        "return_on_equity_pct": -0.7909099768120579,
+        "r_multiple": -1.0545466357494104
+      }
+    ]
+  },
+  "checks": {
+    "at_least_5_trades": false,
+    "positive_after_costs": false,
+    "positive_expectancy": false,
+    "profit_factor_at_least_1_25": false,
+    "winner_loser_ratio_at_least_1_5": false,
+    "max_drawdown_at_most_8pct": true
+  },
+  "pilot_gate": "FAIL",
+  "activate": false
+}
