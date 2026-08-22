@@ -1,0 +1,80 @@
+name: MarketPulse Strategy 2 Experiment 5 Target Vol 9
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - strategy2_experiment5_targetvol9.py
+      - .github/workflows/strategy2-experiment5-targetvol9.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: strategy2-experiment5-targetvol9
+  cancel-in-progress: true
+
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install numpy pandas yfinance
+
+      - name: Verify locked research protocol
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s = Path('strategy2_experiment5_targetvol9.py').read_text()
+          assert 'BASE_CAP = 0.575' in s
+          assert 'CONTROL_TARGET_VOL = 0.08' in s
+          assert 'CANDIDATE_TARGET_VOL = 0.09' in s
+          assert 'COST_BPS = 10.0' in s
+          assert 'single_changed_variable": "TARGET_VOL"' in s
+          assert '/v2/orders' not in s
+          assert 'paper-api.alpaca.markets' not in s
+          assert 'api.alpaca.markets' not in s
+          print('Target-vol 9% research invariants: PASS')
+          PY
+
+      - name: Syntax check
+        run: python -m py_compile strategy2_experiment5_targetvol9.py
+
+      - name: Run target-vol backtest
+        run: python strategy2_experiment5_targetvol9.py
+
+      - name: Commit Experiment 5 results
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          mkdir -p /tmp/s2e5
+          for f in strategy2_experiment5_targetvol9_results.json strategy2_experiment5_targetvol9_summary.md; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/s2e5/$f"; fi
+          done
+          git fetch origin main
+          git reset --hard origin/main
+          for f in strategy2_experiment5_targetvol9_results.json strategy2_experiment5_targetvol9_summary.md; do
+            if [ -f "/tmp/s2e5/$f" ]; then
+              cp "/tmp/s2e5/$f" "$f"
+              git add "$f"
+            fi
+          done
+          if git diff --cached --quiet; then
+            echo "No Experiment 5 result changes"
+          else
+            git commit -m "Record 9% target volatility results"
+            git push origin main
+          fi
