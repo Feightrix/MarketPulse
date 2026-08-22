@@ -12,12 +12,12 @@ Everything else remains frozen to Strategy 1. Results use 10 bps transaction-cos
 
 ## validation_2015_2019
 - Control: return +6.744% | CAGR +1.316% | DD 6.836% | avg day $+0.134
-- Candidate: return +7.583% | CAGR +1.474% | DD 7.725% | avg day $+0.151
+- Candidate: return +7.583% | CAGR +1.475% | DD 7.725% | avg day $+0.151
 - Candidate best/worst day: $+40.14 / $-43.67
 
 ## holdout1_2020_2023
 - Control: return +13.809% | CAGR +3.296% | DD 3.802% | avg day $+0.344
-- Candidate: return +14.279% | CAGR +3.403% | DD 4.555% | avg day $+0.355
+- Candidate: return +14.280% | CAGR +3.403% | DD 4.555% | avg day $+0.355
 - Candidate best/worst day: $+37.62 / $-36.02
 
 ## holdout2_2024_2026
