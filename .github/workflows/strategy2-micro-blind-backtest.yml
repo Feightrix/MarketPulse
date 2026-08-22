@@ -3,6 +3,7 @@ name: Strategy 2 Micro Profit-Lock Blind Backtest
 on:
   push:
     branches:
+      - main
       - research/blind-micro-profitlock-2026h1
     paths:
       - strategy2_micro_blind_backtest.py
