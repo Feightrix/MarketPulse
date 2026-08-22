@@ -1,0 +1,83 @@
+name: Strategy 2 Micro Profit-Lock 0.60 Arm Backtest
+
+on:
+  push:
+    branches:
+      - research/arm60-followup-backtest
+    paths:
+      - strategy2_micro_arm60_backtest.py
+      - .github/workflows/strategy2-micro-arm60-backtest.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: strategy2-micro-arm60-backtest
+  cancel-in-progress: false
+
+jobs:
+  backtest:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - name: Checkout follow-up research branch
+        uses: actions/checkout@v6
+        with:
+          ref: research/arm60-followup-backtest
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install numpy pandas
+
+      - name: Verify one-variable follow-up protocol
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          wrapper = Path('strategy2_micro_arm60_backtest.py').read_text()
+          base = Path('strategy2_micro_blind_backtest.py').read_text()
+          assert 'base.ARM_PROFIT_PCT = 0.0060' in wrapper
+          assert 'base.RESULT_FILE = "strategy2_micro_arm60_results.json"' in wrapper
+          assert 'TEST_START = "2026-01-02"' in base
+          assert 'TEST_END = "2026-07-31"' in base
+          assert 'BASE_TRAIL_PCT = 0.0010' in base
+          assert 'TIGHTEN_PROFIT_PCT = 0.0075' in base
+          assert 'TIGHT_TRAIL_PCT = 0.0007' in base
+          assert 'EXECUTION_COST_BPS_PER_FILL = 10.0' in base
+          assert 'REENTRY_COOLDOWN_SECONDS = 30' in base
+          assert 'MAX_ROUND_TRIPS_PER_DAY = 200' in base
+          assert 'MAX_ROUND_TRIPS_PER_SYMBOL_PER_DAY = 30' in base
+          assert 'DAILY_DRAWDOWN_KILL_PCT = 0.0125' in base
+          assert 'core.api("POST"' not in base
+          assert 'core.api("DELETE"' not in base
+          print('0.60% arm follow-up protocol: PASS')
+          PY
+
+      - name: Syntax check
+        run: python -m py_compile strategy2_micro_arm60_backtest.py strategy2_micro_blind_backtest.py
+
+      - name: Run follow-up backtest
+        env:
+          ALPACA_STRATEGY2_API_KEY_ID: ${{ secrets.ALPACA_STRATEGY2_API_KEY_ID }}
+          ALPACA_STRATEGY2_SECRET_KEY: ${{ secrets.ALPACA_STRATEGY2_SECRET_KEY }}
+        run: python strategy2_micro_arm60_backtest.py
+
+      - name: Commit follow-up results
+        if: always()
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          for f in strategy2_micro_arm60_results.json strategy2_micro_arm60_summary.md; do
+            if [ -f "$f" ]; then git add "$f"; fi
+          done
+          if git diff --cached --quiet; then
+            echo "No arm60 result changes"
+          else
+            git commit -m "Record 0.60% arm follow-up backtest results"
+            git push origin HEAD:research/arm60-followup-backtest
+          fi
