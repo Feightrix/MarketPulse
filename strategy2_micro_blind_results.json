@@ -1,0 +1,184 @@
+{
+  "blind_protocol_locked_before_results": true,
+  "control": {
+    "avg_daily_pnl": 0.3681519874720828,
+    "final_equity": 2553.59254907743,
+    "max_drawdown_pct": 2.087608338515401,
+    "median_daily_pnl": 0.6638200050001615,
+    "positive_day_rate_pct": 55.55555555555556,
+    "total_return_pct": 2.1437019630971887,
+    "trading_days": 145
+  },
+  "data": {
+    "approximation": "one close-price sample per eligible monitor minute; deployed live shadow samples every 15 seconds",
+    "minute_bar_pages": 78,
+    "signal_rule": "monthly Control weights generated from prior trading day's daily close to avoid look-ahead",
+    "source": "Alpaca IEX historical bars",
+    "timeframe": "1Min"
+  },
+  "experiment": "CONTROL_CLONE_MICRO_PROFIT_LOCK_BLIND_BACKTEST",
+  "gate": "FAIL",
+  "gate_checks": {
+    "micro_beats_control_total_return": false,
+    "micro_drawdown_within_control_plus_1pp": false,
+    "micro_net_positive_after_costs": false
+  },
+  "micro": {
+    "avg_daily_pnl": -0.7780128912703188,
+    "avg_round_trips_per_day": 4.358620689655172,
+    "final_equity": 2386.2092825615446,
+    "kill_switch_days": 0,
+    "max_drawdown_pct": 5.6274947695798545,
+    "max_round_trips_in_day": 31,
+    "median_daily_pnl": 0.032754657499936,
+    "median_round_trips_per_day": 2.0,
+    "positive_day_rate_pct": 51.388888888888886,
+    "total_modeled_execution_costs": 178.34429851345536,
+    "total_realized_exit_pnl": -62.224352684260374,
+    "total_return_pct": -4.551628697538213,
+    "total_round_trips": 632,
+    "trading_days": 145
+  },
+  "monthly_signal_schedule": {
+    "2026-01": {
+      "first_trading_day": "2026-01-02",
+      "signal_date": "2025-12-31",
+      "weights": {
+        "BIL": 0.425,
+        "GLD": 0.0675335344190022,
+        "IWM": 0.06902372545523869,
+        "QQQ": 0.07430553048577303,
+        "SPY": 0.11255683296683534,
+        "XLB": -0.024999999999999998,
+        "XLE": -0.024999999999999998,
+        "XLF": 0.024999999999999998,
+        "XLI": 0.024999999999999998,
+        "XLK": 0.024999999999999998,
+        "XLP": -0.024999999999999998,
+        "XLU": 0.10158037667315072
+      }
+    },
+    "2026-02": {
+      "first_trading_day": "2026-02-02",
+      "signal_date": "2026-01-30",
+      "weights": {
+        "BIL": 0.425,
+        "GLD": 0.0208946782690572,
+        "IWM": 0.04180921665025859,
+        "QQQ": 0.051988709895283064,
+        "SPY": 0.07068458584676793,
+        "TLT": 0.08727876708218837,
+        "XLE": 0.059528876750454304,
+        "XLF": -0.024999999999999998,
+        "XLI": 0.024999999999999998,
+        "XLK": 0.024999999999999998,
+        "XLP": 0.041474984687302416,
+        "XLU": 0.05134018081868816,
+        "XLY": -0.024999999999999998
+      }
+    },
+    "2026-03": {
+      "first_trading_day": "2026-03-02",
+      "signal_date": "2026-02-27",
+      "weights": {
+        "BIL": 0.425,
+        "GLD": 0.01865087695700843,
+        "IWM": 0.04362531430740938,
+        "QQQ": 0.05040683605759887,
+        "SPY": 0.06801058615119011,
+        "TLT": 0.09243356696841211,
+        "XLE": 0.06234141894114875,
+        "XLF": -0.024999999999999998,
+        "XLI": 0.024999999999999998,
+        "XLP": 0.0633488392359619,
+        "XLU": 0.0761825613812704,
+        "XLV": -0.024999999999999998,
+        "XLY": -0.024999999999999998
+      }
+    },
+    "2026-04": {
+      "first_trading_day": "2026-04-01",
+      "signal_date": "2026-03-31",
+      "weights": {
+        "BIL": 0.85,
+        "XLE": 0.024999999999999998,
+        "XLF": -0.024999999999999998,
+        "XLI": 0.024999999999999998,
+        "XLU": 0.024999999999999998,
+        "XLV": -0.024999999999999998,
+        "XLY": -0.024999999999999998
+      }
+    },
+    "2026-05": {
+      "first_trading_day": "2026-05-01",
+      "signal_date": "2026-04-29",
+      "weights": {
+        "BIL": 0.425,
+        "GLD": 0.03921323550118388,
+        "IWM": 0.053718466419797835,
+        "QQQ": 0.05828510144234227,
+        "SPY": 0.0745960663119465,
+        "XLE": 0.07488856344757525,
+        "XLF": -0.024999999999999998,
+        "XLI": 0.024999999999999998,
+        "XLK": 0.024999999999999998,
+        "XLP": 0.05245881803743831,
+        "XLU": 0.07183974883971599,
+        "XLV": -0.024999999999999998
+      }
+    },
+    "2026-06": {
+      "first_trading_day": "2026-06-01",
+      "signal_date": "2026-05-29",
+      "weights": {
+        "BIL": 0.425,
+        "IWM": 0.07341153293709343,
+        "QQQ": 0.07997128905304648,
+        "SPY": 0.11002993286389227,
+        "XLE": 0.08127897577892734,
+        "XLF": -0.024999999999999998,
+        "XLI": 0.024999999999999998,
+        "XLK": 0.024999999999999998,
+        "XLP": 0.08030826936704043,
+        "XLV": -0.024999999999999998
+      }
+    },
+    "2026-07": {
+      "first_trading_day": "2026-07-01",
+      "signal_date": "2026-06-30",
+      "weights": {
+        "BIL": 0.425,
+        "IWM": 0.049604737711950196,
+        "QQQ": 0.03964168421443178,
+        "SPY": 0.07263511409207382,
+        "TLT": 0.1033959500886399,
+        "XLE": 0.06298415946066654,
+        "XLF": -0.024999999999999998,
+        "XLI": 0.024999999999999998,
+        "XLK": 0.024999999999999998,
+        "XLP": 0.03812421767650992,
+        "XLU": 0.05861413675572784,
+        "XLY": -0.024999999999999998
+      }
+    }
+  },
+  "no_post_result_tuning": true,
+  "parameters": {
+    "arm_profit_pct": 0.0035,
+    "base_trail_pct": 0.001,
+    "daily_drawdown_kill_pct": 0.0125,
+    "execution_cost_bps_per_fill": 10.0,
+    "max_round_trips_per_day": 200,
+    "max_round_trips_per_symbol_per_day": 30,
+    "reentry_cooldown_seconds": 30,
+    "tight_trail_pct": 0.0007,
+    "tighten_profit_pct": 0.0075
+  },
+  "research_only": true,
+  "stretch_checks": {
+    "avg_daily_pnl_at_least_7_50": false,
+    "avg_round_trips_per_day_at_least_25": false
+  },
+  "test_end": "2026-07-31",
+  "test_start": "2026-01-02"
+}
