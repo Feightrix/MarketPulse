@@ -16,6 +16,7 @@ import phase6b_paper_trader as core
 import phase6e_2500_paper_trader as control2500
 
 # Blind protocol locked before results were viewed.
+# Trigger commit after workflow existed on main: 2026-08-21 ET.
 TEST_START = "2026-01-02"
 TEST_END = "2026-07-31"
 START_EQUITY = 2500.0
