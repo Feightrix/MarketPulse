@@ -1,25 +1,18 @@
 # MarketPulse Strategy 2 — Control Clone + Micro Profit Lock
 
-**Status: MICRO_PROFIT_LOCK_READY**
+**Status: MICRO_PROFIT_LOCK_MONITOR_OK**
 
-- Experiment: **CONTROL_CLONE_MICRO_PROFIT_LOCK**
 - Shadow equity: **$2,495.10**
 - Broker cash equity: **$2,495.10**
-- Direction/holdings template: **Strategy 1 last successful rebalance**
-- Execution: **synthetic shadow only; broker account remains flat**
-- Live-money trading: **LOCKED**
+- Active symbols: **0**
+- Today's entries: **0**
+- Today's exits / round trips: **0**
+- Today's realized P&L: **$+0.00**
+- Today's modeled execution costs: **$0.00**
+- Arm after: **+0.35%**
+- Base trail: **0.10%**
+- Re-entry cooldown: **30 sec**
+- Daily round-trip cap: **200**
+- Daily drawdown kill: **1.25%**
 
-## Control template quantities
-- BIL: +11.6069
-- IWM: +0.858513
-- QQQ: +0.20436
-- SPY: +0.371074
-- XLE: +3.46665
-- XLK: +0.328904
-- XLP: +1.72498
-- XLU: -1
-- XLV: +0.373424
-- XLY: -1
-
-The only experimental variable is the intraday profit-lock/re-entry execution overlay.
-High trade count is a cap, not a quota; the system does not manufacture trades when no profit-lock trigger occurs.
+High turnover is opportunity-driven, not guaranteed. Modeled costs can overwhelm small gross wins.

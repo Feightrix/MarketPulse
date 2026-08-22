@@ -17,11 +17,34 @@
     "XLY": -1.0
   },
   "cycle": {},
-  "daily": {},
+  "daily": {
+    "date": "2026-08-21",
+    "entries": 0,
+    "exits": 0,
+    "kill_switch": false,
+    "modeled_costs": 0.0,
+    "per_symbol_round_trips": {},
+    "realized_pnl": 0.0,
+    "round_trips": 0,
+    "start_equity": 2495.1
+  },
   "events": [],
   "experiment": "CONTROL_CLONE_MICRO_PROFIT_LOCK",
   "initialized": true,
   "last_manager_utc": "2026-08-22T02:45:10.826842+00:00",
+  "last_monitor_utc": "2026-08-22T02:45:32.086866+00:00",
+  "last_prices": {
+    "BIL": 91.6,
+    "IWM": 299.95,
+    "QQQ": 713.14,
+    "SPY": 765.55,
+    "XLE": 63.62,
+    "XLK": 183.32,
+    "XLP": 85.985,
+    "XLU": 42.755,
+    "XLV": 174.615,
+    "XLY": 117.975
+  },
   "positions": {},
   "shadow_equity": 2495.1
 }
