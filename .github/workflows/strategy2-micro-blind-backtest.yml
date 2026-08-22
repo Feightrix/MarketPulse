@@ -7,6 +7,12 @@ on:
     paths:
       - strategy2_micro_blind_backtest.py
       - .github/workflows/strategy2-micro-blind-backtest.yml
+  pull_request:
+    branches:
+      - main
+    paths:
+      - strategy2_micro_blind_backtest.py
+      - .github/workflows/strategy2-micro-blind-backtest.yml
   workflow_dispatch:
 
 permissions:
