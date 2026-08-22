@@ -1,0 +1,179 @@
+{
+  "experiment": "S2-E2-RISK-CAP-55",
+  "single_changed_variable": "RISK_CAP",
+  "control_value": 0.5,
+  "candidate_value": 0.55,
+  "all_other_strategy_parameters": "frozen Phase 5H",
+  "transaction_cost_stress_bps": 10.0,
+  "control": {
+    "development_2008_2014": {
+      "final_equity": 3373.297842886223,
+      "total_return_pct": 34.93191371544893,
+      "cagr_pct": 4.375974384849846,
+      "max_drawdown_pct": 4.489946258787835,
+      "positive_month_rate_pct": 62.65060240963856,
+      "annual_returns_pct": {
+        "2008": 1.5338676166995135,
+        "2009": 1.1870310768626213,
+        "2010": 3.1508092562887224,
+        "2011": 4.4577267934800435,
+        "2012": 2.459298180146363,
+        "2013": 11.603006223203383,
+        "2014": 6.5953885157773895
+      },
+      "avg_daily_pnl_dollars": 0.4956287417061424,
+      "median_daily_pnl_dollars": 0.4111057267136857,
+      "positive_day_rate_pct": 53.6322360953462,
+      "worst_day_pnl_dollars": -38.086293289872174,
+      "best_day_pnl_dollars": 41.99669948981409,
+      "trading_days": 1763
+    },
+    "validation_2015_2019": {
+      "final_equity": 2668.6100188417972,
+      "total_return_pct": 6.744400753671886,
+      "cagr_pct": 1.315528388243692,
+      "max_drawdown_pct": 6.836430453761189,
+      "positive_month_rate_pct": 57.6271186440678,
+      "annual_returns_pct": {
+        "2015": -3.3534246248341337,
+        "2016": 0.965926099070491,
+        "2017": 6.320861963889146,
+        "2018": -2.4845976355598154,
+        "2019": 5.50962872342089
+      },
+      "avg_daily_pnl_dollars": 0.13413684872060241,
+      "median_daily_pnl_dollars": 0.29112646379462603,
+      "positive_day_rate_pct": 52.824184566428,
+      "worst_day_pnl_dollars": -37.86195680115543,
+      "best_day_pnl_dollars": 35.09254962513569,
+      "trading_days": 1258
+    },
+    "holdout1_2020_2023": {
+      "final_equity": 2845.228818706812,
+      "total_return_pct": 13.80915274827248,
+      "cagr_pct": 3.2958453863132453,
+      "max_drawdown_pct": 3.8016409429861397,
+      "positive_month_rate_pct": 55.319148936170215,
+      "annual_returns_pct": {
+        "2020": 5.270988703982971,
+        "2021": 4.840712465491492,
+        "2022": 0.716599624855685,
+        "2023": 2.385267668372948
+      },
+      "avg_daily_pnl_dollars": 0.34351126239483787,
+      "median_daily_pnl_dollars": 0.5806778400151416,
+      "positive_day_rate_pct": 56.81592039800994,
+      "worst_day_pnl_dollars": -32.905459584368145,
+      "best_day_pnl_dollars": 32.26936139410327,
+      "trading_days": 1006
+    },
+    "holdout2_2024_2026": {
+      "final_equity": 3041.051657748765,
+      "total_return_pct": 21.642066309950604,
+      "cagr_pct": 7.900970147603403,
+      "max_drawdown_pct": 2.992799700564641,
+      "positive_month_rate_pct": 70.0,
+      "annual_returns_pct": {
+        "2024": 10.389724280813972,
+        "2025": 6.817852787223133,
+        "2026": 3.1599912201305314
+      },
+      "avg_daily_pnl_dollars": 0.8375412658649615,
+      "median_daily_pnl_dollars": 0.9716310800367864,
+      "positive_day_rate_pct": 57.89473684210527,
+      "worst_day_pnl_dollars": -34.32769695219122,
+      "best_day_pnl_dollars": 28.48256609576856,
+      "trading_days": 647
+    }
+  },
+  "candidate": {
+    "development_2008_2014": {
+      "final_equity": 3473.6242984999994,
+      "total_return_pct": 38.944971939999974,
+      "cagr_pct": 4.814193298125691,
+      "max_drawdown_pct": 4.8606938325878595,
+      "positive_month_rate_pct": 62.65060240963856,
+      "annual_returns_pct": {
+        "2008": 1.5338676166995135,
+        "2009": 1.4243818376050044,
+        "2010": 3.301703005793599,
+        "2011": 4.989987802456497,
+        "2012": 2.769621079708706,
+        "2013": 12.788602168110575,
+        "2014": 7.325816290016807
+      },
+      "avg_daily_pnl_dollars": 0.5525677062996591,
+      "median_daily_pnl_dollars": 0.43680812137495195,
+      "positive_day_rate_pct": 53.85925085130534,
+      "worst_day_pnl_dollars": -41.84333985564081,
+      "best_day_pnl_dollars": 45.9161853885098,
+      "trading_days": 1763
+    },
+    "validation_2015_2019": {
+      "final_equity": 2680.2524739482337,
+      "total_return_pct": 7.210098957929345,
+      "cagr_pct": 1.4038861143673032,
+      "max_drawdown_pct": 7.532053044037513,
+      "positive_month_rate_pct": 57.6271186440678,
+      "annual_returns_pct": {
+        "2015": -3.7151755285344756,
+        "2016": 1.2230138670642265,
+        "2017": 6.963885154948368,
+        "2018": -2.867471266948307,
+        "2019": 5.875805027292458
+      },
+      "avg_daily_pnl_dollars": 0.14339894506621617,
+      "median_daily_pnl_dollars": 0.29843085572883865,
+      "positive_day_rate_pct": 52.58552108194113,
+      "worst_day_pnl_dollars": -41.722367934030444,
+      "best_day_pnl_dollars": 38.4557397386352,
+      "trading_days": 1258
+    },
+    "holdout1_2020_2023": {
+      "final_equity": 2853.7038259320407,
+      "total_return_pct": 14.14815303728163,
+      "cagr_pct": 3.372891779317766,
+      "max_drawdown_pct": 4.304525767931766,
+      "positive_month_rate_pct": 57.446808510638306,
+      "annual_returns_pct": {
+        "2020": 5.507157253632955,
+        "2021": 5.357890784268049,
+        "2022": 0.47826591782316186,
+        "2023": 2.1992639919658163
+      },
+      "avg_daily_pnl_dollars": 0.3519441054050156,
+      "median_daily_pnl_dollars": 0.5806778400146868,
+      "positive_day_rate_pct": 56.517412935323385,
+      "worst_day_pnl_dollars": -34.44352274315088,
+      "best_day_pnl_dollars": 35.83490346297003,
+      "trading_days": 1006
+    },
+    "holdout2_2024_2026": {
+      "final_equity": 3068.6684137520638,
+      "total_return_pct": 22.746736550082545,
+      "cagr_pct": 8.280261070653694,
+      "max_drawdown_pct": 3.273735048597237,
+      "positive_month_rate_pct": 70.0,
+      "annual_returns_pct": {
+        "2024": 10.961146173779124,
+        "2025": 7.195043918003741,
+        "2026": 3.19634452204014
+      },
+      "avg_daily_pnl_dollars": 0.8802916621548975,
+      "median_daily_pnl_dollars": 1.0148726298389192,
+      "positive_day_rate_pct": 58.204334365325074,
+      "worst_day_pnl_dollars": -37.58454524042054,
+      "best_day_pnl_dollars": 31.27815187796614,
+      "trading_days": 647
+    }
+  },
+  "checks": {
+    "recent_holdout_return_improves": true,
+    "recent_holdout_drawdown_not_over_control_plus_1pp": true,
+    "prior_holdout_return_not_worse_by_more_than_1pp": true,
+    "prior_holdout_drawdown_not_over_control_plus_1pp": true
+  },
+  "gate": "PASS",
+  "activate_candidate": true,
+  "research_only": true
+}
