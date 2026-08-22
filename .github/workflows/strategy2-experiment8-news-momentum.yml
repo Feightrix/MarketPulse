@@ -7,6 +7,7 @@ on:
     paths:
       - strategy2_experiment8_news_momentum_long.py
       - strategy2_experiment8_news_momentum_runner.py
+      - strategy2_experiment8_news_momentum_pilot.py
       - .github/workflows/strategy2-experiment8-news-momentum.yml
 
 permissions:
@@ -35,21 +36,22 @@ jobs:
           from pathlib import Path
           s=Path('strategy2_experiment8_news_momentum_long.py').read_text()
           r=Path('strategy2_experiment8_news_momentum_runner.py').read_text()
+          p=Path('strategy2_experiment8_news_momentum_pilot.py').read_text()
           assert 'broker_orders": False' in s
           assert 'long_only": True' in s
           assert 'leverage": False' in s
-          assert '/v2/orders' not in s+r
-          assert 'paper-api.alpaca.markets' not in s+r
+          assert '/v2/orders' not in s+r+p
+          assert 'paper-api.alpaca.markets' not in s+r+p
           assert 'COST_BPS_PER_FILL = 10.0' in s
-          assert 'base.collect_events = collect_events_fast' in r
-          print('Research-only invariants: PASS')
+          assert 'base.UNIVERSE = ["NVDA", "TSLA", "AAPL", "AMD", "META", "AMZN", "NFLX", "GOOGL"]' in p
+          print('Research-only pilot invariants: PASS')
           PY
-      - run: python -m py_compile strategy2_experiment8_news_momentum_long.py strategy2_experiment8_news_momentum_runner.py
+      - run: python -m py_compile strategy2_experiment8_news_momentum_long.py strategy2_experiment8_news_momentum_runner.py strategy2_experiment8_news_momentum_pilot.py
       - name: Run backtest
         env:
           ALPACA_STRATEGY2_API_KEY_ID: ${{ secrets.ALPACA_STRATEGY2_API_KEY_ID }}
           ALPACA_STRATEGY2_SECRET_KEY: ${{ secrets.ALPACA_STRATEGY2_SECRET_KEY }}
-        run: python strategy2_experiment8_news_momentum_runner.py
+        run: python strategy2_experiment8_news_momentum_pilot.py
       - name: Commit results
         run: |
           git config user.name "MarketPulse Bot"
