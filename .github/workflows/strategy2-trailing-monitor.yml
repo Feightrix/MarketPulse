@@ -1,101 +1,14 @@
-name: MarketPulse Strategy 2 Micro Profit-Lock Monitor
+name: MarketPulse Strategy 2 Micro Profit-Lock Monitor (Archived)
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - strategy2_micro_monitor.py
-      - .github/workflows/strategy2-trailing-monitor.yml
   workflow_dispatch:
-  schedule:
-    # Hourly 55-minute windows. Script checks Alpaca's regular-session clock.
-    - cron: '35 13-21 * * 1-5'
 
 permissions:
-  contents: write
-
-concurrency:
-  group: strategy2-micro-profit-lock
-  cancel-in-progress: false
+  contents: read
 
 jobs:
-  micro-monitor:
+  archived:
     runs-on: ubuntu-24.04
-    timeout-minutes: 65
     steps:
-      - name: Checkout current main
-        uses: actions/checkout@v6
-        with:
-          ref: main
-          fetch-depth: 0
-
-      - name: Set up Python
-        uses: actions/setup-python@v6
-        with:
-          python-version: '3.12'
-
-      - name: Install dependencies
-        run: pip install numpy pandas
-
-      - name: Security and experiment invariants
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          s = Path('strategy2_micro_monitor.py').read_text()
-          assert 'CONTROL_CLONE_MICRO_PROFIT_LOCK' in s
-          assert 'ARM_PROFIT_PCT = 0.0060' in s
-          assert 'BASE_TRAIL_PCT = 0.0010' in s
-          assert 'TIGHTEN_PROFIT_PCT = 0.0075' in s
-          assert 'TIGHT_TRAIL_PCT = 0.0007' in s
-          assert 'EXECUTION_COST_BPS_PER_FILL = 10.0' in s
-          assert 'POLL_SECONDS = 15' in s
-          assert 'REENTRY_COOLDOWN_SECONDS = 30' in s
-          assert 'MAX_ROUND_TRIPS_PER_DAY = 200' in s
-          assert 'MAX_ROUND_TRIPS_PER_SYMBOL_PER_DAY = 30' in s
-          assert 'DAILY_DRAWDOWN_KILL_PCT = 0.0125' in s
-          assert 'OPPORTUNITY_DRIVEN_CAP_NOT_QUOTA' in s
-          assert 'ALPACA_STRATEGY2_API_KEY_ID' in s
-          assert 'ALPACA_STRATEGY2_SECRET_KEY' in s
-          assert '/v2/stocks/trades/latest' in s
-          assert 'feed": "iex"' in s
-          assert 'core.submit_market' not in s
-          assert 'core.close_position' not in s
-          assert 'core.api("POST"' not in s
-          assert 'core.api("DELETE"' not in s
-          assert 'https://api.alpaca.markets' not in s
-          assert 'Strategy 2 broker account must remain flat' in s
-          print('Strategy 2 micro profit-lock monitor invariants: PASS')
-          PY
-
-      - name: Syntax check
-        run: python -m py_compile strategy2_micro_monitor.py
-
-      - name: Monitor Control-clone micro profit locks
-        env:
-          ALPACA_STRATEGY2_API_KEY_ID: ${{ secrets.ALPACA_STRATEGY2_API_KEY_ID }}
-          ALPACA_STRATEGY2_SECRET_KEY: ${{ secrets.ALPACA_STRATEGY2_SECRET_KEY }}
-        run: python strategy2_micro_monitor.py
-
-      - name: Commit Strategy 2 micro state
-        if: always()
-        run: |
-          git config user.name "MarketPulse Bot"
-          git config user.email "actions@users.noreply.github.com"
-          mkdir -p /tmp/strategy2-micro-output
-          for f in strategy2_micro_state.json strategy2_status.json strategy2_status.md strategy2_micro_log.jsonl; do
-            if [ -f "$f" ]; then cp "$f" "/tmp/strategy2-micro-output/$f"; fi
-          done
-          git fetch origin main
-          git reset --hard origin/main
-          for f in strategy2_micro_state.json strategy2_status.json strategy2_status.md strategy2_micro_log.jsonl; do
-            if [ -f "/tmp/strategy2-micro-output/$f" ]; then
-              cp "/tmp/strategy2-micro-output/$f" "$f"
-              git add "$f"
-            fi
-          done
-          if git diff --cached --quiet; then
-            echo "No Strategy 2 micro monitor changes"
-          else
-            git commit -m "Update Strategy 2 micro profit-lock monitor"
-            git push origin main
-          fi
+      - name: Archived experiment
+        run: echo "Micro profit-lock monitor archived. Strategy 2 forward test now uses the 57.5% risk-cap shadow."
