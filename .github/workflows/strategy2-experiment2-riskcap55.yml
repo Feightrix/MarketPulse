@@ -1,0 +1,80 @@
+name: MarketPulse Strategy 2 Experiment 2 Risk Cap 55
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - strategy2_experiment2_riskcap55.py
+      - .github/workflows/strategy2-experiment2-riskcap55.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: strategy2-experiment2-riskcap55
+  cancel-in-progress: true
+
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install numpy pandas yfinance
+
+      - name: Verify research-only one-variable protocol
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s = Path('strategy2_experiment2_riskcap55.py').read_text()
+          assert 'CONTROL_CAP = 0.50' in s
+          assert 'CANDIDATE_CAP = 0.55' in s
+          assert 'COST_BPS = 10.0' in s
+          assert 'CFG = {"lookback": 252, "skip": 0, "top_n": 3}' in s
+          assert 'NEUTRAL_WEIGHT = 0.15' in s
+          assert '/v2/orders' not in s
+          assert 'paper-api.alpaca.markets' not in s
+          assert 'api.alpaca.markets' not in s
+          print('Strategy 2 Experiment 2 research-only invariants: PASS')
+          PY
+
+      - name: Syntax check
+        run: python -m py_compile strategy2_experiment2_riskcap55.py
+
+      - name: Run 55% risk-cap backtest
+        run: python strategy2_experiment2_riskcap55.py
+
+      - name: Commit Experiment 2 results
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          mkdir -p /tmp/s2e2
+          for f in strategy2_experiment2_riskcap55_results.json strategy2_experiment2_riskcap55_summary.md; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/s2e2/$f"; fi
+          done
+          git fetch origin main
+          git reset --hard origin/main
+          for f in strategy2_experiment2_riskcap55_results.json strategy2_experiment2_riskcap55_summary.md; do
+            if [ -f "/tmp/s2e2/$f" ]; then
+              cp "/tmp/s2e2/$f" "$f"
+              git add "$f"
+            fi
+          done
+          if git diff --cached --quiet; then
+            echo "No Experiment 2 result changes"
+          else
+            git commit -m "Record Strategy 2 55% risk-cap results"
+            git push origin main
+          fi
