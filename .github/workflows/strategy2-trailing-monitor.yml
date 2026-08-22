@@ -43,7 +43,7 @@ jobs:
           from pathlib import Path
           s = Path('strategy2_micro_monitor.py').read_text()
           assert 'CONTROL_CLONE_MICRO_PROFIT_LOCK' in s
-          assert 'ARM_PROFIT_PCT = 0.0035' in s
+          assert 'ARM_PROFIT_PCT = 0.0060' in s
           assert 'BASE_TRAIL_PCT = 0.0010' in s
           assert 'TIGHTEN_PROFIT_PCT = 0.0075' in s
           assert 'TIGHT_TRAIL_PCT = 0.0007' in s
