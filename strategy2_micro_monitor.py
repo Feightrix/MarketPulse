@@ -15,7 +15,9 @@ STATUS_FILE = "strategy2_status.json"
 STATUS_MD = "strategy2_status.md"
 LOG_FILE = "strategy2_micro_log.jsonl"
 
-ARM_PROFIT_PCT = 0.0035
+# Experiment revision: only the arm threshold changes from 0.35% to 0.60%.
+# All other execution/risk settings remain frozen for a clean one-variable test.
+ARM_PROFIT_PCT = 0.0060
 BASE_TRAIL_PCT = 0.0010
 TIGHTEN_PROFIT_PCT = 0.0075
 TIGHT_TRAIL_PCT = 0.0007
