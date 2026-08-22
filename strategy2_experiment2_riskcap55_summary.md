@@ -18,7 +18,7 @@ Everything else remains frozen to Strategy 1. Results use 10 bps transaction-cos
 ## holdout1_2020_2023
 - Control: return +13.809% | CAGR +3.296% | DD 3.802% | avg day $+0.344
 - Candidate: return +14.148% | CAGR +3.373% | DD 4.305% | avg day $+0.352
-- Candidate best/worst day: $+35.83 / $-34.44
+- Candidate best/worst day: $+35.84 / $-34.44
 
 ## holdout2_2024_2026
 - Control: return +21.642% | CAGR +7.901% | DD 2.993% | avg day $+0.838
