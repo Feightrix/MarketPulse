@@ -3,6 +3,7 @@ name: Strategy 2 Micro Profit-Lock 0.60 Arm Backtest
 on:
   push:
     branches:
+      - main
       - research/arm60-followup-backtest
     paths:
       - strategy2_micro_arm60_backtest.py
