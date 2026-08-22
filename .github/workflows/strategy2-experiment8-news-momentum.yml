@@ -4,7 +4,9 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: [strategy2_experiment8_news_momentum_long.py]
+    paths:
+      - strategy2_experiment8_news_momentum_long.py
+      - .github/workflows/strategy2-experiment8-news-momentum.yml
 
 permissions:
   contents: write
@@ -33,7 +35,6 @@ jobs:
           assert '/v2/orders' not in s
           assert 'paper-api.alpaca.markets' not in s
           assert 'COST_BPS_PER_FILL = 10.0' in s
-          python_ok=True
           print('Research-only invariants: PASS')
           PY
       - run: python -m py_compile strategy2_experiment8_news_momentum_long.py
