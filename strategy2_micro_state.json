@@ -1,0 +1,27 @@
+{
+  "activation_equity": 2495.1,
+  "activation_utc": "2026-08-22T02:45:10.826842+00:00",
+  "cash": 2495.1,
+  "control_rebalance_key": "2026-08-17T15:29:18.082538+00:00",
+  "control_rebalance_month": "2026-08",
+  "control_template_quantities": {
+    "BIL": 11.606948,
+    "IWM": 0.858513,
+    "QQQ": 0.20436,
+    "SPY": 0.371074,
+    "XLE": 3.466648,
+    "XLK": 0.328904,
+    "XLP": 1.724978,
+    "XLU": -1.0,
+    "XLV": 0.373424,
+    "XLY": -1.0
+  },
+  "cycle": {},
+  "daily": {},
+  "events": [],
+  "experiment": "CONTROL_CLONE_MICRO_PROFIT_LOCK",
+  "initialized": true,
+  "last_manager_utc": "2026-08-22T02:45:10.826842+00:00",
+  "positions": {},
+  "shadow_equity": 2495.1
+}
