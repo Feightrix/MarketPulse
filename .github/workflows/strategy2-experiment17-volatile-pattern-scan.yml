@@ -1,0 +1,69 @@
+name: Strategy 2 Experiment 17 Volatile Pattern Scan
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - strategy2_experiment17_volatile_pattern_scan.py
+      - .github/workflows/strategy2-experiment17-volatile-pattern-scan.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: strategy2-experiment17-volatile-pattern-scan
+  cancel-in-progress: true
+
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: pip install numpy pandas requests
+      - name: Verify locked research protocol
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s=Path('strategy2_experiment17_volatile_pattern_scan.py').read_text()
+          assert 'EXPERIMENT = "S2-E17-2026-VOLATILE-PATTERN-SCAN"' in s
+          assert 'BROKER_ORDERS = False' in s and 'LONG_ONLY = True' in s and 'LEVERAGE = False' in s
+          assert 'FEED = "sip"' in s
+          assert 'TOP_VOL_NAMES = 5' in s and 'ATR_DAYS = 20' in s
+          assert 'RISK_PER_TRADE = 0.01' in s and 'MAX_NOTIONAL_PCT = 1.00' in s
+          assert 'COST_BPS_PER_FILL = 10.0' in s
+          assert '"discovery_jan_apr": ("2026-01-02", "2026-04-30")' in s
+          assert '"validation_may_jun": ("2026-05-01", "2026-06-30")' in s
+          assert '"holdout_jul_aug21": ("2026-07-01", "2026-08-21")' in s
+          assert '/v2/orders' not in s and 'paper-api.alpaca.markets' not in s
+          print('Experiment 17 invariants: PASS')
+          PY
+      - run: python -m py_compile strategy2_experiment17_volatile_pattern_scan.py
+      - name: Run 2026 volatile pattern scan
+        env:
+          ALPACA_STRATEGY2_API_KEY_ID: ${{ secrets.ALPACA_STRATEGY2_API_KEY_ID }}
+          ALPACA_STRATEGY2_SECRET_KEY: ${{ secrets.ALPACA_STRATEGY2_SECRET_KEY }}
+        run: python strategy2_experiment17_volatile_pattern_scan.py
+      - name: Commit results
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          mkdir -p /tmp/s2e17
+          for f in strategy2_experiment17_volatile_pattern_scan_results.json strategy2_experiment17_volatile_pattern_scan_summary.md; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/s2e17/$f"; fi
+          done
+          git fetch origin main
+          git reset --hard origin/main
+          for f in strategy2_experiment17_volatile_pattern_scan_results.json strategy2_experiment17_volatile_pattern_scan_summary.md; do
+            if [ -f "/tmp/s2e17/$f" ]; then cp "/tmp/s2e17/$f" "$f"; git add "$f"; fi
+          done
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Record 2026 volatile pattern scan results"
+          git push origin main
