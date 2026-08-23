@@ -72,3 +72,5 @@ jobs:
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Record high-information news filter results"
           git push origin main
+
+# trigger-marker: locked protocol unchanged
