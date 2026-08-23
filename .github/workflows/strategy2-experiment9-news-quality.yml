@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - strategy2_experiment9_news_quality.py
+      - strategy2_experiment9_news_quality_fast.py
       - .github/workflows/strategy2-experiment9-news-quality.yml
 
 permissions:
@@ -33,25 +34,27 @@ jobs:
           python - <<'PY'
           from pathlib import Path
           s=Path('strategy2_experiment9_news_quality.py').read_text()
+          f=Path('strategy2_experiment9_news_quality_fast.py').read_text()
           assert 'research_only' in s
           assert 'broker_orders' in s
           assert 'long_only' in s
           assert 'leverage' in s
-          assert '/v2/orders' not in s
-          assert 'paper-api.alpaca.markets' not in s
+          assert '/v2/orders' not in s+f
+          assert 'paper-api.alpaca.markets' not in s+f
           assert 'COST_BPS_PER_FILL = 10.0' in s
           assert 'RISK_PER_TRADE_PCT = 0.0075' in s
           assert 'MAX_NOTIONAL_PCT = 0.50' in s
           assert 'development_2024' in s and 'validation_2025' in s
           assert 'balanced' in s and 'strong_tape' in s and 'retest_breakout' in s
+          assert 'e9.main()' in f
           print('Experiment 9 invariants: PASS')
           PY
-      - run: python -m py_compile strategy2_experiment9_news_quality.py
+      - run: python -m py_compile strategy2_experiment9_news_quality.py strategy2_experiment9_news_quality_fast.py
       - name: Run backtest
         env:
           ALPACA_STRATEGY2_API_KEY_ID: ${{ secrets.ALPACA_STRATEGY2_API_KEY_ID }}
           ALPACA_STRATEGY2_SECRET_KEY: ${{ secrets.ALPACA_STRATEGY2_SECRET_KEY }}
-        run: python strategy2_experiment9_news_quality.py
+        run: python strategy2_experiment9_news_quality_fast.py
       - name: Commit results
         run: |
           git config user.name "MarketPulse Bot"
@@ -69,4 +72,4 @@ jobs:
           git commit -m "Record news quality-filter results"
           git push origin main
 
-# trigger-marker: protocol unchanged
+# data-plumbing-only parallelization; protocol unchanged
