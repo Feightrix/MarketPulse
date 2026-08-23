@@ -1,0 +1,432 @@
+{
+  "experiment": "S2-E9-NEWS-MOMENTUM-QUALITY-FILTER",
+  "research_only": true,
+  "broker_orders": false,
+  "long_only": true,
+  "leverage": false,
+  "feed": "iex",
+  "universe": [
+    "NVDA",
+    "TSLA",
+    "AAPL",
+    "AMD",
+    "META",
+    "AMZN",
+    "NFLX",
+    "GOOGL"
+  ],
+  "periods": {
+    "development_2024": [
+      "2024-01-01",
+      "2024-12-31"
+    ],
+    "validation_2025": [
+      "2025-01-01",
+      "2025-12-31"
+    ]
+  },
+  "profiles_locked_before_results": {
+    "balanced": {
+      "min_reaction": 0.0075,
+      "min_rs": 0.004,
+      "min_relvol": 1.5,
+      "min_score": 60.0,
+      "hard_required": true,
+      "mode": "persistence",
+      "max_fade_fraction": 0.5
+    },
+    "strong_tape": {
+      "min_reaction": 0.01,
+      "min_rs": 0.006,
+      "min_relvol": 2.0,
+      "min_score": 68.0,
+      "hard_required": false,
+      "mode": "persistence",
+      "max_fade_fraction": 0.35
+    },
+    "retest_breakout": {
+      "min_reaction": 0.0075,
+      "min_rs": 0.004,
+      "min_relvol": 1.5,
+      "min_score": 60.0,
+      "hard_required": true,
+      "mode": "retest_breakout",
+      "max_fade_fraction": 0.5
+    }
+  },
+  "risk_rules": {
+    "risk_per_trade_pct": 0.75,
+    "max_notional_pct": 50.0,
+    "cost_bps_per_fill": 10.0,
+    "break_even_after_r": 1.0,
+    "trail_after_r": 2.0,
+    "force_exit_et": "15:55"
+  },
+  "development_2024": {
+    "balanced": {
+      "ending_equity": 2482.7509723094367,
+      "total_return_pct": -0.6899611076225276,
+      "max_drawdown_pct": 0.6899611076225276,
+      "trades": 1,
+      "wins": 0,
+      "losses": 1,
+      "win_rate_pct": 0.0,
+      "profit_factor": 0.0,
+      "avg_trade_pnl_dollars": -17.249027690563274,
+      "avg_winner_dollars": 0.0,
+      "avg_loser_dollars": 17.249027690563274,
+      "avg_winner_to_loser": 0.0,
+      "avg_r_multiple": -1.0770516181452987,
+      "best_trade_dollars": -17.249027690563274,
+      "worst_trade_dollars": -17.249027690563274,
+      "funnel": {
+        "eligible_news": 3569,
+        "hard_catalyst_reject": 1802,
+        "reaction_reject": 1515,
+        "relative_strength_reject": 0,
+        "relative_volume_reject": 7,
+        "vwap_reject": 0,
+        "score_reject": 0,
+        "structure_reject": 0,
+        "stop_reject": 0,
+        "qualified": 1
+      },
+      "top_trades": [
+        {
+          "symbol": "TSLA",
+          "event_time_et": "2024-04-09T10:00:53-04:00",
+          "headline": "Ford's Delay Of Its All-Electric SUV Is Not The Result Of Gone EV Euphoria But Part Of A Wise Strategy",
+          "groups": [
+            "commercial",
+            "product"
+          ],
+          "confidence_score": 69.53202234354906,
+          "reaction_pct": 0.9134889015367298,
+          "relative_strength_pct": 0.9431783499067814,
+          "relative_volume": 2.369029905484419,
+          "entry_time_et": "2024-04-09T10:11:00-04:00",
+          "entry_fill": 178.19301499999997,
+          "initial_stop": 175.91,
+          "exit_time_et": "2024-04-09T10:52:00-04:00",
+          "exit_fill": 175.73409,
+          "exit_reason": "TRAIL_OR_STOP",
+          "notional": 1250.0,
+          "pnl_dollars": -17.249027690563274,
+          "r_multiple": -1.0770516181452987
+        }
+      ],
+      "bottom_trades": [
+        {
+          "symbol": "TSLA",
+          "event_time_et": "2024-04-09T10:00:53-04:00",
+          "headline": "Ford's Delay Of Its All-Electric SUV Is Not The Result Of Gone EV Euphoria But Part Of A Wise Strategy",
+          "groups": [
+            "commercial",
+            "product"
+          ],
+          "confidence_score": 69.53202234354906,
+          "reaction_pct": 0.9134889015367298,
+          "relative_strength_pct": 0.9431783499067814,
+          "relative_volume": 2.369029905484419,
+          "entry_time_et": "2024-04-09T10:11:00-04:00",
+          "entry_fill": 178.19301499999997,
+          "initial_stop": 175.91,
+          "exit_time_et": "2024-04-09T10:52:00-04:00",
+          "exit_fill": 175.73409,
+          "exit_reason": "TRAIL_OR_STOP",
+          "notional": 1250.0,
+          "pnl_dollars": -17.249027690563274,
+          "r_multiple": -1.0770516181452987
+        }
+      ]
+    },
+    "strong_tape": {
+      "ending_equity": 2500.0,
+      "total_return_pct": 0.0,
+      "max_drawdown_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate_pct": 0.0,
+      "profit_factor": 0.0,
+      "avg_trade_pnl_dollars": 0.0,
+      "avg_winner_dollars": 0.0,
+      "avg_loser_dollars": 0.0,
+      "avg_winner_to_loser": 0.0,
+      "avg_r_multiple": 0.0,
+      "best_trade_dollars": 0.0,
+      "worst_trade_dollars": 0.0,
+      "funnel": {
+        "eligible_news": 3569,
+        "hard_catalyst_reject": 0,
+        "reaction_reject": 3331,
+        "relative_strength_reject": 0,
+        "relative_volume_reject": 4,
+        "vwap_reject": 0,
+        "score_reject": 1,
+        "structure_reject": 0,
+        "stop_reject": 0,
+        "qualified": 0
+      },
+      "top_trades": [],
+      "bottom_trades": []
+    },
+    "retest_breakout": {
+      "ending_equity": 2481.8991383288667,
+      "total_return_pct": -0.7240344668453358,
+      "max_drawdown_pct": 0.7240344668453358,
+      "trades": 1,
+      "wins": 0,
+      "losses": 1,
+      "win_rate_pct": 0.0,
+      "profit_factor": 0.0,
+      "avg_trade_pnl_dollars": -18.100861671133497,
+      "avg_winner_dollars": 0.0,
+      "avg_loser_dollars": 18.100861671133497,
+      "avg_winner_to_loser": 0.0,
+      "avg_r_multiple": -1.0731060026704269,
+      "best_trade_dollars": -18.100861671133497,
+      "worst_trade_dollars": -18.100861671133497,
+      "funnel": {
+        "eligible_news": 3569,
+        "hard_catalyst_reject": 1802,
+        "reaction_reject": 1515,
+        "relative_strength_reject": 0,
+        "relative_volume_reject": 7,
+        "vwap_reject": 0,
+        "score_reject": 0,
+        "structure_reject": 0,
+        "stop_reject": 0,
+        "qualified": 1
+      },
+      "top_trades": [
+        {
+          "symbol": "TSLA",
+          "event_time_et": "2024-04-09T10:00:53-04:00",
+          "headline": "Ford's Delay Of Its All-Electric SUV Is Not The Result Of Gone EV Euphoria But Part Of A Wise Strategy",
+          "groups": [
+            "commercial",
+            "product"
+          ],
+          "confidence_score": 69.53202234354906,
+          "reaction_pct": 0.9134889015367298,
+          "relative_strength_pct": 0.9431783499067814,
+          "relative_volume": 2.369029905484419,
+          "entry_time_et": "2024-04-09T10:17:00-04:00",
+          "entry_fill": 179.26908999999998,
+          "initial_stop": 176.85,
+          "exit_time_et": "2024-04-09T10:30:00-04:00",
+          "exit_fill": 176.67315,
+          "exit_reason": "TRAIL_OR_STOP",
+          "notional": 1250.0,
+          "pnl_dollars": -18.100861671133497,
+          "r_multiple": -1.0731060026704269
+        }
+      ],
+      "bottom_trades": [
+        {
+          "symbol": "TSLA",
+          "event_time_et": "2024-04-09T10:00:53-04:00",
+          "headline": "Ford's Delay Of Its All-Electric SUV Is Not The Result Of Gone EV Euphoria But Part Of A Wise Strategy",
+          "groups": [
+            "commercial",
+            "product"
+          ],
+          "confidence_score": 69.53202234354906,
+          "reaction_pct": 0.9134889015367298,
+          "relative_strength_pct": 0.9431783499067814,
+          "relative_volume": 2.369029905484419,
+          "entry_time_et": "2024-04-09T10:17:00-04:00",
+          "entry_fill": 179.26908999999998,
+          "initial_stop": 176.85,
+          "exit_time_et": "2024-04-09T10:30:00-04:00",
+          "exit_fill": 176.67315,
+          "exit_reason": "TRAIL_OR_STOP",
+          "notional": 1250.0,
+          "pnl_dollars": -18.100861671133497,
+          "r_multiple": -1.0731060026704269
+        }
+      ]
+    }
+  },
+  "development_eligibility": {
+    "balanced": {
+      "checks": {
+        "trades_at_least_5": false,
+        "positive_expectancy": false,
+        "profit_factor_at_least_1_20": false,
+        "winner_loser_at_least_1_25": false,
+        "drawdown_at_most_5pct": true
+      },
+      "eligible": false,
+      "selection_score": -1.0770516181452987
+    },
+    "strong_tape": {
+      "checks": {
+        "trades_at_least_5": false,
+        "positive_expectancy": false,
+        "profit_factor_at_least_1_20": false,
+        "winner_loser_at_least_1_25": false,
+        "drawdown_at_most_5pct": true
+      },
+      "eligible": false,
+      "selection_score": 0.0
+    },
+    "retest_breakout": {
+      "checks": {
+        "trades_at_least_5": false,
+        "positive_expectancy": false,
+        "profit_factor_at_least_1_20": false,
+        "winner_loser_at_least_1_25": false,
+        "drawdown_at_most_5pct": true
+      },
+      "eligible": false,
+      "selection_score": -1.0731060026704269
+    }
+  },
+  "selected_profile_from_2024": null,
+  "validation_2025": {
+    "balanced": {
+      "ending_equity": 2513.8224659987045,
+      "total_return_pct": 0.552898639948185,
+      "max_drawdown_pct": 0.0,
+      "trades": 1,
+      "wins": 1,
+      "losses": 0,
+      "win_rate_pct": 100.0,
+      "profit_factor": 999.0,
+      "avg_trade_pnl_dollars": 13.822465998704319,
+      "avg_winner_dollars": 13.822465998704319,
+      "avg_loser_dollars": 0.0,
+      "avg_winner_to_loser": 0.0,
+      "avg_r_multiple": 0.7509349498197175,
+      "best_trade_dollars": 13.822465998704319,
+      "worst_trade_dollars": 13.822465998704319,
+      "funnel": {
+        "eligible_news": 3455,
+        "hard_catalyst_reject": 1769,
+        "reaction_reject": 1340,
+        "relative_strength_reject": 1,
+        "relative_volume_reject": 4,
+        "vwap_reject": 0,
+        "score_reject": 0,
+        "structure_reject": 0,
+        "stop_reject": 0,
+        "qualified": 1
+      },
+      "top_trades": [
+        {
+          "symbol": "NVDA",
+          "event_time_et": "2025-01-29T13:03:14-05:00",
+          "headline": "'Trump Officials Discuss Tightening Curbs On Nvidia-China Sales; U.S. Officials Are Focused On Potentially Expanding Restrictions To Cover Nvidia's H20 Chips' - Bloomberg",
+          "groups": [
+            "earnings",
+            "product"
+          ],
+          "confidence_score": 79.41494742864113,
+          "reaction_pct": 1.4232209737827572,
+          "relative_strength_pct": 1.170567261977551,
+          "relative_volume": 2.8749018388417773,
+          "entry_time_et": "2025-01-29T13:14:00-05:00",
+          "entry_fill": 121.66153999999999,
+          "initial_stop": 119.87,
+          "exit_time_et": "2025-01-29T15:55:00-05:00",
+          "exit_fill": 123.00686999999999,
+          "exit_reason": "FORCE_CLOSE",
+          "notional": 1250.0,
+          "pnl_dollars": 13.822465998704319,
+          "r_multiple": 0.7509349498197175
+        }
+      ],
+      "bottom_trades": [
+        {
+          "symbol": "NVDA",
+          "event_time_et": "2025-01-29T13:03:14-05:00",
+          "headline": "'Trump Officials Discuss Tightening Curbs On Nvidia-China Sales; U.S. Officials Are Focused On Potentially Expanding Restrictions To Cover Nvidia's H20 Chips' - Bloomberg",
+          "groups": [
+            "earnings",
+            "product"
+          ],
+          "confidence_score": 79.41494742864113,
+          "reaction_pct": 1.4232209737827572,
+          "relative_strength_pct": 1.170567261977551,
+          "relative_volume": 2.8749018388417773,
+          "entry_time_et": "2025-01-29T13:14:00-05:00",
+          "entry_fill": 121.66153999999999,
+          "initial_stop": 119.87,
+          "exit_time_et": "2025-01-29T15:55:00-05:00",
+          "exit_fill": 123.00686999999999,
+          "exit_reason": "FORCE_CLOSE",
+          "notional": 1250.0,
+          "pnl_dollars": 13.822465998704319,
+          "r_multiple": 0.7509349498197175
+        }
+      ]
+    },
+    "strong_tape": {
+      "ending_equity": 2500.0,
+      "total_return_pct": 0.0,
+      "max_drawdown_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate_pct": 0.0,
+      "profit_factor": 0.0,
+      "avg_trade_pnl_dollars": 0.0,
+      "avg_winner_dollars": 0.0,
+      "avg_loser_dollars": 0.0,
+      "avg_winner_to_loser": 0.0,
+      "avg_r_multiple": 0.0,
+      "best_trade_dollars": 0.0,
+      "worst_trade_dollars": 0.0,
+      "funnel": {
+        "eligible_news": 3455,
+        "hard_catalyst_reject": 0,
+        "reaction_reject": 3116,
+        "relative_strength_reject": 1,
+        "relative_volume_reject": 4,
+        "vwap_reject": 0,
+        "score_reject": 0,
+        "structure_reject": 1,
+        "stop_reject": 0,
+        "qualified": 0
+      },
+      "top_trades": [],
+      "bottom_trades": []
+    },
+    "retest_breakout": {
+      "ending_equity": 2500.0,
+      "total_return_pct": 0.0,
+      "max_drawdown_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate_pct": 0.0,
+      "profit_factor": 0.0,
+      "avg_trade_pnl_dollars": 0.0,
+      "avg_winner_dollars": 0.0,
+      "avg_loser_dollars": 0.0,
+      "avg_winner_to_loser": 0.0,
+      "avg_r_multiple": 0.0,
+      "best_trade_dollars": 0.0,
+      "worst_trade_dollars": 0.0,
+      "funnel": {
+        "eligible_news": 3455,
+        "hard_catalyst_reject": 1772,
+        "reaction_reject": 1344,
+        "relative_strength_reject": 1,
+        "relative_volume_reject": 4,
+        "vwap_reject": 0,
+        "score_reject": 0,
+        "structure_reject": 1,
+        "stop_reject": 0,
+        "qualified": 0
+      },
+      "top_trades": [],
+      "bottom_trades": []
+    }
+  },
+  "validation_checks_for_selected": {},
+  "gate": "FAIL",
+  "activate": false
+}
