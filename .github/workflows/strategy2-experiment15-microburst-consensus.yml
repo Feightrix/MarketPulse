@@ -1,0 +1,72 @@
+name: Strategy 2 Experiment 15 MicroBurst Consensus
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - strategy2_experiment15_microburst_consensus.py
+      - .github/workflows/strategy2-experiment15-microburst-consensus.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: strategy2-experiment15-microburst-consensus
+  cancel-in-progress: true
+
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: pip install numpy pandas requests
+      - name: Verify locked consensus protocol
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s=Path('strategy2_experiment15_microburst_consensus.py').read_text()
+          assert 'EXPERIMENT = "S2-E15-MICROBURST-CONSENSUS-V2"' in s
+          assert 'BROKER_ORDERS = False' in s and 'LONG_ONLY = True' in s and 'LEVERAGE = False' in s
+          assert '/v2/orders' not in s and 'paper-api.alpaca.markets' not in s
+          assert 'TEST_DATES = ["2026-08-12", "2026-08-13", "2026-08-14", "2026-08-17", "2026-08-18"]' in s
+          assert 'MIN_QUOTE_IMBALANCE = 0.35' in s
+          assert 'MIN_MICRO_DISP_BPS = 0.15' in s
+          assert 'MIN_BUY_IMBALANCE = 0.35' in s
+          assert 'MIN_TRADE_ACCEL = 1.20' in s
+          assert 'MIN_QUOTE_ACCEL = 1.00' in s
+          assert 'CONSENSUS_MAX_SPREAD_BPS = 3.0' in s
+          assert 'PROFIT_BPS = v1.PROFIT_BPS' in s and 'STOP_BPS = v1.STOP_BPS' in s
+          assert 'IMPACT_BPS_PER_SIDE = v1.IMPACT_BPS_PER_SIDE' in s
+          assert 'MAX_NOTIONAL_PCT = v1.MAX_NOTIONAL_PCT' in s
+          print('Experiment 15 invariants: PASS')
+          PY
+      - run: python -m py_compile strategy2_experiment14_microburst_long.py strategy2_experiment15_microburst_consensus.py
+      - name: Run consensus pilot
+        env:
+          ALPACA_STRATEGY2_API_KEY_ID: ${{ secrets.ALPACA_STRATEGY2_API_KEY_ID }}
+          ALPACA_STRATEGY2_SECRET_KEY: ${{ secrets.ALPACA_STRATEGY2_SECRET_KEY }}
+        run: python strategy2_experiment15_microburst_consensus.py
+      - name: Commit results
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          mkdir -p /tmp/s2e15
+          for f in strategy2_experiment15_microburst_consensus_results.json strategy2_experiment15_microburst_consensus_summary.md; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/s2e15/$f"; fi
+          done
+          git fetch origin main
+          git reset --hard origin/main
+          for f in strategy2_experiment15_microburst_consensus_results.json strategy2_experiment15_microburst_consensus_summary.md; do
+            if [ -f "/tmp/s2e15/$f" ]; then cp "/tmp/s2e15/$f" "$f"; git add "$f"; fi
+          done
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Record MicroBurst consensus v2 results"
+          git push origin main
