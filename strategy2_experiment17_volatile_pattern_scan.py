@@ -211,14 +211,17 @@ def signal_first_pullback_rebreak(x):
     after = x[(x.index > hi_time) & (x.index.time <= dtime(11,0))]
     if len(after) < 5:
         return None
-    pull_low = float(after["l"].cummin().iloc[-1])
-    retrace = (hi - pull_low) / (hi - op) if hi > op else 1.0
-    if retrace < 0.20 or retrace > 0.60 or pull_low <= op:
-        return None
-    for i in range(2, len(after)):
+    running_low = math.inf
+    for i in range(len(after)):
         r = after.iloc[i]
+        running_low = min(running_low, float(r["l"]))
+        retrace = (hi - running_low) / (hi - op) if hi > op else 1.0
+        if running_low <= op or retrace > 0.60:
+            return None
+        if i < 2 or retrace < 0.20:
+            continue
         if float(r["c"]) > hi and float(r["c"]) > float(r["vwap"]) and float(r["relvol"]) >= 1.2:
-            return after.index[i], pull_low
+            return after.index[i], running_low
     return None
 
 
@@ -464,7 +467,9 @@ def main():
         return (s["profit_factor"], s["avg_r"], s["return_pct"])
 
     ranked = sorted(results["patterns"].items(), key=discovery_score, reverse=True)
-    selected = ranked[0][0] if ranked else None
+    selected = None
+    if ranked and discovery_score(ranked[0])[0] > -999.0:
+        selected = ranked[0][0]
     results.update({
         "experiment": EXPERIMENT,
         "research_only": True,
@@ -514,6 +519,8 @@ def main():
         for block in BLOCKS:
             s = results["patterns"][selected][block]["stats"]
             lines.append(f"- {block}: {s['trades']} trades, win {s['win_rate_pct']:.1f}%, PF {s['profit_factor']:.2f}, return {s['return_pct']:+.2f}%, DD {s['max_drawdown_pct']:.2f}%, avg R {s['avg_r']:+.2f}")
+    else:
+        lines += ["", "No pattern met the minimum 15 discovery trades required for selection."]
     lines += ["", "Activation remains OFF. Aggressive sizing is not tested unless the pattern survives validation and holdout."]
     with open("strategy2_experiment17_volatile_pattern_scan_summary.md", "w") as f:
         f.write("\n".join(lines) + "\n")
