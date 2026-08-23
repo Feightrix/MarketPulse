@@ -1,0 +1,232 @@
+{
+  "experiment": "S2-E9-DEV-GATE-CHECK",
+  "research_only": true,
+  "period": [
+    "2024-01-01",
+    "2024-12-31"
+  ],
+  "rules": "identical to Experiment 9",
+  "development_2024": {
+    "balanced": {
+      "ending_equity": 2482.7509723094367,
+      "total_return_pct": -0.6899611076225276,
+      "max_drawdown_pct": 0.6899611076225276,
+      "trades": 1,
+      "wins": 0,
+      "losses": 1,
+      "win_rate_pct": 0.0,
+      "profit_factor": 0.0,
+      "avg_trade_pnl_dollars": -17.249027690563274,
+      "avg_winner_dollars": 0.0,
+      "avg_loser_dollars": 17.249027690563274,
+      "avg_winner_to_loser": 0.0,
+      "avg_r_multiple": -1.0770516181452987,
+      "best_trade_dollars": -17.249027690563274,
+      "worst_trade_dollars": -17.249027690563274,
+      "funnel": {
+        "eligible_news": 3569,
+        "hard_catalyst_reject": 1802,
+        "reaction_reject": 1515,
+        "relative_strength_reject": 0,
+        "relative_volume_reject": 7,
+        "vwap_reject": 0,
+        "score_reject": 0,
+        "structure_reject": 0,
+        "stop_reject": 0,
+        "qualified": 1
+      },
+      "top_trades": [
+        {
+          "symbol": "TSLA",
+          "event_time_et": "2024-04-09T10:00:53-04:00",
+          "headline": "Ford's Delay Of Its All-Electric SUV Is Not The Result Of Gone EV Euphoria But Part Of A Wise Strategy",
+          "groups": [
+            "commercial",
+            "product"
+          ],
+          "confidence_score": 69.53202234354906,
+          "reaction_pct": 0.9134889015367298,
+          "relative_strength_pct": 0.9431783499067814,
+          "relative_volume": 2.369029905484419,
+          "entry_time_et": "2024-04-09T10:11:00-04:00",
+          "entry_fill": 178.19301499999997,
+          "initial_stop": 175.91,
+          "exit_time_et": "2024-04-09T10:52:00-04:00",
+          "exit_fill": 175.73409,
+          "exit_reason": "TRAIL_OR_STOP",
+          "notional": 1250.0,
+          "pnl_dollars": -17.249027690563274,
+          "r_multiple": -1.0770516181452987
+        }
+      ],
+      "bottom_trades": [
+        {
+          "symbol": "TSLA",
+          "event_time_et": "2024-04-09T10:00:53-04:00",
+          "headline": "Ford's Delay Of Its All-Electric SUV Is Not The Result Of Gone EV Euphoria But Part Of A Wise Strategy",
+          "groups": [
+            "commercial",
+            "product"
+          ],
+          "confidence_score": 69.53202234354906,
+          "reaction_pct": 0.9134889015367298,
+          "relative_strength_pct": 0.9431783499067814,
+          "relative_volume": 2.369029905484419,
+          "entry_time_et": "2024-04-09T10:11:00-04:00",
+          "entry_fill": 178.19301499999997,
+          "initial_stop": 175.91,
+          "exit_time_et": "2024-04-09T10:52:00-04:00",
+          "exit_fill": 175.73409,
+          "exit_reason": "TRAIL_OR_STOP",
+          "notional": 1250.0,
+          "pnl_dollars": -17.249027690563274,
+          "r_multiple": -1.0770516181452987
+        }
+      ]
+    },
+    "strong_tape": {
+      "ending_equity": 2500.0,
+      "total_return_pct": 0.0,
+      "max_drawdown_pct": 0.0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate_pct": 0.0,
+      "profit_factor": 0.0,
+      "avg_trade_pnl_dollars": 0.0,
+      "avg_winner_dollars": 0.0,
+      "avg_loser_dollars": 0.0,
+      "avg_winner_to_loser": 0.0,
+      "avg_r_multiple": 0.0,
+      "best_trade_dollars": 0.0,
+      "worst_trade_dollars": 0.0,
+      "funnel": {
+        "eligible_news": 3569,
+        "hard_catalyst_reject": 0,
+        "reaction_reject": 3331,
+        "relative_strength_reject": 0,
+        "relative_volume_reject": 4,
+        "vwap_reject": 0,
+        "score_reject": 1,
+        "structure_reject": 0,
+        "stop_reject": 0,
+        "qualified": 0
+      },
+      "top_trades": [],
+      "bottom_trades": []
+    },
+    "retest_breakout": {
+      "ending_equity": 2481.8991383288667,
+      "total_return_pct": -0.7240344668453358,
+      "max_drawdown_pct": 0.7240344668453358,
+      "trades": 1,
+      "wins": 0,
+      "losses": 1,
+      "win_rate_pct": 0.0,
+      "profit_factor": 0.0,
+      "avg_trade_pnl_dollars": -18.100861671133497,
+      "avg_winner_dollars": 0.0,
+      "avg_loser_dollars": 18.100861671133497,
+      "avg_winner_to_loser": 0.0,
+      "avg_r_multiple": -1.0731060026704269,
+      "best_trade_dollars": -18.100861671133497,
+      "worst_trade_dollars": -18.100861671133497,
+      "funnel": {
+        "eligible_news": 3569,
+        "hard_catalyst_reject": 1802,
+        "reaction_reject": 1515,
+        "relative_strength_reject": 0,
+        "relative_volume_reject": 7,
+        "vwap_reject": 0,
+        "score_reject": 0,
+        "structure_reject": 0,
+        "stop_reject": 0,
+        "qualified": 1
+      },
+      "top_trades": [
+        {
+          "symbol": "TSLA",
+          "event_time_et": "2024-04-09T10:00:53-04:00",
+          "headline": "Ford's Delay Of Its All-Electric SUV Is Not The Result Of Gone EV Euphoria But Part Of A Wise Strategy",
+          "groups": [
+            "commercial",
+            "product"
+          ],
+          "confidence_score": 69.53202234354906,
+          "reaction_pct": 0.9134889015367298,
+          "relative_strength_pct": 0.9431783499067814,
+          "relative_volume": 2.369029905484419,
+          "entry_time_et": "2024-04-09T10:17:00-04:00",
+          "entry_fill": 179.26908999999998,
+          "initial_stop": 176.85,
+          "exit_time_et": "2024-04-09T10:30:00-04:00",
+          "exit_fill": 176.67315,
+          "exit_reason": "TRAIL_OR_STOP",
+          "notional": 1250.0,
+          "pnl_dollars": -18.100861671133497,
+          "r_multiple": -1.0731060026704269
+        }
+      ],
+      "bottom_trades": [
+        {
+          "symbol": "TSLA",
+          "event_time_et": "2024-04-09T10:00:53-04:00",
+          "headline": "Ford's Delay Of Its All-Electric SUV Is Not The Result Of Gone EV Euphoria But Part Of A Wise Strategy",
+          "groups": [
+            "commercial",
+            "product"
+          ],
+          "confidence_score": 69.53202234354906,
+          "reaction_pct": 0.9134889015367298,
+          "relative_strength_pct": 0.9431783499067814,
+          "relative_volume": 2.369029905484419,
+          "entry_time_et": "2024-04-09T10:17:00-04:00",
+          "entry_fill": 179.26908999999998,
+          "initial_stop": 176.85,
+          "exit_time_et": "2024-04-09T10:30:00-04:00",
+          "exit_fill": 176.67315,
+          "exit_reason": "TRAIL_OR_STOP",
+          "notional": 1250.0,
+          "pnl_dollars": -18.100861671133497,
+          "r_multiple": -1.0731060026704269
+        }
+      ]
+    }
+  },
+  "development_eligibility": {
+    "balanced": {
+      "checks": {
+        "trades_at_least_5": false,
+        "positive_expectancy": false,
+        "profit_factor_at_least_1_20": false,
+        "winner_loser_at_least_1_25": false,
+        "drawdown_at_most_5pct": true
+      },
+      "eligible": false,
+      "selection_score": -1.0770516181452987
+    },
+    "strong_tape": {
+      "checks": {
+        "trades_at_least_5": false,
+        "positive_expectancy": false,
+        "profit_factor_at_least_1_20": false,
+        "winner_loser_at_least_1_25": false,
+        "drawdown_at_most_5pct": true
+      },
+      "eligible": false,
+      "selection_score": 0.0
+    },
+    "retest_breakout": {
+      "checks": {
+        "trades_at_least_5": false,
+        "positive_expectancy": false,
+        "profit_factor_at_least_1_20": false,
+        "winner_loser_at_least_1_25": false,
+        "drawdown_at_most_5pct": true
+      },
+      "eligible": false,
+      "selection_score": -1.0731060026704269
+    }
+  },
+  "any_profile_eligible": false
+}
