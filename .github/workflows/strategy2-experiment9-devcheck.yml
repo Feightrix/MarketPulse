@@ -1,0 +1,43 @@
+name: Strategy 2 Experiment 9 Dev Gate
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - strategy2_experiment9_devcheck.py
+      - .github/workflows/strategy2-experiment9-devcheck.yml
+
+permissions:
+  contents: write
+
+jobs:
+  devcheck:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: pip install numpy pandas requests
+      - name: Run 2024 development gate
+        env:
+          ALPACA_STRATEGY2_API_KEY_ID: ${{ secrets.ALPACA_STRATEGY2_API_KEY_ID }}
+          ALPACA_STRATEGY2_SECRET_KEY: ${{ secrets.ALPACA_STRATEGY2_SECRET_KEY }}
+        run: python strategy2_experiment9_devcheck.py
+      - name: Commit dev gate result
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          cp strategy2_experiment9_devcheck.json /tmp/strategy2_experiment9_devcheck.json
+          git fetch origin main
+          git reset --hard origin/main
+          cp /tmp/strategy2_experiment9_devcheck.json .
+          git add strategy2_experiment9_devcheck.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Record Experiment 9 development gate"
+          git push origin main
