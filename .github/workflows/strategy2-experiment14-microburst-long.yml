@@ -1,0 +1,68 @@
+name: Strategy 2 Experiment 14 MicroBurst Long
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - strategy2_experiment14_microburst_long.py
+      - .github/workflows/strategy2-experiment14-microburst-long.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: strategy2-experiment14-microburst-long
+  cancel-in-progress: true
+
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: pip install numpy pandas requests
+      - name: Verify locked research protocol
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s=Path('strategy2_experiment14_microburst_long.py').read_text()
+          assert 'EXPERIMENT = "S2-E14-MICROBURST-LONG-V1"' in s
+          assert 'BROKER_ORDERS = False' in s and 'LONG_ONLY = True' in s and 'LEVERAGE = False' in s
+          assert '/v2/orders' not in s and 'paper-api.alpaca.markets' not in s
+          assert 'FEATURE_SECONDS = 5' in s and 'HORIZON_SECONDS = 30' in s
+          assert 'SIGNAL_THRESHOLD = 70' in s
+          assert 'PROFIT_BPS = 15.0' in s and 'STOP_BPS = 8.0' in s
+          assert 'IMPACT_BPS_PER_SIDE = 1.0' in s
+          assert 'MAX_NOTIONAL_PCT = 0.50' in s
+          assert 'sip_required_for_valid_pass' in s
+          print('Experiment 14 invariants: PASS')
+          PY
+      - run: python -m py_compile strategy2_experiment14_microburst_long.py
+      - name: Run MicroBurst pilot
+        env:
+          ALPACA_STRATEGY2_API_KEY_ID: ${{ secrets.ALPACA_STRATEGY2_API_KEY_ID }}
+          ALPACA_STRATEGY2_SECRET_KEY: ${{ secrets.ALPACA_STRATEGY2_SECRET_KEY }}
+        run: python strategy2_experiment14_microburst_long.py
+      - name: Commit results
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          mkdir -p /tmp/s2e14
+          for f in strategy2_experiment14_microburst_long_results.json strategy2_experiment14_microburst_long_summary.md; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/s2e14/$f"; fi
+          done
+          git fetch origin main
+          git reset --hard origin/main
+          for f in strategy2_experiment14_microburst_long_results.json strategy2_experiment14_microburst_long_summary.md; do
+            if [ -f "/tmp/s2e14/$f" ]; then cp "/tmp/s2e14/$f" "$f"; git add "$f"; fi
+          done
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Record MicroBurst Long v1 results"
+          git push origin main
