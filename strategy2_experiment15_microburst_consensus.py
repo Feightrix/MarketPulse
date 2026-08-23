@@ -42,6 +42,9 @@ PREV_MIN_QUOTE_IMBALANCE = 0.0
 PREV_MIN_BUY_IMBALANCE = 0.0
 PREV_MIN_MICRO_DISP_BPS = 0.0
 
+# Harmless trigger marker; no protocol parameter changed.
+TRIGGER_MARKER = "2026-08-23T18:09:00-04:00"
+
 
 def finite_ge(x, threshold):
     return np.isfinite(x) and float(x) >= float(threshold)
