@@ -64,3 +64,5 @@ jobs:
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Record primary-event news momentum results"
           git push origin main
+
+# trigger-marker: classifier and all trading rules unchanged
