@@ -1,0 +1,58 @@
+{
+  "research_only": true,
+  "period": [
+    "2024-01-01",
+    "2024-01-31"
+  ],
+  "status": "PASS",
+  "profiles": {
+    "balanced": {
+      "trades": 0,
+      "return_pct": 0.0,
+      "funnel": {
+        "eligible_news": 285,
+        "hard_catalyst_reject": 138,
+        "reaction_reject": 131,
+        "relative_strength_reject": 0,
+        "relative_volume_reject": 0,
+        "vwap_reject": 0,
+        "score_reject": 0,
+        "structure_reject": 0,
+        "stop_reject": 0,
+        "qualified": 0
+      }
+    },
+    "strong_tape": {
+      "trades": 0,
+      "return_pct": 0.0,
+      "funnel": {
+        "eligible_news": 285,
+        "hard_catalyst_reject": 0,
+        "reaction_reject": 269,
+        "relative_strength_reject": 0,
+        "relative_volume_reject": 0,
+        "vwap_reject": 0,
+        "score_reject": 0,
+        "structure_reject": 0,
+        "stop_reject": 0,
+        "qualified": 0
+      }
+    },
+    "retest_breakout": {
+      "trades": 0,
+      "return_pct": 0.0,
+      "funnel": {
+        "eligible_news": 285,
+        "hard_catalyst_reject": 138,
+        "reaction_reject": 131,
+        "relative_strength_reject": 0,
+        "relative_volume_reject": 0,
+        "vwap_reject": 0,
+        "score_reject": 0,
+        "structure_reject": 0,
+        "stop_reject": 0,
+        "qualified": 0
+      }
+    }
+  }
+}
