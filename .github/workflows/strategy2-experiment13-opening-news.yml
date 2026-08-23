@@ -1,0 +1,68 @@
+name: Strategy 2 Experiment 13 Opening News
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - strategy2_experiment13_opening_news_continuation.py
+      - strategy2_experiment13_opening_news_runner.py
+      - .github/workflows/strategy2-experiment13-opening-news.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: strategy2-experiment13-opening-news
+  cancel-in-progress: true
+
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: pip install numpy pandas requests
+      - name: Verify locked research protocol
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s=Path('strategy2_experiment13_opening_news_continuation.py').read_text()
+          r=Path('strategy2_experiment13_opening_news_runner.py').read_text()
+          assert 'BROKER_ORDERS = False' in s and 'LONG_ONLY = True' in s and 'LEVERAGE = False' in s
+          assert '/v2/orders' not in s+r and 'paper-api.alpaca.markets' not in s+r
+          assert 'MIN_GAP_ATR = 0.40' in s
+          assert 'MIN_OPENING_RELVOL = 1.50' in s
+          assert 'MIN_GAP_RETENTION = 0.60' in s
+          assert 'OPENING_MINUTES = 10' in s
+          assert 'NONBLIND_FOLLOWUP = True' in s
+          print('Experiment 13 invariants: PASS')
+          PY
+      - run: python -m py_compile strategy2_experiment10_entity_abnormal_news.py strategy2_experiment12_primary_event_news.py strategy2_experiment13_opening_news_continuation.py strategy2_experiment13_opening_news_runner.py
+      - name: Run backtest
+        env:
+          ALPACA_STRATEGY2_API_KEY_ID: ${{ secrets.ALPACA_STRATEGY2_API_KEY_ID }}
+          ALPACA_STRATEGY2_SECRET_KEY: ${{ secrets.ALPACA_STRATEGY2_SECRET_KEY }}
+        run: python strategy2_experiment13_opening_news_runner.py
+      - name: Commit results
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          mkdir -p /tmp/s2e13
+          for f in strategy2_experiment13_opening_news_continuation_results.json strategy2_experiment13_opening_news_continuation_summary.md; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/s2e13/$f"; fi
+          done
+          git fetch origin main
+          git reset --hard origin/main
+          for f in strategy2_experiment13_opening_news_continuation_results.json strategy2_experiment13_opening_news_continuation_summary.md; do
+            if [ -f "/tmp/s2e13/$f" ]; then cp "/tmp/s2e13/$f" "$f"; git add "$f"; fi
+          done
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Record opening news continuation results"
+          git push origin main
