@@ -1,0 +1,12 @@
+{
+  "experiment": "S2-E14-SMOKE",
+  "research_only": true,
+  "status": "PASS",
+  "feed": "sip",
+  "data_quality": "SIP_FULL_MARKET",
+  "quotes": 13264,
+  "trades": 9463,
+  "seconds": 65,
+  "max_score": 80.0,
+  "candidate_count": 1
+}
