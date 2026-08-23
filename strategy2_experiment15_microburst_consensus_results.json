@@ -1,0 +1,128 @@
+{
+  "experiment": "S2-E15-MICROBURST-CONSENSUS-V2",
+  "research_only": true,
+  "broker_orders": false,
+  "long_only": true,
+  "leverage": false,
+  "independent_from_v1_pilot_dates": true,
+  "v1_development_dates_excluded": [
+    "2026-08-19",
+    "2026-08-20",
+    "2026-08-21"
+  ],
+  "test_dates": [
+    "2026-08-12",
+    "2026-08-13",
+    "2026-08-14",
+    "2026-08-17",
+    "2026-08-18"
+  ],
+  "feed_used": "sip",
+  "data_quality": "SIP_FULL_MARKET",
+  "universe": [
+    "NVDA",
+    "TSLA",
+    "AMD"
+  ],
+  "windows_et": [
+    "10:00",
+    "10:05",
+    "10:10",
+    "10:15",
+    "10:20",
+    "10:25"
+  ],
+  "locked_rules": {
+    "architecture": "hard consensus; no additive-score compensation",
+    "feature_seconds": 5,
+    "horizon_seconds": 30,
+    "profit_barrier_bps": 15.0,
+    "stop_barrier_bps": 8.0,
+    "impact_bps_per_side": 1.0,
+    "max_notional_pct": 50.0,
+    "cooldown_seconds": 45,
+    "requirements": {
+      "quote_imbalance_ge": 0.35,
+      "microprice_displacement_bps_ge": 0.15,
+      "signed_trade_buy_imbalance_ge": 0.35,
+      "bid_velocity_bps_ge": 0.0,
+      "trade_acceleration_ge": 1.2,
+      "quote_acceleration_ge": 1.0,
+      "spread_bps_le": 3.0,
+      "prior_second_quote_imbalance_ge": 0.0,
+      "prior_second_buy_imbalance_ge": 0.0,
+      "prior_second_microprice_displacement_bps_ge": 0.0
+    }
+  },
+  "data_counts": {
+    "quotes": 388491,
+    "trades": 403694
+  },
+  "windows_loaded": 90,
+  "signal": {
+    "trades": 1,
+    "wins": 0,
+    "losses": 0,
+    "timeouts": 1,
+    "barrier_win_rate_pct": 0.0,
+    "ending_equity": 2500.8114549950396,
+    "return_pct": 0.03245819980157716,
+    "avg_trade_pnl": 0.8114549950396074,
+    "profit_factor": 999.0,
+    "max_drawdown_pct": 0.0,
+    "best_trade": 0.8114549950396074,
+    "worst_trade": 0.8114549950396074,
+    "avg_ret_bps": 6.491639960317652,
+    "avg_hold_seconds": 30.0
+  },
+  "baseline": {
+    "trades": 129,
+    "wins": 4,
+    "losses": 49,
+    "timeouts": 76,
+    "barrier_win_rate_pct": 3.10077519379845,
+    "ending_equity": 2453.9047584317955,
+    "return_pct": -1.8438096627281797,
+    "avg_trade_pnl": -0.3573274540170922,
+    "profit_factor": 0.3501186092025029,
+    "max_drawdown_pct": 1.982649244439394,
+    "best_trade": 1.7490251543676083,
+    "worst_trade": -1.1264933979469858,
+    "avg_ret_bps": -2.8840721880200664,
+    "avg_hold_seconds": 23.286821705426355
+  },
+  "signal_minus_baseline_win_rate_pp": -3.10077519379845,
+  "checks": {
+    "sip_required_for_valid_pass": true,
+    "at_least_10_consensus_trades": false,
+    "barrier_win_rate_beats_baseline_by_8pp": false,
+    "positive_avg_trade_after_spread_and_impact": true,
+    "profit_factor_at_least_1_25": true,
+    "max_drawdown_at_most_3pct": true
+  },
+  "gate": "FAIL",
+  "activate": false,
+  "sample_signal_trades": [
+    {
+      "entry": 223.732371,
+      "exit": 223.87761,
+      "ret_bps": 6.491639960317652,
+      "label": "TIMEOUT",
+      "held_seconds": 30,
+      "symbol": "NVDA",
+      "day": "2026-08-12",
+      "time": "2026-08-12 14:25:33+00:00",
+      "imbalance": 0.8181818181818182,
+      "micro_disp_bps": 0.5486366379559016,
+      "buy_imbalance": 0.5028336639274582,
+      "bid_velocity_bps": 1.3413816230722908,
+      "trade_accel": 1.2911485003657646,
+      "quote_accel": 1.400602409638554,
+      "spread_bps": 1.3411117816670528,
+      "ask_depletion": 0.8,
+      "prev_imbalance": 0.6923076923076923,
+      "prev_buy_imbalance": 0.5483385956998947,
+      "prev_micro_disp_bps": 0.4642310013469597
+    }
+  ]
+}
