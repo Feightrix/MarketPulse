@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - strategy2_experiment17_volatile_pattern_scan.py
+      - strategy2_experiment17_runner.py
       - .github/workflows/strategy2-experiment17-volatile-pattern-scan.yml
 
 permissions:
@@ -45,27 +46,29 @@ jobs:
           assert '/v2/orders' not in s and 'paper-api.alpaca.markets' not in s
           print('Experiment 17 invariants: PASS')
           PY
-      - run: python -m py_compile strategy2_experiment17_volatile_pattern_scan.py
+      - run: python -m py_compile strategy2_experiment17_volatile_pattern_scan.py strategy2_experiment17_runner.py
       - name: Run 2026 volatile pattern scan
         env:
           ALPACA_STRATEGY2_API_KEY_ID: ${{ secrets.ALPACA_STRATEGY2_API_KEY_ID }}
           ALPACA_STRATEGY2_SECRET_KEY: ${{ secrets.ALPACA_STRATEGY2_SECRET_KEY }}
-        run: python strategy2_experiment17_volatile_pattern_scan.py
-      - name: Commit results
+        run: python strategy2_experiment17_runner.py
+      - name: Preserve outputs
+        if: always()
+        run: |
+          mkdir -p /tmp/s2e17
+          for f in strategy2_experiment17_volatile_pattern_scan_results.json strategy2_experiment17_volatile_pattern_scan_summary.md strategy2_experiment17_error.json; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/s2e17/$f"; fi
+          done
+      - name: Commit outputs
+        if: always()
         run: |
           git config user.name "MarketPulse Bot"
           git config user.email "actions@users.noreply.github.com"
-          mkdir -p /tmp/s2e17
-          for f in strategy2_experiment17_volatile_pattern_scan_results.json strategy2_experiment17_volatile_pattern_scan_summary.md; do
-            if [ -f "$f" ]; then cp "$f" "/tmp/s2e17/$f"; fi
-          done
           git fetch origin main
           git reset --hard origin/main
-          for f in strategy2_experiment17_volatile_pattern_scan_results.json strategy2_experiment17_volatile_pattern_scan_summary.md; do
+          for f in strategy2_experiment17_volatile_pattern_scan_results.json strategy2_experiment17_volatile_pattern_scan_summary.md strategy2_experiment17_error.json; do
             if [ -f "/tmp/s2e17/$f" ]; then cp "/tmp/s2e17/$f" "$f"; git add "$f"; fi
           done
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Record 2026 volatile pattern scan results"
+          git commit -m "Record 2026 volatile pattern scan outputs"
           git push origin main
-
-# trigger: 2026-08-23T19:50-04:00
