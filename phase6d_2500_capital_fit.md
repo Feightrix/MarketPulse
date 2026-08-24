@@ -13,9 +13,9 @@
 - Largest single short: **4.73%**
 
 ## $2,500 shadow mark
-- Mark date: **2026-08-21**
-- Estimated equity: **$2,498.09**
-- Estimated P/L: **$-1.91 (-0.0765%)**
+- Mark date: **2026-08-24**
+- Estimated equity: **$2,493.39**
+- Estimated P/L: **$-6.61 (-0.2644%)**
 - This uses the $100k paper account's observed prices/fills to estimate the $2,500-sized portfolio; it is not a separate $2,500 broker account fill record.
 
 ## $2,500 quantities
