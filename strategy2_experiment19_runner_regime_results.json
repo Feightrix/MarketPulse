@@ -1,0 +1,2360 @@
+{
+  "experiment": "S2-E19-RUNNER-DAY-REGIME",
+  "research_only": true,
+  "broker_orders": false,
+  "long_only": true,
+  "leverage": false,
+  "nonblind_followup": true,
+  "candidate_pool": [
+    "TSLA",
+    "COIN",
+    "MSTR",
+    "HOOD",
+    "PLTR",
+    "SMCI",
+    "AMD",
+    "NVDA",
+    "RIVN",
+    "IONQ",
+    "RKLB",
+    "SOFI"
+  ],
+  "dynamic_top_atr_names": 5,
+  "locked_regime": {
+    "decision_time_et": "09:55",
+    "min_positive_breadth_of_top5": 3,
+    "min_median_first30_return_pct": 0.25,
+    "min_top2_avg_first30_return_pct": 1.0,
+    "min_qqq_first30_return_pct": -0.35000000000000003
+  },
+  "trade_signal": "Experiment 18 volatile leader trend-day unchanged",
+  "execution": {
+    "risk_per_trade_pct": 1.0,
+    "max_notional_pct": 100.0,
+    "cost_bps_per_fill": 10.0,
+    "leverage": false
+  },
+  "blocks": {
+    "discovery_jan_apr": {
+      "stats": {
+        "trades": 12,
+        "wins": 4,
+        "win_rate_pct": 33.33333333333333,
+        "ending_equity": 2524.057863753499,
+        "return_pct": 0.9623145501399533,
+        "profit_factor": 1.1740166343807714,
+        "avg_trade_pnl": 2.004821979458252,
+        "avg_r": 0.08685263339889554,
+        "max_drawdown_pct": 3.1165294255297127,
+        "avg_return_per_business_day_pct": 0.011321347648705333,
+        "avg_return_on_trade_days_pct": 0.08685263339889554,
+        "median_return_on_trade_days_pct": -0.05033940956612573,
+        "days_ge_1pct": 3,
+        "days_ge_3pct": 0,
+        "days_ge_5pct": 0,
+        "best_trade_return_pct": 2.271356303715546,
+        "worst_trade_return_pct": -1.0691444684425229,
+        "regime_days": 35,
+        "business_days": 82,
+        "regime_frequency_pct": 42.68292682926829
+      },
+      "trades": [
+        {
+          "symbol": "MSTR",
+          "day": "2026-02-06",
+          "atr": 11.697029999999998,
+          "opening_low": 114.68,
+          "first30_return_pct": 6.4114832535885125,
+          "relative_strength_pct": 6.035744300313728,
+          "first30_relvol": 3.01382810167687,
+          "close_location": 0.8565118443031858,
+          "range_atr": 0.7625781929258966,
+          "score": 15.16952865642346,
+          "signal_time": "2026-02-06T09:55:00-05:00",
+          "entry_time": "2026-02-06T10:00:00-05:00",
+          "exit_time": "2026-02-06T10:55:00-05:00",
+          "entry": 122.43230999999999,
+          "exit": 124.92495,
+          "notional": 2387.1345177467174,
+          "stop_pct": 0.009483280189682017,
+          "pnl": 48.60046326264855,
+          "r_multiple": 1.944018530505942,
+          "account_return_pct": 1.944018530505942,
+          "exit_reason": "STOP",
+          "regime": {
+            "positive_breadth": 4,
+            "median_first30_return_pct": 2.8940293207528,
+            "top2_avg_first30_return_pct": 5.15129190289545,
+            "qqq_first30_return_pct": 0.37573895327478457
+          }
+        },
+        {
+          "symbol": "MSTR",
+          "day": "2026-02-09",
+          "atr": 12.328029999999998,
+          "opening_low": 125.13,
+          "first30_return_pct": 2.12715855572998,
+          "relative_strength_pct": 1.9093763049834234,
+          "first30_relvol": 1.907343950168523,
+          "close_location": 0.8440677966101717,
+          "range_atr": 0.47858416957129457,
+          "score": 6.004898499163123,
+          "signal_time": "2026-02-09T09:55:00-05:00",
+          "entry_time": "2026-02-09T10:00:00-05:00",
+          "exit_time": "2026-02-09T10:20:00-05:00",
+          "entry": 130.18005,
+          "exit": 130.04986995,
+          "notional": 1650.590461618137,
+          "stop_pct": 0.014455978469819483,
+          "pnl": -1.6505904616182256,
+          "r_multiple": -0.06476458297057613,
+          "account_return_pct": -0.06476458297057613,
+          "exit_reason": "STOP",
+          "regime": {
+            "positive_breadth": 5,
+            "median_first30_return_pct": 2.12715855572998,
+            "top2_avg_first30_return_pct": 2.961613551910136,
+            "qqq_first30_return_pct": 0.21778225074655655
+          }
+        },
+        {
+          "symbol": "HOOD",
+          "day": "2026-02-13",
+          "atr": 6.5701649999999985,
+          "opening_low": 71.52,
+          "first30_return_pct": 2.2010625819361085,
+          "relative_strength_pct": 2.3830294940076935,
+          "first30_relvol": 1.8793251822484522,
+          "close_location": 0.8728522336769748,
+          "range_atr": 0.4429112510873032,
+          "score": 6.530768327501017,
+          "signal_time": "2026-02-13T09:55:00-05:00",
+          "entry_time": "2026-02-13T10:00:00-05:00",
+          "exit_time": "2026-02-13T10:45:00-05:00",
+          "entry": 74.11404,
+          "exit": 76.05386999999999,
+          "notional": 1394.085438766734,
+          "stop_pct": 0.017287952458130754,
+          "pnl": 36.4882113656583,
+          "r_multiple": 1.4326238515848788,
+          "account_return_pct": 1.4326238515848793,
+          "exit_reason": "STOP",
+          "regime": {
+            "positive_breadth": 4,
+            "median_first30_return_pct": 0.26820546163848213,
+            "top2_avg_first30_return_pct": 2.0261654488379133,
+            "qqq_first30_return_pct": -0.181966912071585
+          }
+        },
+        {
+          "symbol": "COIN",
+          "day": "2026-03-04",
+          "atr": 13.691399999999998,
+          "opening_low": 195.4,
+          "first30_return_pct": 4.185595426471345,
+          "relative_strength_pct": 3.9383909933824457,
+          "first30_relvol": 2.992916263125701,
+          "close_location": 0.8842639593908642,
+          "range_atr": 0.7194297150035786,
+          "score": 10.823928345154979,
+          "signal_time": "2026-03-04T09:55:00-05:00",
+          "entry_time": "2026-03-04T10:00:00-05:00",
+          "exit_time": "2026-03-04T15:55:00-05:00",
+          "entry": 204.40419999999997,
+          "exit": 208.66113,
+          "notional": 929.5685697752155,
+          "stop_pct": 0.026819588638589652,
+          "pnl": 19.359232010561648,
+          "r_multiple": 0.7493592406649895,
+          "account_return_pct": 0.7493592406649895,
+          "exit_reason": "FORCE_CLOSE",
+          "regime": {
+            "positive_breadth": 3,
+            "median_first30_return_pct": 0.38400834347296353,
+            "top2_avg_first30_return_pct": 3.326549281617097,
+            "qqq_first30_return_pct": 0.24720443308889894
+          }
+        },
+        {
+          "symbol": "COIN",
+          "day": "2026-03-05",
+          "atr": 14.480399999999998,
+          "opening_low": 205.41,
+          "first30_return_pct": 3.3587712049774066,
+          "relative_strength_pct": 2.5600386153675547,
+          "first30_relvol": 1.5351384253192448,
+          "close_location": 0.9783491204330143,
+          "range_atr": 0.5103450180934239,
+          "score": 7.836124515205717,
+          "signal_time": "2026-03-05T09:55:00-05:00",
+          "entry_time": "2026-03-05T10:00:00-05:00",
+          "exit_time": "2026-03-05T10:30:00-05:00",
+          "entry": 212.98277,
+          "exit": 207.6774147,
+          "notional": 1087.5021964778566,
+          "stop_pct": 0.022957653804577757,
+          "pnl": -27.089447385088523,
+          "r_multiple": -1.0407820546270967,
+          "account_return_pct": -1.040782054627097,
+          "exit_reason": "STOP",
+          "regime": {
+            "positive_breadth": 4,
+            "median_first30_return_pct": 0.7633802816901403,
+            "top2_avg_first30_return_pct": 2.276073376477983,
+            "qqq_first30_return_pct": 0.7987325896098518
+          }
+        },
+        {
+          "symbol": "RKLB",
+          "day": "2026-03-17",
+          "atr": 5.097610000000001,
+          "opening_low": 71.27,
+          "first30_return_pct": 6.247304299117773,
+          "relative_strength_pct": 5.880023836444126,
+          "first30_relvol": 1.869520214244607,
+          "close_location": 0.9526293995859229,
+          "range_atr": 0.9475028493745102,
+          "score": 14.653142212546465,
+          "signal_time": "2026-03-17T09:55:00-04:00",
+          "entry_time": "2026-03-17T10:00:00-04:00",
+          "exit_time": "2026-03-17T11:35:00-04:00",
+          "entry": 75.95588,
+          "exit": 75.87992412,
+          "notional": 925.045806832931,
+          "stop_pct": 0.02687195571955725,
+          "pnl": -0.9250458068328714,
+          "r_multiple": -0.03591423616167532,
+          "account_return_pct": -0.03591423616167533,
+          "exit_reason": "STOP",
+          "regime": {
+            "positive_breadth": 5,
+            "median_first30_return_pct": 1.8528583428034873,
+            "top2_avg_first30_return_pct": 4.071928011627845,
+            "qqq_first30_return_pct": 0.367280462673647
+          }
+        },
+        {
+          "symbol": "RKLB",
+          "day": "2026-03-25",
+          "atr": 5.34436,
+          "opening_low": 68.94,
+          "first30_return_pct": 5.337975050768784,
+          "relative_strength_pct": 5.596263211994968,
+          "first30_relvol": 3.0433330612494967,
+          "close_location": 0.8638497652582166,
+          "range_atr": 0.7971019916323012,
+          "score": 13.708143336189801,
+          "signal_time": "2026-03-25T09:55:00-04:00",
+          "entry_time": "2026-03-25T10:00:00-04:00",
+          "exit_time": "2026-03-25T11:15:00-04:00",
+          "entry": 72.72265,
+          "exit": 72.64992735,
+          "notional": 847.111555957782,
+          "stop_pct": 0.029425244322092193,
+          "pnl": -0.8471115559578156,
+          "r_multiple": -0.03290031098528276,
+          "account_return_pct": -0.03290031098528275,
+          "exit_reason": "STOP",
+          "regime": {
+            "positive_breadth": 5,
+            "median_first30_return_pct": 1.629934477717021,
+            "top2_avg_first30_return_pct": 4.803943277596778,
+            "qqq_first30_return_pct": -0.25828816122618337
+          }
+        },
+        {
+          "symbol": "SMCI",
+          "day": "2026-04-10",
+          "atr": 1.925195,
+          "opening_low": 23.64,
+          "first30_return_pct": 5.541455160744491,
+          "relative_strength_pct": 5.533273863190691,
+          "first30_relvol": 1.932505537787609,
+          "close_location": 0.8397435897435896,
+          "range_atr": 0.8103075272894428,
+          "score": 13.383597508051624,
+          "signal_time": "2026-04-10T09:55:00-04:00",
+          "entry_time": "2026-04-10T10:00:00-04:00",
+          "exit_time": "2026-04-10T10:25:00-04:00",
+          "entry": 24.96494,
+          "exit": 24.1676082,
+          "notional": 831.13214423897,
+          "stop_pct": 0.03,
+          "pnl": -26.544749901418403,
+          "r_multiple": -1.0312903225806458,
+          "account_return_pct": -1.0312903225806458,
+          "exit_reason": "STOP",
+          "regime": {
+            "positive_breadth": 4,
+            "median_first30_return_pct": 3.0579050097592653,
+            "top2_avg_first30_return_pct": 4.361676846767859,
+            "qqq_first30_return_pct": 0.008181297553799816
+          }
+        },
+        {
+          "symbol": "IONQ",
+          "day": "2026-04-14",
+          "atr": 2.0097499999999995,
+          "opening_low": 31.06,
+          "first30_return_pct": 4.672750157331662,
+          "relative_strength_pct": 4.424182648656005,
+          "first30_relvol": 4.067023284158588,
+          "close_location": 0.9463519313304721,
+          "range_atr": 1.1593481776340353,
+          "score": 12.605544267004367,
+          "signal_time": "2026-04-14T09:55:00-04:00",
+          "entry_time": "2026-04-14T10:00:00-04:00",
+          "exit_time": "2026-04-14T11:55:00-04:00",
+          "entry": 33.298264999999994,
+          "exit": 35.199765,
+          "notional": 1013.2255803284108,
+          "stop_pct": 0.024166541409890236,
+          "pnl": 57.860325184945204,
+          "r_multiple": 2.271356303715545,
+          "account_return_pct": 2.271356303715546,
+          "exit_reason": "STOP",
+          "regime": {
+            "positive_breadth": 3,
+            "median_first30_return_pct": 1.4059361749609423,
+            "top2_avg_first30_return_pct": 3.8139066011898537,
+            "qqq_first30_return_pct": 0.2485675086756567
+          }
+        },
+        {
+          "symbol": "IONQ",
+          "day": "2026-04-15",
+          "atr": 2.2175,
+          "opening_low": 37.46,
+          "first30_return_pct": 7.377476538060468,
+          "relative_strength_pct": 7.196060538442395,
+          "first30_relvol": 9.170867275291236,
+          "close_location": 0.9841688654353556,
+          "range_atr": 1.7091319052987597,
+          "score": 19.482869706491336,
+          "signal_time": "2026-04-15T09:55:00-04:00",
+          "entry_time": "2026-04-15T10:00:00-04:00",
+          "exit_time": "2026-04-15T10:00:00-04:00",
+          "entry": 41.226185,
+          "exit": 40.257702,
+          "notional": 1157.1461671704894,
+          "stop_pct": 0.021536967342479067,
+          "pnl": -27.18360652143234,
+          "r_multiple": -1.0434159138533805,
+          "account_return_pct": -1.0434159138533805,
+          "exit_reason": "STOP",
+          "regime": {
+            "positive_breadth": 3,
+            "median_first30_return_pct": 0.9101542510417504,
+            "top2_avg_first30_return_pct": 4.3652881342593375,
+            "qqq_first30_return_pct": 0.1814159996180731
+          }
+        },
+        {
+          "symbol": "RKLB",
+          "day": "2026-04-20",
+          "atr": 5.64232,
+          "opening_low": 84.6,
+          "first30_return_pct": 4.696523276370068,
+          "relative_strength_pct": 4.756770754472428,
+          "first30_relvol": 1.6306924421353655,
+          "close_location": 0.9803240740740723,
+          "range_atr": 0.7656425016659827,
+          "score": 11.688265342320515,
+          "signal_time": "2026-04-20T09:55:00-04:00",
+          "entry_time": "2026-04-20T10:00:00-04:00",
+          "exit_time": "2026-04-20T11:00:00-04:00",
+          "entry": 88.93884999999999,
+          "exit": 86.50647892799999,
+          "notional": 977.4598222781402,
+          "stop_pct": 0.025401553179516062,
+          "pnl": -26.732355947390875,
+          "r_multiple": -1.0369144360634295,
+          "account_return_pct": -1.0369144360634295,
+          "exit_reason": "STOP",
+          "regime": {
+            "positive_breadth": 4,
+            "median_first30_return_pct": 1.1310344827586194,
+            "top2_avg_first30_return_pct": 3.2415126306861275,
+            "qqq_first30_return_pct": -0.060247478102359864
+          }
+        },
+        {
+          "symbol": "COIN",
+          "day": "2026-04-22",
+          "atr": 12.150954999999998,
+          "opening_low": 202.34,
+          "first30_return_pct": 2.9532765207170186,
+          "relative_strength_pct": 3.0148680457231958,
+          "first30_relvol": 1.602525621395643,
+          "close_location": 0.9357907253269926,
+          "range_atr": 0.6921266682330729,
+          "score": 8.06764285807557,
+          "signal_time": "2026-04-22T09:55:00-04:00",
+          "entry_time": "2026-04-22T10:00:00-04:00",
+          "exit_time": "2026-04-22T10:50:00-04:00",
+          "entry": 210.45023999999998,
+          "exit": 207.24255,
+          "notional": 1789.620601377373,
+          "stop_pct": 0.013270547945205576,
+          "pnl": -27.27746049057563,
+          "r_multiple": -1.0691444684425229,
+          "account_return_pct": -1.0691444684425229,
+          "exit_reason": "STOP",
+          "regime": {
+            "positive_breadth": 4,
+            "median_first30_return_pct": 1.5862488255126372,
+            "top2_avg_first30_return_pct": 2.9789658100834338,
+            "qqq_first30_return_pct": -0.06159152500617715
+          }
+        }
+      ],
+      "regime_days": [
+        {
+          "day": "2026-01-05",
+          "names": [
+            "IONQ",
+            "RKLB",
+            "RIVN",
+            "MSTR",
+            "HOOD"
+          ],
+          "returns": {
+            "IONQ": 0.016369359916054593,
+            "RKLB": -0.020534156489061872,
+            "RIVN": -0.0020544427324088455,
+            "MSTR": 0.01963903334353012,
+            "HOOD": 0.018903110960413638
+          },
+          "positive_breadth": 3,
+          "median_first30_return_pct": 1.6369359916054593,
+          "top2_avg_first30_return_pct": 1.927107215197188,
+          "qqq_first30_return_pct": -0.20069921015150038,
+          "passes": true
+        },
+        {
+          "day": "2026-01-12",
+          "names": [
+            "RKLB",
+            "IONQ",
+            "RIVN",
+            "MSTR",
+            "HOOD"
+          ],
+          "returns": {
+            "RKLB": 0.021657842099070512,
+            "IONQ": 0.00855731632023038,
+            "RIVN": 0.02216288384512688,
+            "MSTR": 0.0056078959174517,
+            "HOOD": 0.018146920258244714
+          },
+          "positive_breadth": 5,
+          "median_first30_return_pct": 1.8146920258244714,
+          "top2_avg_first30_return_pct": 2.1910362972098696,
+          "qqq_first30_return_pct": 0.5911441135254325,
+          "passes": true
+        },
+        {
+          "day": "2026-01-26",
+          "names": [
+            "RKLB",
+            "IONQ",
+            "MSTR",
+            "RIVN",
+            "COIN"
+          ],
+          "returns": {
+            "RKLB": -0.01030145829730833,
+            "IONQ": 0.018712748344370977,
+            "MSTR": 0.009723354871087109,
+            "RIVN": -0.00917141049968384,
+            "COIN": 0.0036787247087677333
+          },
+          "positive_breadth": 3,
+          "median_first30_return_pct": 0.3678724708767733,
+          "top2_avg_first30_return_pct": 1.4218051607729043,
+          "qqq_first30_return_pct": 0.3345449866503758,
+          "passes": true
+        },
+        {
+          "day": "2026-02-06",
+          "names": [
+            "IONQ",
+            "RKLB",
+            "MSTR",
+            "HOOD",
+            "AMD"
+          ],
+          "returns": {
+            "IONQ": 0.01697579377554237,
+            "RKLB": -0.018405797101449184,
+            "MSTR": 0.06411483253588512,
+            "HOOD": 0.03891100552202387,
+            "AMD": 0.028940293207528
+          },
+          "positive_breadth": 4,
+          "median_first30_return_pct": 2.8940293207528,
+          "top2_avg_first30_return_pct": 5.15129190289545,
+          "qqq_first30_return_pct": 0.37573895327478457,
+          "passes": true
+        },
+        {
+          "day": "2026-02-09",
+          "names": [
+            "IONQ",
+            "RKLB",
+            "MSTR",
+            "HOOD",
+            "COIN"
+          ],
+          "returns": {
+            "IONQ": 0.0024513338139871,
+            "RKLB": 0.03700104130510229,
+            "MSTR": 0.0212715855572998,
+            "HOOD": 0.0097785108388313,
+            "COIN": 0.022231229733100433
+          },
+          "positive_breadth": 5,
+          "median_first30_return_pct": 2.12715855572998,
+          "top2_avg_first30_return_pct": 2.961613551910136,
+          "qqq_first30_return_pct": 0.21778225074655655,
+          "passes": true
+        },
+        {
+          "day": "2026-02-10",
+          "names": [
+            "IONQ",
+            "RKLB",
+            "MSTR",
+            "HOOD",
+            "AMD"
+          ],
+          "returns": {
+            "IONQ": 0.017943605810310626,
+            "RKLB": -0.013120899718837897,
+            "MSTR": 0.014289989525662072,
+            "HOOD": 0.015647893102033628,
+            "AMD": 0.002509993492609608
+          },
+          "positive_breadth": 4,
+          "median_first30_return_pct": 1.4289989525662072,
+          "top2_avg_first30_return_pct": 1.6795749456172127,
+          "qqq_first30_return_pct": 0.061902357176601974,
+          "passes": true
+        },
+        {
+          "day": "2026-02-13",
+          "names": [
+            "IONQ",
+            "RKLB",
+            "MSTR",
+            "HOOD",
+            "COIN"
+          ],
+          "returns": {
+            "IONQ": -0.025220485842487927,
+            "RKLB": 0.0019491716020691996,
+            "MSTR": 0.01851268315739718,
+            "HOOD": 0.022010625819361085,
+            "COIN": 0.0026820546163848213
+          },
+          "positive_breadth": 4,
+          "median_first30_return_pct": 0.26820546163848213,
+          "top2_avg_first30_return_pct": 2.0261654488379133,
+          "qqq_first30_return_pct": -0.181966912071585,
+          "passes": true
+        },
+        {
+          "day": "2026-02-18",
+          "names": [
+            "IONQ",
+            "RKLB",
+            "MSTR",
+            "HOOD",
+            "COIN"
+          ],
+          "returns": {
+            "IONQ": 0.024816204051012702,
+            "RKLB": 0.04528169014084504,
+            "MSTR": 0.008600423164328852,
+            "HOOD": 0.032448188260462585,
+            "COIN": 0.036972097100879564
+          },
+          "positive_breadth": 5,
+          "median_first30_return_pct": 3.2448188260462585,
+          "top2_avg_first30_return_pct": 4.112689362086231,
+          "qqq_first30_return_pct": 0.5227321913133132,
+          "passes": true
+        },
+        {
+          "day": "2026-02-19",
+          "names": [
+            "IONQ",
+            "RKLB",
+            "MSTR",
+            "HOOD",
+            "COIN"
+          ],
+          "returns": {
+            "IONQ": 0.011308068459657816,
+            "RKLB": 0.019067215363511636,
+            "MSTR": 0.014328503197603704,
+            "HOOD": 0.01786261594300309,
+            "COIN": 0.02179534540081285
+          },
+          "positive_breadth": 5,
+          "median_first30_return_pct": 1.786261594300309,
+          "top2_avg_first30_return_pct": 2.0431280382162242,
+          "qqq_first30_return_pct": 0.18457240725653357,
+          "passes": true
+        },
+        {
+          "day": "2026-02-20",
+          "names": [
+            "IONQ",
+            "MSTR",
+            "RKLB",
+            "HOOD",
+            "COIN"
+          ],
+          "returns": {
+            "IONQ": 0.014998469543924031,
+            "MSTR": 0.01402191402957631,
+            "RKLB": 0.011456953642384082,
+            "HOOD": 0.024468085106382986,
+            "COIN": 0.02500060650169833
+          },
+          "positive_breadth": 5,
+          "median_first30_return_pct": 1.4998469543924031,
+          "top2_avg_first30_return_pct": 2.473434580404066,
+          "qqq_first30_return_pct": 0.7415944280202424,
+          "passes": true
+        },
+        {
+          "day": "2026-02-23",
+          "names": [
+            "IONQ",
+            "RKLB",
+            "MSTR",
+            "HOOD",
+            "COIN"
+          ],
+          "returns": {
+            "IONQ": 0.006640919670662049,
+            "RKLB": 0.02450730855937744,
+            "MSTR": 0.010633722975878612,
+            "HOOD": -0.01937127153294449,
+            "COIN": 0.003340154068367962
+          },
+          "positive_breadth": 4,
+          "median_first30_return_pct": 0.6640919670662049,
+          "top2_avg_first30_return_pct": 1.7570515767628025,
+          "qqq_first30_return_pct": -0.2759418374091327,
+          "passes": true
+        },
+        {
+          "day": "2026-03-02",
+          "names": [
+            "RKLB",
+            "MSTR",
+            "IONQ",
+            "HOOD",
+            "COIN"
+          ],
+          "returns": {
+            "RKLB": 0.038842231553689155,
+            "MSTR": 0.03558291710225725,
+            "IONQ": 0.02648915728794954,
+            "HOOD": 0.030931339225017007,
+            "COIN": 0.044187445762221556
+          },
+          "positive_breadth": 5,
+          "median_first30_return_pct": 3.558291710225725,
+          "top2_avg_first30_return_pct": 4.1514838657955355,
+          "qqq_first30_return_pct": 0.875357758548545,
+          "passes": true
+        },
+        {
+          "day": "2026-03-04",
+          "names": [
+            "RKLB",
+            "IONQ",
+            "MSTR",
+            "HOOD",
+            "COIN"
+          ],
+          "returns": {
+            "RKLB": -0.004519135715294609,
+            "IONQ": -0.022558386411889675,
+            "MSTR": 0.0038400834347296353,
+            "HOOD": 0.024675031367628497,
+            "COIN": 0.041855954264713446
+          },
+          "positive_breadth": 3,
+          "median_first30_return_pct": 0.38400834347296353,
+          "top2_avg_first30_return_pct": 3.326549281617097,
+          "qqq_first30_return_pct": 0.24720443308889894,
+          "passes": true
+        },
+        {
+          "day": "2026-03-05",
+          "names": [
+            "MSTR",
+            "IONQ",
+            "RKLB",
+            "HOOD",
+            "COIN"
+          ],
+          "returns": {
+            "MSTR": 0.0022752344180916317,
+            "IONQ": -0.003278688524590234,
+            "RKLB": 0.007633802816901403,
+            "HOOD": 0.01193375547978559,
+            "COIN": 0.033587712049774066
+          },
+          "positive_breadth": 4,
+          "median_first30_return_pct": 0.7633802816901403,
+          "top2_avg_first30_return_pct": 2.276073376477983,
+          "qqq_first30_return_pct": 0.7987325896098518,
+          "passes": true
+        },
+        {
+          "day": "2026-03-09",
+          "names": [
+            "IONQ",
+            "RKLB",
+            "MSTR",
+            "HOOD",
+            "COIN"
+          ],
+          "returns": {
+            "IONQ": -0.01006614897900493,
+            "RKLB": 0.02709324110102318,
+            "MSTR": 0.003817354279841423,
+            "HOOD": 0.01132771338250782,
+            "COIN": 0.00042885973763873153
+          },
+          "positive_breadth": 4,
+          "median_first30_return_pct": 0.3817354279841423,
+          "top2_avg_first30_return_pct": 1.92104772417655,
+          "qqq_first30_return_pct": -0.24966261808365697,
+          "passes": true
+        },
+        {
+          "day": "2026-03-13",
+          "names": [
+            "IONQ",
+            "RKLB",
+            "COIN",
+            "MSTR",
+            "RIVN"
+          ],
+          "returns": {
+            "IONQ": 0.020973793924955464,
+            "RKLB": 0.014172089660158926,
+            "COIN": -0.01742196702002341,
+            "MSTR": 0.005804254135965303,
+            "RIVN": -0.0019607843137255943
+          },
+          "positive_breadth": 3,
+          "median_first30_return_pct": 0.5804254135965303,
+          "top2_avg_first30_return_pct": 1.7572941792557195,
+          "qqq_first30_return_pct": 0.3208824266733412,
+          "passes": true
+        },
+        {
+          "day": "2026-03-16",
+          "names": [
+            "IONQ",
+            "RKLB",
+            "COIN",
+            "MSTR",
+            "RIVN"
+          ],
+          "returns": {
+            "IONQ": 0.010441527446300558,
+            "RKLB": 0.026036783267219477,
+            "COIN": -0.0047073980476685096,
+            "MSTR": 0.009287925696594312,
+            "RIVN": -0.0023286759813706537
+          },
+          "positive_breadth": 3,
+          "median_first30_return_pct": 0.9287925696594312,
+          "top2_avg_first30_return_pct": 1.8239155356760017,
+          "qqq_first30_return_pct": 0.3107094532516008,
+          "passes": true
+        },
+        {
+          "day": "2026-03-17",
+          "names": [
+            "IONQ",
+            "RKLB",
+            "COIN",
+            "MSTR",
+            "HOOD"
+          ],
+          "returns": {
+            "IONQ": 0.0056971514242878385,
+            "RKLB": 0.06247304299117773,
+            "COIN": 0.018528583428034873,
+            "MSTR": 0.013013698630137016,
+            "HOOD": 0.01896551724137918
+          },
+          "positive_breadth": 5,
+          "median_first30_return_pct": 1.8528583428034873,
+          "top2_avg_first30_return_pct": 4.071928011627845,
+          "qqq_first30_return_pct": 0.367280462673647,
+          "passes": true
+        },
+        {
+          "day": "2026-03-18",
+          "names": [
+            "IONQ",
+            "RKLB",
+            "COIN",
+            "MSTR",
+            "SOFI"
+          ],
+          "returns": {
+            "IONQ": 0.02299546142208797,
+            "RKLB": -0.04694280078895452,
+            "COIN": -0.0007251281059653669,
+            "MSTR": 0.003172632595351166,
+            "SOFI": 0.03384968445209413
+          },
+          "positive_breadth": 3,
+          "median_first30_return_pct": 0.3172632595351166,
+          "top2_avg_first30_return_pct": 2.842257293709105,
+          "qqq_first30_return_pct": 0.1649807522455582,
+          "passes": true
+        },
+        {
+          "day": "2026-03-19",
+          "names": [
+            "IONQ",
+            "RKLB",
+            "COIN",
+            "MSTR",
+            "SOFI"
+          ],
+          "returns": {
+            "IONQ": -0.00665821179454662,
+            "RKLB": 0.008747096399535526,
+            "COIN": 0.022218240458699245,
+            "MSTR": 0.020552510739149543,
+            "SOFI": 0.008065671641791061
+          },
+          "positive_breadth": 4,
+          "median_first30_return_pct": 0.8747096399535526,
+          "top2_avg_first30_return_pct": 2.1385375598924394,
+          "qqq_first30_return_pct": 0.30435965449227,
+          "passes": true
+        },
+        {
+          "day": "2026-03-23",
+          "names": [
+            "IONQ",
+            "RKLB",
+            "SMCI",
+            "MSTR",
+            "COIN"
+          ],
+          "returns": {
+            "IONQ": 0.020790139064475355,
+            "RKLB": -0.0011747430249632318,
+            "SMCI": -0.001964549483013278,
+            "MSTR": 0.009054507413152724,
+            "COIN": 0.020090634441087607
+          },
+          "positive_breadth": 3,
+          "median_first30_return_pct": 0.9054507413152724,
+          "top2_avg_first30_return_pct": 2.044038675278148,
+          "qqq_first30_return_pct": 0.4170410429416682,
+          "passes": true
+        },
+        {
+          "day": "2026-03-25",
+          "names": [
+            "SMCI",
+            "RKLB",
+            "IONQ",
+            "COIN",
+            "MSTR"
+          ],
+          "returns": {
+            "SMCI": 0.042699115044247726,
+            "RKLB": 0.05337975050768784,
+            "IONQ": 0.010035949670461397,
+            "COIN": 0.01629934477717021,
+            "MSTR": 0.015455840455840475
+          },
+          "positive_breadth": 5,
+          "median_first30_return_pct": 1.629934477717021,
+          "top2_avg_first30_return_pct": 4.803943277596778,
+          "qqq_first30_return_pct": -0.25828816122618337,
+          "passes": true
+        },
+        {
+          "day": "2026-03-26",
+          "names": [
+            "SMCI",
+            "RKLB",
+            "IONQ",
+            "COIN",
+            "HOOD"
+          ],
+          "returns": {
+            "SMCI": 0.007283633247643584,
+            "RKLB": -0.0012688566192020634,
+            "IONQ": 0.0011148272017837968,
+            "COIN": 0.012966101694915189,
+            "HOOD": 0.027687983134223382
+          },
+          "positive_breadth": 4,
+          "median_first30_return_pct": 0.7283633247643584,
+          "top2_avg_first30_return_pct": 2.0327042414569285,
+          "qqq_first30_return_pct": 0.24057049574706113,
+          "passes": true
+        },
+        {
+          "day": "2026-03-31",
+          "names": [
+            "SMCI",
+            "RKLB",
+            "COIN",
+            "IONQ",
+            "MSTR"
+          ],
+          "returns": {
+            "SMCI": 0.009345794392523477,
+            "RKLB": 0.0011409942950284524,
+            "COIN": 0.022426470588235548,
+            "IONQ": 0.030514705882352944,
+            "MSTR": -0.004996344138435416
+          },
+          "positive_breadth": 4,
+          "median_first30_return_pct": 0.9345794392523477,
+          "top2_avg_first30_return_pct": 2.6470588235294246,
+          "qqq_first30_return_pct": 0.7912431032341738,
+          "passes": true
+        },
+        {
+          "day": "2026-04-02",
+          "names": [
+            "RKLB",
+            "SMCI",
+            "IONQ",
+            "COIN",
+            "RIVN"
+          ],
+          "returns": {
+            "RKLB": 0.07014865407794302,
+            "SMCI": 0.011373976342129222,
+            "IONQ": 0.026492537313432818,
+            "COIN": -0.0116509602767505,
+            "RIVN": -0.007028112449799062
+          },
+          "positive_breadth": 3,
+          "median_first30_return_pct": 1.1373976342129222,
+          "top2_avg_first30_return_pct": 4.832059569568791,
+          "qqq_first30_return_pct": 0.5616213764956024,
+          "passes": true
+        },
+        {
+          "day": "2026-04-06",
+          "names": [
+            "RKLB",
+            "SMCI",
+            "IONQ",
+            "COIN",
+            "RIVN"
+          ],
+          "returns": {
+            "RKLB": 0.03469658939908449,
+            "SMCI": -0.00043327556325811756,
+            "IONQ": 0.024207296283668578,
+            "COIN": 0.001827527127355788,
+            "RIVN": 0.011703511053315907
+          },
+          "positive_breadth": 4,
+          "median_first30_return_pct": 1.1703511053315907,
+          "top2_avg_first30_return_pct": 2.9451942841376533,
+          "qqq_first30_return_pct": 0.5686766740099269,
+          "passes": true
+        },
+        {
+          "day": "2026-04-10",
+          "names": [
+            "RKLB",
+            "SMCI",
+            "IONQ",
+            "COIN",
+            "RIVN"
+          ],
+          "returns": {
+            "RKLB": 0.001994091580502122,
+            "SMCI": 0.055414551607444906,
+            "IONQ": 0.031818985327912275,
+            "COIN": -0.024711405036757172,
+            "RIVN": 0.030579050097592653
+          },
+          "positive_breadth": 4,
+          "median_first30_return_pct": 3.0579050097592653,
+          "top2_avg_first30_return_pct": 4.361676846767859,
+          "qqq_first30_return_pct": 0.008181297553799816,
+          "passes": true
+        },
+        {
+          "day": "2026-04-13",
+          "names": [
+            "SMCI",
+            "RKLB",
+            "IONQ",
+            "COIN",
+            "PLTR"
+          ],
+          "returns": {
+            "SMCI": -0.004188272836059048,
+            "RKLB": 0.038627889634601065,
+            "IONQ": 0.023535657405769017,
+            "COIN": 0.049241044323011574,
+            "PLTR": 0.0124372264455197
+          },
+          "positive_breadth": 4,
+          "median_first30_return_pct": 2.3535657405769017,
+          "top2_avg_first30_return_pct": 4.393446697880632,
+          "qqq_first30_return_pct": 0.3564388961892373,
+          "passes": true
+        },
+        {
+          "day": "2026-04-14",
+          "names": [
+            "RKLB",
+            "SMCI",
+            "IONQ",
+            "COIN",
+            "PLTR"
+          ],
+          "returns": {
+            "RKLB": -0.01468289035415693,
+            "SMCI": -0.0020370370370370594,
+            "IONQ": 0.04672750157331662,
+            "COIN": 0.029550630450480453,
+            "PLTR": 0.014059361749609423
+          },
+          "positive_breadth": 3,
+          "median_first30_return_pct": 1.4059361749609423,
+          "top2_avg_first30_return_pct": 3.8139066011898537,
+          "qqq_first30_return_pct": 0.2485675086756567,
+          "passes": true
+        },
+        {
+          "day": "2026-04-15",
+          "names": [
+            "RKLB",
+            "SMCI",
+            "IONQ",
+            "COIN",
+            "PLTR"
+          ],
+          "returns": {
+            "RKLB": -0.00822178433104559,
+            "SMCI": -0.0018037518037516964,
+            "IONQ": 0.07377476538060468,
+            "COIN": 0.01353099730458207,
+            "PLTR": 0.009101542510417504
+          },
+          "positive_breadth": 3,
+          "median_first30_return_pct": 0.9101542510417504,
+          "top2_avg_first30_return_pct": 4.3652881342593375,
+          "qqq_first30_return_pct": 0.1814159996180731,
+          "passes": true
+        },
+        {
+          "day": "2026-04-17",
+          "names": [
+            "RKLB",
+            "SMCI",
+            "IONQ",
+            "COIN",
+            "PLTR"
+          ],
+          "returns": {
+            "RKLB": 0.0174833491912465,
+            "SMCI": -0.013080895008605764,
+            "IONQ": 0.007938308006350425,
+            "COIN": 0.00901823145169156,
+            "PLTR": 0.003784490469964874
+          },
+          "positive_breadth": 4,
+          "median_first30_return_pct": 0.7938308006350425,
+          "top2_avg_first30_return_pct": 1.325079032146903,
+          "qqq_first30_return_pct": 0.1426754753264481,
+          "passes": true
+        },
+        {
+          "day": "2026-04-20",
+          "names": [
+            "SMCI",
+            "RKLB",
+            "IONQ",
+            "COIN",
+            "PLTR"
+          ],
+          "returns": {
+            "SMCI": -0.0035660847880299995,
+            "RKLB": 0.04696523276370068,
+            "IONQ": 0.017865019850021868,
+            "COIN": 0.010869749048673105,
+            "PLTR": 0.011310344827586194
+          },
+          "positive_breadth": 4,
+          "median_first30_return_pct": 1.1310344827586194,
+          "top2_avg_first30_return_pct": 3.2415126306861275,
+          "qqq_first30_return_pct": -0.060247478102359864,
+          "passes": true
+        },
+        {
+          "day": "2026-04-21",
+          "names": [
+            "RKLB",
+            "IONQ",
+            "COIN",
+            "SMCI",
+            "PLTR"
+          ],
+          "returns": {
+            "RKLB": 0.005037086239344513,
+            "IONQ": -0.004320987654320985,
+            "COIN": -0.011837121212121215,
+            "SMCI": 0.019910744936491698,
+            "PLTR": 0.008881175990200108
+          },
+          "positive_breadth": 3,
+          "median_first30_return_pct": 0.5037086239344513,
+          "top2_avg_first30_return_pct": 1.4395960463345903,
+          "qqq_first30_return_pct": 0.10344295198394526,
+          "passes": true
+        },
+        {
+          "day": "2026-04-22",
+          "names": [
+            "RKLB",
+            "IONQ",
+            "COIN",
+            "HOOD",
+            "SMCI"
+          ],
+          "returns": {
+            "RKLB": 0.015862488255126372,
+            "IONQ": 0.03004655099449849,
+            "COIN": 0.029532765207170186,
+            "HOOD": 0.005726916620033551,
+            "SMCI": -0.0003461405330564826
+          },
+          "positive_breadth": 4,
+          "median_first30_return_pct": 1.5862488255126372,
+          "top2_avg_first30_return_pct": 2.9789658100834338,
+          "qqq_first30_return_pct": -0.06159152500617715,
+          "passes": true
+        },
+        {
+          "day": "2026-04-28",
+          "names": [
+            "IONQ",
+            "RKLB",
+            "COIN",
+            "MSTR",
+            "HOOD"
+          ],
+          "returns": {
+            "IONQ": 0.018566392479436145,
+            "RKLB": 0.004556977833281239,
+            "COIN": 0.019243427970557336,
+            "MSTR": 0.0028071031915544165,
+            "HOOD": 0.009575251657255146
+          },
+          "positive_breadth": 5,
+          "median_first30_return_pct": 0.9575251657255146,
+          "top2_avg_first30_return_pct": 1.890491022499674,
+          "qqq_first30_return_pct": 0.1537899320888103,
+          "passes": true
+        }
+      ]
+    },
+    "validation_may_jun": {
+      "stats": {
+        "trades": 6,
+        "wins": 1,
+        "win_rate_pct": 16.666666666666664,
+        "ending_equity": 2454.2764915136027,
+        "return_pct": -1.8289403394558978,
+        "profit_factor": 0.4258517886738444,
+        "avg_trade_pnl": -7.62058474773288,
+        "avg_r": -0.30341445765973485,
+        "max_drawdown_pct": 3.1428505328436995,
+        "avg_return_per_business_day_pct": -0.042533496266416226,
+        "avg_return_on_trade_days_pct": -0.3034144576597349,
+        "median_return_on_trade_days_pct": -0.5319335831468995,
+        "days_ge_1pct": 1,
+        "days_ge_3pct": 0,
+        "days_ge_5pct": 0,
+        "best_trade_return_pct": 1.3565443548731964,
+        "worst_trade_return_pct": -1.0495832893765138,
+        "regime_days": 17,
+        "business_days": 41,
+        "regime_frequency_pct": 41.46341463414634
+      },
+      "trades": [
+        {
+          "symbol": "IONQ",
+          "day": "2026-05-11",
+          "atr": 3.959505,
+          "opening_low": 47.89,
+          "first30_return_pct": 10.884918986289982,
+          "relative_strength_pct": 10.869416421320132,
+          "first30_relvol": 2.34401301092215,
+          "close_location": 0.8133333333333336,
+          "range_atr": 1.704758549364125,
+          "score": 25.124291712741638,
+          "signal_time": "2026-05-11T09:55:00-04:00",
+          "entry_time": "2026-05-11T10:00:00-04:00",
+          "exit_time": "2026-05-11T11:00:00-04:00",
+          "entry": 53.43338,
+          "exit": 55.65429,
+          "notional": 815.9352472724495,
+          "stop_pct": 0.02967032596478079,
+          "pnl": 33.91360887182991,
+          "r_multiple": 1.3565443548731966,
+          "account_return_pct": 1.3565443548731964,
+          "exit_reason": "STOP",
+          "regime": {
+            "positive_breadth": 4,
+            "median_first30_return_pct": 2.0968547179231134,
+            "top2_avg_first30_return_pct": 8.394392617491908,
+            "qqq_first30_return_pct": 0.015502564969849253
+          }
+        },
+        {
+          "symbol": "IONQ",
+          "day": "2026-05-21",
+          "atr": 4.5542050000000005,
+          "opening_low": 53.93,
+          "first30_return_pct": 7.1781724958798865,
+          "relative_strength_pct": 6.943778742614626,
+          "first30_relvol": 2.8311986505216007,
+          "close_location": 0.9163346613545814,
+          "range_atr": 1.1022780046133194,
+          "score": 17.181264077866036,
+          "signal_time": "2026-05-21T09:55:00-04:00",
+          "entry_time": "2026-05-21T10:00:00-04:00",
+          "exit_time": "2026-05-21T10:15:00-04:00",
+          "entry": 58.618559999999995,
+          "exit": 58.559941439999996,
+          "notional": 818.2088782195851,
+          "stop_pct": 0.03,
+          "pnl": -0.8182088782195757,
+          "r_multiple": -0.032290322580644945,
+          "account_return_pct": -0.032290322580644945,
+          "exit_reason": "STOP",
+          "regime": {
+            "positive_breadth": 3,
+            "median_first30_return_pct": 0.9408194233687217,
+            "top2_avg_first30_return_pct": 4.913012044673726,
+            "qqq_first30_return_pct": 0.23439375326526068
+          }
+        },
+        {
+          "symbol": "IONQ",
+          "day": "2026-05-22",
+          "atr": 4.693205000000001,
+          "opening_low": 58.0,
+          "first30_return_pct": 8.905172413793094,
+          "relative_strength_pct": 8.701628519412852,
+          "first30_relvol": 2.7907876674508394,
+          "close_location": 0.939090909090909,
+          "range_atr": 1.1719070443332433,
+          "score": 20.744122760701856,
+          "signal_time": "2026-05-22T09:55:00-04:00",
+          "entry_time": "2026-05-22T10:00:00-04:00",
+          "exit_time": "2026-05-22T13:05:00-04:00",
+          "entry": 63.21314999999999,
+          "exit": 63.14993684999999,
+          "notional": 825.2025295609769,
+          "stop_pct": 0.029727347585114822,
+          "pnl": -0.8252025295610139,
+          "r_multiple": -0.032576843713154086,
+          "account_return_pct": -0.03257684371315409,
+          "exit_reason": "STOP",
+          "regime": {
+            "positive_breadth": 4,
+            "median_first30_return_pct": 3.639053254437874,
+            "top2_avg_first30_return_pct": 6.351224057897231,
+            "qqq_first30_return_pct": 0.20354389438024256
+          }
+        },
+        {
+          "symbol": "SMCI",
+          "day": "2026-05-29",
+          "atr": 2.5173900000000002,
+          "opening_low": 44.17,
+          "first30_return_pct": 7.617977528089881,
+          "relative_strength_pct": 7.166164169067857,
+          "first30_relvol": 4.838615774924855,
+          "close_location": 0.9230769230769226,
+          "range_atr": 1.60086438732179,
+          "score": 18.88471169046372,
+          "signal_time": "2026-05-29T09:55:00-04:00",
+          "entry_time": "2026-05-29T10:00:00-04:00",
+          "exit_time": "2026-05-29T10:15:00-04:00",
+          "entry": 47.94789999999999,
+          "exit": 46.953,
+          "notional": 1280.9055617785395,
+          "stop_pct": 0.018789144050104355,
+          "pnl": -26.578284834444315,
+          "r_multiple": -1.0495832893765138,
+          "account_return_pct": -1.0495832893765138,
+          "exit_reason": "STOP",
+          "regime": {
+            "positive_breadth": 4,
+            "median_first30_return_pct": 0.737035184258783,
+            "top2_avg_first30_return_pct": 4.555257420761361,
+            "qqq_first30_return_pct": 0.45181335902202413
+          }
+        },
+        {
+          "symbol": "SMCI",
+          "day": "2026-06-22",
+          "atr": 3.8937349999999995,
+          "opening_low": 32.27,
+          "first30_return_pct": 9.728485793292885,
+          "relative_strength_pct": 9.367983380958966,
+          "first30_relvol": 3.276395641738814,
+          "close_location": 0.9801223241590221,
+          "range_atr": 0.8398106188531054,
+          "score": 22.103146045724262,
+          "signal_time": "2026-06-22T09:55:00-04:00",
+          "entry_time": "2026-06-22T10:00:00-04:00",
+          "exit_time": "2026-06-22T10:15:00-04:00",
+          "entry": 35.505469999999995,
+          "exit": 34.37149409999999,
+          "notional": 809.096001465237,
+          "stop_pct": 0.03,
+          "pnl": -25.84095820863506,
+          "r_multiple": -1.0312903225806478,
+          "account_return_pct": -1.031290322580648,
+          "exit_reason": "STOP",
+          "regime": {
+            "positive_breadth": 4,
+            "median_first30_return_pct": 2.20260683055602,
+            "top2_avg_first30_return_pct": 7.5418674989794265,
+            "qqq_first30_return_pct": 0.36050241233391844
+          }
+        },
+        {
+          "symbol": "MSTR",
+          "day": "2026-06-26",
+          "atr": 10.70547,
+          "opening_low": 82.33,
+          "first30_return_pct": 4.902078577436009,
+          "relative_strength_pct": 4.620659319308085,
+          "first30_relvol": 2.1308646387697348,
+          "close_location": 0.939640370573029,
+          "range_atr": 0.49506467254590486,
+          "score": 11.71397077091028,
+          "signal_time": "2026-06-26T09:55:00-04:00",
+          "entry_time": "2026-06-26T10:00:00-04:00",
+          "exit_time": "2026-06-26T10:40:00-04:00",
+          "entry": 87.412325,
+          "exit": 84.62054475000001,
+          "notional": 800.7518727017423,
+          "stop_pct": 0.03,
+          "pnl": -25.574462907367224,
+          "r_multiple": -1.031290322580645,
+          "account_return_pct": -1.031290322580645,
+          "exit_reason": "STOP",
+          "regime": {
+            "positive_breadth": 5,
+            "median_first30_return_pct": 2.6980728051391845,
+            "top2_avg_first30_return_pct": 4.72544757274167,
+            "qqq_first30_return_pct": 0.281419258127924
+          }
+        }
+      ],
+      "regime_days": [
+        {
+          "day": "2026-05-01",
+          "names": [
+            "IONQ",
+            "RKLB",
+            "HOOD",
+            "COIN",
+            "MSTR"
+          ],
+          "returns": {
+            "IONQ": -0.00947497491918392,
+            "RKLB": -0.028263473053892207,
+            "HOOD": 0.004947475432056869,
+            "COIN": 0.005498228059203747,
+            "MSTR": 0.020784543325526927
+          },
+          "positive_breadth": 3,
+          "median_first30_return_pct": 0.4947475432056869,
+          "top2_avg_first30_return_pct": 1.3141385692365337,
+          "qqq_first30_return_pct": 0.8692269714696055,
+          "passes": true
+        },
+        {
+          "day": "2026-05-04",
+          "names": [
+            "IONQ",
+            "HOOD",
+            "RKLB",
+            "MSTR",
+            "COIN"
+          ],
+          "returns": {
+            "IONQ": 0.01998710509348811,
+            "HOOD": 0.0271753681392235,
+            "RKLB": 0.0037022852036256992,
+            "MSTR": -0.009231619679380909,
+            "COIN": 0.003941726636744303
+          },
+          "positive_breadth": 4,
+          "median_first30_return_pct": 0.39417266367443027,
+          "top2_avg_first30_return_pct": 2.3581236616355805,
+          "qqq_first30_return_pct": 0.14096628679962642,
+          "passes": true
+        },
+        {
+          "day": "2026-05-06",
+          "names": [
+            "IONQ",
+            "RKLB",
+            "HOOD",
+            "COIN",
+            "SMCI"
+          ],
+          "returns": {
+            "IONQ": 0.013136456211812586,
+            "RKLB": 0.0067118303851463335,
+            "HOOD": -0.01065552699228789,
+            "COIN": -0.002579491763504027,
+            "SMCI": 0.03165076335877859
+          },
+          "positive_breadth": 3,
+          "median_first30_return_pct": 0.6711830385146333,
+          "top2_avg_first30_return_pct": 2.2393609785295587,
+          "qqq_first30_return_pct": 0.27365754960042565,
+          "passes": true
+        },
+        {
+          "day": "2026-05-11",
+          "names": [
+            "RKLB",
+            "IONQ",
+            "HOOD",
+            "COIN",
+            "MSTR"
+          ],
+          "returns": {
+            "RKLB": 0.05903866248693834,
+            "IONQ": 0.10884918986289982,
+            "HOOD": 0.0009770713913495044,
+            "COIN": 0.020968547179231134,
+            "MSTR": -0.010702959830866665
+          },
+          "positive_breadth": 4,
+          "median_first30_return_pct": 2.0968547179231134,
+          "top2_avg_first30_return_pct": 8.394392617491908,
+          "qqq_first30_return_pct": 0.015502564969849253,
+          "passes": true
+        },
+        {
+          "day": "2026-05-21",
+          "names": [
+            "IONQ",
+            "SMCI",
+            "RKLB",
+            "AMD",
+            "COIN"
+          ],
+          "returns": {
+            "IONQ": 0.07178172495879886,
+            "SMCI": 0.009408194233687217,
+            "RKLB": 0.02647851593467565,
+            "AMD": -0.0018668114859818896,
+            "COIN": -0.00023708542978329028
+          },
+          "positive_breadth": 3,
+          "median_first30_return_pct": 0.9408194233687217,
+          "top2_avg_first30_return_pct": 4.913012044673726,
+          "qqq_first30_return_pct": 0.23439375326526068,
+          "passes": true
+        },
+        {
+          "day": "2026-05-22",
+          "names": [
+            "IONQ",
+            "RKLB",
+            "SMCI",
+            "COIN",
+            "MSTR"
+          ],
+          "returns": {
+            "IONQ": 0.08905172413793094,
+            "RKLB": 0.03797275702001368,
+            "SMCI": 0.03639053254437874,
+            "COIN": -0.006803422327595232,
+            "MSTR": 0.0020698892000488023
+          },
+          "positive_breadth": 4,
+          "median_first30_return_pct": 3.639053254437874,
+          "top2_avg_first30_return_pct": 6.351224057897231,
+          "qqq_first30_return_pct": 0.20354389438024256,
+          "passes": true
+        },
+        {
+          "day": "2026-05-28",
+          "names": [
+            "IONQ",
+            "RKLB",
+            "COIN",
+            "MSTR",
+            "SMCI"
+          ],
+          "returns": {
+            "IONQ": 0.0323724371820564,
+            "RKLB": 0.0014269212475368498,
+            "COIN": 0.022111728575606948,
+            "MSTR": -0.018056114914753674,
+            "SMCI": 0.0034210526315789913
+          },
+          "positive_breadth": 4,
+          "median_first30_return_pct": 0.34210526315789913,
+          "top2_avg_first30_return_pct": 2.7242082878831675,
+          "qqq_first30_return_pct": -0.22087168863950124,
+          "passes": true
+        },
+        {
+          "day": "2026-05-29",
+          "names": [
+            "IONQ",
+            "RKLB",
+            "COIN",
+            "MSTR",
+            "SMCI"
+          ],
+          "returns": {
+            "IONQ": -0.005313038483630184,
+            "RKLB": 0.003072745462341153,
+            "COIN": 0.014925373134328401,
+            "MSTR": 0.00737035184258783,
+            "SMCI": 0.07617977528089881
+          },
+          "positive_breadth": 4,
+          "median_first30_return_pct": 0.737035184258783,
+          "top2_avg_first30_return_pct": 4.555257420761361,
+          "qqq_first30_return_pct": 0.45181335902202413,
+          "passes": true
+        },
+        {
+          "day": "2026-06-02",
+          "names": [
+            "RKLB",
+            "IONQ",
+            "COIN",
+            "MSTR",
+            "SMCI"
+          ],
+          "returns": {
+            "RKLB": 0.010690920695707762,
+            "IONQ": 0.026099495313626653,
+            "COIN": -0.004607643600180955,
+            "MSTR": -0.03094228545397193,
+            "SMCI": 0.005947497949138514
+          },
+          "positive_breadth": 3,
+          "median_first30_return_pct": 0.5947497949138514,
+          "top2_avg_first30_return_pct": 1.8395208004667207,
+          "qqq_first30_return_pct": 0.1510288842741181,
+          "passes": true
+        },
+        {
+          "day": "2026-06-10",
+          "names": [
+            "RKLB",
+            "IONQ",
+            "MSTR",
+            "SMCI",
+            "COIN"
+          ],
+          "returns": {
+            "RKLB": 0.020055710306406738,
+            "IONQ": 0.03290613093176309,
+            "MSTR": 0.028976784178847748,
+            "SMCI": 0.0009831460674156745,
+            "COIN": 0.05224930476034695
+          },
+          "positive_breadth": 5,
+          "median_first30_return_pct": 2.8976784178847748,
+          "top2_avg_first30_return_pct": 4.257771784605502,
+          "qqq_first30_return_pct": 0.5749832356004569,
+          "passes": true
+        },
+        {
+          "day": "2026-06-11",
+          "names": [
+            "RKLB",
+            "IONQ",
+            "SMCI",
+            "MSTR",
+            "COIN"
+          ],
+          "returns": {
+            "RKLB": 0.029177221127685504,
+            "IONQ": -0.009420672653636109,
+            "SMCI": -0.004094165813715356,
+            "MSTR": 0.015829318651066737,
+            "COIN": 0.01993011518053578
+          },
+          "positive_breadth": 3,
+          "median_first30_return_pct": 1.5829318651066737,
+          "top2_avg_first30_return_pct": 2.455366815411064,
+          "qqq_first30_return_pct": 0.502490980931114,
+          "passes": true
+        },
+        {
+          "day": "2026-06-15",
+          "names": [
+            "SMCI",
+            "RKLB",
+            "IONQ",
+            "MSTR",
+            "AMD"
+          ],
+          "returns": {
+            "SMCI": -0.018623737373737348,
+            "RKLB": 0.0110689144127456,
+            "IONQ": 0.017345276872964277,
+            "MSTR": -0.008369614172046291,
+            "AMD": 0.02393840410639303
+          },
+          "positive_breadth": 3,
+          "median_first30_return_pct": 1.10689144127456,
+          "top2_avg_first30_return_pct": 2.0641840489678653,
+          "qqq_first30_return_pct": 0.21701683236805547,
+          "passes": true
+        },
+        {
+          "day": "2026-06-22",
+          "names": [
+            "SMCI",
+            "IONQ",
+            "RKLB",
+            "MSTR",
+            "AMD"
+          ],
+          "returns": {
+            "SMCI": 0.09728485793292885,
+            "IONQ": 0.05355249204665968,
+            "RKLB": -0.04596464977087822,
+            "MSTR": 0.021144920061887618,
+            "AMD": 0.022026068305560198
+          },
+          "positive_breadth": 4,
+          "median_first30_return_pct": 2.20260683055602,
+          "top2_avg_first30_return_pct": 7.5418674989794265,
+          "qqq_first30_return_pct": 0.36050241233391844,
+          "passes": true
+        },
+        {
+          "day": "2026-06-23",
+          "names": [
+            "SMCI",
+            "RKLB",
+            "IONQ",
+            "MSTR",
+            "COIN"
+          ],
+          "returns": {
+            "SMCI": 0.023157894736842266,
+            "RKLB": 0.04906250000000001,
+            "IONQ": 0.0715042372881356,
+            "MSTR": 0.0024420024420024333,
+            "COIN": 0.03410828025477697
+          },
+          "positive_breadth": 5,
+          "median_first30_return_pct": 3.410828025477697,
+          "top2_avg_first30_return_pct": 6.02833686440678,
+          "qqq_first30_return_pct": 0.6943862296364678,
+          "passes": true
+        },
+        {
+          "day": "2026-06-26",
+          "names": [
+            "SMCI",
+            "RKLB",
+            "MSTR",
+            "IONQ",
+            "HOOD"
+          ],
+          "returns": {
+            "SMCI": 0.013079283061521174,
+            "RKLB": 0.045488165680473314,
+            "MSTR": 0.04902078577436009,
+            "IONQ": 0.01309164149043296,
+            "HOOD": 0.026980728051391845
+          },
+          "positive_breadth": 5,
+          "median_first30_return_pct": 2.6980728051391845,
+          "top2_avg_first30_return_pct": 4.72544757274167,
+          "qqq_first30_return_pct": 0.281419258127924,
+          "passes": true
+        },
+        {
+          "day": "2026-06-29",
+          "names": [
+            "RKLB",
+            "SMCI",
+            "MSTR",
+            "IONQ",
+            "HOOD"
+          ],
+          "returns": {
+            "RKLB": 0.021961772276685387,
+            "SMCI": -0.030615533354818036,
+            "MSTR": -0.0014592575297688315,
+            "IONQ": 0.017186882655077174,
+            "HOOD": 0.008549557610100456
+          },
+          "positive_breadth": 3,
+          "median_first30_return_pct": 0.8549557610100456,
+          "top2_avg_first30_return_pct": 1.957432746588128,
+          "qqq_first30_return_pct": -0.08404879620163008,
+          "passes": true
+        },
+        {
+          "day": "2026-06-30",
+          "names": [
+            "MSTR",
+            "RKLB",
+            "SMCI",
+            "IONQ",
+            "HOOD"
+          ],
+          "returns": {
+            "MSTR": -0.017574386636506012,
+            "RKLB": 0.01445027254962472,
+            "SMCI": 0.030260380014074606,
+            "IONQ": 0.02931777208463804,
+            "HOOD": -0.00029449298125061585
+          },
+          "positive_breadth": 3,
+          "median_first30_return_pct": 1.445027254962472,
+          "top2_avg_first30_return_pct": 2.9789076049356322,
+          "qqq_first30_return_pct": 1.0619044988815052,
+          "passes": true
+        }
+      ]
+    },
+    "holdout_jul_aug21": {
+      "stats": {
+        "trades": 6,
+        "wins": 2,
+        "win_rate_pct": 33.33333333333333,
+        "ending_equity": 2524.2058327892296,
+        "return_pct": 0.9682333115691888,
+        "profit_factor": 1.4049461842225404,
+        "avg_trade_pnl": 4.034305464871558,
+        "avg_r": 0.16867990337168434,
+        "max_drawdown_pct": 1.304185128298263,
+        "avg_return_per_business_day_pct": 0.025479823988662862,
+        "avg_return_on_trade_days_pct": 0.16867990337168426,
+        "median_return_on_trade_days_pct": -0.13078045133045824,
+        "days_ge_1pct": 1,
+        "days_ge_3pct": 0,
+        "days_ge_5pct": 0,
+        "best_trade_return_pct": 2.6509655532359093,
+        "worst_trade_return_pct": -1.0557933267633437,
+        "regime_days": 18,
+        "business_days": 37,
+        "regime_frequency_pct": 48.64864864864865
+      },
+      "trades": [
+        {
+          "symbol": "RIVN",
+          "day": "2026-07-09",
+          "atr": 1.2832149999999998,
+          "opening_low": 16.38,
+          "first30_return_pct": 5.645414952818761,
+          "relative_strength_pct": 5.110841706539215,
+          "first30_relvol": 2.6064794325411746,
+          "close_location": 0.943739130434781,
+          "range_atr": 0.8961865314853725,
+          "score": 13.554182755639019,
+          "signal_time": "2026-07-09T09:55:00-04:00",
+          "entry_time": "2026-07-09T10:00:00-04:00",
+          "exit_time": "2026-07-09T11:15:00-04:00",
+          "entry": 17.47746,
+          "exit": 17.707275000000003,
+          "notional": 1376.3513513513492,
+          "stop_pct": 0.01718213058419248,
+          "pnl": 18.097949347949484,
+          "r_multiple": 0.7239179739179793,
+          "account_return_pct": 0.7239179739179794,
+          "exit_reason": "STOP",
+          "regime": {
+            "positive_breadth": 4,
+            "median_first30_return_pct": 0.9363035154890342,
+            "top2_avg_first30_return_pct": 3.9924224912966544,
+            "qqq_first30_return_pct": 0.534573246279546
+          }
+        },
+        {
+          "symbol": "SMCI",
+          "day": "2026-07-22",
+          "atr": 1.8497299999999997,
+          "opening_low": 28.5,
+          "first30_return_pct": 8.240567670474208,
+          "relative_strength_pct": 7.595278000794292,
+          "first30_relvol": 6.918604218641897,
+          "close_location": 0.9554137931034492,
+          "range_atr": 1.5677963810934563,
+          "score": 20.293269892241902,
+          "signal_time": "2026-07-22T09:55:00-04:00",
+          "entry_time": "2026-07-22T10:00:00-04:00",
+          "exit_time": "2026-07-22T12:45:00-04:00",
+          "entry": 31.306274999999996,
+          "exit": 31.274968724999997,
+          "notional": 1056.3433972627151,
+          "stop_pct": 0.0228617106314948,
+          "pnl": -1.0563433972626683,
+          "r_multiple": -0.04195005192455693,
+          "account_return_pct": -0.04195005192455694,
+          "exit_reason": "STOP",
+          "regime": {
+            "positive_breadth": 5,
+            "median_first30_return_pct": 2.5652049297792967,
+            "top2_avg_first30_return_pct": 6.609014558843274,
+            "qqq_first30_return_pct": 0.645289669679916
+          }
+        },
+        {
+          "symbol": "SMCI",
+          "day": "2026-07-23",
+          "atr": 2.0466899999999995,
+          "opening_low": 30.18,
+          "first30_return_pct": 4.147465437788034,
+          "relative_strength_pct": 4.177695619025156,
+          "first30_relvol": 2.2937295390266605,
+          "close_location": 0.8639053254437868,
+          "range_atr": 0.8257234852371398,
+          "score": 10.84496897995972,
+          "signal_time": "2026-07-23T09:55:00-04:00",
+          "entry_time": "2026-07-23T10:00:00-04:00",
+          "exit_time": "2026-07-23T11:10:00-04:00",
+          "entry": 31.661629999999995,
+          "exit": 30.94902,
+          "notional": 1169.1627425761344,
+          "stop_pct": 0.02055011065444194,
+          "pnl": -26.314408386023484,
+          "r_multiple": -1.045449877499523,
+          "account_return_pct": -1.0454498774995231,
+          "exit_reason": "STOP",
+          "regime": {
+            "positive_breadth": 3,
+            "median_first30_return_pct": 1.3128942350007167,
+            "top2_avg_first30_return_pct": 3.20608566007049,
+            "qqq_first30_return_pct": -0.030230181237123066
+          }
+        },
+        {
+          "symbol": "IONQ",
+          "day": "2026-08-03",
+          "atr": 2.780805,
+          "opening_low": 35.4263,
+          "first30_return_pct": 8.917108568238907,
+          "relative_strength_pct": 8.189954710909264,
+          "first30_relvol": 1.5388444205286878,
+          "close_location": 0.9822583726833516,
+          "range_atr": 1.317496192649253,
+          "score": 19.837849602953042,
+          "signal_time": "2026-08-03T09:55:00-04:00",
+          "entry_time": "2026-08-03T10:00:00-04:00",
+          "exit_time": "2026-08-03T15:55:00-04:00",
+          "entry": 39.049009999999996,
+          "exit": 38.796165,
+          "notional": 844.7644228161364,
+          "stop_pct": 0.028513765701102256,
+          "pnl": -5.469907188093644,
+          "r_multiple": -0.21961085073635955,
+          "account_return_pct": -0.21961085073635955,
+          "exit_reason": "FORCE_CLOSE",
+          "regime": {
+            "positive_breadth": 5,
+            "median_first30_return_pct": 1.9438272807986268,
+            "top2_avg_first30_return_pct": 7.879315857827784,
+            "qqq_first30_return_pct": 0.7271538573296432
+          }
+        },
+        {
+          "symbol": "SMCI",
+          "day": "2026-08-13",
+          "atr": 2.5135999999999994,
+          "opening_low": 38.2,
+          "first30_return_pct": 4.130718954248369,
+          "relative_strength_pct": 3.245384885435021,
+          "first30_relvol": 3.019326077742437,
+          "close_location": 0.8670212765957444,
+          "range_atr": 0.7479312539783561,
+          "score": 10.096090023676501,
+          "signal_time": "2026-08-13T09:55:00-04:00",
+          "entry_time": "2026-08-13T10:00:00-04:00",
+          "exit_time": "2026-08-13T10:40:00-04:00",
+          "entry": 39.87984,
+          "exit": 41.09886,
+          "notional": 2155.3510590433884,
+          "stop_pct": 0.010542168674698838,
+          "pnl": 65.88331467716701,
+          "r_multiple": 2.6509655532359098,
+          "account_return_pct": 2.6509655532359098,
+          "exit_reason": "STOP",
+          "regime": {
+            "positive_breadth": 5,
+            "median_first30_return_pct": 4.130718954248369,
+            "top2_avg_first30_return_pct": 4.99215325028548,
+            "qqq_first30_return_pct": 0.8853340688133482
+          }
+        },
+        {
+          "symbol": "SMCI",
+          "day": "2026-08-14",
+          "atr": 2.642785,
+          "opening_low": 39.14,
+          "first30_return_pct": 2.936670071501557,
+          "relative_strength_pct": 2.9857558488975533,
+          "first30_relvol": 1.6482385570866733,
+          "close_location": 0.8417266187050368,
+          "range_atr": 0.5259603032407103,
+          "score": 7.789820018869827,
+          "signal_time": "2026-08-14T09:55:00-04:00",
+          "entry_time": "2026-08-14T10:00:00-04:00",
+          "exit_time": "2026-08-14T10:25:00-04:00",
+          "entry": 40.34029999999999,
+          "exit": 39.59037,
+          "notional": 1448.8776200204245,
+          "stop_pct": 0.016625310173697137,
+          "pnl": -26.934772264507345,
+          "r_multiple": -1.0557933267633437,
+          "account_return_pct": -1.055793326763344,
+          "exit_reason": "STOP",
+          "regime": {
+            "positive_breadth": 4,
+            "median_first30_return_pct": 2.0639803137496138,
+            "top2_avg_first30_return_pct": 3.3363439842966303,
+            "qqq_first30_return_pct": -0.04908577739599629
+          }
+        }
+      ],
+      "regime_days": [
+        {
+          "day": "2026-07-01",
+          "names": [
+            "SMCI",
+            "MSTR",
+            "IONQ",
+            "RKLB",
+            "AMD"
+          ],
+          "returns": {
+            "SMCI": -0.004946996466431153,
+            "MSTR": 0.06129197787787222,
+            "IONQ": 0.030378533780546224,
+            "RKLB": 0.005286822471466168,
+            "AMD": 0.0038745784602136624
+          },
+          "positive_breadth": 4,
+          "median_first30_return_pct": 0.5286822471466168,
+          "top2_avg_first30_return_pct": 4.583525582920922,
+          "qqq_first30_return_pct": 0.13576894593927413,
+          "passes": true
+        },
+        {
+          "day": "2026-07-02",
+          "names": [
+            "SMCI",
+            "MSTR",
+            "IONQ",
+            "RKLB",
+            "COIN"
+          ],
+          "returns": {
+            "SMCI": 0.036007130124777076,
+            "MSTR": 0.025988983475212724,
+            "IONQ": 0.05282723537468215,
+            "RKLB": 0.0492281812784483,
+            "COIN": 0.029409984871407113
+          },
+          "positive_breadth": 5,
+          "median_first30_return_pct": 3.6007130124777076,
+          "top2_avg_first30_return_pct": 5.102770832656523,
+          "qqq_first30_return_pct": 0.5981586636529146,
+          "passes": true
+        },
+        {
+          "day": "2026-07-06",
+          "names": [
+            "SMCI",
+            "MSTR",
+            "IONQ",
+            "RKLB",
+            "AMD"
+          ],
+          "returns": {
+            "SMCI": -0.0047307132459970536,
+            "MSTR": 0.04081739861315392,
+            "IONQ": 0.02915986949429028,
+            "RKLB": -0.011146496815286677,
+            "AMD": 0.04639955169515275
+          },
+          "positive_breadth": 3,
+          "median_first30_return_pct": 2.915986949429028,
+          "top2_avg_first30_return_pct": 4.360847515415333,
+          "qqq_first30_return_pct": 0.3250722382751592,
+          "passes": true
+        },
+        {
+          "day": "2026-07-08",
+          "names": [
+            "SMCI",
+            "RKLB",
+            "IONQ",
+            "MSTR",
+            "AMD"
+          ],
+          "returns": {
+            "SMCI": 0.04131599081866866,
+            "RKLB": -0.017341040462427793,
+            "IONQ": 0.038322813345356144,
+            "MSTR": -0.0028747870528108566,
+            "AMD": 0.02940739493467759
+          },
+          "positive_breadth": 3,
+          "median_first30_return_pct": 2.940739493467759,
+          "top2_avg_first30_return_pct": 3.98194020820124,
+          "qqq_first30_return_pct": 0.5674161288034663,
+          "passes": true
+        },
+        {
+          "day": "2026-07-09",
+          "names": [
+            "SMCI",
+            "RKLB",
+            "IONQ",
+            "MSTR",
+            "RIVN"
+          ],
+          "returns": {
+            "SMCI": 0.009363035154890342,
+            "RKLB": -0.0228458773048823,
+            "IONQ": 0.002192982456140413,
+            "MSTR": 0.023394300297745474,
+            "RIVN": 0.056454149528187614
+          },
+          "positive_breadth": 4,
+          "median_first30_return_pct": 0.9363035154890342,
+          "top2_avg_first30_return_pct": 3.9924224912966544,
+          "qqq_first30_return_pct": 0.534573246279546,
+          "passes": true
+        },
+        {
+          "day": "2026-07-14",
+          "names": [
+            "RKLB",
+            "IONQ",
+            "MSTR",
+            "SMCI",
+            "RIVN"
+          ],
+          "returns": {
+            "RKLB": 0.04049765139012318,
+            "IONQ": -0.00449550449550451,
+            "MSTR": 0.01704125778199872,
+            "SMCI": -0.004828326180257525,
+            "RIVN": 0.009976945244956736
+          },
+          "positive_breadth": 3,
+          "median_first30_return_pct": 0.9976945244956736,
+          "top2_avg_first30_return_pct": 2.876945458606095,
+          "qqq_first30_return_pct": -0.115242564771878,
+          "passes": true
+        },
+        {
+          "day": "2026-07-17",
+          "names": [
+            "RKLB",
+            "IONQ",
+            "MSTR",
+            "SMCI",
+            "RIVN"
+          ],
+          "returns": {
+            "RKLB": 0.01911117852267541,
+            "IONQ": -0.02014861388968292,
+            "MSTR": 0.026930278665051155,
+            "SMCI": -0.011513157894736836,
+            "RIVN": 0.015906362545017982
+          },
+          "positive_breadth": 3,
+          "median_first30_return_pct": 1.5906362545017982,
+          "top2_avg_first30_return_pct": 2.302072859386328,
+          "qqq_first30_return_pct": 0.261734679121961,
+          "passes": true
+        },
+        {
+          "day": "2026-07-21",
+          "names": [
+            "RKLB",
+            "IONQ",
+            "SMCI",
+            "MSTR",
+            "AMD"
+          ],
+          "returns": {
+            "RKLB": 0.01914380464274945,
+            "IONQ": -0.006486181613085229,
+            "SMCI": 0.011475409836065653,
+            "MSTR": 0.018951732306781155,
+            "AMD": 0.00196104934511121
+          },
+          "positive_breadth": 4,
+          "median_first30_return_pct": 1.1475409836065653,
+          "top2_avg_first30_return_pct": 1.9047768474765303,
+          "qqq_first30_return_pct": -0.24059213971328042,
+          "passes": true
+        },
+        {
+          "day": "2026-07-22",
+          "names": [
+            "RKLB",
+            "IONQ",
+            "AMD",
+            "MSTR",
+            "SMCI"
+          ],
+          "returns": {
+            "RKLB": 0.017869713312517854,
+            "IONQ": 0.025652049297792967,
+            "AMD": 0.04977461447212339,
+            "MSTR": 0.00881970817509492,
+            "SMCI": 0.08240567670474208
+          },
+          "positive_breadth": 5,
+          "median_first30_return_pct": 2.5652049297792967,
+          "top2_avg_first30_return_pct": 6.609014558843274,
+          "qqq_first30_return_pct": 0.645289669679916,
+          "passes": true
+        },
+        {
+          "day": "2026-07-23",
+          "names": [
+            "RKLB",
+            "IONQ",
+            "SMCI",
+            "RIVN",
+            "MSTR"
+          ],
+          "returns": {
+            "RKLB": 0.013128942350007167,
+            "IONQ": 0.022647058823529465,
+            "SMCI": 0.04147465437788034,
+            "RIVN": -0.01474056603773588,
+            "MSTR": -0.018322182192485825
+          },
+          "positive_breadth": 3,
+          "median_first30_return_pct": 1.3128942350007167,
+          "top2_avg_first30_return_pct": 3.20608566007049,
+          "qqq_first30_return_pct": -0.030230181237123066,
+          "passes": true
+        },
+        {
+          "day": "2026-07-30",
+          "names": [
+            "RKLB",
+            "IONQ",
+            "AMD",
+            "RIVN",
+            "HOOD"
+          ],
+          "returns": {
+            "RKLB": 0.04464139176103732,
+            "IONQ": 0.040253279059249136,
+            "AMD": 0.0477898810688584,
+            "RIVN": -0.00935425467712736,
+            "HOOD": -0.019892295856687392
+          },
+          "positive_breadth": 3,
+          "median_first30_return_pct": 4.025327905924914,
+          "top2_avg_first30_return_pct": 4.621563641494786,
+          "qqq_first30_return_pct": 1.0025935531678298,
+          "passes": true
+        },
+        {
+          "day": "2026-08-03",
+          "names": [
+            "RKLB",
+            "AMD",
+            "IONQ",
+            "RIVN",
+            "SMCI"
+          ],
+          "returns": {
+            "RKLB": 0.06841523147416662,
+            "AMD": 0.019438272807986268,
+            "IONQ": 0.08917108568238907,
+            "RIVN": 0.006818181818181834,
+            "SMCI": 0.018591347872720654
+          },
+          "positive_breadth": 5,
+          "median_first30_return_pct": 1.9438272807986268,
+          "top2_avg_first30_return_pct": 7.879315857827784,
+          "qqq_first30_return_pct": 0.7271538573296432,
+          "passes": true
+        },
+        {
+          "day": "2026-08-05",
+          "names": [
+            "AMD",
+            "RKLB",
+            "SMCI",
+            "IONQ",
+            "HOOD"
+          ],
+          "returns": {
+            "AMD": 0.02014262273088474,
+            "RKLB": 0.025641025641025772,
+            "SMCI": -0.010567823343848648,
+            "IONQ": -0.0028083028083029093,
+            "HOOD": 0.01566663114142597
+          },
+          "positive_breadth": 3,
+          "median_first30_return_pct": 1.5666631141425968,
+          "top2_avg_first30_return_pct": 2.2891824185955256,
+          "qqq_first30_return_pct": 0.24234746567890486,
+          "passes": true
+        },
+        {
+          "day": "2026-08-06",
+          "names": [
+            "AMD",
+            "RKLB",
+            "SMCI",
+            "HOOD",
+            "IONQ"
+          ],
+          "returns": {
+            "AMD": 0.022670906200317864,
+            "RKLB": 0.058758468132172004,
+            "SMCI": 0.0029999999999998916,
+            "HOOD": 0.011134384301620504,
+            "IONQ": -0.023205221174764312
+          },
+          "positive_breadth": 4,
+          "median_first30_return_pct": 1.1134384301620504,
+          "top2_avg_first30_return_pct": 4.071468716624493,
+          "qqq_first30_return_pct": 0.6640778884574372,
+          "passes": true
+        },
+        {
+          "day": "2026-08-07",
+          "names": [
+            "AMD",
+            "RKLB",
+            "SMCI",
+            "IONQ",
+            "HOOD"
+          ],
+          "returns": {
+            "AMD": -0.022034991161819062,
+            "RKLB": 0.010279187817259006,
+            "SMCI": 0.008016032064128265,
+            "IONQ": 0.04729478766868889,
+            "HOOD": 0.010652033570045294
+          },
+          "positive_breadth": 4,
+          "median_first30_return_pct": 1.0279187817259006,
+          "top2_avg_first30_return_pct": 2.897341061936709,
+          "qqq_first30_return_pct": -0.11664236617371371,
+          "passes": true
+        },
+        {
+          "day": "2026-08-13",
+          "names": [
+            "SMCI",
+            "AMD",
+            "RKLB",
+            "IONQ",
+            "COIN"
+          ],
+          "returns": {
+            "SMCI": 0.04130718954248369,
+            "AMD": 0.0269151138716357,
+            "RKLB": 0.054408766564729705,
+            "IONQ": 0.0454342984409799,
+            "COIN": 0.011680204067933131
+          },
+          "positive_breadth": 5,
+          "median_first30_return_pct": 4.130718954248369,
+          "top2_avg_first30_return_pct": 4.99215325028548,
+          "qqq_first30_return_pct": 0.8853340688133482,
+          "passes": true
+        },
+        {
+          "day": "2026-08-14",
+          "names": [
+            "AMD",
+            "RKLB",
+            "SMCI",
+            "COIN",
+            "IONQ"
+          ],
+          "returns": {
+            "AMD": 0.020639803137496138,
+            "RKLB": 0.013820831762784147,
+            "SMCI": 0.02936670071501557,
+            "COIN": -0.0019209114393587967,
+            "IONQ": 0.037360178970917035
+          },
+          "positive_breadth": 4,
+          "median_first30_return_pct": 2.0639803137496138,
+          "top2_avg_first30_return_pct": 3.3363439842966303,
+          "qqq_first30_return_pct": -0.04908577739599629,
+          "passes": true
+        },
+        {
+          "day": "2026-08-18",
+          "names": [
+            "RKLB",
+            "SMCI",
+            "AMD",
+            "IONQ",
+            "COIN"
+          ],
+          "returns": {
+            "RKLB": 0.004074357015533492,
+            "SMCI": 0.00495417789757413,
+            "AMD": -0.01220362622036264,
+            "IONQ": 0.018935978358882055,
+            "COIN": -0.003822992083361565
+          },
+          "positive_breadth": 3,
+          "median_first30_return_pct": 0.4074357015533492,
+          "top2_avg_first30_return_pct": 1.1945078128228093,
+          "qqq_first30_return_pct": -0.15203687762073148,
+          "passes": true
+        }
+      ]
+    }
+  },
+  "activate": false
+}
