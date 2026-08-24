@@ -4,11 +4,6 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '20 21 * * 1-5'
-  push:
-    branches: [main]
-    paths:
-      - strategy2_experiment22_forward_shadow.py
-      - .github/workflows/strategy2-experiment22-forward-shadow.yml
 
 permissions:
   contents: write
