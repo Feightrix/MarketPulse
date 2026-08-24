@@ -65,3 +65,5 @@ jobs:
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Record runner-day regime results"
           git push origin main
+
+# trigger: 2026-08-23T20:11-04:00
