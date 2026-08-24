@@ -1,0 +1,16 @@
+{
+  "account_status": "ACTIVE",
+  "equity": 2500.0,
+  "open_order_count": 0,
+  "options_approved_level": 3,
+  "options_buying_power": 2500.0,
+  "options_trading_level": 3,
+  "order_submission_enabled": false,
+  "paper_base": "https://paper-api.alpaca.markets",
+  "position_count": 0,
+  "required_options_level": 3,
+  "status": "PASS",
+  "strategy": "options_pattern_v1",
+  "timestamp_utc": "2026-08-24T23:19:23.281940+00:00",
+  "trading_blocked": false
+}
