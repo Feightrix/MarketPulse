@@ -1,0 +1,91 @@
+name: MarketPulse Options Account Check
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - options_account_check.py
+      - .github/workflows/options-account-check.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: options-account-check
+  cancel-in-progress: false
+
+jobs:
+  verify-options-account:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Security check — options paper only
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s = Path('options_account_check.py').read_text()
+          assert 'ALPACA_OPTIONS_API_KEY_ID' in s
+          assert 'ALPACA_OPTIONS_SECRET_KEY' in s
+          assert 'https://paper-api.alpaca.markets' in s
+          assert 'https://api.alpaca.markets' not in s
+          assert 'order_submission_enabled": False' in s
+          assert 'method="GET"' in s
+          assert 'REQUIRED_OPTIONS_LEVEL = 3' in s
+          print('Options read-only paper invariants: PASS')
+          PY
+
+      - name: Syntax check options account verifier
+        run: python -m py_compile options_account_check.py
+
+      - name: Verify options paper account
+        env:
+          ALPACA_OPTIONS_API_KEY_ID: ${{ secrets.ALPACA_OPTIONS_API_KEY_ID }}
+          ALPACA_OPTIONS_SECRET_KEY: ${{ secrets.ALPACA_OPTIONS_SECRET_KEY }}
+        run: python options_account_check.py
+
+      - name: Fail if options account check did not pass
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          status = json.loads(Path('options_account_check.json').read_text())
+          print(json.dumps(status, indent=2))
+          if status.get('status') != 'PASS':
+              raise SystemExit('Options account verification BLOCKED')
+          PY
+
+      - name: Commit options verification status
+        if: always()
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          mkdir -p /tmp/options-output
+          for f in options_account_check.json options_account_check.md; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/options-output/$f"; fi
+          done
+          git fetch origin main
+          git reset --hard origin/main
+          for f in options_account_check.json options_account_check.md; do
+            if [ -f "/tmp/options-output/$f" ]; then
+              cp "/tmp/options-output/$f" "$f"
+              git add "$f"
+            fi
+          done
+          if git diff --cached --quiet; then
+            echo "No options account status changes"
+          else
+            git commit -m "Update options account check"
+            git push origin main
+          fi
