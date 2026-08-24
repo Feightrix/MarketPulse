@@ -1,0 +1,3385 @@
+{
+  "patterns": {
+    "opening_range_breakout": {
+      "discovery_jan_apr": {
+        "stats": {
+          "trades": 10,
+          "wins": 3,
+          "win_rate_pct": 30.0,
+          "ending_equity": 2461.65729353064,
+          "return_pct": -1.5337082587744022,
+          "profit_factor": 0.6835666283062721,
+          "avg_pnl": -3.8342706469359884,
+          "avg_r": -0.11497984691095349,
+          "max_drawdown_pct": 2.9194037590711486,
+          "trades_per_business_day": 0.11764705882352941,
+          "avg_return_per_business_day_pct": -0.018043626573816522,
+          "avg_return_on_trade_days_pct": -0.15337082587743953,
+          "median_return_on_trade_days_pct": -0.4367943485943549,
+          "days_ge_1pct": 1,
+          "days_ge_3pct": 0
+        },
+        "trades": [
+          {
+            "symbol": "MSTR",
+            "pattern": "opening_range_breakout",
+            "entry_time": "2026-01-02T10:35:00-05:00",
+            "exit_time": "2026-01-02T11:20:00-05:00",
+            "pnl": 17.710910769658145,
+            "r_multiple": 0.7084364307863258,
+            "notional": 2306.3822700638334,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RIVN",
+            "pattern": "opening_range_breakout",
+            "entry_time": "2026-01-05T10:05:00-05:00",
+            "exit_time": "2026-01-05T13:15:00-05:00",
+            "pnl": -26.748639416084437,
+            "r_multiple": -1.0624190133055205,
+            "notional": 1596.7074174955799,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RIVN",
+            "pattern": "opening_range_breakout",
+            "entry_time": "2026-01-22T10:15:00-05:00",
+            "exit_time": "2026-01-22T10:20:00-05:00",
+            "pnl": -19.892859537662225,
+            "r_multiple": -1.141999999999994,
+            "notional": 2490.9622713535737,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "opening_range_breakout",
+            "entry_time": "2026-01-23T10:35:00-05:00",
+            "exit_time": "2026-01-23T10:55:00-05:00",
+            "pnl": 24.873900544147403,
+            "r_multiple": 1.4394447039022191,
+            "notional": 2471.0694118159113,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "opening_range_breakout",
+            "entry_time": "2026-01-28T10:10:00-05:00",
+            "exit_time": "2026-01-28T10:15:00-05:00",
+            "pnl": -25.131492797626514,
+            "r_multiple": -1.109156255348285,
+            "notional": 2495.943312360059,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "opening_range_breakout",
+            "entry_time": "2026-02-20T10:05:00-05:00",
+            "exit_time": "2026-02-20T10:15:00-05:00",
+            "pnl": -26.603055764327987,
+            "r_multiple": -1.0766929133858216,
+            "notional": 1919.6456868994142,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "opening_range_breakout",
+            "entry_time": "2026-02-25T10:35:00-05:00",
+            "exit_time": "2026-02-25T10:50:00-05:00",
+            "pnl": 40.24398275778055,
+            "r_multiple": 2.3544999999999945,
+            "notional": 2444.2087637981044,
+            "exit_reason": "TARGET"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "opening_range_breakout",
+            "entry_time": "2026-03-02T10:10:00-05:00",
+            "exit_time": "2026-03-02T10:20:00-05:00",
+            "pnl": -2.022628303888282,
+            "r_multiple": -0.08141142175846108,
+            "notional": 2022.6283038883578,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "opening_range_breakout",
+            "entry_time": "2026-03-06T10:05:00-05:00",
+            "exit_time": "2026-03-06T10:45:00-05:00",
+            "pnl": -0.9557355955270804,
+            "r_multiple": -0.038500000000002484,
+            "notional": 955.7355955270235,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "opening_range_breakout",
+            "entry_time": "2026-03-13T10:25:00-04:00",
+            "exit_time": "2026-03-13T10:25:00-04:00",
+            "pnl": -19.81708912582946,
+            "r_multiple": -1.1419999999999895,
+            "notional": 2481.4743826564695,
+            "exit_reason": "STOP"
+          }
+        ]
+      },
+      "validation_may_jun": {
+        "stats": {
+          "trades": 7,
+          "wins": 3,
+          "win_rate_pct": 42.857142857142854,
+          "ending_equity": 2528.087136408267,
+          "return_pct": 1.123485456330675,
+          "profit_factor": 1.318536493716223,
+          "avg_pnl": 4.012448058323794,
+          "avg_r": 0.08276489950560806,
+          "max_drawdown_pct": 1.8620639575311682,
+          "trades_per_business_day": 0.16279069767441862,
+          "avg_return_per_business_day_pct": 0.026127568751876107,
+          "avg_return_on_trade_days_pct": 0.16049792233295182,
+          "median_return_on_trade_days_pct": -0.7986013986013972,
+          "days_ge_1pct": 3,
+          "days_ge_3pct": 0
+        },
+        "trades": [
+          {
+            "symbol": "COIN",
+            "pattern": "opening_range_breakout",
+            "entry_time": "2026-05-01T10:05:00-04:00",
+            "exit_time": "2026-05-01T10:15:00-04:00",
+            "pnl": -19.96503496503493,
+            "r_multiple": -1.1420000000000092,
+            "notional": 2500.0,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "opening_range_breakout",
+            "entry_time": "2026-05-04T10:25:00-04:00",
+            "exit_time": "2026-05-04T10:55:00-04:00",
+            "pnl": 25.114120772503025,
+            "r_multiple": 1.448092192691044,
+            "notional": 2480.034965034965,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "opening_range_breakout",
+            "entry_time": "2026-05-14T10:05:00-04:00",
+            "exit_time": "2026-05-14T10:55:00-04:00",
+            "pnl": 29.62523494330219,
+            "r_multiple": 1.1825737282918347,
+            "notional": 1773.5984941478846,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "opening_range_breakout",
+            "entry_time": "2026-05-20T10:05:00-04:00",
+            "exit_time": "2026-05-20T10:10:00-04:00",
+            "pnl": -20.242743176904444,
+            "r_multiple": -1.1419999999999968,
+            "notional": 2534.77432075077,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "opening_range_breakout",
+            "entry_time": "2026-05-28T10:20:00-04:00",
+            "exit_time": "2026-05-28T11:05:00-04:00",
+            "pnl": 61.52334915115344,
+            "r_multiple": 2.4467121311920033,
+            "notional": 1277.0769987538868,
+            "exit_reason": "TARGET"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "opening_range_breakout",
+            "entry_time": "2026-06-02T10:15:00-04:00",
+            "exit_time": "2026-06-02T10:15:00-04:00",
+            "pnl": -20.572410673566072,
+            "r_multiple": -1.1419999999999901,
+            "notional": 2576.0549267250194,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "opening_range_breakout",
+            "entry_time": "2026-06-23T10:00:00-04:00",
+            "exit_time": "2026-06-23T10:05:00-04:00",
+            "pnl": -27.39537964318666,
+            "r_multiple": -1.0720237556356291,
+            "notional": 1866.1093078325869,
+            "exit_reason": "STOP"
+          }
+        ]
+      },
+      "holdout_jul_aug21": {
+        "stats": {
+          "trades": 1,
+          "wins": 0,
+          "win_rate_pct": 0.0,
+          "ending_equity": 2480.034965034965,
+          "return_pct": -0.7986013986014062,
+          "profit_factor": 0.0,
+          "avg_pnl": -19.96503496503505,
+          "avg_r": -1.1420000000000115,
+          "max_drawdown_pct": 0.7986013986014062,
+          "trades_per_business_day": 0.02631578947368421,
+          "avg_return_per_business_day_pct": -0.02101582627898432,
+          "avg_return_on_trade_days_pct": -0.7986013986014019,
+          "median_return_on_trade_days_pct": -0.7986013986014019,
+          "days_ge_1pct": 0,
+          "days_ge_3pct": 0
+        },
+        "trades": [
+          {
+            "symbol": "COIN",
+            "pattern": "opening_range_breakout",
+            "entry_time": "2026-08-18T10:30:00-04:00",
+            "exit_time": "2026-08-18T10:30:00-04:00",
+            "pnl": -19.96503496503505,
+            "r_multiple": -1.1420000000000115,
+            "notional": 2500.0,
+            "exit_reason": "STOP"
+          }
+        ]
+      }
+    },
+    "first_pullback_rebreak": {
+      "discovery_jan_apr": {
+        "stats": {
+          "trades": 16,
+          "wins": 8,
+          "win_rate_pct": 50.0,
+          "ending_equity": 2527.4491928632433,
+          "return_pct": 1.097967714529724,
+          "profit_factor": 1.2138100952471778,
+          "avg_pnl": 1.715574553952707,
+          "avg_r": 0.06556358640506907,
+          "max_drawdown_pct": 2.311460582120306,
+          "trades_per_business_day": 0.18823529411764706,
+          "avg_return_per_business_day_pct": 0.012917267229761553,
+          "avg_return_on_trade_days_pct": 0.06862298215810829,
+          "median_return_on_trade_days_pct": 0.004246606169526636,
+          "days_ge_1pct": 3,
+          "days_ge_3pct": 0
+        },
+        "trades": [
+          {
+            "symbol": "HOOD",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-01-05T10:50:00-05:00",
+            "exit_time": "2026-01-05T15:55:00-05:00",
+            "pnl": 19.742415331445674,
+            "r_multiple": 0.789696613257827,
+            "notional": 1431.2643076244005,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-01-15T11:05:00-05:00",
+            "exit_time": "2026-01-15T15:55:00-05:00",
+            "pnl": -2.839400203770221,
+            "r_multiple": -0.11268612960173265,
+            "notional": 1576.3828653814573,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "HOOD",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-02-06T11:05:00-05:00",
+            "exit_time": "2026-02-06T15:55:00-05:00",
+            "pnl": -3.1154756491672697,
+            "r_multiple": -0.12378210961812647,
+            "notional": 1031.1756546169279,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-02-13T10:35:00-05:00",
+            "exit_time": "2026-02-13T15:55:00-05:00",
+            "pnl": 1.178539409882757,
+            "r_multiple": 0.046883015822699485,
+            "notional": 967.8082026992287,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-02-25T10:35:00-05:00",
+            "exit_time": "2026-02-25T15:55:00-05:00",
+            "pnl": -16.821388873955957,
+            "r_multiple": -0.6688515211064385,
+            "notional": 1068.3372708923184,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-03-02T10:10:00-05:00",
+            "exit_time": "2026-03-02T15:55:00-05:00",
+            "pnl": 11.489339612481531,
+            "r_multiple": 0.4599148983806515,
+            "notional": 1066.1724440688263,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-03-06T10:05:00-05:00",
+            "exit_time": "2026-03-06T10:45:00-05:00",
+            "pnl": -0.9662091014064252,
+            "r_multiple": -0.038500000000002484,
+            "notional": 966.2091014063677,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-03-23T11:05:00-04:00",
+            "exit_time": "2026-03-23T15:55:00-04:00",
+            "pnl": 5.457595609165412,
+            "r_multiple": 0.2175495521771458,
+            "notional": 1003.1034206124262,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-03-25T10:35:00-04:00",
+            "exit_time": "2026-03-25T10:45:00-04:00",
+            "pnl": -26.08590398581046,
+            "r_multiple": -1.0375736953455588,
+            "notional": 969.7910786250142,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-03-31T10:20:00-04:00",
+            "exit_time": "2026-03-31T10:45:00-04:00",
+            "pnl": -26.539949518771746,
+            "r_multiple": -1.0667012878686066,
+            "notional": 1684.4347924047022,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-04-02T10:15:00-04:00",
+            "exit_time": "2026-04-02T15:55:00-04:00",
+            "pnl": 41.36798871368179,
+            "r_multiple": 1.6806010994972675,
+            "notional": 947.6773316125903,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-04-13T11:05:00-04:00",
+            "exit_time": "2026-04-13T15:55:00-04:00",
+            "pnl": 5.0473092256259635,
+            "r_multiple": 0.20166105964800624,
+            "notional": 1365.4953852272938,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-04-15T10:10:00-04:00",
+            "exit_time": "2026-04-15T15:55:00-04:00",
+            "pnl": 36.23692471690185,
+            "r_multiple": 1.4449025079214437,
+            "notional": 1370.378095167031,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-04-21T10:30:00-04:00",
+            "exit_time": "2026-04-21T10:55:00-04:00",
+            "pnl": -25.53209469870089,
+            "r_multiple": -1.1095626389918458,
+            "notional": 2544.151785286303,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-04-28T10:20:00-04:00",
+            "exit_time": "2026-04-28T10:45:00-04:00",
+            "pnl": -26.48076049167603,
+            "r_multiple": -1.0513997246443343,
+            "notional": 1319.7497827058362,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-04-30T10:50:00-04:00",
+            "exit_time": "2026-04-30T15:55:00-04:00",
+            "pnl": 35.31026276731734,
+            "r_multiple": 1.4168657429527092,
+            "notional": 959.4734880869362,
+            "exit_reason": "FORCE_CLOSE"
+          }
+        ]
+      },
+      "validation_may_jun": {
+        "stats": {
+          "trades": 8,
+          "wins": 5,
+          "win_rate_pct": 62.5,
+          "ending_equity": 2550.8318882622257,
+          "return_pct": 2.0332755304890204,
+          "profit_factor": 1.7937488357825855,
+          "avg_pnl": 6.353986032778235,
+          "avg_r": 0.25575103799526827,
+          "max_drawdown_pct": 1.460342241654533,
+          "trades_per_business_day": 0.18604651162790697,
+          "avg_return_per_business_day_pct": 0.047285477453233186,
+          "avg_return_on_trade_days_pct": 0.25415944131112944,
+          "median_return_on_trade_days_pct": 0.7998409388060883,
+          "days_ge_1pct": 1,
+          "days_ge_3pct": 0
+        },
+        "trades": [
+          {
+            "symbol": "MSTR",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-05-01T10:15:00-04:00",
+            "exit_time": "2026-05-01T14:35:00-04:00",
+            "pnl": 23.413568951068516,
+            "r_multiple": 0.9365427580427407,
+            "notional": 1777.428458913135,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-05-04T10:15:00-04:00",
+            "exit_time": "2026-05-04T11:15:00-04:00",
+            "pnl": -26.237340418784267,
+            "r_multiple": -1.0397558585567324,
+            "notional": 1028.4388649630446,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-05-11T11:05:00-04:00",
+            "exit_time": "2026-05-11T15:25:00-04:00",
+            "pnl": 31.078335222553488,
+            "r_multiple": 1.244539126532523,
+            "notional": 1181.0021359710704,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-05-20T10:25:00-04:00",
+            "exit_time": "2026-05-20T14:35:00-04:00",
+            "pnl": 20.388205266751452,
+            "r_multiple": 0.8064142574500847,
+            "notional": 1016.9860608083555,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-06-04T10:20:00-04:00",
+            "exit_time": "2026-06-04T15:50:00-04:00",
+            "pnl": 20.048216642161332,
+            "r_multiple": 0.7866232524167263,
+            "notional": 981.2274660733169,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-06-18T10:10:00-04:00",
+            "exit_time": "2026-06-18T15:55:00-04:00",
+            "pnl": 19.94383029814308,
+            "r_multiple": 0.7764199901604587,
+            "notional": 1228.6843386696685,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-06-26T10:25:00-04:00",
+            "exit_time": "2026-06-26T14:45:00-04:00",
+            "pnl": -26.857086215604664,
+            "r_multiple": -1.0375000000000008,
+            "notional": 996.6244041453335,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-06-30T10:35:00-04:00",
+            "exit_time": "2026-06-30T15:55:00-04:00",
+            "pnl": -10.945841484063054,
+            "r_multiple": -0.4272752220836543,
+            "notional": 986.2844259523231,
+            "exit_reason": "FORCE_CLOSE"
+          }
+        ]
+      },
+      "holdout_jul_aug21": {
+        "stats": {
+          "trades": 5,
+          "wins": 1,
+          "win_rate_pct": 20.0,
+          "ending_equity": 2438.9174730352142,
+          "return_pct": -2.443301078591431,
+          "profit_factor": 0.00839214389601947,
+          "avg_pnl": -12.216505392957163,
+          "avg_r": -0.49241452915614026,
+          "max_drawdown_pct": 2.443301078591431,
+          "trades_per_business_day": 0.13157894736842105,
+          "avg_return_per_business_day_pct": -0.06429739680503764,
+          "avg_return_on_trade_days_pct": -0.48866021571828655,
+          "median_return_on_trade_days_pct": -0.3334422063927452,
+          "days_ge_1pct": 0,
+          "days_ge_3pct": 0
+        },
+        "trades": [
+          {
+            "symbol": "RKLB",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-07-21T10:45:00-04:00",
+            "exit_time": "2026-07-21T14:50:00-04:00",
+            "pnl": -1.4860990266037846,
+            "r_multiple": -0.05944396106415138,
+            "notional": 1486.09902660386,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "AMD",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-07-22T11:05:00-04:00",
+            "exit_time": "2026-07-22T15:55:00-04:00",
+            "pnl": -8.33605515981863,
+            "r_multiple": -0.3336405355427875,
+            "notional": 1337.9359419787381,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "AMD",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-08-06T10:15:00-04:00",
+            "exit_time": "2026-08-06T15:55:00-04:00",
+            "pnl": 0.5169516887805082,
+            "r_multiple": 0.02075962926301003,
+            "notional": 1040.8874025458838,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-08-13T10:20:00-04:00",
+            "exit_time": "2026-08-13T10:50:00-04:00",
+            "pnl": -26.18024307563817,
+            "r_multiple": -1.051122084564172,
+            "notional": 1298.2020485896358,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "AMD",
+            "pattern": "first_pullback_rebreak",
+            "entry_time": "2026-08-14T10:40:00-04:00",
+            "exit_time": "2026-08-14T11:30:00-04:00",
+            "pnl": -25.597081391505743,
+            "r_multiple": -1.0386256938726004,
+            "notional": 976.5809927827752,
+            "exit_reason": "STOP"
+          }
+        ]
+      }
+    },
+    "vwap_reclaim": {
+      "discovery_jan_apr": {
+        "stats": {
+          "trades": 23,
+          "wins": 5,
+          "win_rate_pct": 21.73913043478261,
+          "ending_equity": 2288.214982730113,
+          "return_pct": -8.471400690795472,
+          "profit_factor": 0.36773526199764395,
+          "avg_pnl": -9.208044229125543,
+          "avg_r": -0.38086975401035833,
+          "max_drawdown_pct": 11.196948226363313,
+          "trades_per_business_day": 0.27058823529411763,
+          "avg_return_per_business_day_pct": -0.09966353753877025,
+          "avg_return_on_trade_days_pct": -0.3683217691650217,
+          "median_return_on_trade_days_pct": -0.7235416537980538,
+          "days_ge_1pct": 3,
+          "days_ge_3pct": 0
+        },
+        "trades": [
+          {
+            "symbol": "IONQ",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-01-05T14:15:00-05:00",
+            "exit_time": "2026-01-05T15:55:00-05:00",
+            "pnl": -16.601759430008354,
+            "r_multiple": -0.664070377200334,
+            "notional": 1948.8102777328745,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-01-08T11:20:00-05:00",
+            "exit_time": "2026-01-08T11:35:00-05:00",
+            "pnl": 31.916320412119433,
+            "r_multiple": 1.2851873650677135,
+            "notional": 2174.21378656437,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "HOOD",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-01-21T14:30:00-05:00",
+            "exit_time": "2026-01-21T15:55:00-05:00",
+            "pnl": -18.088541344951345,
+            "r_multiple": -0.7191363507985509,
+            "notional": 1533.9158397811964,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RIVN",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-01-29T10:25:00-05:00",
+            "exit_time": "2026-01-29T10:35:00-05:00",
+            "pnl": -27.197750611030614,
+            "r_multiple": -1.0891185017759173,
+            "notional": 2250.462674855259,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-02-19T13:50:00-05:00",
+            "exit_time": "2026-02-19T15:55:00-05:00",
+            "pnl": 29.106953341014798,
+            "r_multiple": 1.178405676809964,
+            "notional": 2179.6693585418616,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-02-20T13:35:00-05:00",
+            "exit_time": "2026-02-20T14:25:00-05:00",
+            "pnl": -27.049655577984087,
+            "r_multiple": -1.0823606236225605,
+            "notional": 2083.294706536357,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-02-23T11:30:00-05:00",
+            "exit_time": "2026-02-23T15:55:00-05:00",
+            "pnl": -5.438719517151779,
+            "r_multiple": -0.22000531009999777,
+            "notional": 1141.9762483658217,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-02-26T12:05:00-05:00",
+            "exit_time": "2026-02-26T12:25:00-05:00",
+            "pnl": -2.452632631448449,
+            "r_multiple": -0.09943185155025099,
+            "notional": 2452.6326314486532,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "HOOD",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-03-04T14:05:00-05:00",
+            "exit_time": "2026-03-04T15:55:00-05:00",
+            "pnl": -4.62432000023962,
+            "r_multiple": -0.19013555607539273,
+            "notional": 2464.1942146405595,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-03-06T11:50:00-05:00",
+            "exit_time": "2026-03-06T12:25:00-05:00",
+            "pnl": -26.30353194489082,
+            "r_multiple": -1.0694362458334357,
+            "notional": 1732.4286974340653,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "HOOD",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-03-11T12:35:00-04:00",
+            "exit_time": "2026-03-11T15:55:00-04:00",
+            "pnl": 2.1239674854604615,
+            "r_multiple": 0.08728873739526222,
+            "notional": 1356.049218279774,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-03-12T11:40:00-04:00",
+            "exit_time": "2026-03-12T12:05:00-04:00",
+            "pnl": -25.540326462178673,
+            "r_multiple": -1.048715934594421,
+            "notional": 1210.7770636716036,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-03-13T11:10:00-04:00",
+            "exit_time": "2026-03-13T12:20:00-04:00",
+            "pnl": -25.36601449449299,
+            "r_multiple": -1.052597234489696,
+            "notional": 1291.6129573429362,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-03-16T11:40:00-04:00",
+            "exit_time": "2026-03-16T12:10:00-04:00",
+            "pnl": -25.086843238215902,
+            "r_multiple": -1.0520868813372826,
+            "notional": 1265.84818586593,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-03-17T11:55:00-04:00",
+            "exit_time": "2026-03-17T12:40:00-04:00",
+            "pnl": -25.127096995687715,
+            "r_multiple": -1.0649795452383237,
+            "notional": 1556.7195072875236,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-03-18T13:40:00-04:00",
+            "exit_time": "2026-03-18T14:50:00-04:00",
+            "pnl": -25.44008432368401,
+            "r_multiple": -1.08985180762132,
+            "notional": 2120.726534270829,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "SOFI",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-03-19T11:30:00-04:00",
+            "exit_time": "2026-03-19T12:35:00-04:00",
+            "pnl": -2.3088299646667196,
+            "r_multiple": -0.1188129516692003,
+            "notional": 2308.8299646666305,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-03-23T11:05:00-04:00",
+            "exit_time": "2026-03-23T11:20:00-04:00",
+            "pnl": -24.532509094411363,
+            "r_multiple": -1.0636151876224331,
+            "notional": 1490.3629587387027,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-04-09T11:20:00-04:00",
+            "exit_time": "2026-04-09T14:15:00-04:00",
+            "pnl": -24.597870593980062,
+            "r_multiple": -1.0779138124508036,
+            "notional": 1800.8042241605792,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-04-17T10:40:00-04:00",
+            "exit_time": "2026-04-17T11:15:00-04:00",
+            "pnl": -23.71466315480639,
+            "r_multiple": -1.0505342551854215,
+            "notional": 1163.3295122207348,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-04-20T14:10:00-04:00",
+            "exit_time": "2026-04-20T15:00:00-04:00",
+            "pnl": 54.19729985184373,
+            "r_multiple": 2.4263723844912155,
+            "notional": 1588.760542329012,
+            "exit_reason": "TARGET"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-04-22T11:10:00-04:00",
+            "exit_time": "2026-04-22T15:55:00-04:00",
+            "pnl": -5.491413832257545,
+            "r_multiple": -0.24002262765736765,
+            "notional": 1843.8161207081964,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-04-28T11:05:00-04:00",
+            "exit_time": "2026-04-28T15:55:00-04:00",
+            "pnl": 5.8330048517605215,
+            "r_multiple": 0.25556654882031377,
+            "notional": 1420.3911865309278,
+            "exit_reason": "FORCE_CLOSE"
+          }
+        ]
+      },
+      "validation_may_jun": {
+        "stats": {
+          "trades": 17,
+          "wins": 7,
+          "win_rate_pct": 41.17647058823529,
+          "ending_equity": 2597.3002763450395,
+          "return_pct": 3.8920110538015695,
+          "profit_factor": 1.5541369191217764,
+          "avg_pnl": 5.723545667355255,
+          "avg_r": 0.2201427936898787,
+          "max_drawdown_pct": 2.3161541466798496,
+          "trades_per_business_day": 0.3953488372093023,
+          "avg_return_per_business_day_pct": 0.09051188497212977,
+          "avg_return_on_trade_days_pct": 0.22894182669421018,
+          "median_return_on_trade_days_pct": -0.10053243305572551,
+          "days_ge_1pct": 5,
+          "days_ge_3pct": 0
+        },
+        "trades": [
+          {
+            "symbol": "COIN",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-05-01T13:40:00-04:00",
+            "exit_time": "2026-05-01T14:40:00-04:00",
+            "pnl": -25.08527642515155,
+            "r_multiple": -1.109580891417333,
+            "notional": 2500.0,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "HOOD",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-05-04T13:20:00-04:00",
+            "exit_time": "2026-05-04T15:20:00-04:00",
+            "pnl": -24.78142990180482,
+            "r_multiple": -1.1098393574297296,
+            "notional": 2474.9147235748483,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-05-06T13:30:00-04:00",
+            "exit_time": "2026-05-06T14:50:00-04:00",
+            "pnl": 59.84678099856127,
+            "r_multiple": 2.4425928643597903,
+            "notional": 1345.2980109230662,
+            "exit_reason": "TARGET"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-05-12T13:25:00-04:00",
+            "exit_time": "2026-05-12T15:55:00-04:00",
+            "pnl": 3.3307517215059286,
+            "r_multiple": 0.13270032519846636,
+            "notional": 1236.7910160489944,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-05-19T12:35:00-04:00",
+            "exit_time": "2026-05-19T13:50:00-04:00",
+            "pnl": -2.5133108263931376,
+            "r_multiple": -0.10212124585606634,
+            "notional": 2513.310826393111,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-05-21T11:00:00-04:00",
+            "exit_time": "2026-05-21T14:45:00-04:00",
+            "pnl": 30.761124166234257,
+            "r_multiple": 1.2251535209636804,
+            "notional": 1845.537955170485,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-05-22T14:20:00-04:00",
+            "exit_time": "2026-05-22T15:55:00-04:00",
+            "pnl": -6.264287742336259,
+            "r_multiple": -0.24647425577379017,
+            "notional": 1015.0187543195829,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-05-28T10:15:00-04:00",
+            "exit_time": "2026-05-28T10:40:00-04:00",
+            "pnl": 62.01940363724723,
+            "r_multiple": 2.4462407526191963,
+            "notional": 1299.5728037183121,
+            "exit_reason": "TARGET"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-06-02T13:45:00-04:00",
+            "exit_time": "2026-06-02T15:00:00-04:00",
+            "pnl": -27.087521767836883,
+            "r_multiple": -1.0429052596800676,
+            "notional": 1140.3573491145698,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-06-04T13:55:00-04:00",
+            "exit_time": "2026-06-04T15:55:00-04:00",
+            "pnl": -5.708611672501874,
+            "r_multiple": -0.22210541614185247,
+            "notional": 2047.8173548756486,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-06-10T11:55:00-04:00",
+            "exit_time": "2026-06-10T12:45:00-04:00",
+            "pnl": -27.36165681292228,
+            "r_multiple": -1.0669319086052091,
+            "notional": 1742.1257672688537,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-06-11T13:30:00-04:00",
+            "exit_time": "2026-06-11T15:55:00-04:00",
+            "pnl": 33.14273806097701,
+            "r_multiple": 1.3062948637484966,
+            "notional": 1153.951029254502,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-06-12T12:15:00-04:00",
+            "exit_time": "2026-06-12T13:30:00-04:00",
+            "pnl": -27.510783615998978,
+            "r_multiple": -1.0703341047181327,
+            "notional": 1833.4995686775007,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-06-15T12:00:00-04:00",
+            "exit_time": "2026-06-15T12:55:00-04:00",
+            "pnl": -1.521659757175901,
+            "r_multiple": -0.05984218130483599,
+            "notional": 1521.6597571758718,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-06-17T12:05:00-04:00",
+            "exit_time": "2026-06-17T13:40:00-04:00",
+            "pnl": 20.991394861790493,
+            "r_multiple": 0.8260210742842438,
+            "notional": 1997.4376405698679,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-06-22T11:00:00-04:00",
+            "exit_time": "2026-06-22T14:00:00-04:00",
+            "pnl": 62.79695450692717,
+            "r_multiple": 2.450844644223926,
+            "notional": 1195.4304248045744,
+            "exit_reason": "TARGET"
+          },
+          {
+            "symbol": "HOOD",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-06-30T11:25:00-04:00",
+            "exit_time": "2026-06-30T12:40:00-04:00",
+            "pnl": -27.754333086082323,
+            "r_multiple": -1.0572859317428445,
+            "notional": 1530.037537865508,
+            "exit_reason": "STOP"
+          }
+        ]
+      },
+      "holdout_jul_aug21": {
+        "stats": {
+          "trades": 13,
+          "wins": 4,
+          "win_rate_pct": 30.76923076923077,
+          "ending_equity": 2431.452802265208,
+          "return_pct": -2.7418879093916826,
+          "profit_factor": 0.6349951947232536,
+          "avg_pnl": -5.272861364214839,
+          "avg_r": -0.24222084350519354,
+          "max_drawdown_pct": 4.987143387483817,
+          "trades_per_business_day": 0.34210526315789475,
+          "avg_return_per_business_day_pct": -0.0721549449839916,
+          "avg_return_on_trade_days_pct": -0.21091445456859365,
+          "median_return_on_trade_days_pct": -0.687633524755224,
+          "days_ge_1pct": 2,
+          "days_ge_3pct": 0
+        },
+        "trades": [
+          {
+            "symbol": "IONQ",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-07-08T14:05:00-04:00",
+            "exit_time": "2026-07-08T15:55:00-04:00",
+            "pnl": -6.806475349521531,
+            "r_multiple": -0.27225901398086116,
+            "notional": 1807.000831813689,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-07-09T14:10:00-04:00",
+            "exit_time": "2026-07-09T15:15:00-04:00",
+            "pnl": -27.30772867236868,
+            "r_multiple": -1.0952911758503365,
+            "notional": 2400.7253611102315,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-07-13T14:05:00-04:00",
+            "exit_time": "2026-07-13T14:15:00-04:00",
+            "pnl": -26.058992263213344,
+            "r_multiple": -1.103412698412704,
+            "notional": 2465.88579597811,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-07-14T13:55:00-04:00",
+            "exit_time": "2026-07-14T15:55:00-04:00",
+            "pnl": 6.4380335145414165,
+            "r_multiple": 0.26387256278760546,
+            "notional": 1642.3032724666693,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-07-20T10:25:00-04:00",
+            "exit_time": "2026-07-20T11:45:00-04:00",
+            "pnl": 58.99142486576227,
+            "r_multiple": 2.411489711497226,
+            "notional": 2104.0394440428886,
+            "exit_reason": "TARGET"
+          },
+          {
+            "symbol": "AMD",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-07-21T11:10:00-04:00",
+            "exit_time": "2026-07-21T15:00:00-04:00",
+            "pnl": 30.42840365164493,
+            "r_multiple": 1.2145824805242478,
+            "notional": 1846.1961899558423,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-07-27T12:30:00-04:00",
+            "exit_time": "2026-07-27T15:55:00-04:00",
+            "pnl": 23.393009584209867,
+            "r_multiple": 0.9225519994742656,
+            "notional": 2029.2084620490598,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "HOOD",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-08-05T12:20:00-04:00",
+            "exit_time": "2026-08-05T15:55:00-04:00",
+            "pnl": -36.55038124372913,
+            "r_multiple": -1.4282638466220372,
+            "notional": 1841.712364265862,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "HOOD",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-08-06T11:50:00-04:00",
+            "exit_time": "2026-08-06T12:00:00-04:00",
+            "pnl": -20.34873143751858,
+            "r_multiple": -1.1403651917434074,
+            "notional": 2522.527294087326,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-08-12T10:15:00-04:00",
+            "exit_time": "2026-08-12T10:35:00-04:00",
+            "pnl": -26.647012676474517,
+            "r_multiple": -1.0649524807796023,
+            "notional": 1650.2488356030128,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "AMD",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-08-17T11:00:00-04:00",
+            "exit_time": "2026-08-17T13:10:00-04:00",
+            "pnl": -25.682519289160645,
+            "r_multiple": -1.1055651452147481,
+            "notional": 2475.531549973333,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-08-18T12:50:00-04:00",
+            "exit_time": "2026-08-18T13:40:00-04:00",
+            "pnl": -1.2053903000843773,
+            "r_multiple": -0.04920263595784702,
+            "notional": 1205.3903000843527,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "vwap_reclaim",
+            "entry_time": "2026-08-20T13:55:00-04:00",
+            "exit_time": "2026-08-20T15:55:00-04:00",
+            "pnl": -17.1908381188806,
+            "r_multiple": -0.7020555312893177,
+            "notional": 1181.0355934327938,
+            "exit_reason": "FORCE_CLOSE"
+          }
+        ]
+      }
+    },
+    "midday_compression_breakout": {
+      "discovery_jan_apr": {
+        "stats": {
+          "trades": 71,
+          "wins": 27,
+          "win_rate_pct": 38.028169014084504,
+          "ending_equity": 2299.095084934142,
+          "return_pct": -8.036196602634316,
+          "profit_factor": 0.7760977574167358,
+          "avg_pnl": -2.829646691068426,
+          "avg_r": -0.10487025760690825,
+          "max_drawdown_pct": 14.362025340680917,
+          "trades_per_business_day": 0.8352941176470589,
+          "avg_return_per_business_day_pct": -0.09454348944275669,
+          "avg_return_on_trade_days_pct": -0.11318586764273705,
+          "median_return_on_trade_days_pct": -0.2210895369441336,
+          "days_ge_1pct": 12,
+          "days_ge_3pct": 0
+        },
+        "trades": [
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-01-02T12:00:00-05:00",
+            "exit_time": "2026-01-02T12:25:00-05:00",
+            "pnl": 18.466976713326456,
+            "r_multiple": 0.7386790685330583,
+            "notional": 1778.9957928675622,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-01-05T13:15:00-05:00",
+            "exit_time": "2026-01-05T15:55:00-05:00",
+            "pnl": 50.21512724225321,
+            "r_multiple": 1.9938767395626302,
+            "notional": 1904.521806366232,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-01-06T11:50:00-05:00",
+            "exit_time": "2026-01-06T13:05:00-05:00",
+            "pnl": 38.83963251190231,
+            "r_multiple": 1.5120451243107176,
+            "notional": 1341.0975703690606,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-01-07T11:40:00-05:00",
+            "exit_time": "2026-01-07T12:20:00-05:00",
+            "pnl": -27.440998670568693,
+            "r_multiple": -1.052378520446934,
+            "notional": 1391.8565232584415,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-01-08T11:25:00-05:00",
+            "exit_time": "2026-01-08T12:30:00-05:00",
+            "pnl": 28.017273563718334,
+            "r_multiple": 1.085906853738298,
+            "notional": 1171.6845941040845,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-01-09T13:50:00-05:00",
+            "exit_time": "2026-01-09T14:30:00-05:00",
+            "pnl": -27.31987765496854,
+            "r_multiple": -1.0475019549098883,
+            "notional": 1264.9785214757665,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "HOOD",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-01-12T11:30:00-05:00",
+            "exit_time": "2026-01-12T12:00:00-05:00",
+            "pnl": -27.36636185630938,
+            "r_multiple": -1.1030200377940174,
+            "notional": 2580.778133705663,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-01-13T11:55:00-05:00",
+            "exit_time": "2026-01-13T12:15:00-05:00",
+            "pnl": -27.819078723883422,
+            "r_multiple": -1.0894865853827782,
+            "notional": 2310.4951231084324,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-01-14T11:25:00-05:00",
+            "exit_time": "2026-01-14T11:50:00-05:00",
+            "pnl": -26.203024191176727,
+            "r_multiple": -1.037499999999999,
+            "notional": 972.3531868533104,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-01-15T11:40:00-05:00",
+            "exit_time": "2026-01-15T14:25:00-05:00",
+            "pnl": 31.12791861543703,
+            "r_multiple": 1.2454207922172278,
+            "notional": 1237.2055499699386,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-01-16T12:35:00-05:00",
+            "exit_time": "2026-01-16T15:50:00-05:00",
+            "pnl": 23.828958492818096,
+            "r_multiple": 0.9416634213513364,
+            "notional": 1686.942069284589,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-01-20T12:10:00-05:00",
+            "exit_time": "2026-01-20T12:45:00-05:00",
+            "pnl": -27.0120076196652,
+            "r_multiple": -1.0574918920658956,
+            "notional": 1494.085624700102,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "HOOD",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-01-21T14:30:00-05:00",
+            "exit_time": "2026-01-21T15:55:00-05:00",
+            "pnl": -18.17498137208572,
+            "r_multiple": -0.719136350798551,
+            "notional": 1541.2459900837548,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-01-22T12:50:00-05:00",
+            "exit_time": "2026-01-22T14:30:00-05:00",
+            "pnl": 61.11347907392336,
+            "r_multiple": 2.435615499309043,
+            "notional": 1552.780863420377,
+            "exit_reason": "TARGET"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-01-23T11:40:00-05:00",
+            "exit_time": "2026-01-23T12:50:00-05:00",
+            "pnl": 32.7252399245884,
+            "r_multiple": 1.2732203724912137,
+            "notional": 2044.4670816328082,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-01-26T13:20:00-05:00",
+            "exit_time": "2026-01-26T14:15:00-05:00",
+            "pnl": 19.796374260915204,
+            "r_multiple": 0.9192425151436932,
+            "notional": 2602.9982760493094,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-01-27T13:15:00-05:00",
+            "exit_time": "2026-01-27T15:55:00-05:00",
+            "pnl": 21.970419382333585,
+            "r_multiple": 0.8383685888316815,
+            "notional": 2622.794650310225,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-01-28T12:15:00-05:00",
+            "exit_time": "2026-01-28T12:55:00-05:00",
+            "pnl": -28.018441165917565,
+            "r_multiple": -1.059392438556918,
+            "notional": 1597.2381196888332,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-01-29T12:25:00-05:00",
+            "exit_time": "2026-01-29T15:10:00-05:00",
+            "pnl": -27.672003091893696,
+            "r_multiple": -1.0574964648936764,
+            "notional": 1530.7042729125315,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RIVN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-02-02T11:45:00-05:00",
+            "exit_time": "2026-02-02T14:30:00-05:00",
+            "pnl": -2.589074625434634,
+            "r_multiple": -0.14299999999999521,
+            "notional": 2589.074625434747,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-02-03T12:00:00-05:00",
+            "exit_time": "2026-02-03T12:40:00-05:00",
+            "pnl": -27.276307377566216,
+            "r_multiple": -1.0545702592087338,
+            "notional": 1437.3167249811295,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "HOOD",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-02-05T11:55:00-05:00",
+            "exit_time": "2026-02-05T12:10:00-05:00",
+            "pnl": -27.176282393905947,
+            "r_multiple": -1.0619015410191386,
+            "notional": 1609.7820520229118,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-02-06T12:35:00-05:00",
+            "exit_time": "2026-02-06T15:55:00-05:00",
+            "pnl": 16.342122050044164,
+            "r_multiple": 0.6454150598160375,
+            "notional": 1204.6019903588021,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-02-09T14:30:00-05:00",
+            "exit_time": "2026-02-09T15:55:00-05:00",
+            "pnl": -13.282318238488036,
+            "r_multiple": -0.6714968489616322,
+            "notional": 2548.3750830878844,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "HOOD",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-02-11T13:50:00-05:00",
+            "exit_time": "2026-02-11T15:20:00-05:00",
+            "pnl": 23.042717746394633,
+            "r_multiple": 0.9089496868081491,
+            "notional": 2095.1633426708677,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-02-13T11:40:00-05:00",
+            "exit_time": "2026-02-13T15:55:00-05:00",
+            "pnl": -1.1909696826407379,
+            "r_multiple": -0.046556161342644654,
+            "notional": 1064.1056700200177,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-02-17T13:25:00-05:00",
+            "exit_time": "2026-02-17T15:05:00-05:00",
+            "pnl": -27.66148721909166,
+            "r_multiple": -1.0818180480411237,
+            "notional": 2117.611535089352,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-02-18T12:40:00-05:00",
+            "exit_time": "2026-02-18T13:40:00-05:00",
+            "pnl": -27.52970708084193,
+            "r_multiple": -1.0884391664031952,
+            "notional": 2262.1696541582523,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-02-19T12:20:00-05:00",
+            "exit_time": "2026-02-19T15:55:00-05:00",
+            "pnl": 21.879167092605464,
+            "r_multiple": 0.874553335447702,
+            "notional": 1744.6919255767637,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-02-20T13:45:00-05:00",
+            "exit_time": "2026-02-20T15:55:00-05:00",
+            "pnl": 1.1255538417518793,
+            "r_multiple": 0.04460054497345238,
+            "notional": 1259.8501792212905,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "HOOD",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-02-24T13:00:00-05:00",
+            "exit_time": "2026-02-24T14:15:00-05:00",
+            "pnl": -2.5247580395475264,
+            "r_multiple": -0.12304214565835679,
+            "notional": 2524.758039547574,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-02-25T11:35:00-05:00",
+            "exit_time": "2026-02-25T12:55:00-05:00",
+            "pnl": 25.370140626904387,
+            "r_multiple": 1.0058601959187434,
+            "notional": 1738.9152658537823,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-02-26T12:15:00-05:00",
+            "exit_time": "2026-02-26T14:50:00-05:00",
+            "pnl": 29.97921625367796,
+            "r_multiple": 1.1767615003655048,
+            "notional": 1536.337787187282,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-02-27T11:25:00-05:00",
+            "exit_time": "2026-02-27T12:35:00-05:00",
+            "pnl": -27.266789392848363,
+            "r_multiple": -1.0578434610303844,
+            "notional": 1516.7388353461397,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-03-03T12:25:00-05:00",
+            "exit_time": "2026-03-03T14:35:00-05:00",
+            "pnl": -26.45952693333101,
+            "r_multiple": -1.0374999999999996,
+            "notional": 981.8716018633745,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-03-04T14:20:00-05:00",
+            "exit_time": "2026-03-04T15:50:00-05:00",
+            "pnl": -27.108010823625758,
+            "r_multiple": -1.0740710787163112,
+            "notional": 1894.6861662222439,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-03-06T12:55:00-05:00",
+            "exit_time": "2026-03-06T13:35:00-05:00",
+            "pnl": 22.185589629744655,
+            "r_multiple": 0.8885793385692489,
+            "notional": 1453.9981354357008,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-03-09T12:45:00-04:00",
+            "exit_time": "2026-03-09T13:40:00-04:00",
+            "pnl": -26.474402757365976,
+            "r_multiple": -1.0510161758606447,
+            "notional": 1310.2530876890428,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-03-10T12:55:00-04:00",
+            "exit_time": "2026-03-10T13:25:00-04:00",
+            "pnl": -27.247472852752733,
+            "r_multiple": -1.0931962133547692,
+            "notional": 2347.802466621857,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-03-11T12:55:00-04:00",
+            "exit_time": "2026-03-11T13:35:00-04:00",
+            "pnl": -26.256011677736463,
+            "r_multiple": -1.0650609930796533,
+            "notional": 1628.5435454047242,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-03-12T11:30:00-04:00",
+            "exit_time": "2026-03-12T15:10:00-04:00",
+            "pnl": -25.83058762457215,
+            "r_multiple": -1.0590837834196776,
+            "notional": 1465.4170489010085,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-03-16T11:40:00-04:00",
+            "exit_time": "2026-03-16T12:10:00-04:00",
+            "pnl": -25.333110336793734,
+            "r_multiple": -1.0498049568540901,
+            "notional": 1225.9873314921351,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-03-17T13:05:00-04:00",
+            "exit_time": "2026-03-17T14:00:00-04:00",
+            "pnl": 36.53472444480383,
+            "r_multiple": 1.5630692353213744,
+            "notional": 2387.7923156193274,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-03-18T13:20:00-04:00",
+            "exit_time": "2026-03-18T15:45:00-04:00",
+            "pnl": -1.5667364412855223,
+            "r_multiple": -0.06462562250859014,
+            "notional": 1566.7364412854208,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-03-19T12:00:00-04:00",
+            "exit_time": "2026-03-19T15:35:00-04:00",
+            "pnl": -25.327752248426684,
+            "r_multiple": -1.0454089168686282,
+            "notional": 1124.376815234443,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-03-20T12:05:00-04:00",
+            "exit_time": "2026-03-20T12:30:00-04:00",
+            "pnl": -25.59801708258491,
+            "r_multiple": -1.0677262669145742,
+            "notional": 1647.6658943544164,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-03-23T13:35:00-04:00",
+            "exit_time": "2026-03-23T15:55:00-04:00",
+            "pnl": 0.7300149426171726,
+            "r_multiple": 0.030778493696025692,
+            "notional": 1446.3416254884082,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-03-24T11:25:00-04:00",
+            "exit_time": "2026-03-24T12:05:00-04:00",
+            "pnl": -25.179084567416123,
+            "r_multiple": -1.061260254248534,
+            "notional": 1477.1647205638028,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-03-25T13:05:00-04:00",
+            "exit_time": "2026-03-25T13:05:00-04:00",
+            "pnl": -22.234776669566422,
+            "r_multiple": -1.116915821891445,
+            "notional": 2347.385464667035,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RIVN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-03-27T11:45:00-04:00",
+            "exit_time": "2026-03-27T13:00:00-04:00",
+            "pnl": -24.693378222634713,
+            "r_multiple": -1.062011952606041,
+            "notional": 1465.1228495400605,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-03-31T12:30:00-04:00",
+            "exit_time": "2026-03-31T12:40:00-04:00",
+            "pnl": 55.38023447252734,
+            "r_multiple": 2.4073576256865166,
+            "notional": 2073.6868390989957,
+            "exit_reason": "TARGET"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-04-01T11:55:00-04:00",
+            "exit_time": "2026-04-01T13:20:00-04:00",
+            "pnl": -24.848824994211988,
+            "r_multiple": -1.0547766782514132,
+            "notional": 1314.0079271808238,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-04-02T11:30:00-04:00",
+            "exit_time": "2026-04-02T15:55:00-04:00",
+            "pnl": -5.5272384236033405,
+            "r_multiple": -0.23711991302018284,
+            "notional": 1601.6956004449248,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RIVN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-04-06T12:40:00-04:00",
+            "exit_time": "2026-04-06T13:00:00-04:00",
+            "pnl": -22.795369190503266,
+            "r_multiple": -1.1124903025601187,
+            "notional": 2325.461480829546,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-04-07T12:05:00-04:00",
+            "exit_time": "2026-04-07T15:55:00-04:00",
+            "pnl": 16.472135730134795,
+            "r_multiple": 0.7153505949853013,
+            "notional": 1008.4454565108936,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RIVN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-04-08T12:00:00-04:00",
+            "exit_time": "2026-04-08T13:15:00-04:00",
+            "pnl": 18.04991402098855,
+            "r_multiple": 1.025898699691812,
+            "notional": 2319.1382473691774,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-04-09T11:50:00-04:00",
+            "exit_time": "2026-04-09T12:35:00-04:00",
+            "pnl": -1.4846777942810485,
+            "r_multiple": -0.0635241021158501,
+            "notional": 1484.677794280929,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-04-10T12:15:00-04:00",
+            "exit_time": "2026-04-10T15:55:00-04:00",
+            "pnl": -2.059316030384265,
+            "r_multiple": -0.08816684330212526,
+            "notional": 2088.0219380268195,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-04-13T12:40:00-04:00",
+            "exit_time": "2026-04-13T15:40:00-04:00",
+            "pnl": -1.8269202983301138,
+            "r_multiple": -0.07828615534972452,
+            "notional": 1826.920298330147,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-04-14T11:50:00-04:00",
+            "exit_time": "2026-04-14T13:55:00-04:00",
+            "pnl": -24.861627003254814,
+            "r_multiple": -1.0661910590288324,
+            "notional": 1566.7727030557182,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-04-15T12:05:00-04:00",
+            "exit_time": "2026-04-15T12:45:00-04:00",
+            "pnl": -24.24790060690303,
+            "r_multiple": -1.0510778965106,
+            "notional": 1201.4139604665254,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-04-16T11:25:00-04:00",
+            "exit_time": "2026-04-16T13:05:00-04:00",
+            "pnl": -1.119569710724313,
+            "r_multiple": -0.04904568820105159,
+            "notional": 1119.569710724326,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-04-17T13:50:00-04:00",
+            "exit_time": "2026-04-17T14:50:00-04:00",
+            "pnl": 36.90426505684425,
+            "r_multiple": 1.6174814485126523,
+            "notional": 1455.6660566675448,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-04-20T11:25:00-04:00",
+            "exit_time": "2026-04-20T15:55:00-04:00",
+            "pnl": 7.17858138623729,
+            "r_multiple": 0.30962281091730853,
+            "notional": 1156.5919574003447,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-04-21T14:35:00-04:00",
+            "exit_time": "2026-04-21T15:40:00-04:00",
+            "pnl": -24.685761142674416,
+            "r_multiple": -1.0614468332364868,
+            "notional": 1452.3078887447025,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-04-22T12:10:00-04:00",
+            "exit_time": "2026-04-22T14:15:00-04:00",
+            "pnl": -25.00526245341978,
+            "r_multiple": -1.086719813338519,
+            "notional": 2018.419953305264,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-04-24T11:45:00-04:00",
+            "exit_time": "2026-04-24T15:55:00-04:00",
+            "pnl": -11.056732611439942,
+            "r_multiple": -0.4858009623815002,
+            "notional": 1880.1737718936533,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-04-27T13:05:00-04:00",
+            "exit_time": "2026-04-27T13:30:00-04:00",
+            "pnl": 40.18391817067603,
+            "r_multiple": 2.364242045145498,
+            "notional": 2264.923240181836,
+            "exit_reason": "TARGET"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-04-28T12:55:00-04:00",
+            "exit_time": "2026-04-28T13:15:00-04:00",
+            "pnl": -24.93599736889013,
+            "r_multiple": -1.0817717206132922,
+            "notional": 1907.976856948455,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-04-29T11:30:00-04:00",
+            "exit_time": "2026-04-29T15:55:00-04:00",
+            "pnl": 4.853075343516902,
+            "r_multiple": 0.212838203840074,
+            "notional": 1276.424030243166,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-04-30T13:35:00-04:00",
+            "exit_time": "2026-04-30T14:55:00-04:00",
+            "pnl": 14.07084860700312,
+            "r_multiple": 0.6949857954717314,
+            "notional": 2285.0242363271386,
+            "exit_reason": "STOP"
+          }
+        ]
+      },
+      "validation_may_jun": {
+        "stats": {
+          "trades": 33,
+          "wins": 14,
+          "win_rate_pct": 42.42424242424242,
+          "ending_equity": 2576.767873257485,
+          "return_pct": 3.070714930299401,
+          "profit_factor": 1.1726734697055858,
+          "avg_pnl": 2.3262991896207366,
+          "avg_r": 0.10284370123673865,
+          "max_drawdown_pct": 7.187031847684999,
+          "trades_per_business_day": 0.7674418604651163,
+          "avg_return_per_business_day_pct": 0.07141197512324186,
+          "avg_return_on_trade_days_pct": 0.09305196758482943,
+          "median_return_on_trade_days_pct": -0.47649589590673835,
+          "days_ge_1pct": 11,
+          "days_ge_3pct": 0
+        },
+        "trades": [
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-05-01T11:35:00-04:00",
+            "exit_time": "2026-05-01T12:05:00-04:00",
+            "pnl": -27.04128440366978,
+            "r_multiple": -1.0816513761467912,
+            "notional": 2066.284403669736,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-05-04T13:20:00-04:00",
+            "exit_time": "2026-05-04T14:25:00-04:00",
+            "pnl": -26.469637047183795,
+            "r_multiple": -1.0703630788596037,
+            "notional": 1764.7794783765469,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-05-05T13:55:00-04:00",
+            "exit_time": "2026-05-05T14:30:00-04:00",
+            "pnl": 26.955481076027333,
+            "r_multiple": 1.1855581616097477,
+            "notional": 2446.4890785491466,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-05-06T11:55:00-04:00",
+            "exit_time": "2026-05-06T14:40:00-04:00",
+            "pnl": 39.2168562759123,
+            "r_multiple": 1.5855158800023894,
+            "notional": 1249.4444874830278,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-05-08T11:30:00-04:00",
+            "exit_time": "2026-05-08T14:15:00-04:00",
+            "pnl": 29.861198099992787,
+            "r_multiple": 1.18842904623041,
+            "notional": 1421.6482691070562,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-05-11T11:25:00-04:00",
+            "exit_time": "2026-05-11T12:40:00-04:00",
+            "pnl": 21.396261484979068,
+            "r_multiple": 0.8415367229048367,
+            "notional": 1764.230004842297,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "HOOD",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-05-13T12:30:00-04:00",
+            "exit_time": "2026-05-13T13:35:00-04:00",
+            "pnl": -28.072426684380115,
+            "r_multiple": -1.0949030779711486,
+            "notional": 2458.8771182742184,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-05-14T11:35:00-04:00",
+            "exit_time": "2026-05-14T12:50:00-04:00",
+            "pnl": 39.97936140118091,
+            "r_multiple": 1.5765687003672197,
+            "notional": 1195.454861830327,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-05-15T13:25:00-04:00",
+            "exit_time": "2026-05-15T14:05:00-04:00",
+            "pnl": 22.560647828419043,
+            "r_multiple": 0.8758607720699206,
+            "notional": 2463.7081200322214,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-05-19T12:05:00-04:00",
+            "exit_time": "2026-05-19T13:20:00-04:00",
+            "pnl": 63.59820291879036,
+            "r_multiple": 2.4476036935235905,
+            "notional": 1296.4988705408305,
+            "exit_reason": "TARGET"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-05-20T12:15:00-04:00",
+            "exit_time": "2026-05-20T15:55:00-04:00",
+            "pnl": -11.912397397668459,
+            "r_multiple": -0.44750060255482077,
+            "notional": 1727.620987393043,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "AMD",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-05-21T11:50:00-04:00",
+            "exit_time": "2026-05-21T15:55:00-04:00",
+            "pnl": 32.525778213356354,
+            "r_multiple": 1.2273543880556608,
+            "notional": 2103.532070493139,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-05-22T12:00:00-04:00",
+            "exit_time": "2026-05-22T12:55:00-04:00",
+            "pnl": -28.220260322776724,
+            "r_multiple": -1.0519749840792927,
+            "notional": 1421.1058855368494,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-05-26T12:15:00-04:00",
+            "exit_time": "2026-05-26T15:20:00-04:00",
+            "pnl": -1.3211801804182792,
+            "r_multiple": -0.04977363017633669,
+            "notional": 1321.1801804182512,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-05-27T11:35:00-04:00",
+            "exit_time": "2026-05-27T13:10:00-04:00",
+            "pnl": 30.892771768879296,
+            "r_multiple": 1.1644218881036221,
+            "notional": 1102.6207743649966,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-05-28T13:00:00-04:00",
+            "exit_time": "2026-05-28T13:40:00-04:00",
+            "pnl": 60.51143653506588,
+            "r_multiple": 2.391429541487506,
+            "notional": 2683.9493730314402,
+            "exit_reason": "TARGET"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-05-29T11:35:00-04:00",
+            "exit_time": "2026-05-29T15:55:00-04:00",
+            "pnl": -12.446774529810572,
+            "r_multiple": -0.45352349308192774,
+            "notional": 1354.0301197614951,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-06-01T11:35:00-04:00",
+            "exit_time": "2026-06-01T12:10:00-04:00",
+            "pnl": -28.602741298016714,
+            "r_multiple": -1.0469470848685642,
+            "notional": 1309.9210880001224,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-06-02T13:45:00-04:00",
+            "exit_time": "2026-06-02T15:55:00-04:00",
+            "pnl": -25.628605915664437,
+            "r_multiple": -0.9480098708998654,
+            "notional": 1040.8133480893914,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-06-04T12:40:00-04:00",
+            "exit_time": "2026-06-04T14:10:00-04:00",
+            "pnl": 27.825855608369462,
+            "r_multiple": 1.0391379306059874,
+            "notional": 1987.993747577778,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-06-08T12:50:00-04:00",
+            "exit_time": "2026-06-08T14:40:00-04:00",
+            "pnl": 20.998826274035842,
+            "r_multiple": 0.7761221158550938,
+            "notional": 2245.56954357258,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-06-10T11:55:00-04:00",
+            "exit_time": "2026-06-10T12:45:00-04:00",
+            "pnl": -29.091044049768332,
+            "r_multiple": -1.0669319086052094,
+            "notional": 1852.2364264111213,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-06-11T12:40:00-04:00",
+            "exit_time": "2026-06-11T15:35:00-04:00",
+            "pnl": 66.16700255364229,
+            "r_multiple": 2.4528860835553945,
+            "notional": 1203.4676796075587,
+            "exit_reason": "TARGET"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-06-15T11:50:00-04:00",
+            "exit_time": "2026-06-15T13:30:00-04:00",
+            "pnl": -29.438868263538044,
+            "r_multiple": -1.0652041050814862,
+            "notional": 1829.6718147270547,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-06-16T13:45:00-04:00",
+            "exit_time": "2026-06-16T15:15:00-04:00",
+            "pnl": -28.386284902991992,
+            "r_multiple": -1.0381765536632064,
+            "notional": 1071.182748133948,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-06-17T11:50:00-04:00",
+            "exit_time": "2026-06-17T14:00:00-04:00",
+            "pnl": -28.998835027762354,
+            "r_multiple": -1.0717056531354994,
+            "notional": 1967.311859085055,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "HOOD",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-06-18T12:55:00-04:00",
+            "exit_time": "2026-06-18T14:10:00-04:00",
+            "pnl": -29.357174063202695,
+            "r_multiple": -1.09670215481095,
+            "notional": 2615.3492564529583,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-06-22T12:50:00-04:00",
+            "exit_time": "2026-06-22T14:55:00-04:00",
+            "pnl": -1.0192883338914995,
+            "r_multiple": -0.03850000000000215,
+            "notional": 1019.2883338914477,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RIVN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-06-24T12:25:00-04:00",
+            "exit_time": "2026-06-24T12:30:00-04:00",
+            "pnl": -26.69571824477054,
+            "r_multiple": -1.1089343224172308,
+            "notional": 2646.482877617907,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-06-25T12:10:00-04:00",
+            "exit_time": "2026-06-25T13:15:00-04:00",
+            "pnl": -27.731687322180303,
+            "r_multiple": -1.0585473412586672,
+            "notional": 1560.013600042663,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-06-26T11:40:00-04:00",
+            "exit_time": "2026-06-26T14:45:00-04:00",
+            "pnl": -26.998944809225446,
+            "r_multiple": -1.0416036655211938,
+            "notional": 1104.3106434363297,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-06-29T11:40:00-04:00",
+            "exit_time": "2026-06-29T14:20:00-04:00",
+            "pnl": 38.86225925037945,
+            "r_multiple": 1.5150644376702689,
+            "notional": 987.5467629880695,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "HOOD",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-06-30T11:30:00-04:00",
+            "exit_time": "2026-06-30T12:40:00-04:00",
+            "pnl": -27.15091323462602,
+            "r_multiple": -1.0426943180974775,
+            "notional": 1137.7645575699073,
+            "exit_reason": "STOP"
+          }
+        ]
+      },
+      "holdout_jul_aug21": {
+        "stats": {
+          "trades": 34,
+          "wins": 11,
+          "win_rate_pct": 32.35294117647059,
+          "ending_equity": 2371.8468139937577,
+          "return_pct": -5.126127440249695,
+          "profit_factor": 0.6544606818208657,
+          "avg_pnl": -3.769211353124764,
+          "avg_r": -0.1418230314384752,
+          "max_drawdown_pct": 6.16359301406002,
+          "trades_per_business_day": 0.8947368421052632,
+          "avg_return_per_business_day_pct": -0.13489809053288665,
+          "avg_return_on_trade_days_pct": -0.15076845412499054,
+          "median_return_on_trade_days_pct": -0.11543445429054348,
+          "days_ge_1pct": 4,
+          "days_ge_3pct": 0
+        },
+        "trades": [
+          {
+            "symbol": "MSTR",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-07-01T11:25:00-04:00",
+            "exit_time": "2026-07-01T15:10:00-04:00",
+            "pnl": -25.93750000000001,
+            "r_multiple": -1.0375000000000005,
+            "notional": 962.5000000000028,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-07-02T14:35:00-04:00",
+            "exit_time": "2026-07-02T15:20:00-04:00",
+            "pnl": -26.518710715132933,
+            "r_multiple": -1.0718690702087328,
+            "notional": 1802.826340132834,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-07-06T11:55:00-04:00",
+            "exit_time": "2026-07-06T13:25:00-04:00",
+            "pnl": 19.55963202552112,
+            "r_multiple": 0.7991535069219792,
+            "notional": 1248.560727865556,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "AMD",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-07-07T12:30:00-04:00",
+            "exit_time": "2026-07-07T14:55:00-04:00",
+            "pnl": -26.414989766678175,
+            "r_multiple": -1.0706883845448198,
+            "notional": 1768.6265877872202,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-07-08T13:25:00-04:00",
+            "exit_time": "2026-07-08T13:50:00-04:00",
+            "pnl": -24.633413092839604,
+            "r_multiple": -1.1088669848035502,
+            "notional": 2440.68843154371,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-07-09T11:40:00-04:00",
+            "exit_time": "2026-07-09T12:55:00-04:00",
+            "pnl": -25.58612869286153,
+            "r_multiple": -1.0590043892819494,
+            "notional": 1449.7390585374344,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-07-10T12:35:00-04:00",
+            "exit_time": "2026-07-10T15:55:00-04:00",
+            "pnl": -7.576929697472707,
+            "r_multiple": -0.31696416255137844,
+            "notional": 2143.5192809141117,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-07-13T14:05:00-04:00",
+            "exit_time": "2026-07-13T14:15:00-04:00",
+            "pnl": -25.18192985764781,
+            "r_multiple": -1.1034126984127037,
+            "notional": 2382.8919600605363,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-07-14T13:55:00-04:00",
+            "exit_time": "2026-07-14T15:55:00-04:00",
+            "pnl": 6.0945530494415046,
+            "r_multiple": 0.2584945973579732,
+            "notional": 1554.6834906516413,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-07-16T14:10:00-04:00",
+            "exit_time": "2026-07-16T15:55:00-04:00",
+            "pnl": -17.894408603831025,
+            "r_multiple": -0.7570172564438608,
+            "notional": 1533.7712299917434,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RIVN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-07-17T11:45:00-04:00",
+            "exit_time": "2026-07-17T14:15:00-04:00",
+            "pnl": 20.170423916766882,
+            "r_multiple": 0.8598122867082552,
+            "notional": 1767.693598276166,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-07-20T11:50:00-04:00",
+            "exit_time": "2026-07-20T14:30:00-04:00",
+            "pnl": -1.4142984473516467,
+            "r_multiple": -0.05977389139698974,
+            "notional": 1414.2984473516167,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "AMD",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-07-21T12:25:00-04:00",
+            "exit_time": "2026-07-21T14:55:00-04:00",
+            "pnl": 16.611825445317358,
+            "r_multiple": 0.702501889779924,
+            "notional": 1950.8834949362106,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-07-22T12:10:00-04:00",
+            "exit_time": "2026-07-22T15:55:00-04:00",
+            "pnl": -2.576925092689584,
+            "r_multiple": -0.10821604855921975,
+            "notional": 1984.6603859755476,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-07-23T12:25:00-04:00",
+            "exit_time": "2026-07-23T15:55:00-04:00",
+            "pnl": 5.282736734475422,
+            "r_multiple": 0.2220849232106335,
+            "notional": 1501.2090739728967,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-07-27T12:30:00-04:00",
+            "exit_time": "2026-07-27T15:55:00-04:00",
+            "pnl": 21.993491479830208,
+            "r_multiple": 0.9225519994742656,
+            "notional": 1907.8083501919268,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-07-28T11:25:00-04:00",
+            "exit_time": "2026-07-28T14:35:00-04:00",
+            "pnl": -25.114318573663674,
+            "r_multiple": -1.0438301820392237,
+            "notional": 1078.6040611020462,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "AMD",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-07-29T13:15:00-04:00",
+            "exit_time": "2026-07-29T15:20:00-04:00",
+            "pnl": -0.916632297392778,
+            "r_multiple": -0.038499999999998834,
+            "notional": 916.6322973928108,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RIVN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-07-30T13:15:00-04:00",
+            "exit_time": "2026-07-30T14:10:00-04:00",
+            "pnl": 16.167161938108787,
+            "r_multiple": 0.9714101466993013,
+            "notional": 2379.946477813791,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-07-31T13:40:00-04:00",
+            "exit_time": "2026-07-31T15:55:00-04:00",
+            "pnl": -3.19479762183759,
+            "r_multiple": -0.13333247508946983,
+            "notional": 1753.2297921879917,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-08-03T11:55:00-04:00",
+            "exit_time": "2026-08-03T15:55:00-04:00",
+            "pnl": -1.7063646487844246,
+            "r_multiple": -0.07130892275750983,
+            "notional": 995.1738807795152,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-08-04T11:40:00-04:00",
+            "exit_time": "2026-08-04T15:35:00-04:00",
+            "pnl": 29.97310986954024,
+            "r_multiple": 1.2534691145937666,
+            "notional": 1270.7136719634198,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-08-05T12:35:00-04:00",
+            "exit_time": "2026-08-05T14:55:00-04:00",
+            "pnl": -26.247265061902315,
+            "r_multiple": -1.0840666324394082,
+            "notional": 2059.6210442676775,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "AMD",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-08-06T13:00:00-04:00",
+            "exit_time": "2026-08-06T14:15:00-04:00",
+            "pnl": -25.292376098897325,
+            "r_multiple": -1.0560763032396019,
+            "notional": 1366.942259230989,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-08-07T11:25:00-04:00",
+            "exit_time": "2026-08-07T15:55:00-04:00",
+            "pnl": 39.37873833259106,
+            "r_multiple": 1.6617983963344936,
+            "notional": 999.7000579884442,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "AMD",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-08-11T13:45:00-04:00",
+            "exit_time": "2026-08-11T15:55:00-04:00",
+            "pnl": 27.49218355556087,
+            "r_multiple": 1.6319393793278403,
+            "notional": 2409.0246845226093,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-08-12T12:10:00-04:00",
+            "exit_time": "2026-08-12T14:45:00-04:00",
+            "pnl": 40.00169492478838,
+            "r_multiple": 1.6417573565308483,
+            "notional": 1807.772629988114,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "AMD",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-08-13T13:20:00-04:00",
+            "exit_time": "2026-08-13T14:00:00-04:00",
+            "pnl": -20.119364636881144,
+            "r_multiple": -1.1392291917120445,
+            "notional": 2476.5185630029587,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-08-14T12:15:00-04:00",
+            "exit_time": "2026-08-14T15:55:00-04:00",
+            "pnl": -15.760183578430814,
+            "r_multiple": -0.6415970005573203,
+            "notional": 1167.3241601651166,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-08-17T11:55:00-04:00",
+            "exit_time": "2026-08-17T12:20:00-04:00",
+            "pnl": -26.34293016167147,
+            "r_multiple": -1.0793456140814621,
+            "notional": 1960.946403942724,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-08-18T11:30:00-04:00",
+            "exit_time": "2026-08-18T13:55:00-04:00",
+            "pnl": -1.4732480636706473,
+            "r_multiple": -0.061021847032439853,
+            "notional": 1473.2480636707678,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-08-19T11:25:00-04:00",
+            "exit_time": "2026-08-19T15:35:00-04:00",
+            "pnl": -25.69841648637364,
+            "r_multiple": -1.06507680949289,
+            "notional": 1594.3163491161913,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-08-20T13:55:00-04:00",
+            "exit_time": "2026-08-20T15:55:00-04:00",
+            "pnl": -14.250546960411366,
+            "r_multiple": -0.5969754588643552,
+            "notional": 979.0333123808896,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "midday_compression_breakout",
+            "entry_time": "2026-08-21T12:15:00-04:00",
+            "exit_time": "2026-08-21T15:55:00-04:00",
+            "pnl": -1.0270591217615965,
+            "r_multiple": -0.043283342338507676,
+            "notional": 1553.5755749590694,
+            "exit_reason": "FORCE_CLOSE"
+          }
+        ]
+      }
+    },
+    "power_hour_breakout": {
+      "discovery_jan_apr": {
+        "stats": {
+          "trades": 32,
+          "wins": 15,
+          "win_rate_pct": 46.875,
+          "ending_equity": 2424.8538756070943,
+          "return_pct": -3.005844975716232,
+          "profit_factor": 0.7128535275436313,
+          "avg_pnl": -2.3483163872783166,
+          "avg_r": -0.10048469497057108,
+          "max_drawdown_pct": 5.4169706688592445,
+          "trades_per_business_day": 0.3764705882352941,
+          "avg_return_per_business_day_pct": -0.03536288206724973,
+          "avg_return_on_trade_days_pct": -0.09393265549113267,
+          "median_return_on_trade_days_pct": -0.10759477701261602,
+          "days_ge_1pct": 0,
+          "days_ge_3pct": 0
+        },
+        "trades": [
+          {
+            "symbol": "IONQ",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-01-02T15:30:00-05:00",
+            "exit_time": "2026-01-02T15:55:00-05:00",
+            "pnl": -10.747609976364222,
+            "r_multiple": -0.4299043990545689,
+            "notional": 2071.953822274005,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RIVN",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-01-05T15:05:00-05:00",
+            "exit_time": "2026-01-05T15:55:00-05:00",
+            "pnl": -16.454206751404513,
+            "r_multiple": -0.6610099810428737,
+            "notional": 1128.548449605168,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-01-06T15:05:00-05:00",
+            "exit_time": "2026-01-06T15:55:00-05:00",
+            "pnl": 10.151004532694323,
+            "r_multiple": 0.41050679353304886,
+            "notional": 1000.9663324597365,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RIVN",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-01-07T15:20:00-05:00",
+            "exit_time": "2026-01-07T15:55:00-05:00",
+            "pnl": -20.49294342957689,
+            "r_multiple": -0.825346870980226,
+            "notional": 1264.2420159069177,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-01-12T15:05:00-05:00",
+            "exit_time": "2026-01-12T15:55:00-05:00",
+            "pnl": -7.750746779094695,
+            "r_multiple": -0.31475673108095475,
+            "notional": 1512.0581574625985,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-01-13T15:05:00-05:00",
+            "exit_time": "2026-01-13T15:55:00-05:00",
+            "pnl": -13.83751046170268,
+            "r_multiple": -0.5637136705504152,
+            "notional": 1831.3306358375066,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-01-14T15:10:00-05:00",
+            "exit_time": "2026-01-14T15:55:00-05:00",
+            "pnl": 21.301753593147886,
+            "r_multiple": 0.8727122361973786,
+            "notional": 1957.5343283706245,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-01-16T15:10:00-05:00",
+            "exit_time": "2026-01-16T15:55:00-05:00",
+            "pnl": -9.66930596264589,
+            "r_multiple": -0.3927148401957091,
+            "notional": 1666.2301671418836,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-01-22T15:20:00-05:00",
+            "exit_time": "2026-01-22T15:40:00-05:00",
+            "pnl": -26.060904177362918,
+            "r_multiple": -1.0626258739016095,
+            "notional": 1560.4248340600607,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-01-27T15:05:00-05:00",
+            "exit_time": "2026-01-27T15:55:00-05:00",
+            "pnl": 4.667589344663783,
+            "r_multiple": 0.19236372000308122,
+            "notional": 2314.7131801403493,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-02-03T15:35:00-05:00",
+            "exit_time": "2026-02-03T15:55:00-05:00",
+            "pnl": 18.081927524864536,
+            "r_multiple": 0.7437733770187661,
+            "notional": 935.9762411739579,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-02-06T15:35:00-05:00",
+            "exit_time": "2026-02-06T15:55:00-05:00",
+            "pnl": 3.8958848637990173,
+            "r_multiple": 0.15906836051891451,
+            "notional": 1829.515195418588,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-02-09T15:35:00-05:00",
+            "exit_time": "2026-02-09T15:55:00-05:00",
+            "pnl": -24.75573388720976,
+            "r_multiple": -1.294794199010827,
+            "notional": 2453.0849323210177,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "HOOD",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-02-19T15:05:00-05:00",
+            "exit_time": "2026-02-19T15:55:00-05:00",
+            "pnl": 12.984898196636047,
+            "r_multiple": 0.5347256131916083,
+            "notional": 1710.1036131372298,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "HOOD",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-02-26T15:05:00-05:00",
+            "exit_time": "2026-02-26T15:55:00-05:00",
+            "pnl": -1.8347344595451194,
+            "r_multiple": -0.0897275729170339,
+            "notional": 2441.314096630444,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-02-27T15:20:00-05:00",
+            "exit_time": "2026-02-27T15:55:00-05:00",
+            "pnl": -3.545004391085682,
+            "r_multiple": -0.1453180726206666,
+            "notional": 1677.460837581492,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-03-02T15:25:00-05:00",
+            "exit_time": "2026-03-02T15:55:00-05:00",
+            "pnl": 8.883295290788633,
+            "r_multiple": 0.36467712122116236,
+            "notional": 1847.933123431452,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "HOOD",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-03-09T15:20:00-04:00",
+            "exit_time": "2026-03-09T15:55:00-04:00",
+            "pnl": 24.052178729636736,
+            "r_multiple": 0.9838025629203092,
+            "notional": 1745.8979410811032,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-03-16T15:05:00-04:00",
+            "exit_time": "2026-03-16T15:25:00-04:00",
+            "pnl": -26.260903277148998,
+            "r_multiple": -1.0636811604603797,
+            "notional": 1596.8936574646473,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-03-19T15:05:00-04:00",
+            "exit_time": "2026-03-19T15:55:00-04:00",
+            "pnl": -4.744255926767786,
+            "r_multiple": -0.1942290422084216,
+            "notional": 1293.6022932517162,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-03-23T15:10:00-04:00",
+            "exit_time": "2026-03-23T15:50:00-04:00",
+            "pnl": -26.357770064507196,
+            "r_multiple": -1.0811826579543573,
+            "notional": 2003.5019852699136,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-03-24T15:05:00-04:00",
+            "exit_time": "2026-03-24T15:50:00-04:00",
+            "pnl": -25.98992591552191,
+            "r_multiple": -1.0777462792345884,
+            "notional": 1898.9719592290148,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-03-31T15:35:00-04:00",
+            "exit_time": "2026-03-31T15:55:00-04:00",
+            "pnl": 9.275222534278287,
+            "r_multiple": 0.3888139395023134,
+            "notional": 1755.5195582986494,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-04-02T15:10:00-04:00",
+            "exit_time": "2026-04-02T15:55:00-04:00",
+            "pnl": 8.149905442017461,
+            "r_multiple": 0.3403178549232046,
+            "notional": 1236.5849613550452,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-04-06T15:05:00-04:00",
+            "exit_time": "2026-04-06T15:55:00-04:00",
+            "pnl": -32.231459655730255,
+            "r_multiple": -1.341333176281207,
+            "notional": 1626.0403561749617,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-04-10T15:15:00-04:00",
+            "exit_time": "2026-04-10T15:55:00-04:00",
+            "pnl": -6.134911658340066,
+            "r_multiple": -0.2587794369356056,
+            "notional": 2021.1039344298895,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-04-13T15:05:00-04:00",
+            "exit_time": "2026-04-13T15:55:00-04:00",
+            "pnl": 20.099254838124395,
+            "r_multiple": 0.8975552135161621,
+            "notional": 2364.5757332785183,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-04-14T15:05:00-04:00",
+            "exit_time": "2026-04-14T15:55:00-04:00",
+            "pnl": 14.921567836287478,
+            "r_multiple": 0.6257275272582183,
+            "notional": 1138.7317897260677,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-04-15T15:05:00-04:00",
+            "exit_time": "2026-04-15T15:55:00-04:00",
+            "pnl": 21.048858891841544,
+            "r_multiple": 0.8771832431424123,
+            "notional": 2170.4919515813513,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-04-16T15:05:00-04:00",
+            "exit_time": "2026-04-16T15:55:00-04:00",
+            "pnl": 6.067433800346086,
+            "r_multiple": 0.25065355558220703,
+            "notional": 1649.1942263394897,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-04-20T15:15:00-04:00",
+            "exit_time": "2026-04-20T15:55:00-04:00",
+            "pnl": -4.831699030464608,
+            "r_multiple": -0.19910468736184597,
+            "notional": 2023.0301368587761,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-04-27T15:15:00-04:00",
+            "exit_time": "2026-04-27T15:55:00-04:00",
+            "pnl": 2.972725992440836,
+            "r_multiple": 0.13857729420422848,
+            "notional": 2421.881149614653,
+            "exit_reason": "FORCE_CLOSE"
+          }
+        ]
+      },
+      "validation_may_jun": {
+        "stats": {
+          "trades": 15,
+          "wins": 7,
+          "win_rate_pct": 46.666666666666664,
+          "ending_equity": 2482.9813342833063,
+          "return_pct": -0.6807466286677499,
+          "profit_factor": 0.850568769697166,
+          "avg_pnl": -1.1345777144463136,
+          "avg_r": -0.04385316525572026,
+          "max_drawdown_pct": 3.0295981262778326,
+          "trades_per_business_day": 0.3488372093023256,
+          "avg_return_per_business_day_pct": -0.015831316945761585,
+          "avg_return_on_trade_days_pct": -0.045383108577852584,
+          "median_return_on_trade_days_pct": -0.1467254309845169,
+          "days_ge_1pct": 1,
+          "days_ge_3pct": 0
+        },
+        "trades": [
+          {
+            "symbol": "SMCI",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-05-06T15:05:00-04:00",
+            "exit_time": "2026-05-06T15:55:00-04:00",
+            "pnl": 8.648463220885622,
+            "r_multiple": 0.34593852883542486,
+            "notional": 1444.7783184423251,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-05-08T15:10:00-04:00",
+            "exit_time": "2026-05-08T15:55:00-04:00",
+            "pnl": 39.17592828158925,
+            "r_multiple": 1.5616348346906594,
+            "notional": 1630.802819767696,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-05-11T15:15:00-04:00",
+            "exit_time": "2026-05-11T15:55:00-04:00",
+            "pnl": -10.726747551017462,
+            "r_multiple": -0.4210159690280617,
+            "notional": 1756.7409623548865,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-05-12T15:35:00-04:00",
+            "exit_time": "2026-05-12T15:55:00-04:00",
+            "pnl": -23.376750434204972,
+            "r_multiple": -0.9213973490510342,
+            "notional": 1076.275365678792,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-05-19T15:15:00-04:00",
+            "exit_time": "2026-05-19T15:50:00-04:00",
+            "pnl": -26.556911437452182,
+            "r_multiple": -1.0564781279393822,
+            "notional": 1444.8397112148532,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-05-20T15:40:00-04:00",
+            "exit_time": "2026-05-20T15:55:00-04:00",
+            "pnl": -9.246097992362493,
+            "r_multiple": -0.37175264916110523,
+            "notional": 1322.82213825356,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-05-21T15:20:00-04:00",
+            "exit_time": "2026-05-21T15:55:00-04:00",
+            "pnl": 10.943107355725276,
+            "r_multiple": 0.44162510089616547,
+            "notional": 1702.8112000205992,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-05-28T15:30:00-04:00",
+            "exit_time": "2026-05-28T15:55:00-04:00",
+            "pnl": -5.245299652504996,
+            "r_multiple": -0.22133577394418263,
+            "notional": 2488.860991443163,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-05-29T15:40:00-04:00",
+            "exit_time": "2026-05-29T15:55:00-04:00",
+            "pnl": 18.37612434438169,
+            "r_multiple": 0.7398940345369102,
+            "notional": 956.1920413394125,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-06-02T15:30:00-04:00",
+            "exit_time": "2026-06-02T15:55:00-04:00",
+            "pnl": 3.7134103672023,
+            "r_multiple": 0.14841816600897617,
+            "notional": 1488.357132208299,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-06-04T15:20:00-04:00",
+            "exit_time": "2026-06-04T15:45:00-04:00",
+            "pnl": -27.518122844738244,
+            "r_multiple": -1.0982186792638524,
+            "notional": 2486.127631980881,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-06-11T15:20:00-04:00",
+            "exit_time": "2026-06-11T15:55:00-04:00",
+            "pnl": -7.5515521808379065,
+            "r_multiple": -0.304720824738888,
+            "notional": 1631.5382165340245,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RIVN",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-06-25T15:30:00-04:00",
+            "exit_time": "2026-06-25T15:55:00-04:00",
+            "pnl": 7.70891903650479,
+            "r_multiple": 0.31202169951360376,
+            "notional": 1061.595386422925,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-06-29T15:30:00-04:00",
+            "exit_time": "2026-06-29T15:55:00-04:00",
+            "pnl": 8.304999544747542,
+            "r_multiple": 0.3351027124582037,
+            "notional": 1763.2686179007123,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-06-30T15:30:00-04:00",
+            "exit_time": "2026-06-30T15:55:00-04:00",
+            "pnl": -3.6681357746129226,
+            "r_multiple": -0.1475131826492411,
+            "notional": 957.3600459723026,
+            "exit_reason": "FORCE_CLOSE"
+          }
+        ]
+      },
+      "holdout_jul_aug21": {
+        "stats": {
+          "trades": 16,
+          "wins": 5,
+          "win_rate_pct": 31.25,
+          "ending_equity": 2389.1437705916323,
+          "return_pct": -4.434249176334704,
+          "profit_factor": 0.4326757441952748,
+          "avg_pnl": -6.928514338022979,
+          "avg_r": -0.28519671164043126,
+          "max_drawdown_pct": 6.0512438736749825,
+          "trades_per_business_day": 0.42105263157894735,
+          "avg_return_per_business_day_pct": -0.11669076779828175,
+          "avg_return_on_trade_days_pct": -0.2771405735209192,
+          "median_return_on_trade_days_pct": -0.4388022411089587,
+          "days_ge_1pct": 1,
+          "days_ge_3pct": 0
+        },
+        "trades": [
+          {
+            "symbol": "SMCI",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-07-08T15:10:00-04:00",
+            "exit_time": "2026-07-08T15:55:00-04:00",
+            "pnl": 43.02863507756409,
+            "r_multiple": 1.7211454031025633,
+            "notional": 2245.4055416436463,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-07-14T15:15:00-04:00",
+            "exit_time": "2026-07-14T15:30:00-04:00",
+            "pnl": -27.53789977694966,
+            "r_multiple": -1.082878084701934,
+            "notional": 2133.0437125248245,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "AMD",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-07-22T15:30:00-04:00",
+            "exit_time": "2026-07-22T15:50:00-04:00",
+            "pnl": -27.399461627016244,
+            "r_multiple": -1.0892292800967867,
+            "notional": 2269.7091813633215,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "MSTR",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-07-27T15:10:00-04:00",
+            "exit_time": "2026-07-27T15:55:00-04:00",
+            "pnl": -9.070281529853208,
+            "r_multiple": -0.36454778109732233,
+            "notional": 1819.9209671886922,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-07-30T15:05:00-04:00",
+            "exit_time": "2026-07-30T15:55:00-04:00",
+            "pnl": 13.506869483622845,
+            "r_multiple": 0.5448469184580286,
+            "notional": 1369.7087970436014,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-08-03T15:25:00-04:00",
+            "exit_time": "2026-08-03T15:55:00-04:00",
+            "pnl": 5.588515739445011,
+            "r_multiple": 0.2242107631164563,
+            "notional": 2187.1263793680896,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-08-04T15:05:00-04:00",
+            "exit_time": "2026-08-04T15:55:00-04:00",
+            "pnl": -20.825878601126252,
+            "r_multiple": -0.8336632668442039,
+            "notional": 1888.3703884326583,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "RKLB",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-08-05T15:10:00-04:00",
+            "exit_time": "2026-08-05T15:55:00-04:00",
+            "pnl": -12.843881224592474,
+            "r_multiple": -0.5184648805213582,
+            "notional": 1536.081554669122,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "AMD",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-08-06T15:05:00-04:00",
+            "exit_time": "2026-08-06T15:25:00-04:00",
+            "pnl": -25.41337651403478,
+            "r_multiple": -1.106280913839021,
+            "notional": 2464.446617541094,
+            "exit_reason": "STOP"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-08-07T15:10:00-04:00",
+            "exit_time": "2026-08-07T15:55:00-04:00",
+            "pnl": 9.506521531077023,
+            "r_multiple": 0.38976596838319,
+            "notional": 1126.6284692491647,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-08-11T15:35:00-04:00",
+            "exit_time": "2026-08-11T15:55:00-04:00",
+            "pnl": -11.96069726740319,
+            "r_multiple": -0.4884828684549166,
+            "notional": 1034.5430143354552,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "SMCI",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-08-12T15:25:00-04:00",
+            "exit_time": "2026-08-12T15:55:00-04:00",
+            "pnl": -23.127052780851127,
+            "r_multiple": -0.9491607766929412,
+            "notional": 1455.940476947158,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "COIN",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-08-13T15:05:00-04:00",
+            "exit_time": "2026-08-13T15:55:00-04:00",
+            "pnl": 12.91511449654299,
+            "r_multiple": 0.5351303622197091,
+            "notional": 1185.9093708476605,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-08-14T15:40:00-04:00",
+            "exit_time": "2026-08-14T15:55:00-04:00",
+            "pnl": -22.697475218074533,
+            "r_multiple": -0.9354509861860006,
+            "notional": 1681.1549855972837,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-08-17T15:25:00-04:00",
+            "exit_time": "2026-08-17T15:55:00-04:00",
+            "pnl": -4.546466408673423,
+            "r_multiple": -0.19412704666841385,
+            "notional": 2403.6696517883506,
+            "exit_reason": "FORCE_CLOSE"
+          },
+          {
+            "symbol": "IONQ",
+            "pattern": "power_hour_breakout",
+            "entry_time": "2026-08-21T15:15:00-04:00",
+            "exit_time": "2026-08-21T15:55:00-04:00",
+            "pnl": -9.979414788044746,
+            "r_multiple": -0.4159609164239491,
+            "notional": 1452.7039130152516,
+            "exit_reason": "FORCE_CLOSE"
+          }
+        ]
+      }
+    }
+  },
+  "experiment": "S2-E17B-2026-VOLATILE-5M-PATTERN-SCAN",
+  "research_only": true,
+  "feed": "sip",
+  "candidate_pool": [
+    "TSLA",
+    "COIN",
+    "MSTR",
+    "HOOD",
+    "PLTR",
+    "SMCI",
+    "AMD",
+    "NVDA",
+    "RIVN",
+    "IONQ",
+    "RKLB",
+    "SOFI"
+  ],
+  "blocks": {
+    "discovery_jan_apr": [
+      "2026-01-02",
+      "2026-04-30"
+    ],
+    "validation_may_jun": [
+      "2026-05-01",
+      "2026-06-30"
+    ],
+    "holdout_jul_aug21": [
+      "2026-07-01",
+      "2026-08-21"
+    ]
+  },
+  "selected_on_discovery_only": "first_pullback_rebreak",
+  "discovery_rank": [
+    "first_pullback_rebreak",
+    "midday_compression_breakout",
+    "power_hour_breakout",
+    "vwap_reclaim",
+    "opening_range_breakout"
+  ],
+  "execution": {
+    "risk_per_trade_pct": 1.0,
+    "max_notional_pct": 100,
+    "cost_bps_per_fill": 10,
+    "target_r": 2.5
+  },
+  "activate": false
+}
