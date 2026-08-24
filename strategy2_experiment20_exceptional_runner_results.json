@@ -1,0 +1,1225 @@
+{
+  "experiment": "S2-E20-EXCEPTIONAL-RUNNER-OUTLIER-GATE",
+  "research_only": true,
+  "broker_orders": false,
+  "long_only": true,
+  "leverage": false,
+  "nonblind_followup": true,
+  "candidate_pool": [
+    "TSLA",
+    "COIN",
+    "MSTR",
+    "HOOD",
+    "PLTR",
+    "SMCI",
+    "AMD",
+    "NVDA",
+    "RIVN",
+    "IONQ",
+    "RKLB",
+    "SOFI"
+  ],
+  "dynamic_top_atr_names": 5,
+  "locked_gate": {
+    "decision_time_et": "09:55",
+    "lookback_sessions": 40,
+    "min_history": 25,
+    "min_return_percentile": 0.9,
+    "min_volume_percentile": 0.8,
+    "min_range_atr_percentile": 0.8,
+    "min_relative_strength_pct": 1.0,
+    "min_close_location": 0.8,
+    "min_leader_separation_pct": 0.5,
+    "min_qqq_first30_return_pct": -0.5,
+    "target_frequency_pct": [
+      5.0,
+      15.0
+    ]
+  },
+  "trade_signal": "Experiment 18 volatile leader trend-day unchanged",
+  "execution": {
+    "risk_per_trade_pct": 1.0,
+    "max_notional_pct": 100.0,
+    "cost_bps_per_fill": 10.0,
+    "leverage": false
+  },
+  "blocks": {
+    "discovery_jan_apr": {
+      "stats": {
+        "trades": 8,
+        "wins": 3,
+        "win_rate_pct": 37.5,
+        "ending_equity": 2543.4018788722474,
+        "return_pct": 1.7360751548898934,
+        "profit_factor": 1.5294386452080757,
+        "avg_trade_pnl": 5.425234859030924,
+        "avg_r": 0.22303735690525783,
+        "max_drawdown_pct": 2.069511019677883,
+        "avg_return_per_business_day_pct": 0.020424413586939923,
+        "avg_return_on_trade_days_pct": 0.22303735690525783,
+        "median_return_on_trade_days_pct": -0.03440727357347903,
+        "days_ge_1pct": 2,
+        "days_ge_3pct": 0,
+        "days_ge_5pct": 0,
+        "best_trade_return_pct": 2.2713563037155455,
+        "worst_trade_return_pct": -1.0434159138533805,
+        "gate_days": 11,
+        "business_days": 82,
+        "gate_frequency_pct": 13.414634146341465
+      },
+      "trades": [
+        {
+          "symbol": "MSTR",
+          "day": "2026-02-06",
+          "atr": 11.697029999999998,
+          "opening_low": 114.68,
+          "first30_return_pct": 6.4114832535885125,
+          "relative_strength_pct": 6.035744300313728,
+          "first30_relvol": 3.01382810167687,
+          "close_location": 0.8565118443031858,
+          "range_atr": 0.7625781929258966,
+          "score": 15.16952865642346,
+          "signal_time": "2026-02-06T09:55:00-05:00",
+          "entry_time": "2026-02-06T10:00:00-05:00",
+          "exit_time": "2026-02-06T10:55:00-05:00",
+          "entry": 122.43230999999999,
+          "exit": 124.92495,
+          "notional": 2387.1345177467174,
+          "stop_pct": 0.009483280189682017,
+          "pnl": 48.60046326264855,
+          "r_multiple": 1.944018530505942,
+          "account_return_pct": 1.944018530505942,
+          "exit_reason": "STOP",
+          "exceptional_gate": {
+            "return_percentile": 1.0,
+            "volume_percentile": 0.9714285714285714,
+            "range_atr_percentile": 0.8857142857142857,
+            "leader_separation_pct": 2.5203827013861257,
+            "relative_strength_pct": 6.035744300313728
+          }
+        },
+        {
+          "symbol": "COIN",
+          "day": "2026-03-04",
+          "atr": 13.691399999999998,
+          "opening_low": 195.4,
+          "first30_return_pct": 4.185595426471345,
+          "relative_strength_pct": 3.9383909933824457,
+          "first30_relvol": 2.992916263125701,
+          "close_location": 0.8842639593908642,
+          "range_atr": 0.7194297150035786,
+          "score": 10.823928345154979,
+          "signal_time": "2026-03-04T09:55:00-05:00",
+          "entry_time": "2026-03-04T10:00:00-05:00",
+          "exit_time": "2026-03-04T15:55:00-05:00",
+          "entry": 204.40419999999997,
+          "exit": 208.66113,
+          "notional": 917.0333526021725,
+          "stop_pct": 0.026819588638589652,
+          "pnl": 19.09817307908939,
+          "r_multiple": 0.7493592406649894,
+          "account_return_pct": 0.7493592406649895,
+          "exit_reason": "FORCE_CLOSE",
+          "exceptional_gate": {
+            "return_percentile": 0.975,
+            "volume_percentile": 1.0,
+            "range_atr_percentile": 0.9,
+            "leader_separation_pct": 1.718092289708495,
+            "relative_strength_pct": 3.9383909933824457
+          }
+        },
+        {
+          "symbol": "RKLB",
+          "day": "2026-03-17",
+          "atr": 5.097610000000001,
+          "opening_low": 71.27,
+          "first30_return_pct": 6.247304299117773,
+          "relative_strength_pct": 5.880023836444126,
+          "first30_relvol": 1.869520214244607,
+          "close_location": 0.9526293995859229,
+          "range_atr": 0.9475028493745102,
+          "score": 14.653142212546465,
+          "signal_time": "2026-03-17T09:55:00-04:00",
+          "entry_time": "2026-03-17T10:00:00-04:00",
+          "exit_time": "2026-03-17T11:35:00-04:00",
+          "entry": 75.95588,
+          "exit": 75.87992412,
+          "notional": 922.1693521759481,
+          "stop_pct": 0.02687195571955725,
+          "pnl": -0.9221693521758886,
+          "r_multiple": -0.03591423616167533,
+          "account_return_pct": -0.03591423616167532,
+          "exit_reason": "STOP",
+          "exceptional_gate": {
+            "return_percentile": 1.0,
+            "volume_percentile": 0.9,
+            "range_atr_percentile": 1.0,
+            "leader_separation_pct": 4.350752574979855,
+            "relative_strength_pct": 5.880023836444126
+          }
+        },
+        {
+          "symbol": "RKLB",
+          "day": "2026-03-25",
+          "atr": 5.34436,
+          "opening_low": 68.94,
+          "first30_return_pct": 5.337975050768784,
+          "relative_strength_pct": 5.596263211994968,
+          "first30_relvol": 3.0433330612494967,
+          "close_location": 0.8638497652582166,
+          "range_atr": 0.7971019916323012,
+          "score": 13.708143336189801,
+          "signal_time": "2026-03-25T09:55:00-04:00",
+          "entry_time": "2026-03-25T10:00:00-04:00",
+          "exit_time": "2026-03-25T11:15:00-04:00",
+          "entry": 72.72265,
+          "exit": 72.64992735,
+          "notional": 844.4774399365859,
+          "stop_pct": 0.029425244322092193,
+          "pnl": -0.8444774399366194,
+          "r_multiple": -0.03290031098528275,
+          "account_return_pct": -0.03290031098528275,
+          "exit_reason": "STOP",
+          "exceptional_gate": {
+            "return_percentile": 0.975,
+            "volume_percentile": 1.0,
+            "range_atr_percentile": 0.95,
+            "leader_separation_pct": 1.0680635463440113,
+            "relative_strength_pct": 5.596263211994968
+          }
+        },
+        {
+          "symbol": "SMCI",
+          "day": "2026-04-10",
+          "atr": 1.925195,
+          "opening_low": 23.64,
+          "first30_return_pct": 5.541455160744491,
+          "relative_strength_pct": 5.533273863190691,
+          "first30_relvol": 1.932505537787609,
+          "close_location": 0.8397435897435896,
+          "range_atr": 0.8103075272894428,
+          "score": 13.383597508051624,
+          "signal_time": "2026-04-10T09:55:00-04:00",
+          "entry_time": "2026-04-10T10:00:00-04:00",
+          "exit_time": "2026-04-10T10:25:00-04:00",
+          "entry": 24.96494,
+          "exit": 24.1676082,
+          "notional": 828.5477166255425,
+          "stop_pct": 0.03,
+          "pnl": -26.46220829222632,
+          "r_multiple": -1.031290322580646,
+          "account_return_pct": -1.031290322580646,
+          "exit_reason": "STOP",
+          "exceptional_gate": {
+            "return_percentile": 1.0,
+            "volume_percentile": 0.875,
+            "range_atr_percentile": 1.0,
+            "leader_separation_pct": 2.359556627953263,
+            "relative_strength_pct": 5.533273863190691
+          }
+        },
+        {
+          "symbol": "IONQ",
+          "day": "2026-04-14",
+          "atr": 2.0097499999999995,
+          "opening_low": 31.06,
+          "first30_return_pct": 4.672750157331662,
+          "relative_strength_pct": 4.424182648656005,
+          "first30_relvol": 4.067023284158588,
+          "close_location": 0.9463519313304721,
+          "range_atr": 1.1593481776340353,
+          "score": 12.605544267004367,
+          "signal_time": "2026-04-14T09:55:00-04:00",
+          "entry_time": "2026-04-14T10:00:00-04:00",
+          "exit_time": "2026-04-14T11:55:00-04:00",
+          "entry": 33.298264999999994,
+          "exit": 35.199765,
+          "notional": 1010.0749283092548,
+          "stop_pct": 0.024166541409890236,
+          "pnl": 57.68040695754131,
+          "r_multiple": 2.2713563037155455,
+          "account_return_pct": 2.2713563037155455,
+          "exit_reason": "STOP",
+          "exceptional_gate": {
+            "return_percentile": 1.0,
+            "volume_percentile": 0.975,
+            "range_atr_percentile": 1.0,
+            "leader_separation_pct": 1.7176871122836168,
+            "relative_strength_pct": 4.424182648656005
+          }
+        },
+        {
+          "symbol": "IONQ",
+          "day": "2026-04-15",
+          "atr": 2.2175,
+          "opening_low": 37.46,
+          "first30_return_pct": 7.377476538060468,
+          "relative_strength_pct": 7.196060538442395,
+          "first30_relvol": 9.170867275291236,
+          "close_location": 0.9841688654353556,
+          "range_atr": 1.7091319052987597,
+          "score": 19.482869706491336,
+          "signal_time": "2026-04-15T09:55:00-04:00",
+          "entry_time": "2026-04-15T10:00:00-04:00",
+          "exit_time": "2026-04-15T10:00:00-04:00",
+          "entry": 41.226185,
+          "exit": 40.257702,
+          "notional": 1153.547990240459,
+          "stop_pct": 0.021536967342479067,
+          "pnl": -27.099078370507712,
+          "r_multiple": -1.0434159138533805,
+          "account_return_pct": -1.0434159138533805,
+          "exit_reason": "STOP",
+          "exceptional_gate": {
+            "return_percentile": 1.0,
+            "volume_percentile": 1.0,
+            "range_atr_percentile": 1.0,
+            "leader_separation_pct": 6.024376807602261,
+            "relative_strength_pct": 7.196060538442395
+          }
+        },
+        {
+          "symbol": "RKLB",
+          "day": "2026-04-20",
+          "atr": 5.64232,
+          "opening_low": 84.6,
+          "first30_return_pct": 4.696523276370068,
+          "relative_strength_pct": 4.756770754472428,
+          "first30_relvol": 1.6306924421353655,
+          "close_location": 0.9803240740740723,
+          "range_atr": 0.7656425016659827,
+          "score": 11.688265342320515,
+          "signal_time": "2026-04-20T09:55:00-04:00",
+          "entry_time": "2026-04-20T10:00:00-04:00",
+          "exit_time": "2026-04-20T11:00:00-04:00",
+          "entry": 88.93884999999999,
+          "exit": 86.50647892799999,
+          "notional": 974.4203848394345,
+          "stop_pct": 0.025401553179516062,
+          "pnl": -26.64923097218531,
+          "r_multiple": -1.0369144360634295,
+          "account_return_pct": -1.0369144360634295,
+          "exit_reason": "STOP",
+          "exceptional_gate": {
+            "return_percentile": 0.925,
+            "volume_percentile": 0.925,
+            "range_atr_percentile": 0.9,
+            "leader_separation_pct": 2.9100212913678813,
+            "relative_strength_pct": 4.756770754472428
+          }
+        }
+      ],
+      "gate_days": [
+        {
+          "day": "2026-02-06",
+          "names": [
+            "IONQ",
+            "RKLB",
+            "MSTR",
+            "HOOD",
+            "AMD"
+          ],
+          "leader": {
+            "symbol": "MSTR",
+            "ret": 0.06411483253588512,
+            "return_percentile": 1.0,
+            "volume_percentile": 0.9714285714285714,
+            "range_atr_percentile": 0.8857142857142857,
+            "range_atr": 0.7625781929258966,
+            "close_location": 0.8565118443031858,
+            "relative_strength": 0.06035744300313728
+          },
+          "second_symbol": "HOOD",
+          "leader_separation_pct": 2.5203827013861257,
+          "qqq_first30_return_pct": 0.37573895327478457,
+          "passes": true
+        },
+        {
+          "day": "2026-02-25",
+          "names": [
+            "IONQ",
+            "MSTR",
+            "RKLB",
+            "HOOD",
+            "COIN"
+          ],
+          "leader": {
+            "symbol": "IONQ",
+            "ret": 0.03839366164362268,
+            "return_percentile": 1.0,
+            "volume_percentile": 0.9,
+            "range_atr_percentile": 0.825,
+            "range_atr": 0.5946767518658582,
+            "close_location": 0.8614168937329695,
+            "relative_strength": 0.031242251864561865
+          },
+          "second_symbol": "MSTR",
+          "leader_separation_pct": 2.274523225379599,
+          "qqq_first30_return_pct": 0.7151409779060813,
+          "passes": true
+        },
+        {
+          "day": "2026-03-04",
+          "names": [
+            "RKLB",
+            "IONQ",
+            "MSTR",
+            "HOOD",
+            "COIN"
+          ],
+          "leader": {
+            "symbol": "COIN",
+            "ret": 0.041855954264713446,
+            "return_percentile": 0.975,
+            "volume_percentile": 1.0,
+            "range_atr_percentile": 0.9,
+            "range_atr": 0.7194297150035786,
+            "close_location": 0.8842639593908642,
+            "relative_strength": 0.03938390993382446
+          },
+          "second_symbol": "HOOD",
+          "leader_separation_pct": 1.718092289708495,
+          "qqq_first30_return_pct": 0.24720443308889894,
+          "passes": true
+        },
+        {
+          "day": "2026-03-17",
+          "names": [
+            "IONQ",
+            "RKLB",
+            "COIN",
+            "MSTR",
+            "HOOD"
+          ],
+          "leader": {
+            "symbol": "RKLB",
+            "ret": 0.06247304299117773,
+            "return_percentile": 1.0,
+            "volume_percentile": 0.9,
+            "range_atr_percentile": 1.0,
+            "range_atr": 0.9475028493745102,
+            "close_location": 0.9526293995859229,
+            "relative_strength": 0.05880023836444126
+          },
+          "second_symbol": "HOOD",
+          "leader_separation_pct": 4.350752574979855,
+          "qqq_first30_return_pct": 0.367280462673647,
+          "passes": true
+        },
+        {
+          "day": "2026-03-18",
+          "names": [
+            "IONQ",
+            "RKLB",
+            "COIN",
+            "MSTR",
+            "SOFI"
+          ],
+          "leader": {
+            "symbol": "SOFI",
+            "ret": 0.03384968445209413,
+            "return_percentile": 0.975,
+            "volume_percentile": 0.95,
+            "range_atr_percentile": 0.925,
+            "range_atr": 0.7400098667982239,
+            "close_location": 1.0,
+            "relative_strength": 0.03219987692963855
+          },
+          "second_symbol": "IONQ",
+          "leader_separation_pct": 1.085422303000616,
+          "qqq_first30_return_pct": 0.1649807522455582,
+          "passes": true
+        },
+        {
+          "day": "2026-03-25",
+          "names": [
+            "SMCI",
+            "RKLB",
+            "IONQ",
+            "COIN",
+            "MSTR"
+          ],
+          "leader": {
+            "symbol": "RKLB",
+            "ret": 0.05337975050768784,
+            "return_percentile": 0.975,
+            "volume_percentile": 1.0,
+            "range_atr_percentile": 0.95,
+            "range_atr": 0.7971019916323012,
+            "close_location": 0.8638497652582166,
+            "relative_strength": 0.05596263211994967
+          },
+          "second_symbol": "SMCI",
+          "leader_separation_pct": 1.0680635463440113,
+          "qqq_first30_return_pct": -0.25828816122618337,
+          "passes": true
+        },
+        {
+          "day": "2026-04-02",
+          "names": [
+            "RKLB",
+            "SMCI",
+            "IONQ",
+            "COIN",
+            "RIVN"
+          ],
+          "leader": {
+            "symbol": "RKLB",
+            "ret": 0.07014865407794302,
+            "return_percentile": 1.0,
+            "volume_percentile": 0.9,
+            "range_atr_percentile": 1.0,
+            "range_atr": 1.012967564848797,
+            "close_location": 0.8266897746967072,
+            "relative_strength": 0.064532440312987
+          },
+          "second_symbol": "IONQ",
+          "leader_separation_pct": 4.36561167645102,
+          "qqq_first30_return_pct": 0.5616213764956024,
+          "passes": true
+        },
+        {
+          "day": "2026-04-10",
+          "names": [
+            "RKLB",
+            "SMCI",
+            "IONQ",
+            "COIN",
+            "RIVN"
+          ],
+          "leader": {
+            "symbol": "SMCI",
+            "ret": 0.055414551607444906,
+            "return_percentile": 1.0,
+            "volume_percentile": 0.875,
+            "range_atr_percentile": 1.0,
+            "range_atr": 0.8103075272894428,
+            "close_location": 0.8397435897435896,
+            "relative_strength": 0.05533273863190691
+          },
+          "second_symbol": "IONQ",
+          "leader_separation_pct": 2.359556627953263,
+          "qqq_first30_return_pct": 0.008181297553799816,
+          "passes": true
+        },
+        {
+          "day": "2026-04-14",
+          "names": [
+            "RKLB",
+            "SMCI",
+            "IONQ",
+            "COIN",
+            "PLTR"
+          ],
+          "leader": {
+            "symbol": "IONQ",
+            "ret": 0.04672750157331662,
+            "return_percentile": 1.0,
+            "volume_percentile": 0.975,
+            "range_atr_percentile": 1.0,
+            "range_atr": 1.1593481776340353,
+            "close_location": 0.9463519313304721,
+            "relative_strength": 0.044241826486560054
+          },
+          "second_symbol": "COIN",
+          "leader_separation_pct": 1.7176871122836168,
+          "qqq_first30_return_pct": 0.2485675086756567,
+          "passes": true
+        },
+        {
+          "day": "2026-04-15",
+          "names": [
+            "RKLB",
+            "SMCI",
+            "IONQ",
+            "COIN",
+            "PLTR"
+          ],
+          "leader": {
+            "symbol": "IONQ",
+            "ret": 0.07377476538060468,
+            "return_percentile": 1.0,
+            "volume_percentile": 1.0,
+            "range_atr_percentile": 1.0,
+            "range_atr": 1.7091319052987597,
+            "close_location": 0.9841688654353556,
+            "relative_strength": 0.07196060538442395
+          },
+          "second_symbol": "COIN",
+          "leader_separation_pct": 6.024376807602261,
+          "qqq_first30_return_pct": 0.1814159996180731,
+          "passes": true
+        },
+        {
+          "day": "2026-04-20",
+          "names": [
+            "SMCI",
+            "RKLB",
+            "IONQ",
+            "COIN",
+            "PLTR"
+          ],
+          "leader": {
+            "symbol": "RKLB",
+            "ret": 0.04696523276370068,
+            "return_percentile": 0.925,
+            "volume_percentile": 0.925,
+            "range_atr_percentile": 0.9,
+            "range_atr": 0.7656425016659827,
+            "close_location": 0.9803240740740723,
+            "relative_strength": 0.04756770754472428
+          },
+          "second_symbol": "IONQ",
+          "leader_separation_pct": 2.9100212913678813,
+          "qqq_first30_return_pct": -0.060247478102359864,
+          "passes": true
+        }
+      ]
+    },
+    "validation_may_jun": {
+      "stats": {
+        "trades": 6,
+        "wins": 2,
+        "win_rate_pct": 33.33333333333333,
+        "ending_equity": 2499.0888669565056,
+        "return_pct": -0.03644532173977533,
+        "profit_factor": 0.9832764562278932,
+        "avg_trade_pnl": -0.15185550724904454,
+        "avg_r": -0.0022379201275533425,
+        "max_drawdown_pct": 2.133563443582831,
+        "avg_return_per_business_day_pct": -0.0008475656218552401,
+        "avg_return_on_trade_days_pct": -0.0022379201275534166,
+        "median_return_on_trade_days_pct": -0.032433583146899515,
+        "days_ge_1pct": 1,
+        "days_ge_3pct": 0,
+        "days_ge_5pct": 0,
+        "best_trade_return_pct": 1.3565443548731964,
+        "worst_trade_return_pct": -1.049583289376514,
+        "gate_days": 7,
+        "business_days": 41,
+        "gate_frequency_pct": 17.073170731707318
+      },
+      "trades": [
+        {
+          "symbol": "RKLB",
+          "day": "2026-05-08",
+          "atr": 5.917624999999998,
+          "opening_low": 85.87,
+          "first30_return_pct": 9.476724588830132,
+          "relative_strength_pct": 8.702927835629826,
+          "first30_relvol": 4.729143912297402,
+          "close_location": 0.9441884222474451,
+          "range_atr": 1.4887729452271823,
+          "score": 22.16635798699994,
+          "signal_time": "2026-05-08T09:55:00-04:00",
+          "entry_time": "2026-05-08T10:00:00-04:00",
+          "exit_time": "2026-05-08T10:25:00-04:00",
+          "entry": 94.34424999999999,
+          "exit": 96.25365,
+          "notional": 958.276622110269,
+          "stop_pct": 0.02511458885941651,
+          "pnl": 19.39422256531111,
+          "r_multiple": 0.7757689026124446,
+          "account_return_pct": 0.7757689026124445,
+          "exit_reason": "STOP",
+          "exceptional_gate": {
+            "return_percentile": 1.0,
+            "volume_percentile": 1.0,
+            "range_atr_percentile": 1.0,
+            "leader_separation_pct": 8.936670583429596,
+            "relative_strength_pct": 8.702927835629826
+          }
+        },
+        {
+          "symbol": "IONQ",
+          "day": "2026-05-11",
+          "atr": 3.959505,
+          "opening_low": 47.89,
+          "first30_return_pct": 10.884918986289982,
+          "relative_strength_pct": 10.869416421320132,
+          "first30_relvol": 2.34401301092215,
+          "close_location": 0.8133333333333336,
+          "range_atr": 1.704758549364125,
+          "score": 25.124291712741638,
+          "signal_time": "2026-05-11T09:55:00-04:00",
+          "entry_time": "2026-05-11T10:00:00-04:00",
+          "exit_time": "2026-05-11T11:00:00-04:00",
+          "entry": 53.43338,
+          "exit": 55.65429,
+          "notional": 822.2650191862431,
+          "stop_pct": 0.02967032596478079,
+          "pnl": 34.176700103211175,
+          "r_multiple": 1.3565443548731961,
+          "account_return_pct": 1.3565443548731964,
+          "exit_reason": "STOP",
+          "exceptional_gate": {
+            "return_percentile": 1.0,
+            "volume_percentile": 0.95,
+            "range_atr_percentile": 0.975,
+            "leader_separation_pct": 4.981052737596148,
+            "relative_strength_pct": 10.869416421320132
+          }
+        },
+        {
+          "symbol": "IONQ",
+          "day": "2026-05-21",
+          "atr": 4.5542050000000005,
+          "opening_low": 53.93,
+          "first30_return_pct": 7.1781724958798865,
+          "relative_strength_pct": 6.943778742614626,
+          "first30_relvol": 2.8311986505216007,
+          "close_location": 0.9163346613545814,
+          "range_atr": 1.1022780046133194,
+          "score": 17.181264077866036,
+          "signal_time": "2026-05-21T09:55:00-04:00",
+          "entry_time": "2026-05-21T10:00:00-04:00",
+          "exit_time": "2026-05-21T10:15:00-04:00",
+          "entry": 58.618559999999995,
+          "exit": 58.559941439999996,
+          "notional": 824.5562882552267,
+          "stop_pct": 0.03,
+          "pnl": -0.8245562882552172,
+          "r_multiple": -0.032290322580644945,
+          "account_return_pct": -0.032290322580644945,
+          "exit_reason": "STOP",
+          "exceptional_gate": {
+            "return_percentile": 0.95,
+            "volume_percentile": 0.95,
+            "range_atr_percentile": 0.9,
+            "leader_separation_pct": 4.530320902412321,
+            "relative_strength_pct": 6.943778742614626
+          }
+        },
+        {
+          "symbol": "IONQ",
+          "day": "2026-05-22",
+          "atr": 4.693205000000001,
+          "opening_low": 58.0,
+          "first30_return_pct": 8.905172413793094,
+          "relative_strength_pct": 8.701628519412852,
+          "first30_relvol": 2.7907876674508394,
+          "close_location": 0.939090909090909,
+          "range_atr": 1.1719070443332433,
+          "score": 20.744122760701856,
+          "signal_time": "2026-05-22T09:55:00-04:00",
+          "entry_time": "2026-05-22T10:00:00-04:00",
+          "exit_time": "2026-05-22T13:05:00-04:00",
+          "entry": 63.21314999999999,
+          "exit": 63.14993684999999,
+          "notional": 831.6041941688821,
+          "stop_pct": 0.029727347585114822,
+          "pnl": -0.8316041941689194,
+          "r_multiple": -0.03257684371315409,
+          "account_return_pct": -0.032576843713154086,
+          "exit_reason": "STOP",
+          "exceptional_gate": {
+            "return_percentile": 0.975,
+            "volume_percentile": 0.925,
+            "range_atr_percentile": 0.925,
+            "leader_separation_pct": 5.107896711791726,
+            "relative_strength_pct": 8.701628519412852
+          }
+        },
+        {
+          "symbol": "SMCI",
+          "day": "2026-05-29",
+          "atr": 2.5173900000000002,
+          "opening_low": 44.17,
+          "first30_return_pct": 7.617977528089881,
+          "relative_strength_pct": 7.166164169067857,
+          "first30_relvol": 4.838615774924855,
+          "close_location": 0.9230769230769226,
+          "range_atr": 1.60086438732179,
+          "score": 18.88471169046372,
+          "signal_time": "2026-05-29T09:55:00-04:00",
+          "entry_time": "2026-05-29T10:00:00-04:00",
+          "exit_time": "2026-05-29T10:15:00-04:00",
+          "entry": 47.94789999999999,
+          "exit": 46.953,
+          "notional": 1290.8424287986504,
+          "stop_pct": 0.018789144050104355,
+          "pnl": -26.78447090303769,
+          "r_multiple": -1.0495832893765138,
+          "account_return_pct": -1.049583289376514,
+          "exit_reason": "STOP",
+          "exceptional_gate": {
+            "return_percentile": 1.0,
+            "volume_percentile": 0.975,
+            "range_atr_percentile": 1.0,
+            "leader_separation_pct": 6.125440214657041,
+            "relative_strength_pct": 7.166164169067857
+          }
+        },
+        {
+          "symbol": "SMCI",
+          "day": "2026-06-22",
+          "atr": 3.8937349999999995,
+          "opening_low": 32.27,
+          "first30_return_pct": 9.728485793292885,
+          "relative_strength_pct": 9.367983380958966,
+          "first30_relvol": 3.276395641738814,
+          "close_location": 0.9801223241590221,
+          "range_atr": 0.8398106188531054,
+          "score": 22.103146045724262,
+          "signal_time": "2026-06-22T09:55:00-04:00",
+          "entry_time": "2026-06-22T10:00:00-04:00",
+          "exit_time": "2026-06-22T10:15:00-04:00",
+          "entry": 35.505469999999995,
+          "exit": 34.37149409999999,
+          "notional": 815.372716636885,
+          "stop_pct": 0.03,
+          "pnl": -26.04142432655473,
+          "r_multiple": -1.0312903225806478,
+          "account_return_pct": -1.031290322580648,
+          "exit_reason": "STOP",
+          "exceptional_gate": {
+            "return_percentile": 1.0,
+            "volume_percentile": 0.925,
+            "range_atr_percentile": 0.85,
+            "leader_separation_pct": 4.373236588626916,
+            "relative_strength_pct": 9.367983380958966
+          }
+        }
+      ],
+      "gate_days": [
+        {
+          "day": "2026-05-08",
+          "names": [
+            "IONQ",
+            "RKLB",
+            "HOOD",
+            "COIN",
+            "SMCI"
+          ],
+          "leader": {
+            "symbol": "RKLB",
+            "ret": 0.09476724588830132,
+            "return_percentile": 1.0,
+            "volume_percentile": 1.0,
+            "range_atr_percentile": 1.0,
+            "range_atr": 1.4887729452271823,
+            "close_location": 0.9441884222474451,
+            "relative_strength": 0.08702927835629826
+          },
+          "second_symbol": "SMCI",
+          "leader_separation_pct": 8.936670583429596,
+          "qqq_first30_return_pct": 0.7737967532003065,
+          "passes": true
+        },
+        {
+          "day": "2026-05-11",
+          "names": [
+            "RKLB",
+            "IONQ",
+            "HOOD",
+            "COIN",
+            "MSTR"
+          ],
+          "leader": {
+            "symbol": "IONQ",
+            "ret": 0.10884918986289982,
+            "return_percentile": 1.0,
+            "volume_percentile": 0.95,
+            "range_atr_percentile": 0.975,
+            "range_atr": 1.704758549364125,
+            "close_location": 0.8133333333333336,
+            "relative_strength": 0.10869416421320133
+          },
+          "second_symbol": "RKLB",
+          "leader_separation_pct": 4.981052737596148,
+          "qqq_first30_return_pct": 0.015502564969849253,
+          "passes": true
+        },
+        {
+          "day": "2026-05-21",
+          "names": [
+            "IONQ",
+            "SMCI",
+            "RKLB",
+            "AMD",
+            "COIN"
+          ],
+          "leader": {
+            "symbol": "IONQ",
+            "ret": 0.07178172495879886,
+            "return_percentile": 0.95,
+            "volume_percentile": 0.95,
+            "range_atr_percentile": 0.9,
+            "range_atr": 1.1022780046133194,
+            "close_location": 0.9163346613545814,
+            "relative_strength": 0.06943778742614626
+          },
+          "second_symbol": "RKLB",
+          "leader_separation_pct": 4.530320902412321,
+          "qqq_first30_return_pct": 0.23439375326526068,
+          "passes": true
+        },
+        {
+          "day": "2026-05-22",
+          "names": [
+            "IONQ",
+            "RKLB",
+            "SMCI",
+            "COIN",
+            "MSTR"
+          ],
+          "leader": {
+            "symbol": "IONQ",
+            "ret": 0.08905172413793094,
+            "return_percentile": 0.975,
+            "volume_percentile": 0.925,
+            "range_atr_percentile": 0.925,
+            "range_atr": 1.1719070443332433,
+            "close_location": 0.939090909090909,
+            "relative_strength": 0.08701628519412852
+          },
+          "second_symbol": "RKLB",
+          "leader_separation_pct": 5.107896711791726,
+          "qqq_first30_return_pct": 0.20354389438024256,
+          "passes": true
+        },
+        {
+          "day": "2026-05-29",
+          "names": [
+            "IONQ",
+            "RKLB",
+            "COIN",
+            "MSTR",
+            "SMCI"
+          ],
+          "leader": {
+            "symbol": "SMCI",
+            "ret": 0.07617977528089881,
+            "return_percentile": 1.0,
+            "volume_percentile": 0.975,
+            "range_atr_percentile": 1.0,
+            "range_atr": 1.60086438732179,
+            "close_location": 0.9230769230769226,
+            "relative_strength": 0.07166164169067857
+          },
+          "second_symbol": "COIN",
+          "leader_separation_pct": 6.125440214657041,
+          "qqq_first30_return_pct": 0.45181335902202413,
+          "passes": true
+        },
+        {
+          "day": "2026-06-22",
+          "names": [
+            "SMCI",
+            "IONQ",
+            "RKLB",
+            "MSTR",
+            "AMD"
+          ],
+          "leader": {
+            "symbol": "SMCI",
+            "ret": 0.09728485793292885,
+            "return_percentile": 1.0,
+            "volume_percentile": 0.925,
+            "range_atr_percentile": 0.85,
+            "range_atr": 0.8398106188531054,
+            "close_location": 0.9801223241590221,
+            "relative_strength": 0.09367983380958966
+          },
+          "second_symbol": "IONQ",
+          "leader_separation_pct": 4.373236588626916,
+          "qqq_first30_return_pct": 0.36050241233391844,
+          "passes": true
+        },
+        {
+          "day": "2026-06-23",
+          "names": [
+            "SMCI",
+            "RKLB",
+            "IONQ",
+            "MSTR",
+            "COIN"
+          ],
+          "leader": {
+            "symbol": "IONQ",
+            "ret": 0.0715042372881356,
+            "return_percentile": 0.925,
+            "volume_percentile": 0.8,
+            "range_atr_percentile": 0.925,
+            "range_atr": 0.9233423304350172,
+            "close_location": 0.8574040219378425,
+            "relative_strength": 0.06456037499177092
+          },
+          "second_symbol": "RKLB",
+          "leader_separation_pct": 2.244173728813559,
+          "qqq_first30_return_pct": 0.6943862296364678,
+          "passes": true
+        }
+      ]
+    },
+    "holdout_jul_aug21": {
+      "stats": {
+        "trades": 4,
+        "wins": 1,
+        "win_rate_pct": 25.0,
+        "ending_equity": 2485.25729037657,
+        "return_pct": -0.5897083849372042,
+        "profit_factor": 0.5510836236179552,
+        "avg_trade_pnl": -3.685677405857578,
+        "avg_r": -0.14577320156061502,
+        "max_drawdown_pct": 1.304185128298263,
+        "avg_return_per_business_day_pct": -0.015518641708873796,
+        "avg_return_on_trade_days_pct": -0.14577320156061505,
+        "median_return_on_trade_days_pct": -0.13078045133045824,
+        "days_ge_1pct": 0,
+        "days_ge_3pct": 0,
+        "days_ge_5pct": 0,
+        "best_trade_return_pct": 0.7239179739179794,
+        "worst_trade_return_pct": -1.0454498774995231,
+        "gate_days": 5,
+        "business_days": 37,
+        "gate_frequency_pct": 13.513513513513514
+      },
+      "trades": [
+        {
+          "symbol": "RIVN",
+          "day": "2026-07-09",
+          "atr": 1.2832149999999998,
+          "opening_low": 16.38,
+          "first30_return_pct": 5.645414952818761,
+          "relative_strength_pct": 5.110841706539215,
+          "first30_relvol": 2.6064794325411746,
+          "close_location": 0.943739130434781,
+          "range_atr": 0.8961865314853725,
+          "score": 13.554182755639019,
+          "signal_time": "2026-07-09T09:55:00-04:00",
+          "entry_time": "2026-07-09T10:00:00-04:00",
+          "exit_time": "2026-07-09T11:15:00-04:00",
+          "entry": 17.47746,
+          "exit": 17.707275000000003,
+          "notional": 1376.3513513513492,
+          "stop_pct": 0.01718213058419248,
+          "pnl": 18.097949347949484,
+          "r_multiple": 0.7239179739179793,
+          "account_return_pct": 0.7239179739179794,
+          "exit_reason": "STOP",
+          "exceptional_gate": {
+            "return_percentile": 0.975,
+            "volume_percentile": 0.9,
+            "range_atr_percentile": 0.9,
+            "leader_separation_pct": 3.305984923044214,
+            "relative_strength_pct": 5.110841706539215
+          }
+        },
+        {
+          "symbol": "SMCI",
+          "day": "2026-07-22",
+          "atr": 1.8497299999999997,
+          "opening_low": 28.5,
+          "first30_return_pct": 8.240567670474208,
+          "relative_strength_pct": 7.595278000794292,
+          "first30_relvol": 6.918604218641897,
+          "close_location": 0.9554137931034492,
+          "range_atr": 1.5677963810934563,
+          "score": 20.293269892241902,
+          "signal_time": "2026-07-22T09:55:00-04:00",
+          "entry_time": "2026-07-22T10:00:00-04:00",
+          "exit_time": "2026-07-22T12:45:00-04:00",
+          "entry": 31.306274999999996,
+          "exit": 31.274968724999997,
+          "notional": 1056.3433972627151,
+          "stop_pct": 0.0228617106314948,
+          "pnl": -1.0563433972626683,
+          "r_multiple": -0.04195005192455693,
+          "account_return_pct": -0.04195005192455694,
+          "exit_reason": "STOP",
+          "exceptional_gate": {
+            "return_percentile": 0.975,
+            "volume_percentile": 0.975,
+            "range_atr_percentile": 0.975,
+            "leader_separation_pct": 3.263106223261869,
+            "relative_strength_pct": 7.595278000794292
+          }
+        },
+        {
+          "symbol": "SMCI",
+          "day": "2026-07-23",
+          "atr": 2.0466899999999995,
+          "opening_low": 30.18,
+          "first30_return_pct": 4.147465437788034,
+          "relative_strength_pct": 4.177695619025156,
+          "first30_relvol": 2.2937295390266605,
+          "close_location": 0.8639053254437868,
+          "range_atr": 0.8257234852371398,
+          "score": 10.84496897995972,
+          "signal_time": "2026-07-23T09:55:00-04:00",
+          "entry_time": "2026-07-23T10:00:00-04:00",
+          "exit_time": "2026-07-23T11:10:00-04:00",
+          "entry": 31.661629999999995,
+          "exit": 30.94902,
+          "notional": 1169.1627425761344,
+          "stop_pct": 0.02055011065444194,
+          "pnl": -26.314408386023484,
+          "r_multiple": -1.045449877499523,
+          "account_return_pct": -1.0454498774995231,
+          "exit_reason": "STOP",
+          "exceptional_gate": {
+            "return_percentile": 0.9,
+            "volume_percentile": 0.825,
+            "range_atr_percentile": 0.875,
+            "leader_separation_pct": 1.8827595554350873,
+            "relative_strength_pct": 4.177695619025156
+          }
+        },
+        {
+          "symbol": "IONQ",
+          "day": "2026-08-03",
+          "atr": 2.780805,
+          "opening_low": 35.4263,
+          "first30_return_pct": 8.917108568238907,
+          "relative_strength_pct": 8.189954710909264,
+          "first30_relvol": 1.5388444205286878,
+          "close_location": 0.9822583726833516,
+          "range_atr": 1.317496192649253,
+          "score": 19.837849602953042,
+          "signal_time": "2026-08-03T09:55:00-04:00",
+          "entry_time": "2026-08-03T10:00:00-04:00",
+          "exit_time": "2026-08-03T15:55:00-04:00",
+          "entry": 39.049009999999996,
+          "exit": 38.796165,
+          "notional": 844.7644228161364,
+          "stop_pct": 0.028513765701102256,
+          "pnl": -5.469907188093644,
+          "r_multiple": -0.21961085073635955,
+          "account_return_pct": -0.21961085073635955,
+          "exit_reason": "FORCE_CLOSE",
+          "exceptional_gate": {
+            "return_percentile": 1.0,
+            "volume_percentile": 0.825,
+            "range_atr_percentile": 1.0,
+            "leader_separation_pct": 2.0755854208222457,
+            "relative_strength_pct": 8.189954710909264
+          }
+        }
+      ],
+      "gate_days": [
+        {
+          "day": "2026-07-01",
+          "names": [
+            "SMCI",
+            "MSTR",
+            "IONQ",
+            "RKLB",
+            "AMD"
+          ],
+          "leader": {
+            "symbol": "MSTR",
+            "ret": 0.06129197787787222,
+            "return_percentile": 1.0,
+            "volume_percentile": 0.875,
+            "range_atr_percentile": 0.95,
+            "range_atr": 0.6801314398108175,
+            "close_location": 0.9899135446685868,
+            "relative_strength": 0.059934288418479476
+          },
+          "second_symbol": "IONQ",
+          "leader_separation_pct": 3.0913444097325993,
+          "qqq_first30_return_pct": 0.13576894593927413,
+          "passes": true
+        },
+        {
+          "day": "2026-07-09",
+          "names": [
+            "SMCI",
+            "RKLB",
+            "IONQ",
+            "MSTR",
+            "RIVN"
+          ],
+          "leader": {
+            "symbol": "RIVN",
+            "ret": 0.056454149528187614,
+            "return_percentile": 0.975,
+            "volume_percentile": 0.9,
+            "range_atr_percentile": 0.9,
+            "range_atr": 0.8961865314853725,
+            "close_location": 0.943739130434781,
+            "relative_strength": 0.05110841706539215
+          },
+          "second_symbol": "MSTR",
+          "leader_separation_pct": 3.305984923044214,
+          "qqq_first30_return_pct": 0.534573246279546,
+          "passes": true
+        },
+        {
+          "day": "2026-07-22",
+          "names": [
+            "RKLB",
+            "IONQ",
+            "AMD",
+            "MSTR",
+            "SMCI"
+          ],
+          "leader": {
+            "symbol": "SMCI",
+            "ret": 0.08240567670474208,
+            "return_percentile": 0.975,
+            "volume_percentile": 0.975,
+            "range_atr_percentile": 0.975,
+            "range_atr": 1.5677963810934563,
+            "close_location": 0.9554137931034492,
+            "relative_strength": 0.07595278000794292
+          },
+          "second_symbol": "AMD",
+          "leader_separation_pct": 3.263106223261869,
+          "qqq_first30_return_pct": 0.645289669679916,
+          "passes": true
+        },
+        {
+          "day": "2026-07-23",
+          "names": [
+            "RKLB",
+            "IONQ",
+            "SMCI",
+            "RIVN",
+            "MSTR"
+          ],
+          "leader": {
+            "symbol": "SMCI",
+            "ret": 0.04147465437788034,
+            "return_percentile": 0.9,
+            "volume_percentile": 0.825,
+            "range_atr_percentile": 0.875,
+            "range_atr": 0.8257234852371398,
+            "close_location": 0.8639053254437868,
+            "relative_strength": 0.04177695619025157
+          },
+          "second_symbol": "IONQ",
+          "leader_separation_pct": 1.8827595554350873,
+          "qqq_first30_return_pct": -0.030230181237123066,
+          "passes": true
+        },
+        {
+          "day": "2026-08-03",
+          "names": [
+            "RKLB",
+            "AMD",
+            "IONQ",
+            "RIVN",
+            "SMCI"
+          ],
+          "leader": {
+            "symbol": "IONQ",
+            "ret": 0.08917108568238907,
+            "return_percentile": 1.0,
+            "volume_percentile": 0.825,
+            "range_atr_percentile": 1.0,
+            "range_atr": 1.317496192649253,
+            "close_location": 0.9822583726833516,
+            "relative_strength": 0.08189954710909264
+          },
+          "second_symbol": "RKLB",
+          "leader_separation_pct": 2.0755854208222457,
+          "qqq_first30_return_pct": 0.7271538573296432,
+          "passes": true
+        }
+      ]
+    }
+  },
+  "activate": false
+}
