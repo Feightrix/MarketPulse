@@ -1,4 +1,4 @@
-name: MarketPulse Pattern 7 Cross-Sectional Momentum Research
+name: MarketPulse Pattern 8 Cross-Sectional Extremes Research
 
 on:
   workflow_dispatch:
@@ -6,14 +6,14 @@ on:
     branches: [main]
     paths:
       - options_pattern3_fast_research.py
-      - options_pattern7_cross_sectional_momentum.py
+      - options_pattern8_cross_sectional_extremes.py
       - .github/workflows/options-pattern3-fast-research.yml
 
 permissions:
   contents: write
 
 concurrency:
-  group: options-pattern7-cross-sectional
+  group: options-pattern8-cross-sectional-extremes
   cancel-in-progress: false
 
 jobs:
@@ -37,34 +37,34 @@ jobs:
           python - <<'PY'
           from pathlib import Path
           base = Path('options_pattern3_fast_research.py').read_text()
-          p7 = Path('options_pattern7_cross_sectional_momentum.py').read_text()
+          p8 = Path('options_pattern8_cross_sectional_extremes.py').read_text()
           assert 'order_submission_enabled' in base
           assert 'https://data.alpaca.markets' in base
-          assert 'paper-api.alpaca.markets/v2/orders' not in base + p7
-          assert 'api.alpaca.markets/v2/orders' not in base + p7
-          assert 'entry_i = i + 1' in p7
-          assert 'MAX_DAILY_TRADES = 15' in p7
-          assert 'strength_score' in p7
-          print('Pattern 7 research-only invariants: PASS')
+          assert 'paper-api.alpaca.markets/v2/orders' not in base + p8
+          assert 'api.alpaca.markets/v2/orders' not in base + p8
+          assert 'entry_i = i + 1' in p8
+          assert 'MAX_DAILY_TRADES = 15' in p8
+          assert 'momentum' in p8 and 'revert' in p8
+          print('Pattern 8 research-only invariants: PASS')
           PY
 
       - name: Syntax check
         run: |
           python -m py_compile options_pattern3_fast_research.py
-          python -m py_compile options_pattern7_cross_sectional_momentum.py
+          python -m py_compile options_pattern8_cross_sectional_extremes.py
 
-      - name: Run Pattern 7 cross-sectional momentum screen
+      - name: Run Pattern 8 cross-sectional extremes screen
         env:
           ALPACA_OPTIONS_API_KEY_ID: ${{ secrets.ALPACA_OPTIONS_API_KEY_ID }}
           ALPACA_OPTIONS_SECRET_KEY: ${{ secrets.ALPACA_OPTIONS_SECRET_KEY }}
-        run: python options_pattern7_cross_sectional_momentum.py
+        run: python options_pattern8_cross_sectional_extremes.py
 
-      - name: Validate Pattern 7 result
+      - name: Validate Pattern 8 result
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
-          r = json.loads(Path('options_pattern7_cross_sectional_results.json').read_text())
+          r = json.loads(Path('options_pattern8_cross_sectional_extremes_results.json').read_text())
           assert r['order_submission_enabled'] is False
           assert r['evaluation_sessions'] >= 50
           assert len(r['variants_predeclared']) == 6
@@ -73,23 +73,23 @@ jobs:
               print(k, v['full'])
           PY
 
-      - name: Commit Pattern 7 results
+      - name: Commit Pattern 8 results
         if: always()
         run: |
           git config user.name "MarketPulse Bot"
           git config user.email "actions@users.noreply.github.com"
-          mkdir -p /tmp/p7
-          for f in options_pattern7_cross_sectional_results.json options_pattern7_cross_sectional_results.md; do
-            if [ -f "$f" ]; then cp "$f" "/tmp/p7/$f"; fi
+          mkdir -p /tmp/p8
+          for f in options_pattern8_cross_sectional_extremes_results.json options_pattern8_cross_sectional_extremes_results.md; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/p8/$f"; fi
           done
           git fetch origin main
           git reset --hard origin/main
-          for f in options_pattern7_cross_sectional_results.json options_pattern7_cross_sectional_results.md; do
-            if [ -f "/tmp/p7/$f" ]; then cp "/tmp/p7/$f" "$f"; git add "$f"; fi
+          for f in options_pattern8_cross_sectional_extremes_results.json options_pattern8_cross_sectional_extremes_results.md; do
+            if [ -f "/tmp/p8/$f" ]; then cp "/tmp/p8/$f" "$f"; git add "$f"; fi
           done
           if git diff --cached --quiet; then
-            echo "No Pattern 7 result changes"
+            echo "No Pattern 8 result changes"
           else
-            git commit -m "Update Pattern 7 cross-sectional momentum results"
+            git commit -m "Update Pattern 8 cross-sectional extremes results"
             git push origin main
           fi
