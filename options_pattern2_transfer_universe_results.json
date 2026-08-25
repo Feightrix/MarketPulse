@@ -1,0 +1,1565 @@
+{
+  "actual_option_by_selected_symbol": {
+    "MSFT": {
+      "development": {
+        "avg_premium_dollars": 405.2,
+        "ending_balance_dollars": 2505.03,
+        "expectancy_dollars": 0.1,
+        "losses": 24,
+        "max_drawdown_dollars": 185.42,
+        "net_pl_dollars": 5.03,
+        "profit_factor": 1.007,
+        "return_pct": 0.2,
+        "trades": 49,
+        "win_rate_pct": 51.02,
+        "wins": 25
+      },
+      "full": {
+        "avg_premium_dollars": 411.16,
+        "ending_balance_dollars": 2278.04,
+        "expectancy_dollars": -2.88,
+        "losses": 41,
+        "max_drawdown_dollars": 405.05,
+        "net_pl_dollars": -221.96,
+        "profit_factor": 0.838,
+        "return_pct": -8.88,
+        "trades": 77,
+        "win_rate_pct": 46.75,
+        "wins": 36
+      },
+      "holdout": {
+        "avg_premium_dollars": 421.6,
+        "ending_balance_dollars": 2273.01,
+        "expectancy_dollars": -8.11,
+        "losses": 17,
+        "max_drawdown_dollars": 264.18,
+        "net_pl_dollars": -226.99,
+        "profit_factor": 0.638,
+        "return_pct": -9.08,
+        "trades": 28,
+        "win_rate_pct": 39.29,
+        "wins": 11
+      }
+    },
+    "SPY": {
+      "development": {
+        "avg_premium_dollars": 430.47,
+        "ending_balance_dollars": 2834.63,
+        "expectancy_dollars": 7.44,
+        "losses": 21,
+        "max_drawdown_dollars": 123.19,
+        "net_pl_dollars": 334.63,
+        "profit_factor": 1.811,
+        "return_pct": 13.39,
+        "trades": 45,
+        "win_rate_pct": 53.33,
+        "wins": 24
+      },
+      "full": {
+        "avg_premium_dollars": 431.34,
+        "ending_balance_dollars": 2806.72,
+        "expectancy_dollars": 5.48,
+        "losses": 27,
+        "max_drawdown_dollars": 123.19,
+        "net_pl_dollars": 306.72,
+        "profit_factor": 1.564,
+        "return_pct": 12.27,
+        "trades": 56,
+        "win_rate_pct": 51.79,
+        "wins": 29
+      },
+      "holdout": {
+        "avg_premium_dollars": 434.89,
+        "ending_balance_dollars": 2472.09,
+        "expectancy_dollars": -2.54,
+        "losses": 6,
+        "max_drawdown_dollars": 86.76,
+        "net_pl_dollars": -27.91,
+        "profit_factor": 0.787,
+        "return_pct": -1.12,
+        "trades": 11,
+        "win_rate_pct": 45.45,
+        "wins": 5
+      }
+    },
+    "TLT": {
+      "development": {
+        "avg_premium_dollars": 71.17,
+        "ending_balance_dollars": 2450.68,
+        "expectancy_dollars": -4.11,
+        "losses": 9,
+        "max_drawdown_dollars": 54.88,
+        "net_pl_dollars": -49.32,
+        "profit_factor": 0.135,
+        "return_pct": -1.97,
+        "trades": 12,
+        "win_rate_pct": 25.0,
+        "wins": 3
+      },
+      "full": {
+        "avg_premium_dollars": 70.14,
+        "ending_balance_dollars": 2442.46,
+        "expectancy_dollars": -4.11,
+        "losses": 11,
+        "max_drawdown_dollars": 57.54,
+        "net_pl_dollars": -57.54,
+        "profit_factor": 0.118,
+        "return_pct": -2.3,
+        "trades": 14,
+        "win_rate_pct": 21.43,
+        "wins": 3
+      },
+      "holdout": {
+        "avg_premium_dollars": 64.0,
+        "ending_balance_dollars": 2491.78,
+        "expectancy_dollars": -4.11,
+        "losses": 2,
+        "max_drawdown_dollars": 8.22,
+        "net_pl_dollars": -8.22,
+        "profit_factor": 0.0,
+        "return_pct": -0.33,
+        "trades": 2,
+        "win_rate_pct": 0.0,
+        "wins": 0
+      }
+    }
+  },
+  "actual_option_portfolio": {
+    "development": {
+      "avg_premium_dollars": 375.88,
+      "ending_balance_dollars": 2775.52,
+      "ending_cash_dollars": 2775.52,
+      "expectancy_dollars": 2.65,
+      "losses": 53,
+      "max_drawdown_dollars": 213.01,
+      "net_pl_dollars": 275.52,
+      "profit_factor": 1.232,
+      "return_pct": 11.02,
+      "skips": {
+        "premium_cap": 2
+      },
+      "trades": 104,
+      "win_rate_pct": 49.04,
+      "wins": 51
+    },
+    "full": {
+      "avg_premium_dollars": 384.88,
+      "ending_balance_dollars": 2512.4,
+      "ending_cash_dollars": 2512.4,
+      "expectancy_dollars": 0.09,
+      "losses": 78,
+      "max_drawdown_dollars": 372.99,
+      "net_pl_dollars": 12.4,
+      "profit_factor": 1.006,
+      "return_pct": 0.5,
+      "skips": {
+        "premium_cap": 2
+      },
+      "trades": 145,
+      "win_rate_pct": 46.21,
+      "wins": 67
+    },
+    "holdout": {
+      "avg_premium_dollars": 396.01,
+      "ending_balance_dollars": 2354.44,
+      "ending_cash_dollars": 2354.44,
+      "expectancy_dollars": -4.04,
+      "losses": 21,
+      "max_drawdown_dollars": 181.81,
+      "net_pl_dollars": -145.56,
+      "profit_factor": 0.756,
+      "return_pct": -5.82,
+      "skips": {
+        "premium_cap": 5
+      },
+      "trades": 36,
+      "win_rate_pct": 41.67,
+      "wins": 15
+    }
+  },
+  "development_sessions": 257,
+  "evaluation_sessions": 368,
+  "frozen_contract_policy": {
+    "side_moneyness": -0.005,
+    "target_abs_delta": 0.6,
+    "target_dte": 4
+  },
+  "frozen_signal_cfg": {
+    "max_efficiency": 0.65,
+    "max_vwap_slope_atr": 0.5,
+    "min_rsi_turn": 3.0
+  },
+  "generated_utc": "2026-08-25T04:06:29.203976+00:00",
+  "holdout_sessions": 111,
+  "holdout_start": "2026-03-17",
+  "lookback_days": 540,
+  "method_note": "Exact frozen Pattern #2 signal and exact frozen 4-DTE ~0.60 delta option mapping are transferred without per-symbol tuning. Symbol selection uses only the first 70% of dates; newest 30% is untouched holdout. Historical fills use actual 1-minute option trade bars plus conservative execution haircut; historical BBO/Greeks are not assumed.",
+  "monthly_full": {
+    "average_monthly_pl_dollars": 0.69,
+    "best_month_dollars": 147.45,
+    "details": [
+      {
+        "month": "2025-03",
+        "pl_dollars": 46.87,
+        "trades": 7
+      },
+      {
+        "month": "2025-04",
+        "pl_dollars": -4.09,
+        "trades": 3
+      },
+      {
+        "month": "2025-05",
+        "pl_dollars": -120.73,
+        "trades": 11
+      },
+      {
+        "month": "2025-06",
+        "pl_dollars": 95.71,
+        "trades": 13
+      },
+      {
+        "month": "2025-07",
+        "pl_dollars": -15.7,
+        "trades": 8
+      },
+      {
+        "month": "2025-08",
+        "pl_dollars": 131.7,
+        "trades": 7
+      },
+      {
+        "month": "2025-09",
+        "pl_dollars": 121.38,
+        "trades": 15
+      },
+      {
+        "month": "2025-10",
+        "pl_dollars": -28.44,
+        "trades": 10
+      },
+      {
+        "month": "2025-11",
+        "pl_dollars": -2.13,
+        "trades": 3
+      },
+      {
+        "month": "2025-12",
+        "pl_dollars": 147.45,
+        "trades": 10
+      },
+      {
+        "month": "2026-01",
+        "pl_dollars": -75.49,
+        "trades": 8
+      },
+      {
+        "month": "2026-02",
+        "pl_dollars": -4.3,
+        "trades": 5
+      },
+      {
+        "month": "2026-03",
+        "pl_dollars": -121.12,
+        "trades": 9
+      },
+      {
+        "month": "2026-04",
+        "pl_dollars": -71.68,
+        "trades": 9
+      },
+      {
+        "month": "2026-05",
+        "pl_dollars": 0.51,
+        "trades": 7
+      },
+      {
+        "month": "2026-06",
+        "pl_dollars": 44.48,
+        "trades": 7
+      },
+      {
+        "month": "2026-07",
+        "pl_dollars": -95.42,
+        "trades": 8
+      },
+      {
+        "month": "2026-08",
+        "pl_dollars": -36.6,
+        "trades": 5
+      }
+    ],
+    "median_monthly_pl_dollars": -4.19,
+    "months": 18,
+    "months_at_or_above_1000": 0,
+    "positive_months_pct": 38.89,
+    "worst_month_dollars": -121.12
+  },
+  "monthly_holdout": {
+    "average_monthly_pl_dollars": -24.26,
+    "best_month_dollars": 75.25,
+    "details": [
+      {
+        "month": "2026-03",
+        "pl_dollars": -104.41,
+        "trades": 5
+      },
+      {
+        "month": "2026-04",
+        "pl_dollars": -26.97,
+        "trades": 8
+      },
+      {
+        "month": "2026-05",
+        "pl_dollars": 75.25,
+        "trades": 5
+      },
+      {
+        "month": "2026-06",
+        "pl_dollars": 44.48,
+        "trades": 7
+      },
+      {
+        "month": "2026-07",
+        "pl_dollars": -97.31,
+        "trades": 6
+      },
+      {
+        "month": "2026-08",
+        "pl_dollars": -36.6,
+        "trades": 5
+      }
+    ],
+    "median_monthly_pl_dollars": -31.79,
+    "months": 6,
+    "months_at_or_above_1000": 0,
+    "positive_months_pct": 33.33,
+    "worst_month_dollars": -104.41
+  },
+  "monthly_target": 1000.0,
+  "order_submission_enabled": false,
+  "priced_option_trades": 147,
+  "pricing_skips": {
+    "no_affordable_priced_contract": 48
+  },
+  "selected_symbols_before_holdout": [
+    "SPY",
+    "TLT",
+    "MSFT"
+  ],
+  "signals_selected_symbols": 195,
+  "starting_balance": 2500.0,
+  "strategy": "frozen_pattern2_universe_transfer",
+  "symbol_selection_rule": {
+    "min_combined_dev_pf": 1.15,
+    "min_combined_dev_trades": 12,
+    "min_trades_each_dev_fold": 5,
+    "requires_positive_both_dev_folds": true,
+    "uses_holdout": false
+  },
+  "target_met": false,
+  "underlying_diagnostics": {
+    "AAPL": {
+      "dev_fold_1": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.05,
+        "flat": 0,
+        "losses": 16,
+        "max_drawdown_r": 6.75,
+        "net_r": 1.5,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.094,
+        "trades": 30,
+        "win_rate_pct": 46.67,
+        "wins": 14
+      },
+      "dev_fold_2": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.0312,
+        "flat": 0,
+        "losses": 13,
+        "max_drawdown_r": 8.75,
+        "net_r": 0.75,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.058,
+        "trades": 24,
+        "win_rate_pct": 45.83,
+        "wins": 11
+      },
+      "development": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.0417,
+        "flat": 0,
+        "losses": 29,
+        "max_drawdown_r": 8.75,
+        "net_r": 2.25,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.078,
+        "trades": 54,
+        "win_rate_pct": 46.3,
+        "wins": 25
+      },
+      "holdout_underlying": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.3125,
+        "flat": 0,
+        "losses": 10,
+        "max_drawdown_r": 3.0,
+        "net_r": 7.5,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.75,
+        "trades": 24,
+        "win_rate_pct": 58.33,
+        "wins": 14
+      },
+      "selected_before_holdout": false
+    },
+    "AMD": {
+      "dev_fold_1": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.0357,
+        "flat": 0,
+        "losses": 12,
+        "max_drawdown_r": 7.0,
+        "net_r": -0.75,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.938,
+        "trades": 21,
+        "win_rate_pct": 42.86,
+        "wins": 9
+      },
+      "dev_fold_2": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.1346,
+        "flat": 0,
+        "losses": 16,
+        "max_drawdown_r": 8.0,
+        "net_r": -3.5,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.781,
+        "trades": 26,
+        "win_rate_pct": 38.46,
+        "wins": 10
+      },
+      "development": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.0904,
+        "flat": 0,
+        "losses": 28,
+        "max_drawdown_r": 9.75,
+        "net_r": -4.25,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.848,
+        "trades": 47,
+        "win_rate_pct": 40.43,
+        "wins": 19
+      },
+      "holdout_underlying": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.2273,
+        "flat": 0,
+        "losses": 10,
+        "max_drawdown_r": 3.0,
+        "net_r": 5.0,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.5,
+        "trades": 22,
+        "win_rate_pct": 54.55,
+        "wins": 12
+      },
+      "selected_before_holdout": false
+    },
+    "AMZN": {
+      "dev_fold_1": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.0156,
+        "flat": 0,
+        "losses": 18,
+        "max_drawdown_r": 5.0,
+        "net_r": -0.5,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.972,
+        "trades": 32,
+        "win_rate_pct": 43.75,
+        "wins": 14
+      },
+      "dev_fold_2": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.1,
+        "flat": 0,
+        "losses": 21,
+        "max_drawdown_r": 6.5,
+        "net_r": -3.5,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.833,
+        "trades": 35,
+        "win_rate_pct": 40.0,
+        "wins": 14
+      },
+      "development": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.0597,
+        "flat": 0,
+        "losses": 39,
+        "max_drawdown_r": 7.75,
+        "net_r": -4.0,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.897,
+        "trades": 67,
+        "win_rate_pct": 41.79,
+        "wins": 28
+      },
+      "holdout_underlying": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.0761,
+        "flat": 0,
+        "losses": 12,
+        "max_drawdown_r": 3.0,
+        "net_r": 1.75,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.146,
+        "trades": 23,
+        "win_rate_pct": 47.83,
+        "wins": 11
+      },
+      "selected_before_holdout": false
+    },
+    "BAC": {
+      "dev_fold_1": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.3077,
+        "flat": 0,
+        "losses": 9,
+        "max_drawdown_r": 7.0,
+        "net_r": -4.0,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.556,
+        "trades": 13,
+        "win_rate_pct": 30.77,
+        "wins": 4
+      },
+      "dev_fold_2": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.113,
+        "expectancy_r": -0.1297,
+        "flat": 0,
+        "losses": 10,
+        "max_drawdown_r": 3.955,
+        "net_r": -2.205,
+        "payoff_ratio": 1.113,
+        "profit_factor": 0.779,
+        "trades": 17,
+        "win_rate_pct": 41.18,
+        "wins": 7
+      },
+      "development": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.163,
+        "expectancy_r": -0.2069,
+        "flat": 0,
+        "losses": 19,
+        "max_drawdown_r": 10.956,
+        "net_r": -6.205,
+        "payoff_ratio": 1.163,
+        "profit_factor": 0.673,
+        "trades": 30,
+        "win_rate_pct": 36.67,
+        "wins": 11
+      },
+      "holdout_underlying": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.125,
+        "flat": 0,
+        "losses": 7,
+        "max_drawdown_r": 5.75,
+        "net_r": 1.75,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.25,
+        "trades": 14,
+        "win_rate_pct": 50.0,
+        "wins": 7
+      },
+      "selected_before_holdout": false
+    },
+    "DIA": {
+      "dev_fold_1": {
+        "avg_loss_r": 0.0,
+        "avg_win_r": 0.0,
+        "expectancy_r": 0.0,
+        "flat": 0,
+        "losses": 0,
+        "max_drawdown_r": 0.0,
+        "net_r": 0,
+        "payoff_ratio": null,
+        "profit_factor": null,
+        "trades": 0,
+        "win_rate_pct": 0.0,
+        "wins": 0
+      },
+      "dev_fold_2": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.0357,
+        "flat": 0,
+        "losses": 4,
+        "max_drawdown_r": 3.0,
+        "net_r": -0.25,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.938,
+        "trades": 7,
+        "win_rate_pct": 42.86,
+        "wins": 3
+      },
+      "development": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.0357,
+        "flat": 0,
+        "losses": 4,
+        "max_drawdown_r": 3.0,
+        "net_r": -0.25,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.938,
+        "trades": 7,
+        "win_rate_pct": 42.86,
+        "wins": 3
+      },
+      "holdout_underlying": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 0.0,
+        "expectancy_r": -1.0,
+        "flat": 0,
+        "losses": 3,
+        "max_drawdown_r": 3.0,
+        "net_r": -3.0,
+        "payoff_ratio": 0.0,
+        "profit_factor": 0.0,
+        "trades": 3,
+        "win_rate_pct": 0.0,
+        "wins": 0
+      },
+      "selected_before_holdout": false
+    },
+    "GLD": {
+      "dev_fold_1": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.0625,
+        "flat": 0,
+        "losses": 7,
+        "max_drawdown_r": 5.0,
+        "net_r": -0.75,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.893,
+        "trades": 12,
+        "win_rate_pct": 41.67,
+        "wins": 5
+      },
+      "dev_fold_2": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.1964,
+        "flat": 0,
+        "losses": 9,
+        "max_drawdown_r": 5.5,
+        "net_r": -2.75,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.694,
+        "trades": 14,
+        "win_rate_pct": 35.71,
+        "wins": 5
+      },
+      "development": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.1346,
+        "flat": 0,
+        "losses": 16,
+        "max_drawdown_r": 10.5,
+        "net_r": -3.5,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.781,
+        "trades": 26,
+        "win_rate_pct": 38.46,
+        "wins": 10
+      },
+      "holdout_underlying": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 0.928,
+        "expectancy_r": -0.5179,
+        "flat": 0,
+        "losses": 9,
+        "max_drawdown_r": 7.715,
+        "net_r": -6.215,
+        "payoff_ratio": 0.928,
+        "profit_factor": 0.309,
+        "trades": 12,
+        "win_rate_pct": 25.0,
+        "wins": 3
+      },
+      "selected_before_holdout": false
+    },
+    "GOOGL": {
+      "dev_fold_1": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.2742,
+        "flat": 0,
+        "losses": 21,
+        "max_drawdown_r": 8.5,
+        "net_r": -8.5,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.595,
+        "trades": 31,
+        "win_rate_pct": 32.26,
+        "wins": 10
+      },
+      "dev_fold_2": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.2857,
+        "flat": 0,
+        "losses": 12,
+        "max_drawdown_r": 3.0,
+        "net_r": 8.0,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.667,
+        "trades": 28,
+        "win_rate_pct": 57.14,
+        "wins": 16
+      },
+      "development": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.0085,
+        "flat": 0,
+        "losses": 33,
+        "max_drawdown_r": 9.5,
+        "net_r": -0.5,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.985,
+        "trades": 59,
+        "win_rate_pct": 44.07,
+        "wins": 26
+      },
+      "holdout_underlying": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.0625,
+        "flat": 0,
+        "losses": 14,
+        "max_drawdown_r": 5.5,
+        "net_r": -1.5,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.893,
+        "trades": 24,
+        "win_rate_pct": 41.67,
+        "wins": 10
+      },
+      "selected_before_holdout": false
+    },
+    "IWM": {
+      "dev_fold_1": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.233,
+        "expectancy_r": 0.0753,
+        "flat": 0,
+        "losses": 14,
+        "max_drawdown_r": 5.0,
+        "net_r": 2.032,
+        "payoff_ratio": 1.233,
+        "profit_factor": 1.145,
+        "trades": 27,
+        "win_rate_pct": 48.15,
+        "wins": 13
+      },
+      "dev_fold_2": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.0446,
+        "flat": 0,
+        "losses": 15,
+        "max_drawdown_r": 7.75,
+        "net_r": 1.25,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.083,
+        "trades": 28,
+        "win_rate_pct": 46.43,
+        "wins": 13
+      },
+      "development": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.242,
+        "expectancy_r": 0.0597,
+        "flat": 0,
+        "losses": 29,
+        "max_drawdown_r": 7.75,
+        "net_r": 3.282,
+        "payoff_ratio": 1.242,
+        "profit_factor": 1.113,
+        "trades": 55,
+        "win_rate_pct": 47.27,
+        "wins": 26
+      },
+      "holdout_underlying": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.224,
+        "expectancy_r": 0.5292,
+        "flat": 0,
+        "losses": 10,
+        "max_drawdown_r": 2.0,
+        "net_r": 16.933,
+        "payoff_ratio": 1.224,
+        "profit_factor": 2.693,
+        "trades": 32,
+        "win_rate_pct": 68.75,
+        "wins": 22
+      },
+      "selected_before_holdout": false
+    },
+    "META": {
+      "dev_fold_1": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.1912,
+        "flat": 0,
+        "losses": 8,
+        "max_drawdown_r": 3.0,
+        "net_r": 3.25,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.406,
+        "trades": 17,
+        "win_rate_pct": 52.94,
+        "wins": 9
+      },
+      "dev_fold_2": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.0795,
+        "flat": 0,
+        "losses": 13,
+        "max_drawdown_r": 5.0,
+        "net_r": -1.75,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.865,
+        "trades": 22,
+        "win_rate_pct": 40.91,
+        "wins": 9
+      },
+      "development": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.0385,
+        "flat": 0,
+        "losses": 21,
+        "max_drawdown_r": 5.5,
+        "net_r": 1.5,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.071,
+        "trades": 39,
+        "win_rate_pct": 46.15,
+        "wins": 18
+      },
+      "holdout_underlying": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.0833,
+        "flat": 0,
+        "losses": 16,
+        "max_drawdown_r": 5.25,
+        "net_r": -2.25,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.859,
+        "trades": 27,
+        "win_rate_pct": 40.74,
+        "wins": 11
+      },
+      "selected_before_holdout": false
+    },
+    "MSFT": {
+      "dev_fold_1": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.0227,
+        "flat": 0,
+        "losses": 12,
+        "max_drawdown_r": 4.5,
+        "net_r": 0.5,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.042,
+        "trades": 22,
+        "win_rate_pct": 45.45,
+        "wins": 10
+      },
+      "dev_fold_2": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.1953,
+        "flat": 0,
+        "losses": 15,
+        "max_drawdown_r": 3.25,
+        "net_r": 6.25,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.417,
+        "trades": 32,
+        "win_rate_pct": 53.12,
+        "wins": 17
+      },
+      "development": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.125,
+        "flat": 0,
+        "losses": 27,
+        "max_drawdown_r": 4.5,
+        "net_r": 6.75,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.25,
+        "trades": 54,
+        "win_rate_pct": 50.0,
+        "wins": 27
+      },
+      "holdout_underlying": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.2266,
+        "flat": 0,
+        "losses": 21,
+        "max_drawdown_r": 8.75,
+        "net_r": -7.25,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.655,
+        "trades": 32,
+        "win_rate_pct": 34.38,
+        "wins": 11
+      },
+      "selected_before_holdout": true
+    },
+    "NVDA": {
+      "dev_fold_1": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.0565,
+        "flat": 0,
+        "losses": 18,
+        "max_drawdown_r": 9.0,
+        "net_r": -1.75,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.903,
+        "trades": 31,
+        "win_rate_pct": 41.94,
+        "wins": 13
+      },
+      "dev_fold_2": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.0588,
+        "flat": 0,
+        "losses": 18,
+        "max_drawdown_r": 7.25,
+        "net_r": 2.0,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.111,
+        "trades": 34,
+        "win_rate_pct": 47.06,
+        "wins": 16
+      },
+      "development": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.0038,
+        "flat": 0,
+        "losses": 36,
+        "max_drawdown_r": 9.25,
+        "net_r": 0.25,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.007,
+        "trades": 65,
+        "win_rate_pct": 44.62,
+        "wins": 29
+      },
+      "holdout_underlying": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.129,
+        "flat": 0,
+        "losses": 19,
+        "max_drawdown_r": 11.75,
+        "net_r": -4.0,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.789,
+        "trades": 31,
+        "win_rate_pct": 38.71,
+        "wins": 12
+      },
+      "selected_before_holdout": false
+    },
+    "PLTR": {
+      "dev_fold_1": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.175,
+        "flat": 0,
+        "losses": 19,
+        "max_drawdown_r": 8.25,
+        "net_r": -5.25,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.724,
+        "trades": 30,
+        "win_rate_pct": 36.67,
+        "wins": 11
+      },
+      "dev_fold_2": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.125,
+        "flat": 0,
+        "losses": 13,
+        "max_drawdown_r": 3.0,
+        "net_r": 3.25,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.25,
+        "trades": 26,
+        "win_rate_pct": 50.0,
+        "wins": 13
+      },
+      "development": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.0357,
+        "flat": 0,
+        "losses": 32,
+        "max_drawdown_r": 10.25,
+        "net_r": -2.0,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.938,
+        "trades": 56,
+        "win_rate_pct": 42.86,
+        "wins": 24
+      },
+      "holdout_underlying": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.0795,
+        "flat": 0,
+        "losses": 13,
+        "max_drawdown_r": 7.0,
+        "net_r": -1.75,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.865,
+        "trades": 22,
+        "win_rate_pct": 40.91,
+        "wins": 9
+      },
+      "selected_before_holdout": false
+    },
+    "QQQ": {
+      "dev_fold_1": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.124,
+        "expectancy_r": -0.446,
+        "flat": 0,
+        "losses": 17,
+        "max_drawdown_r": 11.507,
+        "net_r": -10.257,
+        "payoff_ratio": 1.124,
+        "profit_factor": 0.397,
+        "trades": 23,
+        "win_rate_pct": 26.09,
+        "wins": 6
+      },
+      "dev_fold_2": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.125,
+        "flat": 0,
+        "losses": 13,
+        "max_drawdown_r": 5.0,
+        "net_r": 3.25,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.25,
+        "trades": 26,
+        "win_rate_pct": 50.0,
+        "wins": 13
+      },
+      "development": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.21,
+        "expectancy_r": -0.143,
+        "flat": 0,
+        "losses": 30,
+        "max_drawdown_r": 15.257,
+        "net_r": -7.007,
+        "payoff_ratio": 1.21,
+        "profit_factor": 0.766,
+        "trades": 49,
+        "win_rate_pct": 38.78,
+        "wins": 19
+      },
+      "holdout_underlying": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.2895,
+        "flat": 0,
+        "losses": 13,
+        "max_drawdown_r": 9.5,
+        "net_r": -5.5,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.577,
+        "trades": 19,
+        "win_rate_pct": 31.58,
+        "wins": 6
+      },
+      "selected_before_holdout": false
+    },
+    "SLV": {
+      "dev_fold_1": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 0.973,
+        "expectancy_r": -0.0136,
+        "flat": 0,
+        "losses": 2,
+        "max_drawdown_r": 1.0,
+        "net_r": -0.055,
+        "payoff_ratio": 0.973,
+        "profit_factor": 0.973,
+        "trades": 4,
+        "win_rate_pct": 50.0,
+        "wins": 2
+      },
+      "dev_fold_2": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.35,
+        "flat": 0,
+        "losses": 6,
+        "max_drawdown_r": 4.0,
+        "net_r": 5.25,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.875,
+        "trades": 15,
+        "win_rate_pct": 60.0,
+        "wins": 9
+      },
+      "development": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.2,
+        "expectancy_r": 0.2734,
+        "flat": 0,
+        "losses": 8,
+        "max_drawdown_r": 4.0,
+        "net_r": 5.195,
+        "payoff_ratio": 1.2,
+        "profit_factor": 1.649,
+        "trades": 19,
+        "win_rate_pct": 57.89,
+        "wins": 11
+      },
+      "holdout_underlying": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.2125,
+        "flat": 0,
+        "losses": 13,
+        "max_drawdown_r": 8.5,
+        "net_r": -4.25,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.673,
+        "trades": 20,
+        "win_rate_pct": 35.0,
+        "wins": 7
+      },
+      "selected_before_holdout": false
+    },
+    "SPY": {
+      "dev_fold_1": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.35,
+        "flat": 0,
+        "losses": 14,
+        "max_drawdown_r": 4.75,
+        "net_r": 12.25,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.875,
+        "trades": 35,
+        "win_rate_pct": 60.0,
+        "wins": 21
+      },
+      "dev_fold_2": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.2273,
+        "flat": 0,
+        "losses": 10,
+        "max_drawdown_r": 4.0,
+        "net_r": 5.0,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.5,
+        "trades": 22,
+        "win_rate_pct": 54.55,
+        "wins": 12
+      },
+      "development": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.3026,
+        "flat": 0,
+        "losses": 24,
+        "max_drawdown_r": 4.75,
+        "net_r": 17.25,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.719,
+        "trades": 57,
+        "win_rate_pct": 57.89,
+        "wins": 33
+      },
+      "holdout_underlying": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.3235,
+        "flat": 0,
+        "losses": 7,
+        "max_drawdown_r": 2.0,
+        "net_r": 5.5,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.786,
+        "trades": 17,
+        "win_rate_pct": 58.82,
+        "wins": 10
+      },
+      "selected_before_holdout": true
+    },
+    "TLT": {
+      "dev_fold_1": {
+        "avg_loss_r": 0.887,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.1104,
+        "flat": 0,
+        "losses": 8,
+        "max_drawdown_r": 2.0,
+        "net_r": 1.656,
+        "payoff_ratio": 1.41,
+        "profit_factor": 1.233,
+        "trades": 15,
+        "win_rate_pct": 46.67,
+        "wins": 7
+      },
+      "dev_fold_2": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.6875,
+        "flat": 0,
+        "losses": 3,
+        "max_drawdown_r": 1.0,
+        "net_r": 8.25,
+        "payoff_ratio": 1.25,
+        "profit_factor": 3.75,
+        "trades": 12,
+        "win_rate_pct": 75.0,
+        "wins": 9
+      },
+      "development": {
+        "avg_loss_r": 0.918,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.3669,
+        "flat": 0,
+        "losses": 11,
+        "max_drawdown_r": 2.594,
+        "net_r": 9.906,
+        "payoff_ratio": 1.362,
+        "profit_factor": 1.981,
+        "trades": 27,
+        "win_rate_pct": 59.26,
+        "wins": 16
+      },
+      "holdout_underlying": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.6875,
+        "flat": 0,
+        "losses": 2,
+        "max_drawdown_r": 1.0,
+        "net_r": 5.5,
+        "payoff_ratio": 1.25,
+        "profit_factor": 3.75,
+        "trades": 8,
+        "win_rate_pct": 75.0,
+        "wins": 6
+      },
+      "selected_before_holdout": true
+    },
+    "TSLA": {
+      "dev_fold_1": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.5109,
+        "flat": 0,
+        "losses": 18,
+        "max_drawdown_r": 13.25,
+        "net_r": -11.75,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.347,
+        "trades": 23,
+        "win_rate_pct": 21.74,
+        "wins": 5
+      },
+      "dev_fold_2": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.319,
+        "flat": 0,
+        "losses": 12,
+        "max_drawdown_r": 3.5,
+        "net_r": 9.25,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.771,
+        "trades": 29,
+        "win_rate_pct": 58.62,
+        "wins": 17
+      },
+      "development": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.0481,
+        "flat": 0,
+        "losses": 30,
+        "max_drawdown_r": 13.25,
+        "net_r": -2.5,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.917,
+        "trades": 52,
+        "win_rate_pct": 42.31,
+        "wins": 22
+      },
+      "holdout_underlying": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.1667,
+        "flat": 0,
+        "losses": 13,
+        "max_drawdown_r": 3.0,
+        "net_r": 4.5,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.346,
+        "trades": 27,
+        "win_rate_pct": 51.85,
+        "wins": 14
+      },
+      "selected_before_holdout": false
+    },
+    "XLE": {
+      "dev_fold_1": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.6442,
+        "flat": 0,
+        "losses": 7,
+        "max_drawdown_r": 2.0,
+        "net_r": 16.75,
+        "payoff_ratio": 1.25,
+        "profit_factor": 3.393,
+        "trades": 26,
+        "win_rate_pct": 73.08,
+        "wins": 19
+      },
+      "dev_fold_2": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.0,
+        "flat": 0,
+        "losses": 10,
+        "max_drawdown_r": 5.75,
+        "net_r": 0.0,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.0,
+        "trades": 18,
+        "win_rate_pct": 44.44,
+        "wins": 8
+      },
+      "development": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.3807,
+        "flat": 0,
+        "losses": 17,
+        "max_drawdown_r": 6.75,
+        "net_r": 16.75,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.985,
+        "trades": 44,
+        "win_rate_pct": 61.36,
+        "wins": 27
+      },
+      "holdout_underlying": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.3571,
+        "flat": 0,
+        "losses": 15,
+        "max_drawdown_r": 11.5,
+        "net_r": -7.5,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.5,
+        "trades": 21,
+        "win_rate_pct": 28.57,
+        "wins": 6
+      },
+      "selected_before_holdout": false
+    },
+    "XLF": {
+      "dev_fold_1": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.0735,
+        "flat": 0,
+        "losses": 10,
+        "max_drawdown_r": 5.75,
+        "net_r": -1.25,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.875,
+        "trades": 17,
+        "win_rate_pct": 41.18,
+        "wins": 7
+      },
+      "dev_fold_2": {
+        "avg_loss_r": 0.918,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.2232,
+        "flat": 0,
+        "losses": 9,
+        "max_drawdown_r": 5.75,
+        "net_r": 4.24,
+        "payoff_ratio": 1.362,
+        "profit_factor": 1.513,
+        "trades": 19,
+        "win_rate_pct": 52.63,
+        "wins": 10
+      },
+      "development": {
+        "avg_loss_r": 0.961,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.0831,
+        "flat": 0,
+        "losses": 19,
+        "max_drawdown_r": 8.25,
+        "net_r": 2.99,
+        "payoff_ratio": 1.301,
+        "profit_factor": 1.164,
+        "trades": 36,
+        "win_rate_pct": 47.22,
+        "wins": 17
+      },
+      "holdout_underlying": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.35,
+        "flat": 0,
+        "losses": 8,
+        "max_drawdown_r": 2.0,
+        "net_r": 7.0,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.875,
+        "trades": 20,
+        "win_rate_pct": 60.0,
+        "wins": 12
+      },
+      "selected_before_holdout": false
+    },
+    "XLK": {
+      "dev_fold_1": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.325,
+        "flat": 0,
+        "losses": 7,
+        "max_drawdown_r": 6.0,
+        "net_r": -3.25,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.536,
+        "trades": 10,
+        "win_rate_pct": 30.0,
+        "wins": 3
+      },
+      "dev_fold_2": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.17,
+        "flat": 0,
+        "losses": 12,
+        "max_drawdown_r": 4.0,
+        "net_r": 4.25,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.354,
+        "trades": 25,
+        "win_rate_pct": 52.0,
+        "wins": 13
+      },
+      "development": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": 0.0286,
+        "flat": 0,
+        "losses": 19,
+        "max_drawdown_r": 6.0,
+        "net_r": 1.0,
+        "payoff_ratio": 1.25,
+        "profit_factor": 1.053,
+        "trades": 35,
+        "win_rate_pct": 45.71,
+        "wins": 16
+      },
+      "holdout_underlying": {
+        "avg_loss_r": 1.0,
+        "avg_win_r": 1.25,
+        "expectancy_r": -0.4375,
+        "flat": 0,
+        "losses": 12,
+        "max_drawdown_r": 7.0,
+        "net_r": -7.0,
+        "payoff_ratio": 1.25,
+        "profit_factor": 0.417,
+        "trades": 16,
+        "win_rate_pct": 25.0,
+        "wins": 4
+      },
+      "selected_before_holdout": false
+    }
+  },
+  "universe": [
+    "SPY",
+    "QQQ",
+    "IWM",
+    "DIA",
+    "XLK",
+    "XLF",
+    "XLE",
+    "GLD",
+    "SLV",
+    "TLT",
+    "AAPL",
+    "NVDA",
+    "AMD",
+    "TSLA",
+    "AMZN",
+    "META",
+    "MSFT",
+    "GOOGL",
+    "PLTR",
+    "BAC"
+  ]
+}
