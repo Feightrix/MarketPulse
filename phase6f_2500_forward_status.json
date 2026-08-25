@@ -1,15 +1,15 @@
 {
   "actual_weights": {
-    "BIL": 0.42674303223916293,
-    "IWM": 0.1027277273657638,
-    "QQQ": 0.0579316215098989,
-    "SPY": 0.11373671484012858,
-    "XLE": 0.0877621838992812,
-    "XLK": 0.023762706436193905,
-    "XLP": 0.06047173926130458,
-    "XLU": -0.017352439508927675,
-    "XLV": 0.026121950563673647,
-    "XLY": -0.04750590964365551
+    "BIL": 0.42701801185370786,
+    "IWM": 0.10313766644179957,
+    "QQQ": 0.058348244430524096,
+    "SPY": 0.11413122640903323,
+    "XLE": 0.08630566504441124,
+    "XLK": 0.024025737644356636,
+    "XLP": 0.059866785926532703,
+    "XLU": -0.017391059927078817,
+    "XLV": 0.02628434965225911,
+    "XLY": -0.04741884707431857
   },
   "baseline_equity": 2500.0,
   "baseline_utc": "2026-08-17T15:29:18.082538+00:00",
@@ -24,16 +24,16 @@
       "single_short_weight_at_most_5pct": true
     },
     "gate": "PASS",
-    "l1_tracking_error_pct": 3.041469614309811,
-    "largest_single_short_pct": 4.762248821881297,
-    "represented_gross_exposure_pct": 96.48309731461188,
-    "represented_net_exposure_pct": 83.51696772556858,
+    "l1_tracking_error_pct": 3.0022465354985584,
+    "largest_single_short_pct": 4.739001613926337,
+    "represented_gross_exposure_pct": 96.47577670285287,
+    "represented_net_exposure_pct": 83.52421858143101,
     "target_gross_exposure_pct": 95.0,
     "target_net_exposure_pct": 85.00000000000001
   },
   "current_capital_fit_gate": "PASS",
-  "current_equity": 2491.69,
-  "executed_tracking_l1_error_pct": 1.303953758616503,
+  "current_equity": 2490.36,
+  "executed_tracking_l1_error_pct": 0.9805656338437163,
   "executed_weights": {
     "BIL": 0.42500000796799997,
     "IWM": 0.10476949246799999,
@@ -74,98 +74,98 @@
     "zero_failed_orders": true
   },
   "live_trading_locked": true,
-  "operating_floor_buffer_dollars": 291.69000000000005,
+  "operating_floor_buffer_dollars": 290.3600000000001,
   "operating_floor_dollars": 2200.0,
   "paper_base": "https://paper-api.alpaca.markets",
   "performance": {
     "completed_months": 0,
-    "cumulative_pnl_dollars": -8.309999999999945,
-    "cumulative_return_pct": -0.33239999999999936,
-    "daily_pnl_dollars": -4.8400000000001455,
-    "daily_return_pct": -0.19386909029733834,
-    "max_drawdown_pct": 0.33239999999999936,
+    "cumulative_pnl_dollars": -9.639999999999873,
+    "cumulative_return_pct": -0.38559999999999706,
+    "daily_pnl_dollars": -1.3299999999999272,
+    "daily_return_pct": -0.05337742656590372,
+    "max_drawdown_pct": 0.38559999999999706,
     "monthly_returns_pct": {},
-    "positive_day_rate_pct": 33.33333333333333,
+    "positive_day_rate_pct": 28.57142857142857,
     "positive_month_rate_pct": 0.0,
-    "trading_days": 6,
+    "trading_days": 7,
     "worst_completed_month_pct": 0.0
   },
   "phase": "6F",
   "positions": {
     "BIL": {
       "avg_entry_price": 91.55,
-      "current_price": 91.6099,
-      "market_value": 1063.311346,
+      "current_price": 91.62,
+      "market_value": 1063.428576,
       "qty": 11.606948,
-      "unrealized_pl": 0.695257
+      "unrealized_pl": 0.812487
     },
     "IWM": {
       "avg_entry_price": 303.618,
-      "current_price": 298.15,
-      "market_value": 255.965651,
+      "current_price": 299.18,
+      "market_value": 256.849919,
       "qty": 0.858513,
-      "unrealized_pl": -4.694349
+      "unrealized_pl": -3.810081
     },
     "QQQ": {
       "avg_entry_price": 734.344,
-      "current_price": 706.34,
-      "market_value": 144.347642,
+      "current_price": 711.04,
+      "market_value": 145.308134,
       "qty": 0.20436,
-      "unrealized_pl": -5.722898
+      "unrealized_pl": -4.762406
     },
     "SPY": {
       "avg_entry_price": 775.764,
-      "current_price": 763.72,
-      "market_value": 283.396635,
+      "current_price": 765.96,
+      "market_value": 284.227841,
       "qty": 0.371074,
-      "unrealized_pl": -4.469216
+      "unrealized_pl": -3.63801
     },
     "XLE": {
       "avg_entry_price": 62.11,
-      "current_price": 63.08,
-      "market_value": 218.676156,
+      "current_price": 62.0,
+      "market_value": 214.932176,
       "qty": 3.466648,
-      "unrealized_pl": 3.362649
+      "unrealized_pl": -0.381331
     },
     "XLK": {
       "avg_entry_price": 191.656,
-      "current_price": 180.02,
-      "market_value": 59.209298,
+      "current_price": 181.9155,
+      "market_value": 59.832736,
       "qty": 0.328904,
-      "unrealized_pl": -3.827127
+      "unrealized_pl": -3.203689
     },
     "XLP": {
       "avg_entry_price": 84.8,
-      "current_price": 87.35,
-      "market_value": 150.676828,
+      "current_price": 86.43,
+      "market_value": 149.089849,
       "qty": 1.724978,
-      "unrealized_pl": 4.398694
+      "unrealized_pl": 2.811715
     },
     "XLU": {
       "avg_entry_price": 43.88,
-      "current_price": 43.2369,
-      "market_value": -43.2369,
+      "current_price": 43.31,
+      "market_value": -43.31,
       "qty": -1.0,
-      "unrealized_pl": 0.6431
+      "unrealized_pl": 0.57
     },
     "XLV": {
       "avg_entry_price": 167.716,
-      "current_price": 174.3,
-      "market_value": 65.087803,
+      "current_price": 175.29,
+      "market_value": 65.457493,
       "qty": 0.373424,
-      "unrealized_pl": 2.458623
+      "unrealized_pl": 2.828313
     },
     "XLY": {
       "avg_entry_price": 117.26,
-      "current_price": 118.37,
-      "market_value": -118.37,
+      "current_price": 118.09,
+      "market_value": -118.09,
       "qty": -1.0,
-      "unrealized_pl": -1.11
+      "unrealized_pl": -0.83
     }
   },
   "promotion_is_review_only": true,
   "rebalance_count": 1,
   "status": "FORWARD_TEST_ACCUMULATING",
   "strategy_parameters_frozen": true,
-  "timestamp_utc": "2026-08-24T21:41:21.684753+00:00"
+  "timestamp_utc": "2026-08-25T20:41:10.292431+00:00"
 }
