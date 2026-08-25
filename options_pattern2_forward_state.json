@@ -1,0 +1,22 @@
+{
+  "closed_trades": [],
+  "daily": {
+    "closed_pl_dollars": 0.0,
+    "date": "2026-08-24",
+    "entries": 0,
+    "locked": false
+  },
+  "enabled": true,
+  "events": [
+    {
+      "date": "2026-08-24",
+      "event": "NEW_TRADING_DAY",
+      "ts_utc": "2026-08-25T02:04:11.341829+00:00"
+    }
+  ],
+  "last_signal_key": null,
+  "order_submission_enabled": true,
+  "position": null,
+  "strategy": "options_pattern2_forward_paper",
+  "trading_mode": "paper"
+}
