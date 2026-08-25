@@ -1,73 +1,10 @@
 {
-  "actual_weights": {
-    "BIL": 0.42628763193354996,
-    "IWM": 0.10308751273138647,
-    "QQQ": 0.05803867751354231,
-    "SPY": 0.11365540676334954,
-    "XLE": 0.0877052531547426,
-    "XLK": 0.023816466838653776,
-    "XLP": 0.06059309525577996,
-    "XLU": -0.024260627330955107,
-    "XLV": 0.026071981086429687,
-    "XLY": -0.024998774599354134
-  },
-  "baseline_date": "2026-08-14T15:33:00.739322+00:00",
-  "baseline_equity": 100000.0,
-  "current_equity": 99763.29,
-  "execution": {
-    "failed_order_count": 0,
-    "fill_rate_pct": 100.0,
-    "filled_order_count": 10,
-    "measured_slippage_orders": 10,
-    "median_adverse_slippage_bps": 0.02899904646525009,
-    "order_count": 10,
-    "p95_adverse_slippage_bps": 2.278366373271832,
-    "terminal_order_count": 10,
-    "worst_adverse_slippage_bps": 3.165725742626524
-  },
-  "gate_checks": {
-    "cumulative_return_positive": false,
-    "fill_rate_at_least_99pct": true,
-    "max_drawdown_at_most_5pct": true,
-    "median_adverse_slippage_at_most_15bps": true,
-    "minimum_126_trading_days": false,
-    "minimum_6_rebalances": false,
-    "p95_adverse_slippage_at_most_30bps": true,
-    "positive_month_rate_at_least_66_7pct": false,
-    "tracking_l1_error_at_most_8pct": false,
-    "worst_completed_month_above_minus_2_5pct": false,
-    "zero_failed_orders": true
-  },
   "live_trading_locked": true,
   "paper_base": "https://paper-api.alpaca.markets",
-  "performance": {
-    "completed_months": 0,
-    "cumulative_return_pct": -0.23671000000000664,
-    "max_drawdown_pct": 0.33824082190829774,
-    "monthly_returns_pct": {},
-    "positive_day_rate_pct": 33.33333333333333,
-    "positive_month_rate_pct": 0.0,
-    "trading_days": 7,
-    "worst_month_pct": 0.0
-  },
   "phase": "6C",
-  "promotion_is_review_only": true,
-  "rebalance_count": 1,
-  "status": "FORWARD_TEST_ACCUMULATING",
-  "strategy_parameters_frozen": true,
-  "target_weights": {
-    "BIL": 0.425,
-    "GLD": 0.051587863613945524,
-    "IWM": 0.09322105308333489,
-    "QQQ": 0.05475685709014359,
-    "SPY": 0.1052846367873213,
-    "XLE": 0.0789747267959123,
-    "XLK": 0.024999999999999998,
-    "XLP": 0.04117486262934232,
-    "XLU": -0.024999999999999998,
-    "XLV": 0.024999999999999998,
-    "XLY": -0.024999999999999998
-  },
-  "timestamp_utc": "2026-08-24T21:40:10.230967+00:00",
-  "tracking_l1_error_pct": 10.553941689770863
+  "problems": [
+    "Paper API GET /v2/account failed: HTTP 401: {\"message\": \"unauthorized.\"}\n"
+  ],
+  "status": "PAPER_READ_FAILED",
+  "timestamp_utc": "2026-08-25T20:41:00.440527+00:00"
 }
