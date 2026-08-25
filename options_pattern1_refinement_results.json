@@ -59,7 +59,7 @@
     "win_rate_pct": 45.45,
     "wins": 25
   },
-  "generated_utc": "2026-08-25T00:01:35.583079+00:00",
+  "generated_utc": "2026-08-25T00:16:54.883044+00:00",
   "holdout": {
     "avg_loss_r": 1.0,
     "avg_win_r": 1.5,
