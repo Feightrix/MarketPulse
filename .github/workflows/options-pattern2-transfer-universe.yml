@@ -1,0 +1,96 @@
+name: MarketPulse Pattern 2 Universe Transfer Research
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - options_pattern2_transfer_universe.py
+      - .github/workflows/options-pattern2-transfer-universe.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: options-pattern2-transfer-universe
+  cancel-in-progress: false
+
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Safety gate
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          text = Path('options_pattern2_transfer_universe.py').read_text()
+          assert 'ORDER_SUBMISSION_ENABLED = False' in text
+          assert 'paper-api.alpaca.markets/v2/orders' not in text
+          assert 'api.alpaca.markets/v2/orders' not in text
+          assert '"max_vwap_slope_atr": 0.50' in text
+          assert '"max_efficiency": 0.65' in text
+          assert '"min_rsi_turn": 3.0' in text
+          assert '"target_dte": 4' in text and '"target_abs_delta": 0.60' in text
+          assert 'DEV_FRACTION = 0.70' in text
+          assert 'uses_holdout' in text
+          print('Frozen transfer research invariants: PASS')
+          PY
+
+      - name: Syntax check
+        run: python -m py_compile options_pattern2_transfer_universe.py
+
+      - name: Run universe transfer test
+        env:
+          ALPACA_OPTIONS_API_KEY_ID: ${{ secrets.ALPACA_OPTIONS_API_KEY_ID }}
+          ALPACA_OPTIONS_SECRET_KEY: ${{ secrets.ALPACA_OPTIONS_SECRET_KEY }}
+        run: python options_pattern2_transfer_universe.py
+
+      - name: Validate result
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('options_pattern2_transfer_universe_results.json').read_text())
+          assert r['order_submission_enabled'] is False
+          assert r['evaluation_sessions'] >= 180
+          assert r['symbol_selection_rule']['uses_holdout'] is False
+          assert r['frozen_contract_policy']['target_dte'] == 4
+          assert r['frozen_contract_policy']['target_abs_delta'] == 0.60
+          print('SELECTED',r['selected_symbols_before_holdout'])
+          print('FULL',r['actual_option_portfolio']['full'])
+          print('HOLDOUT',r['actual_option_portfolio']['holdout'])
+          print('MONTHLY',r['monthly_full'])
+          PY
+
+      - name: Commit results
+        if: always()
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          mkdir -p /tmp/transfer
+          for f in options_pattern2_transfer_universe_results.json options_pattern2_transfer_universe_results.md; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/transfer/$f"; fi
+          done
+          git fetch origin main
+          git reset --hard origin/main
+          for f in options_pattern2_transfer_universe_results.json options_pattern2_transfer_universe_results.md; do
+            if [ -f "/tmp/transfer/$f" ]; then cp "/tmp/transfer/$f" "$f"; git add "$f"; fi
+          done
+          if git diff --cached --quiet; then
+            echo "No transfer result changes"
+          else
+            git commit -m "Update Pattern 2 universe transfer results"
+            git push origin main
+          fi
