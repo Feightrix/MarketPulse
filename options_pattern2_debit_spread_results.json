@@ -1,0 +1,1075 @@
+{
+  "best_full_monthly": {
+    "average_monthly_pl_dollars": 0.87,
+    "best_month_dollars": 40.63,
+    "details": [
+      {
+        "month": "2024-03",
+        "pl_dollars": -4.09
+      },
+      {
+        "month": "2024-04",
+        "pl_dollars": -33.78
+      },
+      {
+        "month": "2024-05",
+        "pl_dollars": -8.91
+      },
+      {
+        "month": "2024-06",
+        "pl_dollars": -44.61
+      },
+      {
+        "month": "2024-07",
+        "pl_dollars": 0.0
+      },
+      {
+        "month": "2024-08",
+        "pl_dollars": 33.08
+      },
+      {
+        "month": "2024-09",
+        "pl_dollars": 2.92
+      },
+      {
+        "month": "2024-10",
+        "pl_dollars": -8.24
+      },
+      {
+        "month": "2024-11",
+        "pl_dollars": 18.48
+      },
+      {
+        "month": "2024-12",
+        "pl_dollars": 20.85
+      },
+      {
+        "month": "2025-01",
+        "pl_dollars": 3.69
+      },
+      {
+        "month": "2025-02",
+        "pl_dollars": -21.35
+      },
+      {
+        "month": "2025-03",
+        "pl_dollars": 40.63
+      },
+      {
+        "month": "2025-04",
+        "pl_dollars": 19.11
+      },
+      {
+        "month": "2025-05",
+        "pl_dollars": 7.55
+      },
+      {
+        "month": "2025-06",
+        "pl_dollars": 25.77
+      },
+      {
+        "month": "2025-07",
+        "pl_dollars": -13.43
+      },
+      {
+        "month": "2025-08",
+        "pl_dollars": -3.32
+      },
+      {
+        "month": "2025-09",
+        "pl_dollars": -13.19
+      },
+      {
+        "month": "2025-10",
+        "pl_dollars": 0.0
+      },
+      {
+        "month": "2025-11",
+        "pl_dollars": 0.0
+      },
+      {
+        "month": "2025-12",
+        "pl_dollars": -31.26
+      },
+      {
+        "month": "2026-01",
+        "pl_dollars": 0.0
+      },
+      {
+        "month": "2026-02",
+        "pl_dollars": -5.3
+      },
+      {
+        "month": "2026-03",
+        "pl_dollars": -1.46
+      },
+      {
+        "month": "2026-04",
+        "pl_dollars": 26.5
+      },
+      {
+        "month": "2026-05",
+        "pl_dollars": 15.62
+      },
+      {
+        "month": "2026-06",
+        "pl_dollars": 0.0
+      },
+      {
+        "month": "2026-07",
+        "pl_dollars": 0.0
+      }
+    ],
+    "median_monthly_pl_dollars": 0.0,
+    "months": 29,
+    "months_at_or_above_target": 0,
+    "positive_months_pct": 37.93,
+    "worst_month_dollars": -44.61
+  },
+  "best_full_sample_descriptive": "width_100_budget_10",
+  "candidates": {
+    "width_050_budget_10": {
+      "debit_budget_fraction": 0.1,
+      "development": {
+        "avg_position_debit_dollars": 167.37,
+        "avg_units": 1.02,
+        "ending_balance_dollars": 1971.95,
+        "expectancy_dollars": -5.8,
+        "losses": 54,
+        "max_drawdown_dollars": 553.2,
+        "max_drawdown_pct_starting": 22.13,
+        "net_pl_dollars": -528.05,
+        "profit_factor": 0.394,
+        "return_pct": -21.12,
+        "trades": 91,
+        "win_rate_pct": 40.66,
+        "wins": 37
+      },
+      "development_folds": [
+        {
+          "avg_position_debit_dollars": 168.33,
+          "avg_units": 1.06,
+          "ending_balance_dollars": 2383.67,
+          "expectancy_dollars": -3.53,
+          "losses": 18,
+          "max_drawdown_dollars": 141.49,
+          "max_drawdown_pct_starting": 5.66,
+          "net_pl_dollars": -116.33,
+          "profit_factor": 0.568,
+          "return_pct": -4.65,
+          "trades": 33,
+          "win_rate_pct": 45.45,
+          "wins": 15
+        },
+        {
+          "avg_position_debit_dollars": 168.82,
+          "avg_units": 1.0,
+          "ending_balance_dollars": 2279.53,
+          "expectancy_dollars": -6.89,
+          "losses": 21,
+          "max_drawdown_dollars": 220.86,
+          "max_drawdown_pct_starting": 8.83,
+          "net_pl_dollars": -220.47,
+          "profit_factor": 0.287,
+          "return_pct": -8.82,
+          "trades": 32,
+          "win_rate_pct": 34.38,
+          "wins": 11
+        },
+        {
+          "avg_position_debit_dollars": 175.47,
+          "avg_units": 1.03,
+          "ending_balance_dollars": 2209.98,
+          "expectancy_dollars": -9.67,
+          "losses": 18,
+          "max_drawdown_dollars": 363.47,
+          "max_drawdown_pct_starting": 14.54,
+          "net_pl_dollars": -290.02,
+          "profit_factor": 0.401,
+          "return_pct": -11.6,
+          "trades": 30,
+          "win_rate_pct": 40.0,
+          "wins": 12
+        }
+      ],
+      "external_validation": {
+        "avg_position_debit_dollars": 163.91,
+        "avg_units": 1.1,
+        "ending_balance_dollars": 2391.86,
+        "expectancy_dollars": -5.41,
+        "losses": 12,
+        "max_drawdown_dollars": 124.13,
+        "max_drawdown_pct_starting": 4.97,
+        "net_pl_dollars": -108.14,
+        "profit_factor": 0.382,
+        "return_pct": -4.33,
+        "trades": 20,
+        "win_rate_pct": 40.0,
+        "wins": 8
+      },
+      "full_900": {
+        "avg_position_debit_dollars": 164.77,
+        "avg_units": 1.03,
+        "ending_balance_dollars": 1933.13,
+        "expectancy_dollars": -5.2,
+        "losses": 64,
+        "max_drawdown_dollars": 570.58,
+        "max_drawdown_pct_starting": 22.82,
+        "net_pl_dollars": -566.87,
+        "profit_factor": 0.415,
+        "return_pct": -22.67,
+        "trades": 109,
+        "win_rate_pct": 41.28,
+        "wins": 45
+      },
+      "robust_development": false,
+      "width": {
+        "name": "width_050",
+        "width_spot_pct": 0.005
+      }
+    },
+    "width_050_budget_15": {
+      "debit_budget_fraction": 0.15,
+      "development": {
+        "avg_position_debit_dollars": 254.8,
+        "avg_units": 1.57,
+        "ending_balance_dollars": 1678.09,
+        "expectancy_dollars": -8.3,
+        "losses": 61,
+        "max_drawdown_dollars": 910.52,
+        "max_drawdown_pct_starting": 36.42,
+        "net_pl_dollars": -821.91,
+        "profit_factor": 0.444,
+        "return_pct": -32.88,
+        "trades": 99,
+        "win_rate_pct": 38.38,
+        "wins": 38
+      },
+      "development_folds": [
+        {
+          "avg_position_debit_dollars": 312.28,
+          "avg_units": 1.97,
+          "ending_balance_dollars": 2305.62,
+          "expectancy_dollars": -5.89,
+          "losses": 18,
+          "max_drawdown_dollars": 282.98,
+          "max_drawdown_pct_starting": 11.32,
+          "net_pl_dollars": -194.38,
+          "profit_factor": 0.604,
+          "return_pct": -7.78,
+          "trades": 33,
+          "win_rate_pct": 45.45,
+          "wins": 15
+        },
+        {
+          "avg_position_debit_dollars": 266.97,
+          "avg_units": 1.66,
+          "ending_balance_dollars": 2224.51,
+          "expectancy_dollars": -8.61,
+          "losses": 21,
+          "max_drawdown_dollars": 276.25,
+          "max_drawdown_pct_starting": 11.05,
+          "net_pl_dollars": -275.49,
+          "profit_factor": 0.359,
+          "return_pct": -11.02,
+          "trades": 32,
+          "win_rate_pct": 34.38,
+          "wins": 11
+        },
+        {
+          "avg_position_debit_dollars": 266.6,
+          "avg_units": 1.54,
+          "ending_balance_dollars": 2080.33,
+          "expectancy_dollars": -11.99,
+          "losses": 22,
+          "max_drawdown_dollars": 529.9,
+          "max_drawdown_pct_starting": 21.2,
+          "net_pl_dollars": -419.67,
+          "profit_factor": 0.4,
+          "return_pct": -16.79,
+          "trades": 35,
+          "win_rate_pct": 37.14,
+          "wins": 13
+        }
+      ],
+      "external_validation": {
+        "avg_position_debit_dollars": 297.97,
+        "avg_units": 2.0,
+        "ending_balance_dollars": 2316.54,
+        "expectancy_dollars": -9.17,
+        "losses": 12,
+        "max_drawdown_dollars": 215.39,
+        "max_drawdown_pct_starting": 8.62,
+        "net_pl_dollars": -183.46,
+        "profit_factor": 0.418,
+        "return_pct": -7.34,
+        "trades": 20,
+        "win_rate_pct": 40.0,
+        "wins": 8
+      },
+      "full_900": {
+        "avg_position_debit_dollars": 242.44,
+        "avg_units": 1.53,
+        "ending_balance_dollars": 1605.02,
+        "expectancy_dollars": -7.58,
+        "losses": 72,
+        "max_drawdown_dollars": 895.0,
+        "max_drawdown_pct_starting": 35.8,
+        "net_pl_dollars": -894.98,
+        "profit_factor": 0.46,
+        "return_pct": -35.8,
+        "trades": 118,
+        "win_rate_pct": 38.98,
+        "wins": 46
+      },
+      "robust_development": false,
+      "width": {
+        "name": "width_050",
+        "width_spot_pct": 0.005
+      }
+    },
+    "width_050_budget_20": {
+      "debit_budget_fraction": 0.2,
+      "development": {
+        "avg_position_debit_dollars": 328.0,
+        "avg_units": 2.02,
+        "ending_balance_dollars": 1486.55,
+        "expectancy_dollars": -10.13,
+        "losses": 61,
+        "max_drawdown_dollars": 1143.1,
+        "max_drawdown_pct_starting": 45.72,
+        "net_pl_dollars": -1013.45,
+        "profit_factor": 0.462,
+        "return_pct": -40.54,
+        "trades": 100,
+        "win_rate_pct": 39.0,
+        "wins": 39
+      },
+      "development_folds": [
+        {
+          "avg_position_debit_dollars": 394.43,
+          "avg_units": 2.52,
+          "ending_balance_dollars": 2333.71,
+          "expectancy_dollars": -5.04,
+          "losses": 18,
+          "max_drawdown_dollars": 295.91,
+          "max_drawdown_pct_starting": 11.84,
+          "net_pl_dollars": -166.29,
+          "profit_factor": 0.717,
+          "return_pct": -6.65,
+          "trades": 33,
+          "win_rate_pct": 45.45,
+          "wins": 15
+        },
+        {
+          "avg_position_debit_dollars": 370.25,
+          "avg_units": 2.28,
+          "ending_balance_dollars": 2080.09,
+          "expectancy_dollars": -13.12,
+          "losses": 21,
+          "max_drawdown_dollars": 420.68,
+          "max_drawdown_pct_starting": 16.83,
+          "net_pl_dollars": -419.91,
+          "profit_factor": 0.305,
+          "return_pct": -16.8,
+          "trades": 32,
+          "win_rate_pct": 34.38,
+          "wins": 11
+        },
+        {
+          "avg_position_debit_dollars": 353.05,
+          "avg_units": 2.06,
+          "ending_balance_dollars": 1856.62,
+          "expectancy_dollars": -18.38,
+          "losses": 22,
+          "max_drawdown_dollars": 790.32,
+          "max_drawdown_pct_starting": 31.61,
+          "net_pl_dollars": -643.38,
+          "profit_factor": 0.354,
+          "return_pct": -25.74,
+          "trades": 35,
+          "win_rate_pct": 37.14,
+          "wins": 13
+        }
+      ],
+      "external_validation": {
+        "avg_position_debit_dollars": 392.37,
+        "avg_units": 2.65,
+        "ending_balance_dollars": 2204.63,
+        "expectancy_dollars": -14.77,
+        "losses": 12,
+        "max_drawdown_dollars": 327.32,
+        "max_drawdown_pct_starting": 13.09,
+        "net_pl_dollars": -295.37,
+        "profit_factor": 0.358,
+        "return_pct": -11.81,
+        "trades": 20,
+        "win_rate_pct": 40.0,
+        "wins": 8
+      },
+      "full_900": {
+        "avg_position_debit_dollars": 296.98,
+        "avg_units": 1.86,
+        "ending_balance_dollars": 1288.14,
+        "expectancy_dollars": -10.1,
+        "losses": 73,
+        "max_drawdown_dollars": 1211.86,
+        "max_drawdown_pct_starting": 48.47,
+        "net_pl_dollars": -1211.86,
+        "profit_factor": 0.413,
+        "return_pct": -48.47,
+        "trades": 120,
+        "win_rate_pct": 39.17,
+        "wins": 47
+      },
+      "robust_development": false,
+      "width": {
+        "name": "width_050",
+        "width_spot_pct": 0.005
+      }
+    },
+    "width_075_budget_10": {
+      "debit_budget_fraction": 0.1,
+      "development": {
+        "avg_position_debit_dollars": 209.44,
+        "avg_units": 1.0,
+        "ending_balance_dollars": 2508.93,
+        "expectancy_dollars": 0.12,
+        "losses": 39,
+        "max_drawdown_dollars": 103.49,
+        "max_drawdown_pct_starting": 4.14,
+        "net_pl_dollars": 8.93,
+        "profit_factor": 1.018,
+        "return_pct": 0.36,
+        "trades": 72,
+        "win_rate_pct": 45.83,
+        "wins": 33
+      },
+      "development_folds": [
+        {
+          "avg_position_debit_dollars": 209.56,
+          "avg_units": 1.0,
+          "ending_balance_dollars": 2441.86,
+          "expectancy_dollars": -1.88,
+          "losses": 17,
+          "max_drawdown_dollars": 86.69,
+          "max_drawdown_pct_starting": 3.47,
+          "net_pl_dollars": -58.14,
+          "profit_factor": 0.759,
+          "return_pct": -2.33,
+          "trades": 31,
+          "win_rate_pct": 45.16,
+          "wins": 14
+        },
+        {
+          "avg_position_debit_dollars": 204.12,
+          "avg_units": 1.0,
+          "ending_balance_dollars": 2515.49,
+          "expectancy_dollars": 0.67,
+          "losses": 13,
+          "max_drawdown_dollars": 58.37,
+          "max_drawdown_pct_starting": 2.33,
+          "net_pl_dollars": 15.49,
+          "profit_factor": 1.13,
+          "return_pct": 0.62,
+          "trades": 23,
+          "win_rate_pct": 43.48,
+          "wins": 10
+        },
+        {
+          "avg_position_debit_dollars": 218.28,
+          "avg_units": 1.0,
+          "ending_balance_dollars": 2542.73,
+          "expectancy_dollars": 2.25,
+          "losses": 10,
+          "max_drawdown_dollars": 65.77,
+          "max_drawdown_pct_starting": 2.63,
+          "net_pl_dollars": 42.73,
+          "profit_factor": 1.325,
+          "return_pct": 1.71,
+          "trades": 19,
+          "win_rate_pct": 47.37,
+          "wins": 9
+        }
+      ],
+      "external_validation": {
+        "avg_position_debit_dollars": 189.14,
+        "avg_units": 1.0,
+        "ending_balance_dollars": 2414.94,
+        "expectancy_dollars": -4.25,
+        "losses": 11,
+        "max_drawdown_dollars": 110.63,
+        "max_drawdown_pct_starting": 4.43,
+        "net_pl_dollars": -85.06,
+        "profit_factor": 0.559,
+        "return_pct": -3.4,
+        "trades": 20,
+        "win_rate_pct": 45.0,
+        "wins": 9
+      },
+      "full_900": {
+        "avg_position_debit_dollars": 203.11,
+        "avg_units": 1.0,
+        "ending_balance_dollars": 2486.1,
+        "expectancy_dollars": -0.16,
+        "losses": 47,
+        "max_drawdown_dollars": 133.28,
+        "max_drawdown_pct_starting": 5.33,
+        "net_pl_dollars": -13.9,
+        "profit_factor": 0.976,
+        "return_pct": -0.56,
+        "trades": 88,
+        "win_rate_pct": 46.59,
+        "wins": 41
+      },
+      "robust_development": false,
+      "width": {
+        "name": "width_075",
+        "width_spot_pct": 0.0075
+      }
+    },
+    "width_075_budget_15": {
+      "debit_budget_fraction": 0.15,
+      "development": {
+        "avg_position_debit_dollars": 249.99,
+        "avg_units": 1.12,
+        "ending_balance_dollars": 2243.87,
+        "expectancy_dollars": -2.64,
+        "losses": 56,
+        "max_drawdown_dollars": 314.53,
+        "max_drawdown_pct_starting": 12.58,
+        "net_pl_dollars": -256.13,
+        "profit_factor": 0.736,
+        "return_pct": -10.25,
+        "trades": 97,
+        "win_rate_pct": 42.27,
+        "wins": 41
+      },
+      "development_folds": [
+        {
+          "avg_position_debit_dollars": 252.88,
+          "avg_units": 1.24,
+          "ending_balance_dollars": 2449.84,
+          "expectancy_dollars": -1.52,
+          "losses": 19,
+          "max_drawdown_dollars": 95.66,
+          "max_drawdown_pct_starting": 3.83,
+          "net_pl_dollars": -50.16,
+          "profit_factor": 0.829,
+          "return_pct": -2.01,
+          "trades": 33,
+          "win_rate_pct": 42.42,
+          "wins": 14
+        },
+        {
+          "avg_position_debit_dollars": 268.93,
+          "avg_units": 1.21,
+          "ending_balance_dollars": 2480.87,
+          "expectancy_dollars": -0.58,
+          "losses": 18,
+          "max_drawdown_dollars": 94.6,
+          "max_drawdown_pct_starting": 3.78,
+          "net_pl_dollars": -19.13,
+          "profit_factor": 0.93,
+          "return_pct": -0.77,
+          "trades": 33,
+          "win_rate_pct": 45.45,
+          "wins": 15
+        },
+        {
+          "avg_position_debit_dollars": 253.9,
+          "avg_units": 1.03,
+          "ending_balance_dollars": 2142.68,
+          "expectancy_dollars": -11.17,
+          "losses": 20,
+          "max_drawdown_dollars": 416.94,
+          "max_drawdown_pct_starting": 16.68,
+          "net_pl_dollars": -357.32,
+          "profit_factor": 0.408,
+          "return_pct": -14.29,
+          "trades": 32,
+          "win_rate_pct": 37.5,
+          "wins": 12
+        }
+      ],
+      "external_validation": {
+        "avg_position_debit_dollars": 252.92,
+        "avg_units": 1.4,
+        "ending_balance_dollars": 2319.34,
+        "expectancy_dollars": -9.03,
+        "losses": 11,
+        "max_drawdown_dollars": 202.63,
+        "max_drawdown_pct_starting": 8.11,
+        "net_pl_dollars": -180.66,
+        "profit_factor": 0.434,
+        "return_pct": -7.23,
+        "trades": 20,
+        "win_rate_pct": 45.0,
+        "wins": 9
+      },
+      "full_900": {
+        "avg_position_debit_dollars": 241.13,
+        "avg_units": 1.13,
+        "ending_balance_dollars": 2127.42,
+        "expectancy_dollars": -3.24,
+        "losses": 66,
+        "max_drawdown_dollars": 382.92,
+        "max_drawdown_pct_starting": 15.32,
+        "net_pl_dollars": -372.58,
+        "profit_factor": 0.691,
+        "return_pct": -14.9,
+        "trades": 115,
+        "win_rate_pct": 42.61,
+        "wins": 49
+      },
+      "robust_development": false,
+      "width": {
+        "name": "width_075",
+        "width_spot_pct": 0.0075
+      }
+    },
+    "width_075_budget_20": {
+      "debit_budget_fraction": 0.2,
+      "development": {
+        "avg_position_debit_dollars": 379.07,
+        "avg_units": 1.7,
+        "ending_balance_dollars": 2013.14,
+        "expectancy_dollars": -4.82,
+        "losses": 59,
+        "max_drawdown_dollars": 558.89,
+        "max_drawdown_pct_starting": 22.36,
+        "net_pl_dollars": -486.86,
+        "profit_factor": 0.699,
+        "return_pct": -19.47,
+        "trades": 101,
+        "win_rate_pct": 41.58,
+        "wins": 42
+      },
+      "development_folds": [
+        {
+          "avg_position_debit_dollars": 422.76,
+          "avg_units": 2.03,
+          "ending_balance_dollars": 2403.72,
+          "expectancy_dollars": -2.92,
+          "losses": 19,
+          "max_drawdown_dollars": 168.3,
+          "max_drawdown_pct_starting": 6.73,
+          "net_pl_dollars": -96.28,
+          "profit_factor": 0.808,
+          "return_pct": -3.85,
+          "trades": 33,
+          "win_rate_pct": 42.42,
+          "wins": 14
+        },
+        {
+          "avg_position_debit_dollars": 378.0,
+          "avg_units": 1.73,
+          "ending_balance_dollars": 2477.96,
+          "expectancy_dollars": -0.67,
+          "losses": 18,
+          "max_drawdown_dollars": 116.74,
+          "max_drawdown_pct_starting": 4.67,
+          "net_pl_dollars": -22.04,
+          "profit_factor": 0.939,
+          "return_pct": -0.88,
+          "trades": 33,
+          "win_rate_pct": 45.45,
+          "wins": 15
+        },
+        {
+          "avg_position_debit_dollars": 369.81,
+          "avg_units": 1.51,
+          "ending_balance_dollars": 2143.57,
+          "expectancy_dollars": -10.18,
+          "losses": 22,
+          "max_drawdown_dollars": 475.72,
+          "max_drawdown_pct_starting": 19.03,
+          "net_pl_dollars": -356.43,
+          "profit_factor": 0.548,
+          "return_pct": -14.26,
+          "trades": 35,
+          "win_rate_pct": 37.14,
+          "wins": 13
+        }
+      ],
+      "external_validation": {
+        "avg_position_debit_dollars": 403.82,
+        "avg_units": 2.2,
+        "ending_balance_dollars": 2311.22,
+        "expectancy_dollars": -9.44,
+        "losses": 11,
+        "max_drawdown_dollars": 234.66,
+        "max_drawdown_pct_starting": 9.39,
+        "net_pl_dollars": -188.78,
+        "profit_factor": 0.564,
+        "return_pct": -7.55,
+        "trades": 20,
+        "win_rate_pct": 45.0,
+        "wins": 9
+      },
+      "full_900": {
+        "avg_position_debit_dollars": 358.21,
+        "avg_units": 1.68,
+        "ending_balance_dollars": 1939.98,
+        "expectancy_dollars": -4.63,
+        "losses": 70,
+        "max_drawdown_dollars": 561.98,
+        "max_drawdown_pct_starting": 22.48,
+        "net_pl_dollars": -560.02,
+        "profit_factor": 0.699,
+        "return_pct": -22.4,
+        "trades": 121,
+        "win_rate_pct": 42.15,
+        "wins": 51
+      },
+      "robust_development": false,
+      "width": {
+        "name": "width_075",
+        "width_spot_pct": 0.0075
+      }
+    },
+    "width_100_budget_10": {
+      "debit_budget_fraction": 0.1,
+      "development": {
+        "avg_position_debit_dollars": 232.8,
+        "avg_units": 1.0,
+        "ending_balance_dollars": 2580.4,
+        "expectancy_dollars": 2.36,
+        "losses": 16,
+        "max_drawdown_dollars": 79.85,
+        "max_drawdown_pct_starting": 3.19,
+        "net_pl_dollars": 80.4,
+        "profit_factor": 1.549,
+        "return_pct": 3.22,
+        "trades": 34,
+        "win_rate_pct": 52.94,
+        "wins": 18
+      },
+      "development_folds": [
+        {
+          "avg_position_debit_dollars": 222.9,
+          "avg_units": 1.0,
+          "ending_balance_dollars": 2556.98,
+          "expectancy_dollars": 5.7,
+          "losses": 3,
+          "max_drawdown_dollars": 21.34,
+          "max_drawdown_pct_starting": 0.85,
+          "net_pl_dollars": 56.98,
+          "profit_factor": 2.385,
+          "return_pct": 2.28,
+          "trades": 10,
+          "win_rate_pct": 70.0,
+          "wins": 7
+        },
+        {
+          "avg_position_debit_dollars": 226.43,
+          "avg_units": 1.0,
+          "ending_balance_dollars": 2522.49,
+          "expectancy_dollars": 1.73,
+          "losses": 6,
+          "max_drawdown_dollars": 40.53,
+          "max_drawdown_pct_starting": 1.62,
+          "net_pl_dollars": 22.49,
+          "profit_factor": 1.377,
+          "return_pct": 0.9,
+          "trades": 13,
+          "win_rate_pct": 53.85,
+          "wins": 7
+        },
+        {
+          "avg_position_debit_dollars": 241.03,
+          "avg_units": 1.0,
+          "ending_balance_dollars": 2482.9,
+          "expectancy_dollars": -4.28,
+          "losses": 3,
+          "max_drawdown_dollars": 32.7,
+          "max_drawdown_pct_starting": 1.31,
+          "net_pl_dollars": -17.1,
+          "profit_factor": 0.477,
+          "return_pct": -0.68,
+          "trades": 4,
+          "win_rate_pct": 25.0,
+          "wins": 1
+        }
+      ],
+      "external_validation": {
+        "avg_position_debit_dollars": 199.84,
+        "avg_units": 1.0,
+        "ending_balance_dollars": 2441.69,
+        "expectancy_dollars": -4.49,
+        "losses": 6,
+        "max_drawdown_dollars": 91.4,
+        "max_drawdown_pct_starting": 3.66,
+        "net_pl_dollars": -58.31,
+        "profit_factor": 0.588,
+        "return_pct": -2.33,
+        "trades": 13,
+        "win_rate_pct": 53.85,
+        "wins": 7
+      },
+      "full_900": {
+        "avg_position_debit_dollars": 219.73,
+        "avg_units": 1.0,
+        "ending_balance_dollars": 2525.26,
+        "expectancy_dollars": 0.6,
+        "losses": 19,
+        "max_drawdown_dollars": 91.4,
+        "max_drawdown_pct_starting": 3.66,
+        "net_pl_dollars": 25.26,
+        "profit_factor": 1.09,
+        "return_pct": 1.01,
+        "trades": 42,
+        "win_rate_pct": 54.76,
+        "wins": 23
+      },
+      "robust_development": false,
+      "width": {
+        "name": "width_100",
+        "width_spot_pct": 0.01
+      }
+    },
+    "width_100_budget_15": {
+      "debit_budget_fraction": 0.15,
+      "development": {
+        "avg_position_debit_dollars": 283.75,
+        "avg_units": 1.02,
+        "ending_balance_dollars": 2356.86,
+        "expectancy_dollars": -1.54,
+        "losses": 49,
+        "max_drawdown_dollars": 206.85,
+        "max_drawdown_pct_starting": 8.27,
+        "net_pl_dollars": -143.14,
+        "profit_factor": 0.849,
+        "return_pct": -5.73,
+        "trades": 93,
+        "win_rate_pct": 47.31,
+        "wins": 44
+      },
+      "development_folds": [
+        {
+          "avg_position_debit_dollars": 281.77,
+          "avg_units": 1.03,
+          "ending_balance_dollars": 2488.5,
+          "expectancy_dollars": -0.35,
+          "losses": 16,
+          "max_drawdown_dollars": 100.41,
+          "max_drawdown_pct_starting": 4.02,
+          "net_pl_dollars": -11.5,
+          "profit_factor": 0.961,
+          "return_pct": -0.46,
+          "trades": 33,
+          "win_rate_pct": 51.52,
+          "wins": 17
+        },
+        {
+          "avg_position_debit_dollars": 277.16,
+          "avg_units": 1.03,
+          "ending_balance_dollars": 2488.87,
+          "expectancy_dollars": -0.36,
+          "losses": 16,
+          "max_drawdown_dollars": 56.39,
+          "max_drawdown_pct_starting": 2.26,
+          "net_pl_dollars": -11.13,
+          "profit_factor": 0.943,
+          "return_pct": -0.45,
+          "trades": 31,
+          "win_rate_pct": 48.39,
+          "wins": 15
+        },
+        {
+          "avg_position_debit_dollars": 293.06,
+          "avg_units": 1.0,
+          "ending_balance_dollars": 2379.49,
+          "expectancy_dollars": -4.16,
+          "losses": 17,
+          "max_drawdown_dollars": 206.85,
+          "max_drawdown_pct_starting": 8.27,
+          "net_pl_dollars": -120.51,
+          "profit_factor": 0.738,
+          "return_pct": -4.82,
+          "trades": 29,
+          "win_rate_pct": 41.38,
+          "wins": 12
+        }
+      ],
+      "external_validation": {
+        "avg_position_debit_dollars": 268.42,
+        "avg_units": 1.25,
+        "ending_balance_dollars": 2374.59,
+        "expectancy_dollars": -6.27,
+        "losses": 12,
+        "max_drawdown_dollars": 156.38,
+        "max_drawdown_pct_starting": 6.26,
+        "net_pl_dollars": -125.41,
+        "profit_factor": 0.545,
+        "return_pct": -5.02,
+        "trades": 20,
+        "win_rate_pct": 40.0,
+        "wins": 8
+      },
+      "full_900": {
+        "avg_position_debit_dollars": 276.43,
+        "avg_units": 1.06,
+        "ending_balance_dollars": 2364.02,
+        "expectancy_dollars": -1.25,
+        "losses": 58,
+        "max_drawdown_dollars": 167.85,
+        "max_drawdown_pct_starting": 6.71,
+        "net_pl_dollars": -135.98,
+        "profit_factor": 0.868,
+        "return_pct": -5.44,
+        "trades": 109,
+        "win_rate_pct": 46.79,
+        "wins": 51
+      },
+      "robust_development": false,
+      "width": {
+        "name": "width_100",
+        "width_spot_pct": 0.01
+      }
+    },
+    "width_100_budget_20": {
+      "debit_budget_fraction": 0.2,
+      "development": {
+        "avg_position_debit_dollars": 345.72,
+        "avg_units": 1.25,
+        "ending_balance_dollars": 2250.15,
+        "expectancy_dollars": -2.47,
+        "losses": 55,
+        "max_drawdown_dollars": 353.65,
+        "max_drawdown_pct_starting": 14.15,
+        "net_pl_dollars": -249.85,
+        "profit_factor": 0.8,
+        "return_pct": -9.99,
+        "trades": 101,
+        "win_rate_pct": 45.54,
+        "wins": 46
+      },
+      "development_folds": [
+        {
+          "avg_position_debit_dollars": 343.79,
+          "avg_units": 1.3,
+          "ending_balance_dollars": 2553.47,
+          "expectancy_dollars": 1.62,
+          "losses": 16,
+          "max_drawdown_dollars": 114.98,
+          "max_drawdown_pct_starting": 4.6,
+          "net_pl_dollars": 53.47,
+          "profit_factor": 1.164,
+          "return_pct": 2.14,
+          "trades": 33,
+          "win_rate_pct": 51.52,
+          "wins": 17
+        },
+        {
+          "avg_position_debit_dollars": 352.85,
+          "avg_units": 1.33,
+          "ending_balance_dollars": 2435.46,
+          "expectancy_dollars": -1.96,
+          "losses": 17,
+          "max_drawdown_dollars": 114.86,
+          "max_drawdown_pct_starting": 4.59,
+          "net_pl_dollars": -64.54,
+          "profit_factor": 0.787,
+          "return_pct": -2.58,
+          "trades": 33,
+          "win_rate_pct": 48.48,
+          "wins": 16
+        },
+        {
+          "avg_position_debit_dollars": 340.81,
+          "avg_units": 1.11,
+          "ending_balance_dollars": 2261.22,
+          "expectancy_dollars": -6.82,
+          "losses": 22,
+          "max_drawdown_dollars": 312.78,
+          "max_drawdown_pct_starting": 12.51,
+          "net_pl_dollars": -238.78,
+          "profit_factor": 0.616,
+          "return_pct": -9.55,
+          "trades": 35,
+          "win_rate_pct": 37.14,
+          "wins": 13
+        }
+      ],
+      "external_validation": {
+        "avg_position_debit_dollars": 360.82,
+        "avg_units": 1.7,
+        "ending_balance_dollars": 2354.23,
+        "expectancy_dollars": -7.29,
+        "losses": 12,
+        "max_drawdown_dollars": 207.68,
+        "max_drawdown_pct_starting": 8.31,
+        "net_pl_dollars": -145.77,
+        "profit_factor": 0.583,
+        "return_pct": -5.83,
+        "trades": 20,
+        "win_rate_pct": 40.0,
+        "wins": 8
+      },
+      "full_900": {
+        "avg_position_debit_dollars": 323.29,
+        "avg_units": 1.23,
+        "ending_balance_dollars": 2095.9,
+        "expectancy_dollars": -3.37,
+        "losses": 66,
+        "max_drawdown_dollars": 404.13,
+        "max_drawdown_pct_starting": 16.17,
+        "net_pl_dollars": -404.1,
+        "profit_factor": 0.731,
+        "return_pct": -16.16,
+        "trades": 120,
+        "win_rate_pct": 45.0,
+        "wins": 54
+      },
+      "robust_development": false,
+      "width": {
+        "name": "width_100",
+        "width_spot_pct": 0.01
+      }
+    }
+  },
+  "complete_sessions": 609,
+  "debit_budget_fractions_predeclared": [
+    0.1,
+    0.15,
+    0.2
+  ],
+  "development_fold_boundaries": [
+    "2025-04-11",
+    "2025-10-17"
+  ],
+  "development_start": "2024-09-04",
+  "fees_per_spread_roundtrip": 0.22,
+  "generated_utc": "2026-08-25T03:57:52.699049+00:00",
+  "long_policy_frozen": {
+    "name": "itm_4d_delta60",
+    "side_moneyness": -0.005,
+    "target_abs_delta": 0.6,
+    "target_dte": 4
+  },
+  "method_note": "Frozen Pattern #2 signals and frozen long-leg policy. New test only changes the defined-risk same-expiry short leg and predeclared debit budget. Both legs use actual 1-minute option trade bars with conservative 0.5% half-spread haircuts; historical BBO/Greeks are not assumed.",
+  "monthly_target": 1000.0,
+  "order_submission_enabled": false,
+  "promoted_candidate": null,
+  "promoted_monthly": null,
+  "robust_candidate_selected": null,
+  "signals_generated": 121,
+  "skip_reasons": {},
+  "spread_widths_predeclared": [
+    {
+      "name": "width_050",
+      "width_spot_pct": 0.005
+    },
+    {
+      "name": "width_075",
+      "width_spot_pct": 0.0075
+    },
+    {
+      "name": "width_100",
+      "width_spot_pct": 0.01
+    }
+  ],
+  "starting_balance": 2500.0,
+  "strategy": "options_pattern2_debit_spread_capital_efficiency"
+}
