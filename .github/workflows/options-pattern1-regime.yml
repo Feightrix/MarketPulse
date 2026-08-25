@@ -1,0 +1,98 @@
+name: MarketPulse Options Pattern 1 Regime Refinement
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - options_pattern1_regime_refinement.py
+      - .github/workflows/options-pattern1-regime.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: options-pattern1-regime
+  cancel-in-progress: false
+
+jobs:
+  refine-regime:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Security check — research only
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s = Path('options_pattern1_regime_refinement.py').read_text()
+          base = Path('options_pattern1_backtest.py').read_text()
+          assert 'ALPACA_OPTIONS_API_KEY_ID' in base
+          assert 'https://data.alpaca.markets' in base
+          assert 'order_submission_enabled' in s
+          assert 'paper-api.alpaca.markets/v2/orders' not in s
+          assert 'api.alpaca.markets/v2/orders' not in s
+          print('Options Pattern 1 regime research-only invariants: PASS')
+          PY
+
+      - name: Syntax check
+        run: |
+          python -m py_compile options_pattern1_backtest.py
+          python -m py_compile options_pattern1_refinement.py
+          python -m py_compile options_pattern1_regime_refinement.py
+
+      - name: Run regime refinement
+        env:
+          ALPACA_OPTIONS_API_KEY_ID: ${{ secrets.ALPACA_OPTIONS_API_KEY_ID }}
+          ALPACA_OPTIONS_SECRET_KEY: ${{ secrets.ALPACA_OPTIONS_SECRET_KEY }}
+        run: python options_pattern1_regime_refinement.py
+
+      - name: Validate regime result
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r = json.loads(Path('options_pattern1_regime_results.json').read_text())
+          assert r['order_submission_enabled'] is False
+          assert r['strategy'] == 'options_pattern1_regime_refinement'
+          assert r['complete_sessions'] > 20
+          print('FOLD A', json.dumps(r['fold_a'], indent=2))
+          print('FOLD B', json.dumps(r['fold_b'], indent=2))
+          print('HOLDOUT', json.dumps(r['holdout'], indent=2))
+          print('FULL', json.dumps(r['full_sample'], indent=2))
+          print('REGIME', json.dumps(r['selected_regime'], indent=2))
+          PY
+
+      - name: Commit regime results
+        if: always()
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          mkdir -p /tmp/options-pattern1-regime
+          for f in options_pattern1_regime_results.json options_pattern1_regime_results.md; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/options-pattern1-regime/$f"; fi
+          done
+          git fetch origin main
+          git reset --hard origin/main
+          for f in options_pattern1_regime_results.json options_pattern1_regime_results.md; do
+            if [ -f "/tmp/options-pattern1-regime/$f" ]; then
+              cp "/tmp/options-pattern1-regime/$f" "$f"
+              git add "$f"
+            fi
+          done
+          if git diff --cached --quiet; then
+            echo "No regime result changes"
+          else
+            git commit -m "Update Options Pattern 1 regime results"
+            git push origin main
+          fi
