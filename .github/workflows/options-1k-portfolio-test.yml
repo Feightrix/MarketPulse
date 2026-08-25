@@ -1,0 +1,103 @@
+name: MarketPulse $1K Portfolio Research
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - options_1k_portfolio_test.py
+      - .github/workflows/options-1k-portfolio-test.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: options-1k-portfolio-research
+  cancel-in-progress: false
+
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Safety gate
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          text = Path('options_1k_portfolio_test.py').read_text()
+          assert 'ORDER_SUBMISSION_ENABLED = False' in text
+          assert 'paper-api.alpaca.markets/v2/orders' not in text
+          assert 'api.alpaca.markets/v2/orders' not in text
+          assert 'MAX_CONCURRENT = 2' in text
+          assert 'MAX_DAILY_ENTRIES = 5' in text
+          assert 'DAILY_LOSS_LOCK = 75.0' in text
+          assert 'TARGET_ABS_DELTA = 0.60' in text
+          assert 'TARGET_DTE = 4' in text
+          assert 'FROZEN_P6_VARIANT' in text and 'edges_125' in text
+          print('Research-only portfolio invariants: PASS')
+          PY
+
+      - name: Syntax check
+        run: |
+          python -m py_compile options_1k_portfolio_test.py
+          python -m py_compile options_pattern6_broad_reclaim_2m.py
+          python -m py_compile options_pattern2_trend_refinement.py
+          python -m py_compile options_pattern2_contract_sim.py
+
+      - name: Run $1K portfolio test
+        env:
+          ALPACA_OPTIONS_API_KEY_ID: ${{ secrets.ALPACA_OPTIONS_API_KEY_ID }}
+          ALPACA_OPTIONS_SECRET_KEY: ${{ secrets.ALPACA_OPTIONS_SECRET_KEY }}
+        run: python options_1k_portfolio_test.py
+
+      - name: Validate result
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r = json.loads(Path('options_1k_portfolio_results.json').read_text())
+          assert r['order_submission_enabled'] is False
+          assert r['starting_balance_dollars'] == 2500.0
+          assert r['monthly_profit_target_dollars'] == 1000.0
+          assert r['evaluation_sessions'] >= 80
+          assert r['frozen_components']['contract_policy']['target_dte'] == 4
+          assert r['frozen_components']['contract_policy']['target_abs_delta'] == 0.60
+          assert r['account_constraints']['max_concurrent'] == 2
+          assert r['account_constraints']['max_daily_entries'] == 5
+          print('PORTFOLIO', r['portfolio_full'])
+          print('MONTHLY', r['monthly_full'])
+          print('HOLDOUT', r['portfolio_holdout'])
+          print('TARGET_MET', r['target_met'])
+          PY
+
+      - name: Commit results
+        if: always()
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          mkdir -p /tmp/portfolio
+          for f in options_1k_portfolio_results.json options_1k_portfolio_results.md; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/portfolio/$f"; fi
+          done
+          git fetch origin main
+          git reset --hard origin/main
+          for f in options_1k_portfolio_results.json options_1k_portfolio_results.md; do
+            if [ -f "/tmp/portfolio/$f" ]; then cp "/tmp/portfolio/$f" "$f"; git add "$f"; fi
+          done
+          if git diff --cached --quiet; then
+            echo "No portfolio result changes"
+          else
+            git commit -m "Update $1K portfolio research results"
+            git push origin main
+          fi
