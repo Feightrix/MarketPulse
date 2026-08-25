@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - options_pattern2_contract_ab.py
+      - options_pattern2_contract_gate.py
       - .github/workflows/options-pattern1-refinement.yml
   workflow_dispatch:
 
@@ -35,16 +35,16 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
-          text = Path('options_pattern2_contract_ab.py').read_text()
-          assert 'order_submission_enabled' in text
-          assert 'https://data.alpaca.markets' in Path('options_pattern2_contract_sim.py').read_text()
-          assert '/v2/options/contracts' in text
-          assert '/v1beta1/options/bars' in text
-          assert 'paper-api.alpaca.markets/v2/orders' not in text
-          assert 'api.alpaca.markets/v2/orders' not in text
-          assert 'CONTROL_MAX_CANDIDATES = 12' in text
-          assert 'control_matches_prior_720' in text
-          print('Corrected Pattern 2 contract A/B research-only invariants: PASS')
+          gate = Path('options_pattern2_contract_gate.py').read_text()
+          ab = Path('options_pattern2_contract_ab.py').read_text()
+          assert 'order_submission_enabled' in gate
+          assert 'POLICY_NAME = "itm_4d_delta60"' in gate
+          assert 'GATES = [' in gate
+          assert '/v2/options/contracts' in ab
+          assert '/v1beta1/options/bars' in ab
+          assert 'paper-api.alpaca.markets/v2/orders' not in gate + ab
+          assert 'api.alpaca.markets/v2/orders' not in gate + ab
+          print('Pattern 2 contract execution-gate research-only invariants: PASS')
           PY
 
       - name: Syntax check
@@ -54,51 +54,54 @@ jobs:
           python -m py_compile options_pattern2_trend_refinement.py
           python -m py_compile options_pattern2_contract_sim.py
           python -m py_compile options_pattern2_contract_ab.py
+          python -m py_compile options_pattern2_contract_gate.py
 
-      - name: Run corrected Pattern 2 contract policy A/B
+      - name: Run Pattern 2 contract execution gate
         env:
           ALPACA_OPTIONS_API_KEY_ID: ${{ secrets.ALPACA_OPTIONS_API_KEY_ID }}
           ALPACA_OPTIONS_SECRET_KEY: ${{ secrets.ALPACA_OPTIONS_SECRET_KEY }}
-        run: python options_pattern2_contract_ab.py
+        run: python options_pattern2_contract_gate.py
 
-      - name: Validate corrected contract A/B result
+      - name: Validate execution gate result
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
-          result = json.loads(Path('options_pattern2_contract_ab_results.json').read_text())
+          result = json.loads(Path('options_pattern2_contract_gate_results.json').read_text())
           assert result['order_submission_enabled'] is False
-          assert result['strategy'] == 'options_pattern2_contract_policy_ab_corrected'
+          assert result['strategy'] == 'options_pattern2_contract_execution_gate'
           assert result['signals_generated'] > 20
-          assert len(result['policies_predeclared']) == 6
-          assert result['control_matches_prior_720'] is True
-          print('CONTROL DEV', json.dumps(result['control_development'], indent=2))
-          print('CONTROL EXTERNAL', json.dumps(result['control_external_validation'], indent=2))
-          print('BEST CHALLENGER', json.dumps(result['best_development_challenger'], indent=2))
-          print('ROBUST FOUND', result['robust_challenger_found'])
-          print('PROMOTED', json.dumps(result['promoted_policy'], indent=2))
+          assert result['contracts_simulated'] > 20
+          assert len(result['gates_predeclared']) == 12
+          base = result['baseline']['full']
+          assert abs(base['net_pl_dollars'] - 183.78) <= 5.0, base
+          print('BASELINE', json.dumps(result['baseline'], indent=2))
+          print('ELIGIBLE DEV GATES', result['eligible_on_development_only'])
+          print('SELECTED', json.dumps(result['selected_development_gate'], indent=2))
+          print('EXTERNAL CONFIRMATION', result['external_confirmation_pass'])
+          print('PROMOTED', json.dumps(result['promoted_gate'], indent=2))
           PY
 
-      - name: Commit corrected contract A/B results
+      - name: Commit execution gate results
         if: always()
         run: |
           git config user.name "MarketPulse Bot"
           git config user.email "actions@users.noreply.github.com"
           mkdir -p /tmp/options-research
-          for f in options_pattern2_contract_ab_results.json options_pattern2_contract_ab_results.md; do
+          for f in options_pattern2_contract_gate_results.json options_pattern2_contract_gate_results.md; do
             if [ -f "$f" ]; then cp "$f" "/tmp/options-research/$f"; fi
           done
           git fetch origin main
           git reset --hard origin/main
-          for f in options_pattern2_contract_ab_results.json options_pattern2_contract_ab_results.md; do
+          for f in options_pattern2_contract_gate_results.json options_pattern2_contract_gate_results.md; do
             if [ -f "/tmp/options-research/$f" ]; then
               cp "/tmp/options-research/$f" "$f"
               git add "$f"
             fi
           done
           if git diff --cached --quiet; then
-            echo "No corrected contract A/B result changes"
+            echo "No execution gate result changes"
           else
-            git commit -m "Update corrected Pattern 2 contract A/B results"
+            git commit -m "Update Pattern 2 contract execution gate results"
             git push origin main
           fi
