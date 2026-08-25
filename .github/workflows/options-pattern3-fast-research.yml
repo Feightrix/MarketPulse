@@ -1,4 +1,4 @@
-name: MarketPulse Pattern 8 Cross-Sectional Extremes Research
+name: MarketPulse Pattern 9 Gap-Aligned Opening Drive Research
 
 on:
   workflow_dispatch:
@@ -6,14 +6,14 @@ on:
     branches: [main]
     paths:
       - options_pattern3_fast_research.py
-      - options_pattern8_cross_sectional_extremes.py
+      - options_pattern9_gap_orb.py
       - .github/workflows/options-pattern3-fast-research.yml
 
 permissions:
   contents: write
 
 concurrency:
-  group: options-pattern8-cross-sectional-extremes
+  group: options-pattern9-gap-orb
   cancel-in-progress: false
 
 jobs:
@@ -37,34 +37,34 @@ jobs:
           python - <<'PY'
           from pathlib import Path
           base = Path('options_pattern3_fast_research.py').read_text()
-          p8 = Path('options_pattern8_cross_sectional_extremes.py').read_text()
+          p9 = Path('options_pattern9_gap_orb.py').read_text()
           assert 'order_submission_enabled' in base
           assert 'https://data.alpaca.markets' in base
-          assert 'paper-api.alpaca.markets/v2/orders' not in base + p8
-          assert 'api.alpaca.markets/v2/orders' not in base + p8
-          assert 'entry_i = i + 1' in p8
-          assert 'MAX_DAILY_TRADES = 15' in p8
-          assert 'momentum' in p8 and 'revert' in p8
-          print('Pattern 8 research-only invariants: PASS')
+          assert 'paper-api.alpaca.markets/v2/orders' not in base + p9
+          assert 'api.alpaca.markets/v2/orders' not in base + p9
+          assert 'entry_i = i + 1' in p9
+          assert 'MAX_DAILY_TRADES = 15' in p9
+          assert 'min_gap' in p9 and 'opening_range' in p9
+          print('Pattern 9 research-only invariants: PASS')
           PY
 
       - name: Syntax check
         run: |
           python -m py_compile options_pattern3_fast_research.py
-          python -m py_compile options_pattern8_cross_sectional_extremes.py
+          python -m py_compile options_pattern9_gap_orb.py
 
-      - name: Run Pattern 8 cross-sectional extremes screen
+      - name: Run Pattern 9 gap-aligned opening drive screen
         env:
           ALPACA_OPTIONS_API_KEY_ID: ${{ secrets.ALPACA_OPTIONS_API_KEY_ID }}
           ALPACA_OPTIONS_SECRET_KEY: ${{ secrets.ALPACA_OPTIONS_SECRET_KEY }}
-        run: python options_pattern8_cross_sectional_extremes.py
+        run: python options_pattern9_gap_orb.py
 
-      - name: Validate Pattern 8 result
+      - name: Validate Pattern 9 result
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
-          r = json.loads(Path('options_pattern8_cross_sectional_extremes_results.json').read_text())
+          r = json.loads(Path('options_pattern9_gap_orb_results.json').read_text())
           assert r['order_submission_enabled'] is False
           assert r['evaluation_sessions'] >= 50
           assert len(r['variants_predeclared']) == 6
@@ -73,23 +73,23 @@ jobs:
               print(k, v['full'])
           PY
 
-      - name: Commit Pattern 8 results
+      - name: Commit Pattern 9 results
         if: always()
         run: |
           git config user.name "MarketPulse Bot"
           git config user.email "actions@users.noreply.github.com"
-          mkdir -p /tmp/p8
-          for f in options_pattern8_cross_sectional_extremes_results.json options_pattern8_cross_sectional_extremes_results.md; do
-            if [ -f "$f" ]; then cp "$f" "/tmp/p8/$f"; fi
+          mkdir -p /tmp/p9
+          for f in options_pattern9_gap_orb_results.json options_pattern9_gap_orb_results.md; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/p9/$f"; fi
           done
           git fetch origin main
           git reset --hard origin/main
-          for f in options_pattern8_cross_sectional_extremes_results.json options_pattern8_cross_sectional_extremes_results.md; do
-            if [ -f "/tmp/p8/$f" ]; then cp "/tmp/p8/$f" "$f"; git add "$f"; fi
+          for f in options_pattern9_gap_orb_results.json options_pattern9_gap_orb_results.md; do
+            if [ -f "/tmp/p9/$f" ]; then cp "/tmp/p9/$f" "$f"; git add "$f"; fi
           done
           if git diff --cached --quiet; then
-            echo "No Pattern 8 result changes"
+            echo "No Pattern 9 result changes"
           else
-            git commit -m "Update Pattern 8 cross-sectional extremes results"
+            git commit -m "Update Pattern 9 gap-aligned opening drive results"
             git push origin main
           fi
