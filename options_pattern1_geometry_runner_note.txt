@@ -1,0 +1,1 @@
+Entry/stop geometry research is routed through the existing Pattern 1 refinement workflow. Research only; no order submission.
