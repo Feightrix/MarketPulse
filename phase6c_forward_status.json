@@ -6,5 +6,5 @@
     "Paper API GET /v2/account failed: HTTP 401: {\"message\": \"unauthorized.\"}\n"
   ],
   "status": "PAPER_READ_FAILED",
-  "timestamp_utc": "2026-08-25T20:41:00.440527+00:00"
+  "timestamp_utc": "2026-08-25T21:39:03.707320+00:00"
 }
