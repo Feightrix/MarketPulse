@@ -1,4 +1,4 @@
-name: MarketPulse Pattern 5 Liquid Names ORB Research
+name: MarketPulse Pattern 6 Broad 2-Minute Reclaim Research
 
 on:
   workflow_dispatch:
@@ -6,14 +6,14 @@ on:
     branches: [main]
     paths:
       - options_pattern3_fast_research.py
-      - options_pattern5_liquid_names_orb.py
+      - options_pattern6_broad_reclaim_2m.py
       - .github/workflows/options-pattern3-fast-research.yml
 
 permissions:
   contents: write
 
 concurrency:
-  group: options-pattern5-liquid-names
+  group: options-pattern6-broad-reclaim
   cancel-in-progress: false
 
 jobs:
@@ -37,34 +37,34 @@ jobs:
           python - <<'PY'
           from pathlib import Path
           base = Path('options_pattern3_fast_research.py').read_text()
-          p5 = Path('options_pattern5_liquid_names_orb.py').read_text()
+          p6 = Path('options_pattern6_broad_reclaim_2m.py').read_text()
           assert 'order_submission_enabled' in base
           assert 'https://data.alpaca.markets' in base
-          assert 'paper-api.alpaca.markets/v2/orders' not in base + p5
-          assert 'api.alpaca.markets/v2/orders' not in base + p5
-          assert 'entry_i = i + 1' in p5
-          assert 'MAX_PER_SYMBOL_DAY = 2' in p5
-          assert 'AAPL' in p5 and 'NVDA' in p5 and 'TSLA' in p5
-          print('Pattern 5 research-only invariants: PASS')
+          assert 'paper-api.alpaca.markets/v2/orders' not in base + p6
+          assert 'api.alpaca.markets/v2/orders' not in base + p6
+          assert 'entry_i = i + 1' in p6
+          assert 'MAX_PER_SYMBOL_DAY = 1' in p6
+          assert 'aggregate_2m' in p6
+          print('Pattern 6 research-only invariants: PASS')
           PY
 
       - name: Syntax check
         run: |
           python -m py_compile options_pattern3_fast_research.py
-          python -m py_compile options_pattern5_liquid_names_orb.py
+          python -m py_compile options_pattern6_broad_reclaim_2m.py
 
-      - name: Run Pattern 5 liquid names ORB screen
+      - name: Run Pattern 6 broad 2-minute reclaim screen
         env:
           ALPACA_OPTIONS_API_KEY_ID: ${{ secrets.ALPACA_OPTIONS_API_KEY_ID }}
           ALPACA_OPTIONS_SECRET_KEY: ${{ secrets.ALPACA_OPTIONS_SECRET_KEY }}
-        run: python options_pattern5_liquid_names_orb.py
+        run: python options_pattern6_broad_reclaim_2m.py
 
-      - name: Validate Pattern 5 result
+      - name: Validate Pattern 6 result
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
-          r = json.loads(Path('options_pattern5_liquid_names_orb_results.json').read_text())
+          r = json.loads(Path('options_pattern6_broad_reclaim_2m_results.json').read_text())
           assert r['order_submission_enabled'] is False
           assert r['evaluation_sessions'] >= 50
           assert len(r['variants_predeclared']) == 6
@@ -73,23 +73,23 @@ jobs:
               print(k, v['full'])
           PY
 
-      - name: Commit Pattern 5 results
+      - name: Commit Pattern 6 results
         if: always()
         run: |
           git config user.name "MarketPulse Bot"
           git config user.email "actions@users.noreply.github.com"
-          mkdir -p /tmp/p5
-          for f in options_pattern5_liquid_names_orb_results.json options_pattern5_liquid_names_orb_results.md; do
-            if [ -f "$f" ]; then cp "$f" "/tmp/p5/$f"; fi
+          mkdir -p /tmp/p6
+          for f in options_pattern6_broad_reclaim_2m_results.json options_pattern6_broad_reclaim_2m_results.md; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/p6/$f"; fi
           done
           git fetch origin main
           git reset --hard origin/main
-          for f in options_pattern5_liquid_names_orb_results.json options_pattern5_liquid_names_orb_results.md; do
-            if [ -f "/tmp/p5/$f" ]; then cp "/tmp/p5/$f" "$f"; git add "$f"; fi
+          for f in options_pattern6_broad_reclaim_2m_results.json options_pattern6_broad_reclaim_2m_results.md; do
+            if [ -f "/tmp/p6/$f" ]; then cp "/tmp/p6/$f" "$f"; git add "$f"; fi
           done
           if git diff --cached --quiet; then
-            echo "No Pattern 5 result changes"
+            echo "No Pattern 6 result changes"
           else
-            git commit -m "Update Pattern 5 liquid names ORB results"
+            git commit -m "Update Pattern 6 broad 2-minute reclaim results"
             git push origin main
           fi
