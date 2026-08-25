@@ -1,0 +1,96 @@
+name: MarketPulse Pattern 2 Debit Spread Research
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - options_pattern2_debit_spread_test.py
+      - .github/workflows/options-pattern2-debit-spread-test.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: options-pattern2-debit-spread-research
+  cancel-in-progress: false
+
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Safety gate
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          text = Path('options_pattern2_debit_spread_test.py').read_text()
+          assert 'ORDER_SUBMISSION_ENABLED = False' in text
+          assert 'paper-api.alpaca.markets/v2/orders' not in text
+          assert 'api.alpaca.markets/v2/orders' not in text
+          assert 'target_abs_delta": 0.60' in text
+          assert 'target_dte": 4' in text
+          assert 'SPREAD_WIDTHS' in text
+          assert 'DEBIT_BUDGET_FRACTIONS = [0.10, 0.15, 0.20]' in text
+          print('Debit-spread research-only invariants: PASS')
+          PY
+
+      - name: Syntax check
+        run: |
+          python -m py_compile options_pattern2_debit_spread_test.py
+          python -m py_compile options_pattern2_contract_ab.py
+
+      - name: Run debit spread test
+        env:
+          ALPACA_OPTIONS_API_KEY_ID: ${{ secrets.ALPACA_OPTIONS_API_KEY_ID }}
+          ALPACA_OPTIONS_SECRET_KEY: ${{ secrets.ALPACA_OPTIONS_SECRET_KEY }}
+        run: python options_pattern2_debit_spread_test.py
+
+      - name: Validate result
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r = json.loads(Path('options_pattern2_debit_spread_results.json').read_text())
+          assert r['order_submission_enabled'] is False
+          assert r['starting_balance'] == 2500.0
+          assert len(r['spread_widths_predeclared']) == 3
+          assert len(r['debit_budget_fractions_predeclared']) == 3
+          assert len(r['candidates']) == 9
+          print('BEST', r['best_full_sample_descriptive'])
+          print('ROBUST', r['robust_candidate_selected'])
+          print('PROMOTED', r['promoted_candidate'])
+          print('MONTHLY', r['best_full_monthly'])
+          PY
+
+      - name: Commit results
+        if: always()
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          mkdir -p /tmp/spread
+          for f in options_pattern2_debit_spread_results.json options_pattern2_debit_spread_results.md; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/spread/$f"; fi
+          done
+          git fetch origin main
+          git reset --hard origin/main
+          for f in options_pattern2_debit_spread_results.json options_pattern2_debit_spread_results.md; do
+            if [ -f "/tmp/spread/$f" ]; then cp "/tmp/spread/$f" "$f"; git add "$f"; fi
+          done
+          if git diff --cached --quiet; then
+            echo "No debit-spread result changes"
+          else
+            git commit -m "Update Pattern 2 debit spread results"
+            git push origin main
+          fi
