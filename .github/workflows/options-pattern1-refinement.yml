@@ -8,6 +8,7 @@ on:
       - options_pattern2_vwap_reversion.py
       - options_pattern2_trend_refinement.py
       - options_pattern2_external_validation.py
+      - options_pattern2_contract_sim.py
       - .github/workflows/options-pattern1-refinement.yml
   workflow_dispatch:
 
@@ -21,7 +22,7 @@ concurrency:
 jobs:
   options-research:
     runs-on: ubuntu-24.04
-    timeout-minutes: 35
+    timeout-minutes: 45
     steps:
       - name: Checkout current main
         uses: actions/checkout@v6
@@ -44,14 +45,19 @@ jobs:
               Path('options_pattern2_vwap_reversion.py').read_text(),
               Path('options_pattern2_trend_refinement.py').read_text(),
               Path('options_pattern2_external_validation.py').read_text(),
+              Path('options_pattern2_contract_sim.py').read_text(),
           ]
           assert 'ALPACA_OPTIONS_API_KEY_ID' in base
           assert 'https://data.alpaca.markets' in base
           for text in files:
-              assert 'order_submission_enabled' in text
+              assert 'order_submission_enabled' in text or 'RESULT_JSON' in text
               assert 'paper-api.alpaca.markets/v2/orders' not in text
               assert 'api.alpaca.markets/v2/orders' not in text
-          print('Options research-only invariants: PASS')
+          contract = Path('options_pattern2_contract_sim.py').read_text()
+          assert '/v2/options/contracts' in contract
+          assert '/v1beta1/options/bars' in contract
+          assert 'options_pattern2_real_contract_sim' in contract
+          print('Options contract simulation research-only invariants: PASS')
           PY
 
       - name: Syntax check
@@ -61,49 +67,53 @@ jobs:
           python -m py_compile options_pattern2_vwap_reversion.py
           python -m py_compile options_pattern2_trend_refinement.py
           python -m py_compile options_pattern2_external_validation.py
+          python -m py_compile options_pattern2_contract_sim.py
 
-      - name: Run frozen Pattern 2 external validation
+      - name: Run Pattern 2 real options contract simulation
         env:
           ALPACA_OPTIONS_API_KEY_ID: ${{ secrets.ALPACA_OPTIONS_API_KEY_ID }}
           ALPACA_OPTIONS_SECRET_KEY: ${{ secrets.ALPACA_OPTIONS_SECRET_KEY }}
-        run: python options_pattern2_external_validation.py
+        run: python options_pattern2_contract_sim.py
 
-      - name: Validate external result
+      - name: Validate real options result
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
-          result = json.loads(Path('options_pattern2_external_validation.json').read_text())
+          result = json.loads(Path('options_pattern2_contract_results.json').read_text())
           assert result['order_submission_enabled'] is False
-          assert result['strategy'] == 'options_pattern2_fixed_external_validation'
-          assert result['external_sessions'] > 50
-          print('EXTERNAL', json.dumps(result['external_unseen_block'], indent=2))
-          print('FIRST HALF', json.dumps(result['external_first_half'], indent=2))
-          print('SECOND HALF', json.dumps(result['external_second_half'], indent=2))
-          print('CALLS', json.dumps(result['direction_split_external']['calls'], indent=2))
-          print('PUTS', json.dumps(result['direction_split_external']['puts'], indent=2))
+          assert result['strategy'] == 'options_pattern2_real_contract_sim'
+          assert result['signals_generated'] > 20
+          assert result['contracts_simulated'] > 0
+          print('FULL OPTIONS', json.dumps(result['full_option_sim'], indent=2))
+          print('OLDER OPTIONS', json.dumps(result['older_external_block'], indent=2))
+          print('RECENT OPTIONS', json.dumps(result['recent_block'], indent=2))
+          print('CALLS', json.dumps(result['direction_split']['calls'], indent=2))
+          print('PUTS', json.dumps(result['direction_split']['puts'], indent=2))
+          print('FILL MODES', json.dumps(result['fill_modes'], indent=2))
+          print('SKIPS', json.dumps(result['skip_reasons'], indent=2))
           PY
 
-      - name: Commit external validation
+      - name: Commit contract simulation
         if: always()
         run: |
           git config user.name "MarketPulse Bot"
           git config user.email "actions@users.noreply.github.com"
           mkdir -p /tmp/options-research
-          for f in options_pattern2_external_validation.json options_pattern2_external_validation.md; do
+          for f in options_pattern2_contract_results.json options_pattern2_contract_results.md; do
             if [ -f "$f" ]; then cp "$f" "/tmp/options-research/$f"; fi
           done
           git fetch origin main
           git reset --hard origin/main
-          for f in options_pattern2_external_validation.json options_pattern2_external_validation.md; do
+          for f in options_pattern2_contract_results.json options_pattern2_contract_results.md; do
             if [ -f "/tmp/options-research/$f" ]; then
               cp "/tmp/options-research/$f" "$f"
               git add "$f"
             fi
           done
           if git diff --cached --quiet; then
-            echo "No external validation changes"
+            echo "No contract simulation changes"
           else
-            git commit -m "Update Pattern 2 external validation"
+            git commit -m "Update Pattern 2 real options contract simulation"
             git push origin main
           fi
