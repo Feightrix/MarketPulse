@@ -1,0 +1,63 @@
+name: MarketPulse Kalshi Demo Account Check
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install crypto dependency
+        run: pip install cryptography
+
+      - name: Safety gate
+        run: |
+          set -euo pipefail
+          grep -q 'external-api.demo.kalshi.co' kalshi_demo_account_check.py
+          grep -q 'order_submission_enabled.*False' kalshi_demo_account_check.py
+          ! grep -Eq 'Request\(.*method="POST"|requests\.post|urllib.*POST|portfolio/events/orders' kalshi_demo_account_check.py
+
+      - name: Syntax check
+        run: python -m py_compile kalshi_demo_account_check.py
+
+      - name: Verify Kalshi demo account
+        env:
+          KALSHI_DEMO_API_KEY_ID: ${{ secrets.KALSHI_DEMO_API_KEY_ID }}
+          KALSHI_DEMO_PRIVATE_KEY: ${{ secrets.KALSHI_DEMO_PRIVATE_KEY }}
+        run: python kalshi_demo_account_check.py
+
+      - name: Validate demo lock
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('kalshi_demo_account_check.json'))
+          assert d['environment'] == 'demo'
+          assert d['order_submission_enabled'] is False
+          assert 'demo.kalshi.co' in d['base_url']
+          print('Kalshi demo lock validated.')
+          PY
+
+      - name: Commit result
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add kalshi_demo_account_check.json kalshi_demo_account_check.md
+          if git diff --cached --quiet; then
+            echo 'No result changes.'
+          else
+            git commit -m 'Update Kalshi demo account check'
+            git push
+          fi
