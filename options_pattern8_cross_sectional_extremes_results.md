@@ -1,4 +1,4 @@
-# MarketPulse — Pattern #8 Cross-Sectional Extremes
+# MarketPulse — Pattern #8 Cross-Sectional Extremes (Clock-Aligned)
 
 **Research only. No orders. Next-bar entries only.**
 
@@ -6,32 +6,32 @@ Evaluation sessions: **124**
 Selected development candidate: **NONE**
 
 ## momentum_050
-- Trades/day: **0.08** | 10+ trade days: **0.0%**
-- Full risk-normalized P/L: **$-31.25** | Avg/day: **$-0.25** | PF: **0.5**
-- Holdout: **$-31.25** | trades/day **0.13** | PF **0.167**
+- Trades/day: **15.0** | 10+ trade days: **100.0%**
+- Full risk-normalized P/L: **$-2,671.21** | Avg/day: **$-21.54** | PF: **0.719**
+- Holdout: **$-859.36** | trades/day **15.0** | PF **0.656**
 
 ## momentum_075
-- Trades/day: **0.07** | 10+ trade days: **0.0%**
-- Full risk-normalized P/L: **$-46.86** | Avg/day: **$-0.38** | PF: **0.375**
-- Holdout: **$-28.12** | trades/day **0.13** | PF **0.25**
+- Trades/day: **15.0** | 10+ trade days: **100.0%**
+- Full risk-normalized P/L: **$-1,118.34** | Avg/day: **$-9.02** | PF: **0.894**
+- Holdout: **$-481.38** | trades/day **15.0** | PF **0.824**
 
 ## momentum_100
-- Trades/day: **0.06** | 10+ trade days: **0.0%**
-- Full risk-normalized P/L: **$-50.00** | Avg/day: **$-0.40** | PF: **0.333**
-- Holdout: **$-25.00** | trades/day **0.13** | PF **0.333**
+- Trades/day: **15.0** | 10+ trade days: **100.0%**
+- Full risk-normalized P/L: **$-186.07** | Avg/day: **$-1.50** | PF: **0.984**
+- Holdout: **$-434.37** | trades/day **15.0** | PF **0.859**
 
 ## revert_050
-- Trades/day: **0.07** | 10+ trade days: **0.0%**
-- Full risk-normalized P/L: **$-18.75** | Avg/day: **$-0.15** | PF: **0.625**
-- Holdout: **$6.25** | trades/day **0.13** | PF **1.5**
+- Trades/day: **15.0** | 10+ trade days: **100.0%**
+- Full risk-normalized P/L: **$-4,016.08** | Avg/day: **$-32.39** | PF: **0.613**
+- Holdout: **$-801.70** | trades/day **15.0** | PF **0.674**
 
 ## revert_075
-- Trades/day: **0.07** | 10+ trade days: **0.0%**
-- Full risk-normalized P/L: **$40.66** | Avg/day: **$0.33** | PF: **2.626**
-- Holdout: **$15.64** | trades/day **0.13** | PF **2.251**
+- Trades/day: **15.0** | 10+ trade days: **100.0%**
+- Full risk-normalized P/L: **$-2,816.11** | Avg/day: **$-22.71** | PF: **0.754**
+- Holdout: **$-356.85** | trades/day **15.0** | PF **0.866**
 
 ## revert_100
-- Trades/day: **0.06** | 10+ trade days: **0.0%**
-- Full risk-normalized P/L: **$50.00** | Avg/day: **$0.40** | PF: **3.0**
-- Holdout: **$25.00** | trades/day **0.13** | PF **3.0**
+- Trades/day: **15.0** | 10+ trade days: **100.0%**
+- Full risk-normalized P/L: **$-1,338.93** | Avg/day: **$-10.80** | PF: **0.89**
+- Holdout: **$134.37** | trades/day **15.0** | PF **1.048**
 
