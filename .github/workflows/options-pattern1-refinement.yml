@@ -6,6 +6,7 @@ on:
     paths:
       - options_pattern1_refinement.py
       - options_pattern1_geometry.py
+      - options_pattern1_geometry_eval.py
       - .github/workflows/options-pattern1-refinement.yml
   workflow_dispatch:
 
@@ -39,12 +40,14 @@ jobs:
           base = Path('options_pattern1_backtest.py').read_text()
           ref = Path('options_pattern1_refinement.py').read_text()
           geo = Path('options_pattern1_geometry.py').read_text()
+          ge = Path('options_pattern1_geometry_eval.py').read_text()
           assert 'ALPACA_OPTIONS_API_KEY_ID' in base
           assert 'https://data.alpaca.markets' in base
           assert 'order_submission_enabled' in ref
           assert 'order_submission_enabled' in geo
-          assert 'paper-api.alpaca.markets/v2/orders' not in geo
-          assert 'api.alpaca.markets/v2/orders' not in geo
+          assert 'order_submission_enabled' in ge
+          assert 'paper-api.alpaca.markets/v2/orders' not in geo + ge
+          assert 'api.alpaca.markets/v2/orders' not in geo + ge
           assert 'TARGET_R = 1.5' in geo
           print('Pattern 1 refinement + geometry research-only invariants: PASS')
           PY
@@ -54,6 +57,7 @@ jobs:
           python -m py_compile options_pattern1_backtest.py
           python -m py_compile options_pattern1_refinement.py
           python -m py_compile options_pattern1_geometry.py
+          python -m py_compile options_pattern1_geometry_eval.py
 
       - name: Run Pattern 1 refinement
         env:
@@ -74,11 +78,11 @@ jobs:
           print('REFINEMENT FULL', json.dumps(result['full_sample'], indent=2))
           PY
 
-      - name: Run entry stop geometry research
+      - name: Run entry stop geometry evaluation
         env:
           ALPACA_OPTIONS_API_KEY_ID: ${{ secrets.ALPACA_OPTIONS_API_KEY_ID }}
           ALPACA_OPTIONS_SECRET_KEY: ${{ secrets.ALPACA_OPTIONS_SECRET_KEY }}
-        run: python options_pattern1_geometry.py
+        run: python options_pattern1_geometry_eval.py
 
       - name: Validate geometry result
         run: |
@@ -94,6 +98,7 @@ jobs:
           print('GEOMETRY FOLD B', json.dumps(result['fold_b'], indent=2))
           print('GEOMETRY HOLDOUT', json.dumps(result['holdout'], indent=2))
           print('GEOMETRY FULL', json.dumps(result['full_sample'], indent=2))
+          print('REPLACE LEADER', result['replace_prior_leader'])
           PY
 
       - name: Commit research results
