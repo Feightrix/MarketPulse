@@ -1,0 +1,97 @@
+name: MarketPulse Options Pattern 1 Refinement
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - options_pattern1_refinement.py
+      - .github/workflows/options-pattern1-refinement.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: options-pattern1-refinement
+  cancel-in-progress: false
+
+jobs:
+  refine-pattern1:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Security check — research only
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s = Path('options_pattern1_refinement.py').read_text()
+          assert 'ALPACA_OPTIONS_API_KEY_ID' in Path('options_pattern1_backtest.py').read_text()
+          assert 'https://data.alpaca.markets' in Path('options_pattern1_backtest.py').read_text()
+          assert 'order_submission_enabled' in s
+          assert 'paper-api.alpaca.markets/v2/orders' not in s
+          assert 'api.alpaca.markets/v2/orders' not in s
+          print('Options Pattern 1 refinement research-only invariants: PASS')
+          PY
+
+      - name: Syntax check
+        run: |
+          python -m py_compile options_pattern1_backtest.py
+          python -m py_compile options_pattern1_refinement.py
+
+      - name: Run Pattern 1 refinement
+        env:
+          ALPACA_OPTIONS_API_KEY_ID: ${{ secrets.ALPACA_OPTIONS_API_KEY_ID }}
+          ALPACA_OPTIONS_SECRET_KEY: ${{ secrets.ALPACA_OPTIONS_SECRET_KEY }}
+        run: python options_pattern1_refinement.py
+
+      - name: Validate refinement result
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          result = json.loads(Path('options_pattern1_refinement_results.json').read_text())
+          assert result['order_submission_enabled'] is False
+          assert result['strategy'] == 'options_pattern1_refinement'
+          assert result['complete_sessions'] > 20
+          print('TRAIN')
+          print(json.dumps(result['train'], indent=2))
+          print('HOLDOUT')
+          print(json.dumps(result['holdout'], indent=2))
+          print('FULL')
+          print(json.dumps(result['full_sample'], indent=2))
+          PY
+
+      - name: Commit refinement results
+        if: always()
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          mkdir -p /tmp/options-pattern1-refinement
+          for f in options_pattern1_refinement_results.json options_pattern1_refinement_results.md; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/options-pattern1-refinement/$f"; fi
+          done
+          git fetch origin main
+          git reset --hard origin/main
+          for f in options_pattern1_refinement_results.json options_pattern1_refinement_results.md; do
+            if [ -f "/tmp/options-pattern1-refinement/$f" ]; then
+              cp "/tmp/options-pattern1-refinement/$f" "$f"
+              git add "$f"
+            fi
+          done
+          if git diff --cached --quiet; then
+            echo "No refinement result changes"
+          else
+            git commit -m "Update Options Pattern 1 refinement results"
+            git push origin main
+          fi
