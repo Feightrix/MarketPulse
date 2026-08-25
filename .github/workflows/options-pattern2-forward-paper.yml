@@ -1,0 +1,89 @@
+name: MarketPulse Pattern 2 Forward Paper
+
+on:
+  schedule:
+    # Covers the full US options session in both EST and EDT; the Python runner
+    # checks Alpaca's market clock and local entry/exit windows before acting.
+    - cron: '*/5 13-21 * * 1-5'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - options_pattern2_forward_paper.py
+      - .github/workflows/options-pattern2-forward-paper.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: options-pattern2-forward-paper
+  cancel-in-progress: false
+
+jobs:
+  forward-paper:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Paper-trading safety gate
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          text = Path('options_pattern2_forward_paper.py').read_text()
+          assert 'https://paper-api.alpaca.markets' in text
+          assert 'https://api.alpaca.markets/v2/orders' not in text
+          assert 'PAPER_BASE != "https://paper-api.alpaca.markets"' in text
+          assert 'ENABLE_OPTIONS_FORWARD_PAPER' in text
+          assert 'MAX_CONCURRENT_POSITIONS = 1' in text
+          assert 'MAX_ENTRIES_PER_DAY = 2' in text
+          assert 'DAILY_LOSS_LOCK_DOLLARS = 75.0' in text
+          assert 'HARD_MAX_PREMIUM_DOLLARS = 500.0' in text
+          print('Pattern 2 forward paper safety invariants: PASS')
+          PY
+
+      - name: Syntax check
+        run: |
+          python -m py_compile options_pattern1_backtest.py
+          python -m py_compile options_pattern2_vwap_reversion.py
+          python -m py_compile options_pattern2_forward_paper.py
+
+      - name: Run forward paper trader
+        env:
+          ALPACA_OPTIONS_API_KEY_ID: ${{ secrets.ALPACA_OPTIONS_API_KEY_ID }}
+          ALPACA_OPTIONS_SECRET_KEY: ${{ secrets.ALPACA_OPTIONS_SECRET_KEY }}
+          ENABLE_OPTIONS_FORWARD_PAPER: 'true'
+        run: python options_pattern2_forward_paper.py
+
+      - name: Commit forward state changes
+        if: always()
+        run: |
+          git config user.name "MarketPulse Bot"
+          git config user.email "actions@users.noreply.github.com"
+          mkdir -p /tmp/forward-paper
+          for f in options_pattern2_forward_state.json options_pattern2_forward_status.md; do
+            if [ -f "$f" ]; then cp "$f" "/tmp/forward-paper/$f"; fi
+          done
+          git fetch origin main
+          git reset --hard origin/main
+          for f in options_pattern2_forward_state.json options_pattern2_forward_status.md; do
+            if [ -f "/tmp/forward-paper/$f" ]; then
+              cp "/tmp/forward-paper/$f" "$f"
+              git add "$f"
+            fi
+          done
+          if git diff --cached --quiet; then
+            echo "No forward-paper state change"
+          else
+            git commit -m "Update Pattern 2 forward paper state"
+            git push origin main
+          fi
