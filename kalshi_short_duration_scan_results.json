@@ -1,19 +1,23 @@
 {
   "authentication_required": false,
-  "generated_utc": "2026-08-25T20:27:33.168859+00:00",
+  "generated_utc": "2026-08-25T20:28:11.692764+00:00",
   "order_submission_enabled": false,
   "series": [
     {
       "label": "S&P 500 Hourly Up/Down",
-      "markets": [],
       "open_market_count": 0,
-      "series_ticker": "KXINXHUD"
+      "open_markets": [],
+      "series_ticker": "KXINXHUD",
+      "upcoming_market_count": 0,
+      "upcoming_markets": []
     },
     {
       "label": "NASDAQ-100 Hourly Up/Down",
-      "markets": [],
       "open_market_count": 0,
-      "series_ticker": "KXNDQHUD"
+      "open_markets": [],
+      "series_ticker": "KXNDQHUD",
+      "upcoming_market_count": 0,
+      "upcoming_markets": []
     }
   ],
   "source": "Kalshi public production Trade API"
