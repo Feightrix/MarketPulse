@@ -1,0 +1,60 @@
+name: MarketPulse Kalshi Short-Duration Scan
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'kalshi_short_duration_scan.py'
+      - '.github/workflows/kalshi-short-duration-scan.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Safety gate
+        run: |
+          set -euo pipefail
+          ! grep -Eq 'portfolio/orders|Create Order|POST .*orders' kalshi_short_duration_scan.py
+          grep -q 'order_submission_enabled.*False' kalshi_short_duration_scan.py
+
+      - name: Syntax check
+        run: python -m py_compile kalshi_short_duration_scan.py
+
+      - name: Scan public Kalshi markets
+        run: python kalshi_short_duration_scan.py
+
+      - name: Validate results
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('kalshi_short_duration_scan_results.json'))
+          assert d['order_submission_enabled'] is False
+          assert len(d['series']) == 2
+          assert {x['series_ticker'] for x in d['series']} == {'KXINXHUD','KXNDQHUD'}
+          print('Kalshi public market scan validated.')
+          PY
+
+      - name: Commit results
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add kalshi_short_duration_scan_results.json kalshi_short_duration_scan_results.md
+          if git diff --cached --quiet; then
+            echo 'No result changes.'
+          else
+            git commit -m 'Update Kalshi short-duration market scan'
+            git push
+          fi
