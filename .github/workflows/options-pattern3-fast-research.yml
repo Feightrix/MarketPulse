@@ -7,6 +7,7 @@ on:
     paths:
       - options_pattern3_fast_research.py
       - options_pattern3_fast_research_v2.py
+      - options_pattern3_trend_strength.py
       - .github/workflows/options-pattern3-fast-research.yml
 
 permissions:
@@ -37,59 +38,58 @@ jobs:
           python - <<'PY'
           from pathlib import Path
           base = Path('options_pattern3_fast_research.py').read_text()
-          v2 = Path('options_pattern3_fast_research_v2.py').read_text()
+          p3b = Path('options_pattern3_trend_strength.py').read_text()
           assert 'order_submission_enabled' in base
           assert 'https://data.alpaca.markets' in base
-          assert 'paper-api.alpaca.markets/v2/orders' not in base + v2
-          assert 'api.alpaca.markets/v2/orders' not in base + v2
-          assert 'MAX_DAILY_TRADES = 15' in base
-          assert 'entry_i = i + 1' in v2
-          assert 'MAX_NEXT_BAR_CHASE_ATR = 0.30' in v2
-          print('Corrected Pattern 3 research-only invariants: PASS')
+          assert 'paper-api.alpaca.markets/v2/orders' not in base + p3b
+          assert 'api.alpaca.markets/v2/orders' not in base + p3b
+          assert 'entry_i = i + 1' in p3b
+          assert 'LOOKBACK_DAYS = 240' in p3b
+          print('Pattern 3B research-only invariants: PASS')
           PY
 
       - name: Syntax check
         run: |
           python -m py_compile options_pattern3_fast_research.py
-          python -m py_compile options_pattern3_fast_research_v2.py
+          python -m py_compile options_pattern3_trend_strength.py
 
-      - name: Run corrected Pattern 3 speed screen
+      - name: Run Pattern 3B trend strength screen
         env:
           ALPACA_OPTIONS_API_KEY_ID: ${{ secrets.ALPACA_OPTIONS_API_KEY_ID }}
           ALPACA_OPTIONS_SECRET_KEY: ${{ secrets.ALPACA_OPTIONS_SECRET_KEY }}
-        run: python options_pattern3_fast_research_v2.py
+        run: python options_pattern3_trend_strength.py
 
-      - name: Validate corrected result
+      - name: Validate Pattern 3B result
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
-          r = json.loads(Path('options_pattern3_fast_v2_results.json').read_text())
+          r = json.loads(Path('options_pattern3_trend_strength_results.json').read_text())
           assert r['order_submission_enabled'] is False
-          assert r['common_sessions'] >= 40
+          assert r['common_sessions'] >= 80
           assert len(r['variants_predeclared']) == 6
           print('SELECTED', r['selected_development_candidate'])
           for k,v in r['results'].items():
               print(k, v['full'])
           PY
 
-      - name: Commit corrected results
+      - name: Commit Pattern 3B results
         if: always()
         run: |
           git config user.name "MarketPulse Bot"
           git config user.email "actions@users.noreply.github.com"
           mkdir -p /tmp/p3
-          for f in options_pattern3_fast_v2_results.json options_pattern3_fast_v2_results.md; do
+          for f in options_pattern3_trend_strength_results.json options_pattern3_trend_strength_results.md; do
             if [ -f "$f" ]; then cp "$f" "/tmp/p3/$f"; fi
           done
           git fetch origin main
           git reset --hard origin/main
-          for f in options_pattern3_fast_v2_results.json options_pattern3_fast_v2_results.md; do
+          for f in options_pattern3_trend_strength_results.json options_pattern3_trend_strength_results.md; do
             if [ -f "/tmp/p3/$f" ]; then cp "/tmp/p3/$f" "$f"; git add "$f"; fi
           done
           if git diff --cached --quiet; then
-            echo "No corrected result changes"
+            echo "No Pattern 3B result changes"
           else
-            git commit -m "Update corrected Pattern 3 fast research results"
+            git commit -m "Update Pattern 3B trend strength results"
             git push origin main
           fi
