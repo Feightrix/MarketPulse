@@ -1,0 +1,251 @@
+{
+  "account_constraints": {
+    "absolute_max_trade_premium_dollars": 500.0,
+    "daily_loss_lock_dollars": 75.0,
+    "max_concurrent": 2,
+    "max_daily_entries": 5,
+    "max_total_open_premium_fraction": 0.4,
+    "max_trade_premium_fraction": 0.2
+  },
+  "approx_required_daily_pl_dollars": 50.0,
+  "average_daily_pl_dollars": -0.18,
+  "average_daily_target_attainment_pct": -0.37,
+  "component_actual_option_results_before_account_caps": {
+    "P2_CORE": {
+      "avg_loss_dollars": -19.31,
+      "avg_premium_dollars": 439.86,
+      "avg_win_dollars": 20.64,
+      "ending_balance_dollars": 2468.05,
+      "expectancy_dollars": -2.66,
+      "losses": 7,
+      "max_drawdown_dollars": 86.76,
+      "net_pl_dollars": -31.95,
+      "profit_factor": 0.764,
+      "return_pct": -1.28,
+      "trades": 12,
+      "win_rate_pct": 41.67,
+      "wins": 5
+    },
+    "P2_TRANSFER": {
+      "avg_loss_dollars": -17.11,
+      "avg_premium_dollars": 281.52,
+      "avg_win_dollars": 29.09,
+      "ending_balance_dollars": 2515.48,
+      "expectancy_dollars": 0.34,
+      "losses": 28,
+      "max_drawdown_dollars": 130.18,
+      "net_pl_dollars": 15.48,
+      "profit_factor": 1.032,
+      "return_pct": 0.62,
+      "trades": 45,
+      "win_rate_pct": 37.78,
+      "wins": 17
+    },
+    "P6_RECLAIM": {
+      "avg_loss_dollars": -17.66,
+      "avg_premium_dollars": 319.91,
+      "avg_win_dollars": 22.72,
+      "ending_balance_dollars": 2425.18,
+      "expectancy_dollars": -0.76,
+      "losses": 57,
+      "max_drawdown_dollars": 174.55,
+      "net_pl_dollars": -74.82,
+      "profit_factor": 0.926,
+      "return_pct": -2.99,
+      "trades": 98,
+      "win_rate_pct": 41.84,
+      "wins": 41
+    }
+  },
+  "evaluation_sessions": 124,
+  "frozen_components": {
+    "P2": {
+      "symbols": [
+        "SPY",
+        "QQQ",
+        "IWM",
+        "GLD",
+        "TLT"
+      ],
+      "trend_cfg": {
+        "max_efficiency": 0.65,
+        "max_vwap_slope_atr": 0.5,
+        "min_rsi_turn": 3.0
+      },
+      "validated_core": [
+        "SPY"
+      ]
+    },
+    "P6": {
+      "symbols": [
+        "SPY",
+        "QQQ",
+        "IWM",
+        "AAPL",
+        "NVDA",
+        "AMD",
+        "TSLA",
+        "AMZN",
+        "META",
+        "MSFT",
+        "GOOGL",
+        "PLTR",
+        "BAC",
+        "INTC",
+        "SOFI",
+        "XLF",
+        "XLE",
+        "GLD",
+        "SLV",
+        "TLT"
+      ],
+      "variant": {
+        "min_sep": 0.06,
+        "min_slope": 0.02,
+        "min_vol": 0.7,
+        "name": "edges_125",
+        "session": "edges",
+        "target_r": 1.25,
+        "timeout": 10
+      }
+    },
+    "contract_policy": {
+      "side_moneyness": -0.005,
+      "target_abs_delta": 0.6,
+      "target_dte": 4
+    }
+  },
+  "generated_utc": "2026-08-25T03:52:08.325611+00:00",
+  "holdout_start": "2026-07-13",
+  "illustrative_linear_capital_for_1000_monthly": null,
+  "lookback_days": 180,
+  "method_note": "Research only. Signals and contract policy are frozen from prior work. Historical option fills use actual 1-minute option trade bars with a conservative half-spread haircut; historical BBO is unavailable. Linear capital estimate is illustrative, not a forecast or recommendation.",
+  "monthly_full": {
+    "average_monthly_pl_dollars": -3.24,
+    "best_month_dollars": 180.0,
+    "details": [
+      {
+        "month": "2026-02",
+        "pl_dollars": -76.73,
+        "trades": 3
+      },
+      {
+        "month": "2026-03",
+        "pl_dollars": -51.19,
+        "trades": 13
+      },
+      {
+        "month": "2026-04",
+        "pl_dollars": 0.34,
+        "trades": 27
+      },
+      {
+        "month": "2026-05",
+        "pl_dollars": 180.0,
+        "trades": 21
+      },
+      {
+        "month": "2026-06",
+        "pl_dollars": 142.46,
+        "trades": 29
+      },
+      {
+        "month": "2026-07",
+        "pl_dollars": -76.16,
+        "trades": 35
+      },
+      {
+        "month": "2026-08",
+        "pl_dollars": -141.41,
+        "trades": 25
+      }
+    ],
+    "median_monthly_pl_dollars": -51.19,
+    "months": 7,
+    "months_at_or_above_1000": 0,
+    "positive_months_pct": 42.86,
+    "target_attainment_pct_of_average": -0.32,
+    "worst_month_dollars": -141.41
+  },
+  "monthly_holdout": {
+    "average_monthly_pl_dollars": -37.78,
+    "best_month_dollars": 42.95,
+    "details": [
+      {
+        "month": "2026-07",
+        "pl_dollars": 42.95,
+        "trades": 24
+      },
+      {
+        "month": "2026-08",
+        "pl_dollars": -118.51,
+        "trades": 23
+      }
+    ],
+    "median_monthly_pl_dollars": -37.78,
+    "months": 2,
+    "months_at_or_above_1000": 0,
+    "positive_months_pct": 50.0,
+    "target_attainment_pct_of_average": -3.78,
+    "worst_month_dollars": -118.51
+  },
+  "monthly_profit_target_dollars": 1000.0,
+  "order_submission_enabled": false,
+  "portfolio_full": {
+    "avg_loss_dollars": -17.24,
+    "avg_premium_dollars": 315.86,
+    "avg_win_dollars": 24.27,
+    "daily_loss_lock_dollars": 75.0,
+    "ending_balance_dollars": 2477.31,
+    "ending_cash_dollars": 2477.31,
+    "expectancy_dollars": -0.15,
+    "losses": 90,
+    "max_concurrent": 2,
+    "max_daily_entries": 5,
+    "max_drawdown_dollars": 287.11,
+    "net_pl_dollars": -22.69,
+    "profit_factor": 0.985,
+    "return_pct": -0.91,
+    "skips": {
+      "premium_or_cash_cap": 2
+    },
+    "trades": 153,
+    "win_rate_pct": 41.18,
+    "wins": 63
+  },
+  "portfolio_holdout": {
+    "avg_loss_dollars": -17.12,
+    "avg_premium_dollars": 284.88,
+    "avg_win_dollars": 23.38,
+    "daily_loss_lock_dollars": 75.0,
+    "ending_balance_dollars": 2424.44,
+    "ending_cash_dollars": 2424.44,
+    "expectancy_dollars": -1.61,
+    "losses": 29,
+    "max_concurrent": 2,
+    "max_daily_entries": 5,
+    "max_drawdown_dollars": 216.54,
+    "net_pl_dollars": -75.56,
+    "profit_factor": 0.848,
+    "return_pct": -3.02,
+    "skips": {
+      "premium_or_cash_cap": 2
+    },
+    "trades": 47,
+    "win_rate_pct": 38.3,
+    "wins": 18
+  },
+  "required_monthly_return_pct_on_starting_balance": 40.0,
+  "signals": {
+    "P2": 98,
+    "P6": 128,
+    "priced": 155,
+    "pricing_skips": {
+      "no_affordable_priced_contract": 71
+    },
+    "total": 226
+  },
+  "starting_balance_dollars": 2500.0,
+  "strategy": "MarketPulse_1K_monthly_portfolio_test",
+  "target_met": false
+}
