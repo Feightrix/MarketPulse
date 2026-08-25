@@ -1,0 +1,59 @@
+name: MarketPulse Pattern 11 Compression Breakout Research
+
+on:
+  push:
+    paths:
+      - 'options_pattern11_compression_breakout.py'
+      - '.github/workflows/options-pattern11-compression-breakout.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      ALPACA_OPTIONS_API_KEY_ID: ${{ secrets.ALPACA_OPTIONS_API_KEY_ID }}
+      ALPACA_OPTIONS_SECRET_KEY: ${{ secrets.ALPACA_OPTIONS_SECRET_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Safety gate
+        run: |
+          set -euo pipefail
+          if grep -nE '/v2/orders|submit_order|place_order' options_pattern11_compression_breakout.py; then
+            echo 'Order submission reference found; refusing research run.'
+            exit 1
+          fi
+      - name: Syntax check
+        run: python -m py_compile options_pattern11_compression_breakout.py options_pattern10_opening_pullback.py
+      - name: Run underlying screen
+        run: python options_pattern11_compression_breakout.py
+      - name: Validate result
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('options_pattern11_compression_breakout_results.json'))
+          assert d['order_submission_enabled'] is False
+          assert d['reference_sessions'] >= 60
+          assert len(d['results']) == 4
+          print('selected:', (d.get('selected_development_candidate') or {}).get('variant',{}).get('name'))
+          print('advance:', d.get('advance_to_actual_options'))
+          PY
+      - name: Commit results
+        run: |
+          git config user.name 'MarketPulse Research Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add options_pattern11_compression_breakout_results.json options_pattern11_compression_breakout_results.md
+          if git diff --cached --quiet; then
+            echo 'No result changes.'
+          else
+            git commit -m 'Record Pattern 11 compression breakout results'
+            git push
+          fi
