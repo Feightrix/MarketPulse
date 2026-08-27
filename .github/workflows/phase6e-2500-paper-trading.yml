@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - phase6e_2500_paper_trader.py
+      - phase6e_adaptive_rebalance_gate.py
       - position_reconciliation_guard.py
       - .github/workflows/phase6e-2500-paper-trading.yml
   workflow_dispatch:
@@ -43,23 +44,29 @@ jobs:
           python - <<'PY'
           from pathlib import Path
           s = Path('phase6e_2500_paper_trader.py').read_text()
+          a = Path('phase6e_adaptive_rebalance_gate.py').read_text()
           g = Path('position_reconciliation_guard.py').read_text()
           assert 'ALPACA_2500_PAPER_API_KEY_ID' in s
           assert 'ALPACA_2500_PAPER_API_SECRET_KEY' in s
           assert 'https://api.alpaca.markets' not in s
           assert 'DESIGN_CAPITAL = 2500.0' in s
           assert 'WRONG_PAPER_ACCOUNT' in s
+          assert 'ALPACA_2500_PAPER_API_KEY_ID' in a
+          assert 'paper_only' in a
+          assert 'https://api.alpaca.markets' not in a
+          assert 'MIN_TARGET_L1_SHIFT_PCT = 7.5' in a
+          assert 'MIN_DAYS_BETWEEN_REBALANCES = 7' in a
           assert 'https://paper-api.alpaca.markets' in g
           assert 'https://api.alpaca.markets' not in g
           assert 'method="GET"' in g
           assert 'method="POST"' not in g
           assert 'method="DELETE"' not in g
           assert 'POSITION_DRIFT_BLOCKED' in g
-          print('Phase 6E dedicated $2,500 paper + position guard invariants: PASS')
+          print('Phase 6E dedicated $2,500 paper + adaptive gate + position guard invariants: PASS')
           PY
 
-      - name: Syntax check Phase 6E and position guard
-        run: python -m py_compile phase6e_2500_paper_trader.py position_reconciliation_guard.py
+      - name: Syntax check Phase 6E, adaptive gate and position guard
+        run: python -m py_compile phase6e_2500_paper_trader.py phase6e_adaptive_rebalance_gate.py position_reconciliation_guard.py
 
       - name: Reconcile actual Control positions
         env:
@@ -74,6 +81,12 @@ jobs:
             --key-env ALPACA_2500_PAPER_API_KEY_ID \
             --secret-env ALPACA_2500_PAPER_API_SECRET_KEY
 
+      - name: Evaluate adaptive mid-month rebalance
+        env:
+          ALPACA_2500_PAPER_API_KEY_ID: ${{ secrets.ALPACA_2500_PAPER_API_KEY_ID }}
+          ALPACA_2500_PAPER_API_SECRET_KEY: ${{ secrets.ALPACA_2500_PAPER_API_SECRET_KEY }}
+        run: python phase6e_adaptive_rebalance_gate.py
+
       - name: Run Phase 6E $2500 paper trader
         env:
           ALPACA_2500_PAPER_API_KEY_ID: ${{ secrets.ALPACA_2500_PAPER_API_KEY_ID }}
@@ -86,12 +99,12 @@ jobs:
           git config user.name "MarketPulse Bot"
           git config user.email "actions@users.noreply.github.com"
           mkdir -p /tmp/phase6e-output
-          for f in phase6e_2500_status.json phase6e_2500_status.md phase6e_2500_log.jsonl phase6e_2500_state.json; do
+          for f in phase6e_2500_status.json phase6e_2500_status.md phase6e_2500_log.jsonl phase6e_2500_state.json phase6e_adaptive_gate_status.json; do
             if [ -f "$f" ]; then cp "$f" "/tmp/phase6e-output/$f"; fi
           done
           git fetch origin main
           git reset --hard origin/main
-          for f in phase6e_2500_status.json phase6e_2500_status.md phase6e_2500_log.jsonl phase6e_2500_state.json; do
+          for f in phase6e_2500_status.json phase6e_2500_status.md phase6e_2500_log.jsonl phase6e_2500_state.json phase6e_adaptive_gate_status.json; do
             if [ -f "/tmp/phase6e-output/$f" ]; then
               cp "/tmp/phase6e-output/$f" "$f"
               git add "$f"
