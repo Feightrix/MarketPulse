@@ -1,0 +1,9 @@
+{
+  "min_days_between_rebalances": 7,
+  "min_target_l1_shift_pct": 7.5,
+  "paper_only": true,
+  "phase": "6E",
+  "problem": "Cannot compare Timestamp with datetime.date. Use ts == pd.Timestamp(date) or ts.date() == date instead.",
+  "status": "ADAPTIVE_GATE_ERROR",
+  "timestamp_utc": "2026-08-27T23:08:14.095304+00:00"
+}
