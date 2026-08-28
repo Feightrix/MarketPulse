@@ -1,5 +1,5 @@
 {
-  "current_equity": 2497.06,
+  "current_equity": 2496.56,
   "execution": {
     "failed_order_count": 0,
     "fill_rate_pct": 100.0,
@@ -39,24 +39,24 @@
     },
     "IWM": {
       "avg_entry_price": 303.618,
-      "current_price": 300.29,
-      "market_value": 257.802869,
+      "current_price": 300.11,
+      "market_value": 257.648336,
       "qty": 0.858513,
-      "unrealized_pl": -2.857131
+      "unrealized_pl": -3.011664
     },
     "QQQ": {
       "avg_entry_price": 734.344,
-      "current_price": 720.64,
-      "market_value": 147.26999,
+      "current_price": 719.5,
+      "market_value": 147.03702,
       "qty": 0.20436,
-      "unrealized_pl": -2.80055
+      "unrealized_pl": -3.03352
     },
     "SPY": {
       "avg_entry_price": 775.764,
-      "current_price": 771.0,
-      "market_value": 286.098054,
+      "current_price": 770.7,
+      "market_value": 285.986732,
       "qty": 0.371074,
-      "unrealized_pl": -1.767797
+      "unrealized_pl": -1.879119
     },
     "XLE": {
       "avg_entry_price": 62.11,
@@ -105,5 +105,5 @@
     "Waiting for the 4:00-4:59 PM ET close capture window"
   ],
   "status": "WAITING_CLOSE_WINDOW",
-  "timestamp_utc": "2026-08-28T04:20:53.614467+00:00"
+  "timestamp_utc": "2026-08-28T05:20:58.856253+00:00"
 }
