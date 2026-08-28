@@ -2,6 +2,10 @@ name: MarketPulse Kalshi Demo Account Check
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'kalshi_demo_account_check.py'
+      - '.github/workflows/kalshi-demo-account-check.yml'
 
 permissions:
   contents: write
