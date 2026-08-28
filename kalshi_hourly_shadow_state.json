@@ -1,0 +1,41 @@
+{
+  "closed_trades": [],
+  "daily": {
+    "2026-08-28": {
+      "entries": 0,
+      "risk_used_dollars": 0.0
+    }
+  },
+  "events": [],
+  "last_run": {
+    "open_shadow_trades": 0,
+    "order_submission_enabled": false,
+    "performance": {
+      "ending_balance_dollars": 2500.0,
+      "max_drawdown_dollars": 0.0,
+      "net_pl_dollars": 0,
+      "profit_factor": 0.0,
+      "trades": 0,
+      "win_rate_pct": 0.0,
+      "wins": 0
+    },
+    "production_market_data_only": true,
+    "signals": [
+      {
+        "elapsed_minutes": 55.0,
+        "qualified": false,
+        "reason": "outside_entry_window",
+        "remaining_minutes": 5.0
+      },
+      {
+        "elapsed_minutes": 55.0,
+        "qualified": false,
+        "reason": "outside_entry_window",
+        "remaining_minutes": 5.0
+      }
+    ],
+    "ts_utc": "2026-08-28T19:55:00.380575+00:00"
+  },
+  "open_trades": {},
+  "traded_tickers": []
+}
