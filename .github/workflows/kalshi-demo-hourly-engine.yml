@@ -1,0 +1,84 @@
+name: MarketPulse Kalshi Hourly Demo Engine
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'kalshi_demo_hourly_engine.py'
+      - '.github/workflows/kalshi-demo-hourly-engine.yml'
+  schedule:
+    - cron: '*/5 13-21 * * 1-5'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kalshi-demo-hourly-engine
+  cancel-in-progress: false
+
+jobs:
+  demo-trade:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install crypto dependency
+        run: pip install cryptography
+
+      - name: Demo-only safety gate
+        run: |
+          set -euo pipefail
+          grep -q 'https://external-api.demo.kalshi.co' kalshi_demo_hourly_engine.py
+          ! grep -q 'https://external-api.kalshi.com' kalshi_demo_hourly_engine.py
+          grep -q 'MAX_RISK_PER_TRADE_DOLLARS = 20.0' kalshi_demo_hourly_engine.py
+          grep -q 'MAX_DAILY_LOSS_DOLLARS = 75.0' kalshi_demo_hourly_engine.py
+          grep -q 'MAX_DAILY_ENTRIES = 12' kalshi_demo_hourly_engine.py
+          grep -q 'MAX_CONCURRENT_POSITIONS = 4' kalshi_demo_hourly_engine.py
+          grep -q 'immediate_or_cancel' kalshi_demo_hourly_engine.py
+          grep -q 'ENABLE_KALSHI_DEMO_TRADING' kalshi_demo_hourly_engine.py
+          echo 'Kalshi demo-only order safety validated.'
+
+      - name: Syntax check
+        run: python -m py_compile kalshi_demo_hourly_engine.py
+
+      - name: Run Kalshi hourly demo engine
+        env:
+          KALSHI_DEMO_API_KEY_ID: ${{ secrets.KALSHI_DEMO_API_KEY_ID }}
+          KALSHI_DEMO_PRIVATE_KEY: ${{ secrets.KALSHI_DEMO_PRIVATE_KEY }}
+          ALPACA_OPTIONS_API_KEY_ID: ${{ secrets.ALPACA_OPTIONS_API_KEY_ID }}
+          ALPACA_OPTIONS_SECRET_KEY: ${{ secrets.ALPACA_OPTIONS_SECRET_KEY }}
+          ENABLE_KALSHI_DEMO_TRADING: 'true'
+        run: python kalshi_demo_hourly_engine.py
+
+      - name: Validate state
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('kalshi_demo_hourly_state.json'))
+          r=d['last_run']
+          assert r['environment'] == 'demo'
+          assert r['demo_trading_enabled'] is True
+          assert r['equity_dollars'] >= 0
+          print('Kalshi hourly demo state validated.')
+          PY
+
+      - name: Commit demo state
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git pull --rebase origin main || true
+          git add kalshi_demo_hourly_state.json kalshi_demo_hourly_status.md
+          if git diff --cached --quiet; then
+            echo 'No demo state changes.'
+          else
+            git commit -m 'Update Kalshi hourly demo state'
+            git push
+          fi
