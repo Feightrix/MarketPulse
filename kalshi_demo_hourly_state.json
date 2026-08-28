@@ -1,0 +1,38 @@
+{
+  "daily": {
+    "2026-08-28": {
+      "entries": 0,
+      "estimated_risk": 0.0,
+      "start_equity": 2500.0
+    }
+  },
+  "events": [],
+  "last_run": {
+    "cash_dollars": 2500.0,
+    "daily_loss_lock": false,
+    "day_pl_dollars": 0.0,
+    "demo_trading_enabled": true,
+    "environment": "demo",
+    "equity_dollars": 2500.0,
+    "portfolio_value_dollars": 0.0,
+    "positions": 0,
+    "resting_orders": 0,
+    "signals": [
+      {
+        "proxy": "SPY",
+        "qualified": false,
+        "reason": "no_open_market",
+        "series": "KXINXHUD"
+      },
+      {
+        "proxy": "QQQ",
+        "qualified": false,
+        "reason": "no_open_market",
+        "series": "KXNDQHUD"
+      }
+    ],
+    "ts_utc": "2026-08-28T19:53:02.660986+00:00"
+  },
+  "orders": [],
+  "traded_tickers": []
+}
