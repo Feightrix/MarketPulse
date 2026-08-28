@@ -1,0 +1,75 @@
+name: MarketPulse Kalshi Hourly Production Shadow
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'kalshi_hourly_shadow.py'
+      - '.github/workflows/kalshi-hourly-shadow.yml'
+  schedule:
+    - cron: '*/5 13-21 * * 1-5'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kalshi-hourly-shadow
+  cancel-in-progress: false
+
+jobs:
+  shadow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Read-only production safety gate
+        run: |
+          set -euo pipefail
+          grep -q 'ORDER_SUBMISSION_ENABLED = False' kalshi_hourly_shadow.py
+          grep -q 'https://external-api.kalshi.com' kalshi_hourly_shadow.py
+          ! grep -Eq 'portfolio/events/orders|portfolio/orders|KALSHI-ACCESS-KEY|KALSHI-ACCESS-SIGNATURE|method="POST"|Request\(.*data=' kalshi_hourly_shadow.py
+          grep -q 'MAX_RISK_PER_TRADE_DOLLARS = 20.0' kalshi_hourly_shadow.py
+          grep -q 'MAX_DAILY_RISK_DOLLARS = 75.0' kalshi_hourly_shadow.py
+          grep -q 'MAX_DAILY_ENTRIES = 12' kalshi_hourly_shadow.py
+          echo 'Production shadow is read-only.'
+
+      - name: Syntax check
+        run: python -m py_compile kalshi_hourly_shadow.py
+
+      - name: Run production shadow tracker
+        env:
+          ALPACA_OPTIONS_API_KEY_ID: ${{ secrets.ALPACA_OPTIONS_API_KEY_ID }}
+          ALPACA_OPTIONS_SECRET_KEY: ${{ secrets.ALPACA_OPTIONS_SECRET_KEY }}
+        run: python kalshi_hourly_shadow.py
+
+      - name: Validate shadow state
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('kalshi_hourly_shadow_state.json'))
+          r=d['last_run']
+          assert r['order_submission_enabled'] is False
+          assert r['production_market_data_only'] is True
+          print('Kalshi production shadow validated read-only.')
+          PY
+
+      - name: Commit shadow state
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git pull --rebase origin main || true
+          git add kalshi_hourly_shadow_state.json kalshi_hourly_shadow_status.md
+          if git diff --cached --quiet; then
+            echo 'No shadow state changes.'
+          else
+            git commit -m 'Update Kalshi hourly production shadow'
+            git push
+          fi
