@@ -12,4 +12,4 @@
 - Active state: **FLAT**
 - Paper equity: **$2,500.00**
 - Options buying power: **$2,500.00**
-- Market open at last state change: **NO**
+- Market open at last state change: **YES**
