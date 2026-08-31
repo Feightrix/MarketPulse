@@ -1,7 +1,7 @@
 {
   "closed_trades": [],
   "daily": {
-    "2026-08-28": {
+    "2026-08-31": {
       "entries": 0,
       "risk_used_dollars": 0.0
     }
@@ -22,19 +22,15 @@
     "production_market_data_only": true,
     "signals": [
       {
-        "proxy": "SPY",
         "qualified": false,
-        "reason": "no_open_market",
-        "series": "KXINXHUD"
+        "reason": "invalid_market_quote"
       },
       {
-        "proxy": "QQQ",
         "qualified": false,
-        "reason": "no_open_market",
-        "series": "KXNDQHUD"
+        "reason": "invalid_market_quote"
       }
     ],
-    "ts_utc": "2026-08-29T02:36:39.076268+00:00"
+    "ts_utc": "2026-08-31T19:17:44.853314+00:00"
   },
   "open_trades": {},
   "traded_tickers": []
