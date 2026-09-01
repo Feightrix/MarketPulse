@@ -22,19 +22,19 @@
     "production_market_data_only": true,
     "signals": [
       {
-        "elapsed_minutes": 50.7,
+        "proxy": "SPY",
         "qualified": false,
-        "reason": "outside_entry_window",
-        "remaining_minutes": 9.3
+        "reason": "no_open_market",
+        "series": "KXINXHUD"
       },
       {
-        "elapsed_minutes": 50.7,
+        "proxy": "QQQ",
         "qualified": false,
-        "reason": "outside_entry_window",
-        "remaining_minutes": 9.3
+        "reason": "no_open_market",
+        "series": "KXNDQHUD"
       }
     ],
-    "ts_utc": "2026-09-01T19:50:44.984581+00:00"
+    "ts_utc": "2026-09-01T22:06:33.259130+00:00"
   },
   "open_trades": {},
   "traded_tickers": []
