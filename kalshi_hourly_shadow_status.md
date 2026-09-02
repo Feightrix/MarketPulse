@@ -14,5 +14,5 @@
 - Today's risk used: **$0.00 / $75.00**
 
 ## Current signals
-- **None / None** — qualified **NO** | reason `outside_entry_window`
-- **None / None** — qualified **NO** | reason `outside_entry_window`
+- **KXINXHUD / SPY** `KXINXHUD-26SEP021600-T7664.99` — NO | qualified **NO** | reason `edge_or_probability_below_gate` | model 0.2471 | edge -0.0029 | price 0.25
+- **None / None** — qualified **NO** | reason `invalid_market_quote`

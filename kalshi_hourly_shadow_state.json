@@ -22,19 +22,32 @@
     "production_market_data_only": true,
     "signals": [
       {
-        "elapsed_minutes": 54.3,
+        "direction": "NO",
+        "edge": -0.0029,
+        "elapsed_minutes": 32.0,
+        "entry_price": 0.25,
+        "market_close_time": "2026-09-02T20:00:00Z",
+        "market_open_time": "2026-09-02T19:00:00Z",
+        "market_ticker": "KXINXHUD-26SEP021600-T7664.99",
+        "model_fair_yes": 0.7529,
+        "model_probability": 0.2471,
+        "proxy": "SPY",
+        "proxy_hour_return_pct": 0.0732,
         "qualified": false,
-        "reason": "outside_entry_window",
-        "remaining_minutes": 5.7
+        "reason": "edge_or_probability_below_gate",
+        "remaining_minutes": 28.0,
+        "series": "KXINXHUD",
+        "spread": 0.08,
+        "yes_ask": 0.83,
+        "yes_bid": 0.75,
+        "z_score": 0.8328
       },
       {
-        "elapsed_minutes": 54.3,
         "qualified": false,
-        "reason": "outside_entry_window",
-        "remaining_minutes": 5.7
+        "reason": "invalid_market_quote"
       }
     ],
-    "ts_utc": "2026-09-02T16:54:16.129461+00:00"
+    "ts_utc": "2026-09-02T19:32:01.364876+00:00"
   },
   "open_trades": {},
   "traded_tickers": []
