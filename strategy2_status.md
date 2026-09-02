@@ -1,12 +1,12 @@
 # MarketPulse Strategy 2 — Strategy 1 Clone at 57.5% Risk Cap
 
-**Status: RISK_CAP_57_5_REBALANCED**
+**Status: RISK_CAP_57_5_HOLD**
 
 - Experiment: **CONTROL_CLONE_RISK_CAP_57_5**
 - Risk cap: **57.5%**
-- Shadow equity: **$2,476.29**
+- Shadow equity: **$2,485.34**
 - Flat broker cash equity: **$2,495.10**
-- Signal date: **2026-09-01**
+- Signal date: **2026-09-02**
 - Gross exposure: **95.00%**
 - Net exposure: **+85.00%**
 - Profit-lock overlay: **OFF**
@@ -15,12 +15,12 @@
 
 ## Current target weights
 - BIL: +36.125%
-- IWM: +11.590%
-- QQQ: +7.337%
-- SPY: +13.784%
-- XLE: +9.655%
+- IWM: +11.242%
+- QQQ: +7.549%
+- SPY: +14.220%
+- XLE: +9.506%
 - XLK: +2.500%
-- XLP: +6.509%
+- XLP: +6.358%
 - XLU: -2.500%
 - XLV: +2.500%
 - XLY: -2.500%
