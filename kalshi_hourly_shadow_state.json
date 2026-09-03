@@ -22,16 +22,19 @@
     "production_market_data_only": true,
     "signals": [
       {
+        "proxy": "SPY",
         "qualified": false,
-        "reason": "spread_too_wide",
-        "spread": 0.2
+        "reason": "no_open_market",
+        "series": "KXINXHUD"
       },
       {
+        "proxy": "QQQ",
         "qualified": false,
-        "reason": "invalid_market_quote"
+        "reason": "no_open_market",
+        "series": "KXNDQHUD"
       }
     ],
-    "ts_utc": "2026-09-03T19:27:23.180618+00:00"
+    "ts_utc": "2026-09-03T21:47:48.263696+00:00"
   },
   "open_trades": {},
   "traded_tickers": []
