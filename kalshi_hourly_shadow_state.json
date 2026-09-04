@@ -1,7 +1,7 @@
 {
   "closed_trades": [],
   "daily": {
-    "2026-09-03": {
+    "2026-09-04": {
       "entries": 0,
       "risk_used_dollars": 0.0
     }
@@ -22,19 +22,32 @@
     "production_market_data_only": true,
     "signals": [
       {
+        "direction": "NO",
+        "edge": 0.0252,
+        "elapsed_minutes": 39.0,
+        "entry_price": 0.1,
+        "market_close_time": "2026-09-04T17:00:00Z",
+        "market_open_time": "2026-09-04T16:00:00Z",
+        "market_ticker": "KXINXHUD-26SEP041300-T7714.96",
+        "model_fair_yes": 0.8748,
+        "model_probability": 0.1252,
         "proxy": "SPY",
+        "proxy_hour_return_pct": 0.1039,
         "qualified": false,
-        "reason": "no_open_market",
-        "series": "KXINXHUD"
+        "reason": "edge_or_probability_below_gate",
+        "remaining_minutes": 21.0,
+        "series": "KXINXHUD",
+        "spread": 0.08,
+        "yes_ask": 0.98,
+        "yes_bid": 0.9,
+        "z_score": 1.5625
       },
       {
-        "proxy": "QQQ",
         "qualified": false,
-        "reason": "no_open_market",
-        "series": "KXNDQHUD"
+        "reason": "invalid_market_quote"
       }
     ],
-    "ts_utc": "2026-09-03T23:33:02.030646+00:00"
+    "ts_utc": "2026-09-04T16:39:00.117424+00:00"
   },
   "open_trades": {},
   "traded_tickers": []

@@ -14,5 +14,5 @@
 - Today's risk used: **$0.00 / $75.00**
 
 ## Current signals
-- **KXINXHUD / SPY** — qualified **NO** | reason `no_open_market`
-- **KXNDQHUD / QQQ** — qualified **NO** | reason `no_open_market`
+- **KXINXHUD / SPY** `KXINXHUD-26SEP041300-T7714.96` — NO | qualified **NO** | reason `edge_or_probability_below_gate` | model 0.1252 | edge 0.0252 | price 0.1
+- **None / None** — qualified **NO** | reason `invalid_market_quote`
