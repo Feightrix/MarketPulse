@@ -2,7 +2,7 @@
   "closed_trades": [],
   "daily": {
     "closed_pl_dollars": 0.0,
-    "date": "2026-09-03",
+    "date": "2026-09-04",
     "entries": 0,
     "locked": false
   },
@@ -52,6 +52,11 @@
       "date": "2026-09-03",
       "event": "NEW_TRADING_DAY",
       "ts_utc": "2026-09-03T16:43:25.815317+00:00"
+    },
+    {
+      "date": "2026-09-04",
+      "event": "NEW_TRADING_DAY",
+      "ts_utc": "2026-09-04T16:38:11.221012+00:00"
     }
   ],
   "last_signal_key": null,
