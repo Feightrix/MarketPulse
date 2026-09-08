@@ -19,19 +19,19 @@
     "resting_orders": 0,
     "signals": [
       {
-        "proxy": "SPY",
+        "elapsed_minutes": 15.8,
         "qualified": false,
-        "reason": "no_open_market",
-        "series": "KXINXHUD"
+        "reason": "outside_entry_window",
+        "remaining_minutes": 7.9
       },
       {
-        "proxy": "QQQ",
+        "elapsed_minutes": 15.8,
         "qualified": false,
-        "reason": "no_open_market",
-        "series": "KXNDQHUD"
+        "reason": "outside_entry_window",
+        "remaining_minutes": 7.9
       }
     ],
-    "ts_utc": "2026-09-08T17:03:18.602823+00:00"
+    "ts_utc": "2026-09-08T19:52:03.286724+00:00"
   },
   "orders": [],
   "traded_tickers": []
