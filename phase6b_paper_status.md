@@ -2,7 +2,7 @@
 
 **Status: PAPER_AUTH_FAILED**
 
-- Timestamp UTC: 2026-09-07T19:06:38.017217+00:00
+- Timestamp UTC: 2026-09-08T18:34:06.260321+00:00
 - Paper endpoint only: **https://paper-api.alpaca.markets**
 
 ## Blockers
