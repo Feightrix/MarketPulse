@@ -1,5 +1,5 @@
 {
-  "current_equity": 2496.54,
+  "current_equity": 2494.83,
   "execution": {
     "failed_order_count": 0,
     "fill_rate_pct": 100.0,
@@ -31,10 +31,81 @@
     "worst_completed_month_pct": -0.38559999999999706
   },
   "phase": "6F",
-  "positions": {},
+  "positions": {
+    "BIL": {
+      "avg_entry_price": 91.55,
+      "current_price": 91.46,
+      "market_value": 1061.571464,
+      "qty": 11.606948,
+      "unrealized_pl": -1.044625
+    },
+    "IWM": {
+      "avg_entry_price": 303.618,
+      "current_price": 294.67,
+      "market_value": 252.978026,
+      "qty": 0.858513,
+      "unrealized_pl": -7.681974
+    },
+    "QQQ": {
+      "avg_entry_price": 734.344,
+      "current_price": 717.93,
+      "market_value": 146.716175,
+      "qty": 0.20436,
+      "unrealized_pl": -3.354365
+    },
+    "SPY": {
+      "avg_entry_price": 775.764,
+      "current_price": 765.84,
+      "market_value": 284.183312,
+      "qty": 0.371074,
+      "unrealized_pl": -3.682539
+    },
+    "XLE": {
+      "avg_entry_price": 62.11,
+      "current_price": 64.92,
+      "market_value": 225.054788,
+      "qty": 3.466648,
+      "unrealized_pl": 9.741281
+    },
+    "XLK": {
+      "avg_entry_price": 191.656,
+      "current_price": 187.87,
+      "market_value": 61.791194,
+      "qty": 0.328904,
+      "unrealized_pl": -1.245231
+    },
+    "XLP": {
+      "avg_entry_price": 84.8,
+      "current_price": 84.02,
+      "market_value": 144.932652,
+      "qty": 1.724978,
+      "unrealized_pl": -1.345482
+    },
+    "XLU": {
+      "avg_entry_price": 43.88,
+      "current_price": 43.45,
+      "market_value": -43.45,
+      "qty": -1.0,
+      "unrealized_pl": 0.43
+    },
+    "XLV": {
+      "avg_entry_price": 167.716,
+      "current_price": 167.13,
+      "market_value": 62.410353,
+      "qty": 0.373424,
+      "unrealized_pl": -0.218827
+    },
+    "XLY": {
+      "avg_entry_price": 117.26,
+      "current_price": 113.99,
+      "market_value": -113.99,
+      "qty": -1.0,
+      "unrealized_pl": 3.27
+    }
+  },
   "problems": [
-    "No U.S. equity market session on this date"
+    "Waiting for the 4:00-4:59 PM ET close capture window"
   ],
-  "status": "MARKET_CLOSED_NO_SNAPSHOT",
-  "timestamp_utc": "2026-09-07T23:28:14.451987+00:00"
+  "status": "WAITING_CLOSE_WINDOW",
+  "timestamp_utc": "2026-09-08T22:35:20.722962+00:00"
 }
