@@ -22,19 +22,16 @@
     "production_market_data_only": true,
     "signals": [
       {
-        "elapsed_minutes": 44.0,
         "qualified": false,
-        "reason": "outside_entry_window",
-        "remaining_minutes": 16.0
+        "reason": "spread_too_wide",
+        "spread": 0.08
       },
       {
-        "elapsed_minutes": 44.0,
         "qualified": false,
-        "reason": "outside_entry_window",
-        "remaining_minutes": 16.0
+        "reason": "invalid_market_quote"
       }
     ],
-    "ts_utc": "2026-09-10T16:44:02.617645+00:00"
+    "ts_utc": "2026-09-10T19:16:40.185205+00:00"
   },
   "open_trades": {},
   "traded_tickers": []
