@@ -4,9 +4,9 @@
 
 - Experiment: **CONTROL_CLONE_RISK_CAP_57_5**
 - Risk cap: **57.5%**
-- Shadow equity: **$2,471.06**
+- Shadow equity: **$2,478.87**
 - Flat broker cash equity: **$2,495.10**
-- Signal date: **2026-09-10**
+- Signal date: **2026-09-11**
 - Gross exposure: **100.00%**
 - Net exposure: **+85.00%**
 - Profit-lock overlay: **OFF**
@@ -15,10 +15,10 @@
 
 ## Current target weights
 - BIL: +36.125%
-- IWM: +13.335%
-- QQQ: +9.841%
-- SPY: +16.974%
-- XLE: +11.226%
+- IWM: +13.480%
+- QQQ: +9.797%
+- SPY: +16.787%
+- XLE: +11.311%
 - XLK: +2.500%
 - XLP: -2.500%
 - XLU: -2.500%
