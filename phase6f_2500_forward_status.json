@@ -1,5 +1,5 @@
 {
-  "current_equity": 2488.14,
+  "current_equity": 2488.42,
   "execution": {
     "failed_order_count": 0,
     "fill_rate_pct": 100.0,
@@ -34,45 +34,45 @@
   "positions": {
     "BIL": {
       "avg_entry_price": 91.55,
-      "current_price": 91.5397,
-      "market_value": 1062.496538,
+      "current_price": 91.54,
+      "market_value": 1062.50002,
       "qty": 11.606948,
-      "unrealized_pl": -0.119551
+      "unrealized_pl": -0.116069
     },
     "IWM": {
       "avg_entry_price": 303.618,
-      "current_price": 284.85,
-      "market_value": 244.547428,
+      "current_price": 284.94,
+      "market_value": 244.624694,
       "qty": 0.858513,
-      "unrealized_pl": -16.112572
+      "unrealized_pl": -16.035306
     },
     "QQQ": {
       "avg_entry_price": 734.344,
-      "current_price": 715.39,
-      "market_value": 146.1971,
+      "current_price": 715.6399,
+      "market_value": 146.24817,
       "qty": 0.20436,
-      "unrealized_pl": -3.87344
+      "unrealized_pl": -3.82237
     },
     "SPY": {
       "avg_entry_price": 775.764,
-      "current_price": 761.79,
-      "market_value": 282.680462,
+      "current_price": 761.96,
+      "market_value": 282.743545,
       "qty": 0.371074,
-      "unrealized_pl": -5.185389
+      "unrealized_pl": -5.122306
     },
     "XLE": {
       "avg_entry_price": 62.11,
-      "current_price": 64.58,
-      "market_value": 223.876128,
+      "current_price": 64.62,
+      "market_value": 224.014794,
       "qty": 3.466648,
-      "unrealized_pl": 8.562621
+      "unrealized_pl": 8.701287
     },
     "XLK": {
       "avg_entry_price": 191.656,
-      "current_price": 188.06,
-      "market_value": 61.853686,
+      "current_price": 187.9,
+      "market_value": 61.801062,
       "qty": 0.328904,
-      "unrealized_pl": -1.182739
+      "unrealized_pl": -1.235363
     },
     "XLP": {
       "avg_entry_price": 84.8,
@@ -107,5 +107,5 @@
     "Waiting for the 4:00-4:59 PM ET close capture window"
   ],
   "status": "WAITING_CLOSE_WINDOW",
-  "timestamp_utc": "2026-09-17T22:49:41.097171+00:00"
+  "timestamp_utc": "2026-09-17T23:32:02.940820+00:00"
 }
