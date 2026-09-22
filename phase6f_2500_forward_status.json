@@ -1,5 +1,5 @@
 {
-  "current_equity": 2494.39,
+  "current_equity": 2494.42,
   "execution": {
     "failed_order_count": 0,
     "fill_rate_pct": 100.0,
@@ -41,38 +41,38 @@
     },
     "IWM": {
       "avg_entry_price": 303.618,
-      "current_price": 287.23,
-      "market_value": 246.590689,
+      "current_price": 287.2,
+      "market_value": 246.564934,
       "qty": 0.858513,
-      "unrealized_pl": -14.069311
+      "unrealized_pl": -14.095066
     },
     "QQQ": {
       "avg_entry_price": 734.344,
-      "current_price": 747.73,
-      "market_value": 152.806103,
+      "current_price": 748.12,
+      "market_value": 152.885803,
       "qty": 0.20436,
-      "unrealized_pl": 2.735563
+      "unrealized_pl": 2.815263
     },
     "SPY": {
       "avg_entry_price": 775.764,
-      "current_price": 773.53,
-      "market_value": 287.036871,
+      "current_price": 773.67,
+      "market_value": 287.088822,
       "qty": 0.371074,
-      "unrealized_pl": -0.82898
+      "unrealized_pl": -0.777029
     },
     "XLE": {
       "avg_entry_price": 62.11,
-      "current_price": 61.91,
-      "market_value": 214.620178,
+      "current_price": 61.89,
+      "market_value": 214.550845,
       "qty": 3.466648,
-      "unrealized_pl": -0.693329
+      "unrealized_pl": -0.762662
     },
     "XLK": {
       "avg_entry_price": 191.656,
-      "current_price": 196.38,
-      "market_value": 64.590168,
+      "current_price": 196.3,
+      "market_value": 64.563855,
       "qty": 0.328904,
-      "unrealized_pl": 1.553743
+      "unrealized_pl": 1.52743
     },
     "XLP": {
       "avg_entry_price": 84.8,
@@ -83,10 +83,10 @@
     },
     "XLU": {
       "avg_entry_price": 43.88,
-      "current_price": 40.57,
-      "market_value": -40.57,
+      "current_price": 40.55,
+      "market_value": -40.55,
       "qty": -1.0,
-      "unrealized_pl": 3.31
+      "unrealized_pl": 3.33
     },
     "XLV": {
       "avg_entry_price": 167.716,
@@ -107,5 +107,5 @@
     "Waiting for the 4:00-4:59 PM ET close capture window"
   ],
   "status": "WAITING_CLOSE_WINDOW",
-  "timestamp_utc": "2026-09-22T22:54:12.559237+00:00"
+  "timestamp_utc": "2026-09-22T23:35:15.754100+00:00"
 }
