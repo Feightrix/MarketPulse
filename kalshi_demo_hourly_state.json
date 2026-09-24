@@ -1,6 +1,6 @@
 {
   "daily": {
-    "2026-09-23": {
+    "2026-09-24": {
       "entries": 0,
       "estimated_risk": 0.0,
       "start_equity": 2500.0
@@ -19,19 +19,19 @@
     "resting_orders": 0,
     "signals": [
       {
-        "proxy": "SPY",
+        "elapsed_minutes": 6.3,
         "qualified": false,
-        "reason": "no_open_market",
-        "series": "KXINXHUD"
+        "reason": "outside_entry_window",
+        "remaining_minutes": 16.5
       },
       {
-        "proxy": "QQQ",
+        "elapsed_minutes": 6.3,
         "qualified": false,
-        "reason": "no_open_market",
-        "series": "KXNDQHUD"
+        "reason": "outside_entry_window",
+        "remaining_minutes": 16.5
       }
     ],
-    "ts_utc": "2026-09-23T23:09:56.501333+00:00"
+    "ts_utc": "2026-09-24T17:43:28.432623+00:00"
   },
   "orders": [],
   "traded_tickers": []
