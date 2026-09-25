@@ -19,10 +19,10 @@
     "resting_orders": 0,
     "signals": [
       {
-        "elapsed_minutes": 7.9,
+        "proxy": "SPY",
         "qualified": false,
-        "reason": "outside_entry_window",
-        "remaining_minutes": 14.8
+        "reason": "no_open_market",
+        "series": "KXINXHUD"
       },
       {
         "proxy": "QQQ",
@@ -31,7 +31,7 @@
         "series": "KXNDQHUD"
       }
     ],
-    "ts_utc": "2026-09-25T17:45:09.481764+00:00"
+    "ts_utc": "2026-09-25T20:45:49.112587+00:00"
   },
   "orders": [],
   "traded_tickers": []
