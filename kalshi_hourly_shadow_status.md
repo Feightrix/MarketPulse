@@ -14,5 +14,5 @@
 - Today's risk used: **$0.00 / $75.00**
 
 ## Current signals
-- **None / None** — qualified **NO** | reason `spread_too_wide`
-- **None / None** — qualified **NO** | reason `invalid_market_quote`
+- **KXINXHUD / SPY** — qualified **NO** | reason `no_open_market`
+- **KXNDQHUD / QQQ** — qualified **NO** | reason `no_open_market`
