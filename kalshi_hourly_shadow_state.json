@@ -1,7 +1,7 @@
 {
   "closed_trades": [],
   "daily": {
-    "2026-10-06": {
+    "2026-10-07": {
       "entries": 0,
       "risk_used_dollars": 0.0
     }
@@ -22,19 +22,19 @@
     "production_market_data_only": true,
     "signals": [
       {
-        "proxy": "SPY",
+        "elapsed_minutes": 7.5,
         "qualified": false,
-        "reason": "no_open_market",
-        "series": "KXINXHUD"
+        "reason": "outside_entry_window",
+        "remaining_minutes": 52.5
       },
       {
-        "proxy": "QQQ",
+        "elapsed_minutes": 7.5,
         "qualified": false,
-        "reason": "no_open_market",
-        "series": "KXNDQHUD"
+        "reason": "outside_entry_window",
+        "remaining_minutes": 52.5
       }
     ],
-    "ts_utc": "2026-10-06T22:47:28.256195+00:00"
+    "ts_utc": "2026-10-07T19:07:28.432029+00:00"
   },
   "open_trades": {},
   "traded_tickers": []
