@@ -1,5 +1,5 @@
 {
-  "current_equity": 2504.49,
+  "current_equity": 2505.36,
   "execution": {
     "failed_order_count": 0,
     "fill_rate_pct": 100.0,
@@ -34,59 +34,59 @@
   "positions": {
     "BIL": {
       "avg_entry_price": 91.55,
-      "current_price": 91.5121,
-      "market_value": 1062.176186,
+      "current_price": 91.52,
+      "market_value": 1062.267881,
       "qty": 11.606948,
-      "unrealized_pl": -0.439903
+      "unrealized_pl": -0.348208
     },
     "IWM": {
       "avg_entry_price": 303.618,
-      "current_price": 276.75,
-      "market_value": 237.593473,
+      "current_price": 276.78,
+      "market_value": 237.619228,
       "qty": 0.858513,
-      "unrealized_pl": -23.066527
+      "unrealized_pl": -23.040772
     },
     "QQQ": {
       "avg_entry_price": 734.344,
-      "current_price": 743.1,
-      "market_value": 151.859916,
+      "current_price": 743.99,
+      "market_value": 152.041796,
       "qty": 0.20436,
-      "unrealized_pl": 1.789376
+      "unrealized_pl": 1.971256
     },
     "SPY": {
       "avg_entry_price": 775.764,
-      "current_price": 777.8599,
-      "market_value": 288.643585,
+      "current_price": 778.29,
+      "market_value": 288.803183,
       "qty": 0.371074,
-      "unrealized_pl": 0.777734
+      "unrealized_pl": 0.937332
     },
     "XLE": {
       "avg_entry_price": 62.11,
-      "current_price": 67.1861,
-      "market_value": 232.910559,
+      "current_price": 67.2,
+      "market_value": 232.958746,
       "qty": 3.466648,
-      "unrealized_pl": 17.597052
+      "unrealized_pl": 17.645239
     },
     "XLK": {
       "avg_entry_price": 191.656,
-      "current_price": 196.15,
-      "market_value": 64.51452,
+      "current_price": 196.28,
+      "market_value": 64.557277,
       "qty": 0.328904,
-      "unrealized_pl": 1.478095
+      "unrealized_pl": 1.520852
     },
     "XLP": {
       "avg_entry_price": 84.8,
-      "current_price": 84.0463,
-      "market_value": 144.978018,
+      "current_price": 84.19,
+      "market_value": 145.225898,
       "qty": 1.724978,
-      "unrealized_pl": -1.300116
+      "unrealized_pl": -1.052236
     },
     "XLU": {
       "avg_entry_price": 43.88,
-      "current_price": 41.81,
-      "market_value": -41.81,
+      "current_price": 41.74,
+      "market_value": -41.74,
       "qty": -1.0,
-      "unrealized_pl": 2.07
+      "unrealized_pl": 2.14
     },
     "XLV": {
       "avg_entry_price": 167.716,
@@ -107,5 +107,5 @@
     "Waiting for the 4:00-4:59 PM ET close capture window"
   ],
   "status": "WAITING_CLOSE_WINDOW",
-  "timestamp_utc": "2026-10-13T23:42:37.808808+00:00"
+  "timestamp_utc": "2026-10-14T00:16:02.460651+00:00"
 }
