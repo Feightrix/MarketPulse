@@ -10,7 +10,7 @@
   "gross_exposure_pct": 100.0,
   "last_rebalance_month": "2026-10",
   "live_trading_locked": true,
-  "market_open": false,
+  "market_open": true,
   "net_exposure_pct": 85.0,
   "neutral_sleeve": {
     "XLE": 0.16666666666666666,
@@ -54,7 +54,7 @@
     "XLV": 0.024999999999999998,
     "XLY": -0.024999999999999998
   },
-  "timestamp_utc": "2026-10-13T20:36:48.490771+00:00",
+  "timestamp_utc": "2026-10-14T19:18:01.878239+00:00",
   "trading_blocked": false,
   "trend_sleeve": {
     "BIL": 0.42500000000000004,
