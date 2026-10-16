@@ -2,8 +2,8 @@
 
 **Status: WAITING_CLOSE_WINDOW**
 
-- Timestamp UTC: 2026-10-15T23:00:59.668812+00:00
-- Official close equity: **$2,499.25**
+- Timestamp UTC: 2026-10-16T22:46:47.182124+00:00
+- Official close equity: **$2,494.21**
 - Daily P/L: **$-1.33 (-0.0534%)**
 - Cumulative P/L: **$-9.64 (-0.3856%)**
 - Max drawdown: **0.39%**
@@ -23,16 +23,16 @@
 - Current capital-fit gate: **None**
 
 ## Holdings
-- BIL: +11.6069 shares | value $+1,062.38 | unrealized $-0.23
-- IWM: +0.858513 shares | value $+236.13 | unrealized $-24.53
-- QQQ: +0.20436 shares | value $+148.40 | unrealized $-1.67
-- SPY: +0.371074 shares | value $+286.23 | unrealized $-1.64
-- XLE: +3.46665 shares | value $+230.45 | unrealized $+15.14
-- XLK: +0.328904 shares | value $+62.10 | unrealized $-0.94
-- XLP: +1.72498 shares | value $+149.70 | unrealized $+3.42
-- XLU: -1 shares | value $-41.60 | unrealized $+2.28
-- XLV: +0.373424 shares | value $+66.25 | unrealized $+3.62
-- XLY: -1 shares | value $-113.41 | unrealized $+3.85
+- BIL: +11.6069 shares | value $+1,062.76 | unrealized $+0.14
+- IWM: +0.858513 shares | value $+232.00 | unrealized $-28.66
+- QQQ: +0.20436 shares | value $+144.89 | unrealized $-5.18
+- SPY: +0.371074 shares | value $+282.70 | unrealized $-5.16
+- XLE: +3.46665 shares | value $+236.49 | unrealized $+21.18
+- XLK: +0.328904 shares | value $+60.25 | unrealized $-2.79
+- XLP: +1.72498 shares | value $+151.14 | unrealized $+4.86
+- XLU: -1 shares | value $-42.18 | unrealized $+1.70
+- XLV: +0.373424 shares | value $+65.99 | unrealized $+3.36
+- XLY: -1 shares | value $-112.46 | unrealized $+4.80
 
 ## Forward-test gate
 
