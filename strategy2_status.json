@@ -1,5 +1,5 @@
 {
-  "account_equity": 2468.9810290724095,
+  "account_equity": 2459.4135316814777,
   "account_status": "ACTIVE",
   "broker_cash": 2495.1,
   "broker_cash_equity": 2495.1,
@@ -7,7 +7,7 @@
   "broker_positions": {},
   "execution_mode": "synthetic_exact_weight_shadow",
   "experiment": "CONTROL_CLONE_RISK_CAP_57_5",
-  "gross_exposure_pct": 99.99999999999999,
+  "gross_exposure_pct": 100.0,
   "last_rebalance_month": "2026-10",
   "live_trading_locked": true,
   "market_open": true,
@@ -39,28 +39,28 @@
     "XLV": 0.3714085412040761,
     "XLY": -0.5671633323780705
   },
-  "signal_date": "2026-10-15",
+  "signal_date": "2026-10-16",
   "status": "RISK_CAP_57_5_HOLD",
   "strategy": "2",
   "target_weights": {
     "BIL": 0.36125,
-    "QQQ": 0.11304839073754813,
-    "SPY": 0.17744532432874424,
-    "XLE": 0.10860827976235879,
+    "QQQ": 0.10974433258622636,
+    "SPY": 0.17638003047993844,
+    "XLE": 0.10882948902476224,
     "XLF": -0.024999999999999998,
     "XLK": 0.024999999999999998,
-    "XLP": 0.11464800517134875,
+    "XLP": 0.1187961479090729,
     "XLU": -0.024999999999999998,
     "XLV": 0.024999999999999998,
     "XLY": -0.024999999999999998
   },
-  "timestamp_utc": "2026-10-15T19:03:59.630734+00:00",
+  "timestamp_utc": "2026-10-16T18:45:35.024841+00:00",
   "trading_blocked": false,
   "trend_sleeve": {
     "BIL": 0.42500000000000004,
-    "QQQ": 0.13299810675005663,
-    "SPY": 0.2087592050926403,
-    "XLE": 0.0983626820733633,
-    "XLP": 0.1348800060839397
+    "QQQ": 0.1291109795132075,
+    "SPY": 0.2075059182116923,
+    "XLE": 0.09862292826442617,
+    "XLP": 0.139760174010674
   }
 }
