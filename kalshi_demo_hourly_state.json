@@ -1,6 +1,6 @@
 {
   "daily": {
-    "2026-10-20": {
+    "2026-10-21": {
       "entries": 0,
       "estimated_risk": 0.0,
       "start_equity": 2500.0
@@ -31,7 +31,7 @@
         "series": "KXNDQHUD"
       }
     ],
-    "ts_utc": "2026-10-20T23:35:26.900254+00:00"
+    "ts_utc": "2026-10-21T17:53:17.731546+00:00"
   },
   "orders": [],
   "traded_tickers": []
