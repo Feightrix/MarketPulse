@@ -13,5 +13,5 @@
 - Active positions: **0 / 4**
 
 ## Current signals
-- **KXINXHUD / SPY** — qualified **NO** | reason `no_open_market`
-- **KXNDQHUD / QQQ** — qualified **NO** | reason `no_open_market`
+- **None / None** — qualified **NO** | reason `outside_entry_window`
+- **None / None** — qualified **NO** | reason `outside_entry_window`
