@@ -1,7 +1,7 @@
 {
   "closed_trades": [],
   "daily": {
-    "2026-11-04": {
+    "2026-11-05": {
       "entries": 0,
       "risk_used_dollars": 0.0
     }
@@ -22,19 +22,15 @@
     "production_market_data_only": true,
     "signals": [
       {
-        "elapsed_minutes": 8.4,
         "qualified": false,
-        "reason": "outside_entry_window",
-        "remaining_minutes": 51.6
+        "reason": "invalid_market_quote"
       },
       {
-        "elapsed_minutes": 8.4,
         "qualified": false,
-        "reason": "outside_entry_window",
-        "remaining_minutes": 51.6
+        "reason": "invalid_market_quote"
       }
     ],
-    "ts_utc": "2026-11-04T20:08:21.302760+00:00"
+    "ts_utc": "2026-11-05T20:23:09.658871+00:00"
   },
   "open_trades": {},
   "traded_tickers": []
