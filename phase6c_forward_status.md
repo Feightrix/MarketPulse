@@ -2,7 +2,7 @@
 
 **Status: PAPER_READ_FAILED**
 
-- Timestamp UTC: 2026-11-07T00:51:50.309032+00:00
+- Timestamp UTC: 2026-11-10T02:40:31.752859+00:00
 - Paper endpoint only: **https://paper-api.alpaca.markets**
 - Real-money trading: **LOCKED**
 
