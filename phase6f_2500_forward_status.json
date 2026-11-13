@@ -1,5 +1,5 @@
 {
-  "current_equity": 2483.31,
+  "current_equity": 2485.83,
   "execution": {
     "failed_order_count": 0,
     "fill_rate_pct": 100.0,
@@ -34,45 +34,45 @@
   "positions": {
     "BIL": {
       "avg_entry_price": 91.55,
-      "current_price": 91.5,
-      "market_value": 1062.035742,
+      "current_price": 91.53,
+      "market_value": 1062.38395,
       "qty": 11.606948,
-      "unrealized_pl": -0.580347
+      "unrealized_pl": -0.232139
     },
     "IWM": {
       "avg_entry_price": 303.618,
-      "current_price": 278.44,
-      "market_value": 239.04436,
+      "current_price": 279.51,
+      "market_value": 239.962969,
       "qty": 0.858513,
-      "unrealized_pl": -21.61564
+      "unrealized_pl": -20.697031
     },
     "QQQ": {
       "avg_entry_price": 734.344,
-      "current_price": 690.92,
-      "market_value": 141.196411,
+      "current_price": 692.58,
+      "market_value": 141.535649,
       "qty": 0.20436,
-      "unrealized_pl": -8.874129
+      "unrealized_pl": -8.534891
     },
     "SPY": {
       "avg_entry_price": 775.764,
-      "current_price": 759.19,
-      "market_value": 281.71567,
+      "current_price": 760.39,
+      "market_value": 282.160959,
       "qty": 0.371074,
-      "unrealized_pl": -6.150181
+      "unrealized_pl": -5.704892
     },
     "XLE": {
       "avg_entry_price": 62.11,
-      "current_price": 64.33,
-      "market_value": 223.009466,
+      "current_price": 64.35,
+      "market_value": 223.078799,
       "qty": 3.466648,
-      "unrealized_pl": 7.695959
+      "unrealized_pl": 7.765292
     },
     "XLK": {
       "avg_entry_price": 191.656,
-      "current_price": 173.77,
-      "market_value": 57.153648,
+      "current_price": 174.98,
+      "market_value": 57.551622,
       "qty": 0.328904,
-      "unrealized_pl": -5.882777
+      "unrealized_pl": -5.484803
     },
     "XLP": {
       "avg_entry_price": 84.8,
@@ -107,5 +107,5 @@
     "Waiting for the 4:00-4:59 PM ET close capture window"
   ],
   "status": "WAITING_CLOSE_WINDOW",
-  "timestamp_utc": "2026-11-13T01:01:10.734288+00:00"
+  "timestamp_utc": "2026-11-13T01:47:30.035272+00:00"
 }
