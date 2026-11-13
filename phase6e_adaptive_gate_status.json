@@ -5,5 +5,5 @@
   "phase": "6E",
   "problem": "Cannot compare Timestamp with datetime.date. Use ts == pd.Timestamp(date) or ts.date() == date instead.",
   "status": "ADAPTIVE_GATE_ERROR",
-  "timestamp_utc": "2026-11-12T21:46:34.289222+00:00"
+  "timestamp_utc": "2026-11-13T21:18:12.163808+00:00"
 }
