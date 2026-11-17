@@ -1,5 +1,5 @@
 {
-  "current_equity": 2465.73,
+  "current_equity": 2465.39,
   "execution": {
     "failed_order_count": 0,
     "fill_rate_pct": 100.0,
@@ -41,24 +41,24 @@
     },
     "IWM": {
       "avg_entry_price": 303.618,
-      "current_price": 272.41,
-      "market_value": 233.867526,
+      "current_price": 272.38,
+      "market_value": 233.841771,
       "qty": 0.858513,
-      "unrealized_pl": -26.792474
+      "unrealized_pl": -26.818229
     },
     "QQQ": {
       "avg_entry_price": 734.344,
-      "current_price": 664.7,
-      "market_value": 135.838092,
+      "current_price": 665.28,
+      "market_value": 135.956621,
       "qty": 0.20436,
-      "unrealized_pl": -14.232448
+      "unrealized_pl": -14.113919
     },
     "SPY": {
       "avg_entry_price": 775.764,
-      "current_price": 740.86,
-      "market_value": 274.913884,
+      "current_price": 740.25,
+      "market_value": 274.687529,
       "qty": 0.371074,
-      "unrealized_pl": -12.951967
+      "unrealized_pl": -13.178322
     },
     "XLE": {
       "avg_entry_price": 62.11,
@@ -69,17 +69,17 @@
     },
     "XLK": {
       "avg_entry_price": 191.656,
-      "current_price": 164.76,
-      "market_value": 54.190223,
+      "current_price": 166.07,
+      "market_value": 54.621087,
       "qty": 0.328904,
-      "unrealized_pl": -8.846202
+      "unrealized_pl": -8.415338
     },
     "XLP": {
       "avg_entry_price": 84.8,
-      "current_price": 92.75,
-      "market_value": 159.99171,
+      "current_price": 92.5,
+      "market_value": 159.560465,
       "qty": 1.724978,
-      "unrealized_pl": 13.713576
+      "unrealized_pl": 13.282331
     },
     "XLU": {
       "avg_entry_price": 43.88,
@@ -90,10 +90,10 @@
     },
     "XLV": {
       "avg_entry_price": 167.716,
-      "current_price": 187.74,
-      "market_value": 70.106622,
+      "current_price": 187.17,
+      "market_value": 69.89377,
       "qty": 0.373424,
-      "unrealized_pl": 7.477442
+      "unrealized_pl": 7.26459
     },
     "XLY": {
       "avg_entry_price": 117.26,
@@ -107,5 +107,5 @@
     "Waiting for the 4:00-4:59 PM ET close capture window"
   ],
   "status": "WAITING_CLOSE_WINDOW",
-  "timestamp_utc": "2026-11-17T02:53:45.986895+00:00"
+  "timestamp_utc": "2026-11-17T03:46:40.862740+00:00"
 }
