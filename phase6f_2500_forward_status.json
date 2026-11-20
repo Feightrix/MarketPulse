@@ -1,5 +1,5 @@
 {
-  "current_equity": 2428.19,
+  "current_equity": 2429.4,
   "execution": {
     "failed_order_count": 0,
     "fill_rate_pct": 100.0,
@@ -41,38 +41,38 @@
     },
     "IWM": {
       "avg_entry_price": 303.618,
-      "current_price": 263.7,
-      "market_value": 226.389878,
+      "current_price": 263.71,
+      "market_value": 226.398463,
       "qty": 0.858513,
-      "unrealized_pl": -34.270122
+      "unrealized_pl": -34.261537
     },
     "QQQ": {
       "avg_entry_price": 734.344,
-      "current_price": 641.0,
-      "market_value": 130.99476,
+      "current_price": 642.24,
+      "market_value": 131.248166,
       "qty": 0.20436,
-      "unrealized_pl": -19.07578
+      "unrealized_pl": -18.822374
     },
     "SPY": {
       "avg_entry_price": 775.764,
-      "current_price": 714.19,
-      "market_value": 265.01734,
+      "current_price": 715.36,
+      "market_value": 265.451497,
       "qty": 0.371074,
-      "unrealized_pl": -22.848511
+      "unrealized_pl": -22.414354
     },
     "XLE": {
       "avg_entry_price": 62.11,
-      "current_price": 60.84,
-      "market_value": 210.910864,
+      "current_price": 60.99,
+      "market_value": 211.430862,
       "qty": 3.466648,
-      "unrealized_pl": -4.402643
+      "unrealized_pl": -3.882645
     },
     "XLK": {
       "avg_entry_price": 191.656,
-      "current_price": 159.96,
-      "market_value": 52.611484,
+      "current_price": 159.26,
+      "market_value": 52.381251,
       "qty": 0.328904,
-      "unrealized_pl": -10.424941
+      "unrealized_pl": -10.655174
     },
     "XLP": {
       "avg_entry_price": 84.8,
@@ -97,15 +97,15 @@
     },
     "XLY": {
       "avg_entry_price": 117.26,
-      "current_price": 115.88,
-      "market_value": -115.88,
+      "current_price": 115.65,
+      "market_value": -115.65,
       "qty": -1.0,
-      "unrealized_pl": 1.38
+      "unrealized_pl": 1.61
     }
   },
   "problems": [
     "Waiting for the 4:00-4:59 PM ET close capture window"
   ],
   "status": "WAITING_CLOSE_WINDOW",
-  "timestamp_utc": "2026-11-20T01:45:04.506402+00:00"
+  "timestamp_utc": "2026-11-20T02:15:51.291578+00:00"
 }
