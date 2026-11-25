@@ -1,5 +1,5 @@
 {
-  "account_equity": 2395.40477225224,
+  "account_equity": 2397.206641949667,
   "account_status": "ACTIVE",
   "broker_cash": 2495.1,
   "broker_cash_equity": 2495.1,
@@ -38,7 +38,7 @@
     "XLV": 0.33051688308870697,
     "XLY": -0.5165183012568672
   },
-  "signal_date": "2026-11-24",
+  "signal_date": "2026-11-25",
   "status": "RISK_CAP_57_5_HOLD",
   "strategy": "2",
   "target_weights": {
@@ -50,7 +50,7 @@
     "XLV": 0.024999999999999998,
     "XLY": -0.024999999999999998
   },
-  "timestamp_utc": "2026-11-24T23:50:52.725280+00:00",
+  "timestamp_utc": "2026-11-25T23:34:32.290109+00:00",
   "trading_blocked": false,
   "trend_sleeve": {
     "BIL": 1.0
