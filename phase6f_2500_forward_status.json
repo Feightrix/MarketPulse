@@ -1,5 +1,5 @@
 {
-  "current_equity": 2435.26,
+  "current_equity": 2446.99,
   "execution": {
     "failed_order_count": 0,
     "fill_rate_pct": 100.0,
@@ -31,81 +31,10 @@
     "worst_completed_month_pct": -0.38559999999999706
   },
   "phase": "6F",
-  "positions": {
-    "BIL": {
-      "avg_entry_price": 91.55,
-      "current_price": 91.64,
-      "market_value": 1063.660715,
-      "qty": 11.606948,
-      "unrealized_pl": 1.044626
-    },
-    "IWM": {
-      "avg_entry_price": 303.618,
-      "current_price": 268.87,
-      "market_value": 230.82839,
-      "qty": 0.858513,
-      "unrealized_pl": -29.83161
-    },
-    "QQQ": {
-      "avg_entry_price": 734.344,
-      "current_price": 633.93,
-      "market_value": 129.549935,
-      "qty": 0.20436,
-      "unrealized_pl": -20.520605
-    },
-    "SPY": {
-      "avg_entry_price": 775.764,
-      "current_price": 716.7,
-      "market_value": 265.948736,
-      "qty": 0.371074,
-      "unrealized_pl": -21.917115
-    },
-    "XLE": {
-      "avg_entry_price": 62.11,
-      "current_price": 60.9,
-      "market_value": 211.118863,
-      "qty": 3.466648,
-      "unrealized_pl": -4.194644
-    },
-    "XLK": {
-      "avg_entry_price": 191.656,
-      "current_price": 155.79,
-      "market_value": 51.239954,
-      "qty": 0.328904,
-      "unrealized_pl": -11.796471
-    },
-    "XLP": {
-      "avg_entry_price": 84.8,
-      "current_price": 92.3,
-      "market_value": 159.215469,
-      "qty": 1.724978,
-      "unrealized_pl": 12.937335
-    },
-    "XLU": {
-      "avg_entry_price": 43.88,
-      "current_price": 43.61,
-      "market_value": -43.61,
-      "qty": -1.0,
-      "unrealized_pl": 0.27
-    },
-    "XLV": {
-      "avg_entry_price": 167.716,
-      "current_price": 183.68,
-      "market_value": 68.59052,
-      "qty": 0.373424,
-      "unrealized_pl": 5.96134
-    },
-    "XLY": {
-      "avg_entry_price": 117.26,
-      "current_price": 117.49,
-      "market_value": -117.49,
-      "qty": -1.0,
-      "unrealized_pl": -0.23
-    }
-  },
+  "positions": {},
   "problems": [
-    "Waiting for the 4:00-4:59 PM ET close capture window"
+    "No U.S. equity market session on this date"
   ],
-  "status": "WAITING_CLOSE_WINDOW",
-  "timestamp_utc": "2026-11-26T03:30:28.293243+00:00"
+  "status": "MARKET_CLOSED_NO_SNAPSHOT",
+  "timestamp_utc": "2026-11-27T02:46:28.780441+00:00"
 }
