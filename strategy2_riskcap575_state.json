@@ -5,18 +5,18 @@
   "experiment": "CONTROL_CLONE_RISK_CAP_57_5",
   "initialized": true,
   "last_prices": {
-    "BIL": 91.635,
-    "SPY": 716.735,
-    "XLE": 60.88,
-    "XLF": 56.49,
-    "XLK": 155.82,
-    "XLP": 92.28,
-    "XLU": 43.605,
-    "XLV": 183.61,
-    "XLY": 117.48
+    "BIL": 91.665,
+    "SPY": 728.86,
+    "XLE": 61.67,
+    "XLF": 57.18,
+    "XLK": 160.22,
+    "XLP": 92.7,
+    "XLU": 43.72,
+    "XLV": 184.16,
+    "XLY": 119.88
   },
   "last_rebalance_month": "2026-11",
-  "last_signal_date": "2026-11-25",
+  "last_signal_date": "2026-11-27",
   "quantities": {
     "BIL": 9.647028868734914,
     "SPY": 0.567792737070468,
@@ -30,7 +30,7 @@
   },
   "rebalance_count": 4,
   "risk_cap": 0.575,
-  "shadow_equity": 2397.206641949667,
+  "shadow_equity": 2409.0794581963783,
   "target_weights": {
     "BIL": 0.85,
     "XLE": 0.024999999999999998,
