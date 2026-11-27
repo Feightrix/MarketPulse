@@ -2,8 +2,8 @@
 
 **Status: MARKET_CLOSED_NO_SNAPSHOT**
 
-- Timestamp UTC: 2026-11-27T02:46:28.780441+00:00
-- Official close equity: **$2,446.99**
+- Timestamp UTC: 2026-11-27T03:36:39.789165+00:00
+- Official close equity: **$2,447.98**
 - Daily P/L: **$-1.33 (-0.0534%)**
 - Cumulative P/L: **$-9.64 (-0.3856%)**
 - Max drawdown: **0.39%**

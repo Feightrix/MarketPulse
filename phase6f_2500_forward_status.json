@@ -1,5 +1,5 @@
 {
-  "current_equity": 2446.99,
+  "current_equity": 2447.98,
   "execution": {
     "failed_order_count": 0,
     "fill_rate_pct": 100.0,
@@ -36,5 +36,5 @@
     "No U.S. equity market session on this date"
   ],
   "status": "MARKET_CLOSED_NO_SNAPSHOT",
-  "timestamp_utc": "2026-11-27T02:46:28.780441+00:00"
+  "timestamp_utc": "2026-11-27T03:36:39.789165+00:00"
 }
