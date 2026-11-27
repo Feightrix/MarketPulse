@@ -1,7 +1,7 @@
 {
   "closed_trades": [],
   "daily": {
-    "2026-11-26": {
+    "2026-11-27": {
       "entries": 0,
       "risk_used_dollars": 0.0
     }
@@ -34,7 +34,7 @@
         "series": "KXNDQHUD"
       }
     ],
-    "ts_utc": "2026-11-26T22:00:36.052601+00:00"
+    "ts_utc": "2026-11-27T21:43:51.757684+00:00"
   },
   "open_trades": {},
   "traded_tickers": []
