@@ -1,5 +1,5 @@
 {
-  "current_equity": 2449.91,
+  "current_equity": 2449.99,
   "execution": {
     "failed_order_count": 0,
     "fill_rate_pct": 100.0,
@@ -48,10 +48,10 @@
     },
     "QQQ": {
       "avg_entry_price": 734.344,
-      "current_price": 650.62,
-      "market_value": 132.960703,
+      "current_price": 650.99,
+      "market_value": 133.036316,
       "qty": 0.20436,
-      "unrealized_pl": -17.109837
+      "unrealized_pl": -17.034224
     },
     "SPY": {
       "avg_entry_price": 775.764,
@@ -107,5 +107,5 @@
     "Waiting for the 4:00-4:59 PM ET close capture window"
   ],
   "status": "WAITING_CLOSE_WINDOW",
-  "timestamp_utc": "2026-11-28T02:37:31.431282+00:00"
+  "timestamp_utc": "2026-11-28T03:15:14.612334+00:00"
 }
