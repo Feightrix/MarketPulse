@@ -1,9 +1,9 @@
 # MarketPulse Phase 6F — $2,500 Forward Test
 
-**Status: MARKET_CLOSED_NO_SNAPSHOT**
+**Status: WAITING_CLOSE_WINDOW**
 
-- Timestamp UTC: 2026-11-27T03:36:39.789165+00:00
-- Official close equity: **$2,447.98**
+- Timestamp UTC: 2026-11-28T02:37:31.431282+00:00
+- Official close equity: **$2,449.91**
 - Daily P/L: **$-1.33 (-0.0534%)**
 - Cumulative P/L: **$-9.64 (-0.3856%)**
 - Max drawdown: **0.39%**
@@ -23,11 +23,21 @@
 - Current capital-fit gate: **None**
 
 ## Holdings
+- BIL: +11.6069 shares | value $+1,064.01 | unrealized $+1.39
+- IWM: +0.858513 shares | value $+235.05 | unrealized $-25.61
+- QQQ: +0.20436 shares | value $+132.96 | unrealized $-17.11
+- SPY: +0.371074 shares | value $+270.26 | unrealized $-17.61
+- XLE: +3.46665 shares | value $+213.79 | unrealized $-1.53
+- XLK: +0.328904 shares | value $+52.67 | unrealized $-10.36
+- XLP: +1.72498 shares | value $+159.87 | unrealized $+13.59
+- XLU: -1 shares | value $-43.73 | unrealized $+0.15
+- XLV: +0.373424 shares | value $+68.78 | unrealized $+6.16
+- XLY: -1 shares | value $-119.97 | unrealized $-2.71
 
 ## Forward-test gate
 
 ## Notes
-- No U.S. equity market session on this date
+- Waiting for the 4:00-4:59 PM ET close capture window
 
 ## Rule
 Phase 6F is read-only. It cannot place orders, modify Phase 5H, or enable live-money trading.
